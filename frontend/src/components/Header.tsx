@@ -25,7 +25,7 @@ export default function Header() {
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* LOGO Y BOTON DE MENU */}
                 <div className="flex items-center justify-between w-full lg:w-auto">
-                    <Link href="/" className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2 cursor-pointer">
                         <Image
                             src={logo}
                             width={80}
@@ -49,7 +49,7 @@ export default function Header() {
                         <div key={index} className="relative group">
                             {link.submenu ? (
                                 <>
-                                    <button className="flex items-center px-4 py-2 text-white hover:text-red-500 font-medium">
+                                    <button className="flex items-center px-4 py-2 text-white hover:text-red-500 font-medium cursor-pointer">
                                         {link.title}
                                         <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
