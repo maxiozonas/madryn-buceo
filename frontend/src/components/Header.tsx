@@ -10,15 +10,7 @@ import { NavLinks } from "@/lib/utils/NavLinks";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-    const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
-    const toggleSubmenu = (title: string) => {
-        if (openSubmenu === title) {
-            setOpenSubmenu(null)
-        } else {
-            setOpenSubmenu(title)
-        }
-    }
 
     return (
         <header className="sticky top-0 z-50 shadow-sm text-white bg-[#121113] pt-2">
