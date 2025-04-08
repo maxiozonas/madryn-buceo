@@ -1,6 +1,6 @@
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1>MADRYN BUCEO</h1>
