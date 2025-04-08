@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -43,7 +44,7 @@
 }
 
 body {
-  background: whitesmoke;
+  background: #121113;
   color: var(--negro);
 }
 
