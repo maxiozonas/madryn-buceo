@@ -16,17 +16,31 @@ export default function ActivitySection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   }
 
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  }
+
   return (
-    <section className="py-20" id="activities" ref={ref}>
+    <section
+      className="py-20"
+      id="activities"
+      ref={ref}
+    >
       <motion.div className="container flex flex-col items-center justify-center px-8 mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 uppercase font-oceanica">
+        <motion.h2
+          className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12 uppercase font-oceanica tracking-wide shadow-md"
+          variants={titleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           Nuestras Actividades
-        </h2>
+        </motion.h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -46,7 +60,7 @@ export default function ActivitySection() {
             link="/excursiones/bautismo-de-buceo"
           />
           <ActivityCard
-            title="Busqueda de delfines"
+            title="Búsqueda de Delfines"
             description="Disfruta de un paseo por el mar en busca de delfines y otras especies marinas."
             image="/images/inicio/delfines.jpeg"
             link="/excursiones/paseo-nautico-delfines"
@@ -74,22 +88,37 @@ function ActivityCard({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
+        duration: 0.6,
+        type: "spring",
+        stiffness: 100,
       },
     },
   }
 
   return (
-    <motion.div variants={cardVariants} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}>
-      <Card className="overflow-hidden py-0 border-none shadow-lg bg-[#252422]">
+    <motion.div
+      variants={cardVariants}
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+    >
+      <Card className="overflow-hidden py-0 border-none shadow-lg bg-[#252422] hover:shadow-xl transition-shadow">
         <div className="relative h-64">
-          <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+          <Image
+            src={image || "/placeholder.svg"}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <CardContent className="p-3 flex flex-col items-center text-center text-white">
-          <h3 className="text-sm uppercase font-extrabold mb-2 text-white font-oceanica">{title}</h3>
-          <p className="text-white/80 mb-4">{description}</p>
-          <Button asChild className="bg-[#e12222] hover:bg-[#e12222]/60 text-white w-full">
+        <CardContent className="p-4 flex flex-col items-center text-center text-white relative">
+          <h3 className="text-lg uppercase font-extrabold mb-2 text-white font-oceanica tracking-tight">
+            {title}
+          </h3>
+          <p className="text-white/80 mb-4 text-sm">{description}</p>
+          <Button
+            asChild
+            className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white w-full transition-all duration-300 text-lg font-semibold"
+          >
             <Link href={link}>Ver más</Link>
           </Button>
         </CardContent>

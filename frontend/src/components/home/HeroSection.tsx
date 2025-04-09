@@ -28,7 +28,7 @@ export default function HeroSection() {
           <p className="text-base md:text-2xl mb-8 font-oceanica">
             Sumérgete en una experiencia inolvidable en la Patagonia
           </p>
-          <Button asChild size="lg" className="bg-[#e12222] hover:bg-[#e12222]/80 text-white">
+          <Button asChild size="lg" className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
             <Link href="/reservar">Reserva ahora</Link>
           </Button>
         </div>
