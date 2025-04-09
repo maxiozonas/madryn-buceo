@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       style={{ borderTop: "1px solid #444", backgroundColor: "#e12222" }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center ">
           <a
             href="https://www.tripadvisor.com.ar/Attraction_Review-g312832-d7353317-Reviews-Madryn_Buceo-Puerto_Madryn_Province_of_Chubut_Patagonia.html"
             target="_blank"
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           <p>Teléfono: +5492804564422</p>
           <p>Email: madrynbuceo@hotmail.com</p>
         </div>
-        <div className="flex justify-center gap-10">
+        <div className="flex justify-center">
           <a/>
             <Image
               src="/images/footer-widget-logo.png"
