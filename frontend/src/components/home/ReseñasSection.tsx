@@ -6,6 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import googleLogo from "../../../public/images/inicio/google.png"
 import { Reseña } from "@/lib/types/reseñas"
+import { Button } from "../ui/button"
 
 export default function ReseñasSection() {
   // Ejemplo de reseñas (en un futuro se integrarían con Google Reviews) PREGUNTAR????
@@ -53,15 +54,12 @@ export default function ReseñasSection() {
         </div>
 
         <div className="mt-12 flex items-center justify-center">
-          <a
-            href="https://www.google.com/search?q=madryn+buceo+reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 font-semibold bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
+          <Button
+            className="bg-white hover:scale-105 hover:shadow-lg hover:bg-white text-black transition-all duration-300 text-lg font-semibold cursor-pointer"
           >
             <Image src={googleLogo} alt="Google" width={24} height={24} />
             Ver todas las reseñas en Google
-          </a>
+          </Button>
         </div>
       </div>
     </section>
@@ -75,15 +73,15 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
     >
-      <Card className="border-none shadow-lg bg-[#121113]">
+      <Card className="border-none shadow-lg bg-white text-[#252422]">
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
             <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">
               <Image src={review.image || "/placeholder.svg"} alt={review.name} fill className="object-cover" />
             </div>
             <div>
-              <h4 className="font-medium text-white">{review.name}</h4>
-              <p className="text-xs text-gray-400">{review.date}</p>
+              <h4 className="font-medium">{review.name}</h4>
+              <p className="text-xs">{review.date}</p>
             </div>
           </div>
           <div className="flex mb-2">
@@ -94,7 +92,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
               />
             ))}
           </div>
-          <p className="text-white/80 text-sm">{review.text}</p>
+          <p className="text-[#252422] text-sm">{review.text}</p>
         </CardContent>
       </Card>
     </motion.div>
