@@ -78,7 +78,7 @@ export default function WhyChooseSection() {
           />
           <FeatureCard
             icon={<Anchor className="h-12 w-12 text-[#e12222]" />}
-            title="Exploramos las Maravillas del Golfo Nuevo"
+            title="Exploramos el Golfo Nuevo"
             description="Exploramos parques naturales, naufragios y la reserva de lobos marinos, ofreciendo experiencias únicas para todos los niveles, desde principiantes hasta Dive Masters."
           />
         </motion.div>

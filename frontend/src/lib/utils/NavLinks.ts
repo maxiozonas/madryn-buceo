@@ -13,13 +13,13 @@ export const NavLinks = [
                 description: "Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural.",
             },
             {
-                title: "Bautismo de buceo",
-                href: "/excursiones/bautismo-de-buceo",
+                title: "Bautismo submarino",
+                href: "/excursiones/bautismo-submarino",
                 description: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
             },
             {
-                title: "Paseo Náutico en Busqueda de delfines",
-                href: "/excursiones/paseo-nautico-delfines",
+                title: "Busqueda de delfines",
+                href: "/excursiones/busqueda-delfines",
                 description: "Disfruta de un paseo por el mar en busca de delfines y otras especies marinas.",
             },
             {

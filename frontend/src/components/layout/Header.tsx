@@ -8,6 +8,7 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import logo from "../../../public/images/inicio/logo.png"
 import { NavLinks } from "@/lib/utils/NavLinks"
 import { motion, AnimatePresence } from "framer-motion"
+import { Instagram, Facebook, MessageCircle } from "lucide-react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,6 @@ export default function Header() {
     setExpandedSubmenu(expandedSubmenu === index ? null : index)
   }
 
-  // Variantes para la animación de los submenús en desktop
   const submenuVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
@@ -106,11 +106,26 @@ export default function Header() {
           ))}
         </nav>
 
-        <Button size="lg" className="hidden md:inline bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
-          <Link href="/reservar" className="w-full">
-            Reservar Ahora
-          </Link>
-        </Button>
+        {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
+        <div className="hidden lg:flex items-center gap-4">
+          <Button size="lg" className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
+            <Link href="/reservar" className="w-full">
+              Reservar Ahora
+            </Link>
+          </Button>
+          {/* Íconos de redes sociales */}
+          <div className="flex items-center gap-3">
+            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <Instagram className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
+            </Link>
+            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <Facebook className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
+            </Link>
+            <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* MENÚ MOBILE */}
