@@ -8,7 +8,7 @@ export default function PadiSection() {
             <div className="container flex flex-col items-center justify-center px-8 mx-auto">
                 <div className="w-full grid items-center gap-8 lg:grid-cols-2">
                     <div>
-                        <div className="mb-4 inline-block rounded-lg bg-muted px-4 py-1.5 text-sm font-medium">
+                        <div className="mb-4 inline-block rounded-lg bg-muted px-4 py-1.5 text-lg font-medium">
                             Centro PADI Oficial
                         </div>
                         <h2 className="mb-4 text-3xl font-bold uppercase text-white">Certifícate con Nosotros</h2>
@@ -17,8 +17,8 @@ export default function PadiSection() {
                             instructores certificados te guiarán en cada paso de tu formación.
                         </p> 
                         <div className="flex flex-wrap gap-4 text-end">
-                            <Button className="bg-[#e12222] hover:bg-[#e12222]/60 cursor-pointer">Ver Cursos PADI</Button>
-                            <Button className="bg-[#252422] cursor-pointer">Checkout para Escuelas</Button>
+                            <Button size="lg" className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Ver Cursos PADI</Button>
+                            <Button size="lg" className="bg-[#252422] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Checkout para Escuelas</Button>
                         </div>
                     </div>
                     <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
