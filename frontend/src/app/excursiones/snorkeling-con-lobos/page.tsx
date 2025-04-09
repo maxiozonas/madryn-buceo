@@ -90,13 +90,13 @@ export default function SnorkelingConLobos() {
     ],
     callToAction: "¿Listo para vivir una experiencia única de snorkeling? ¡Reserva tu aventura ahora y descubre la magia de estar cerca de los lobos marinos!",
     buttonText: "Reserva Ahora",
-    heroImage: "/images/excursiones/snorkel/lobo-1.jpg",
-    cardImage: "/images/excursiones/snorkel/lobo-1.jpg",
+    heroImage: "/images/excursiones/delfines/delfines-1.jpeg",
+    cardImage: "/images/excursiones/delfines/delfines-1.jpeg",
     galleryImages: [
-      "/images/excursiones/snorkel/lobo-2.jpg",
-      "/images/excursiones/snorkel/lobo-2.jpg",
-      "/images/excursiones/snorkel/lobo-2.jpg",
-      "/images/excursiones/snorkel/lobo-2.jpg",
+      "/images/excursiones/delfines/delfines-1.jpeg",
+      "/images/excursiones/delfines/delfines-1.jpeg",
+      "/images/excursiones/delfines/delfines-1.jpeg",
+      "/images/excursiones/delfines/delfines-1.jpeg",
     ],
   }
 

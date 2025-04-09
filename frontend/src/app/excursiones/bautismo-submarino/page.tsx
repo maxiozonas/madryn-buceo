@@ -86,13 +86,13 @@ export default function BautismoSubmarino() {
         ],
         callToAction: "¿Listo para descubrir el mundo submarino? ¡Reserva tu bautismo de buceo ahora y comienza tu aventura subacuática con nosotros!",
         buttonText: "Reserva Ahora",
-        heroImage: "/images/excursiones/snorkel/lobo-1.jpg",
-        cardImage: "/images/excursiones/snorkel/lobo-1.jpg",
+        heroImage: "/images/excursiones/delfines/delfines-1.jpeg",
+        cardImage: "/images/excursiones/delfines/delfines-1.jpeg",
         galleryImages: [
-            "/images/excursiones/snorkel/lobo-2.jpg",
-            "/images/excursiones/snorkel/lobo-2.jpg",
-            "/images/excursiones/snorkel/lobo-2.jpg",
-            "/images/excursiones/snorkel/lobo-2.jpg",
+            "/images/excursiones/delfines/delfines-1.jpeg",
+            "/images/excursiones/delfines/delfines-1.jpeg",
+            "/images/excursiones/delfines/delfines-1.jpeg",
+            "/images/excursiones/delfines/delfines-1.jpeg",
         ],
     }
 
