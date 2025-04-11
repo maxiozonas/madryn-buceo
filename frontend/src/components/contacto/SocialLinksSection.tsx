@@ -10,21 +10,21 @@ export function SocialLinksSection() {
       <div className="flex justify-center gap-7 text-3xl" style={{color:"#ff4d4d"
       }}>
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/madrynbuceo/?fref=ts"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebookF className="hover:text-blue-600" />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/madrynbuceo/?hl=es-la"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaInstagram className="hover:text-pink-500" />
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-          <FaTiktok className="hover:text-black" />
+        <a href="https://www.tiktok.com/@madrynbuceo" target="_blank" rel="noopener noreferrer">
+          <FaTiktok className="hover:text-white" />
         </a>
       </div>
     </section>
