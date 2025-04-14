@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X } from "lucide-react"
 import logo from "../../../public/images/inicio/logo.png"
-import { NavLinks } from "@/lib/utils/NavLinks"
+import { NavLinks } from "@/lib/data/NavLinks"
 import { motion, AnimatePresence } from "framer-motion"
 import { Instagram, Facebook, MessageCircle } from "lucide-react"
 
@@ -108,7 +108,7 @@ export default function Header() {
 
         {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button size="lg" className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
+          <Button size="lg" className="bg-[#e12222] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
             <Link href="/reservar" className="w-full">
               Reservar Ahora
             </Link>
@@ -184,7 +184,7 @@ export default function Header() {
           </nav>
           <div className="mt-6">
             <Button
-              className="w-full bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
+              className="w-full bg-[#e12222] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
               onClick={() => setIsOpen(false)}
             >
               <Link href="/reservar" className="w-full">

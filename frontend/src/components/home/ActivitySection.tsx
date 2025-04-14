@@ -117,7 +117,7 @@ function ActivityCard({
           <p className="text-white/80 mb-4 text-sm">{description}</p>
           <Button
             asChild
-            className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white w-full transition-all duration-300 text-lg font-semibold"
+            className="w-full bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold"
           >
             <Link href={link}>Ver más</Link>
           </Button>

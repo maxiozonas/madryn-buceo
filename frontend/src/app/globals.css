@@ -5,9 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --negro-claro: #403d39;
-  --negro: #171717;
-  --rojo: #ef233c;
   --blanco: #f8f9fa;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -41,13 +38,26 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --color-punch-50: #fef2f2;
+  --color-punch-100: #ffe1e1;
+  --color-punch-200: #ffc9c9;
+  --color-punch-300: #fea3a3;
+  --color-punch-400: #fc6d6d;
+  --color-punch-500: #f43f3f;
+  --color-punch-600: #e12222;
+  --color-punch-700: #bd1818;
+  --color-punch-800: #9c1818;
+  --color-punch-900: #821a1a;
+  --color-punch-950: #470808;
+
+
 }
 
 body {
   background: #121113;
   color: var(--negro);
 }
-
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -125,6 +135,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

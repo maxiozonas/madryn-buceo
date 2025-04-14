@@ -86,7 +86,7 @@ export default function WhyChooseSection() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
+            className="bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold"
           >
             <Link href="/reservar">¡Sumérgete hoy!</Link>
           </Button>

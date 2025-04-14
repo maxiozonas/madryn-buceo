@@ -55,19 +55,9 @@ export const NavLinks = [
         href: "/cursos",
         submenu: [
             {
-                title: "Iniciación en el buceo",
-                href: "/cursos/iniciacion",
-                description: "Primeros pasos para convertirte en buceador certificado.",
-            },
-            {
-                title: "Niveles avanzados",
-                href: "/cursos/avanzados",
-                description: "Perfecciona tus habilidades y amplía tus conocimientos de buceo.",
-            },
-            {
-                title: "Primer nivel profesional",
-                href: "/cursos/profesional",
-                description: "Conviértete en un profesional del buceo con nuestro curso de Divemaster.",
+                title: "Cursos PADI",
+                href: "/cursos/padi",
+                description: "Explora todos nuestros cursos de buceo para todos los niveles.",
             },
             {
                 title: "Checkout para escuelas",
