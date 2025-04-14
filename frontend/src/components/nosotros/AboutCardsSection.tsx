@@ -51,8 +51,9 @@ export function AboutCardsSection() {
       <div className="flex justify-center mt-7">
         <a
           href="#about"
-          className="animate-bounce text-red-600"
+          className="animate-bounce"
           aria-label="Bajar a sección siguiente"
+          style={{color:"#ff4d4d"}}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +105,7 @@ function AboutCard({
     >
       <Card className="bg-[#252422] text-white overflow-hidden border-none shadow-lg h-full">
         <CardHeader>
-          <CardTitle className="text-lg text-center text-red-600 font-semibold">
+          <CardTitle className="text-lg text-center font-semibold" style={{color:"#ff4d4d"}}>
             {title}
           </CardTitle>
         </CardHeader>

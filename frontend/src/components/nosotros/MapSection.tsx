@@ -24,7 +24,7 @@ export default function MapSection() {
   return (
     <section className="relative isolate z-0 py-1 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-red-600 mb-4">
+        <h2 className="text-3xl font-semibold mb-4" style={{ color: "#ff4d4d" }}>
           Dónde Estamos
         </h2>
         <p className="text-white text-lg mb-6">
