@@ -1,22 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X } from "lucide-react"
-import logo from "../../../public/images/inicio/logo.png"
-import { NavLinks } from "@/lib/data/NavLinks"
-import { motion, AnimatePresence } from "framer-motion"
-import { Instagram, Facebook, MessageCircle } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import logo from "../../../public/images/inicio/logo.png";
+import { NavLinks } from "@/lib/data/NavLinks";
+import { motion, AnimatePresence } from "framer-motion";
+import { Instagram, Facebook, MessageCircle } from "lucide-react";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [expandedSubmenu, setExpandedSubmenu] = useState<number | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedMainIndex, setExpandedMainIndex] = useState<number | null>(
+    null
+  );
+  const [expandedSubIndex, setExpandedSubIndex] = useState<string | null>(null);
 
-  const toggleSubmenu = (index: number) => {
-    setExpandedSubmenu(expandedSubmenu === index ? null : index)
-  }
+  const toggleMainMenu = (index: number) => {
+    setExpandedMainIndex((prev) => (prev === index ? null : index));
+    setExpandedSubIndex(null);
+  };
 
   const submenuVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -36,7 +40,7 @@ export default function Header() {
         ease: "easeIn",
       },
     },
-  }
+  };
 
   return (
     <header className="sticky top-0 z-50 shadow-md text-white bg-[#121113] pt-2">
@@ -80,16 +84,38 @@ export default function Header() {
                       variants={submenuVariants}
                     >
                       {link.submenu.map((sublink, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={sublink.href}
-                          className="block px-3 py-3 text-white hover:bg-[#403d39] hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
-                        >
-                          <div className="flex flex-col">
-                            <span className="font-medium text-sm uppercase">{sublink.title}</span>
-                            <span className="text-xs text-gray-300 mt-1">{sublink.description}</span>
-                          </div>
-                        </Link>
+                        <div key={subIndex}>
+                          <Link
+                            href={sublink.href || "#"}
+                            className="block px-3 py-3 text-white hover:bg-[#403d39] hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
+                          >
+                            <div className="flex flex-col">
+                              <span className="font-medium text-sm uppercase">
+                                {sublink.title}
+                              </span>
+                              {sublink.description && (
+                                <span className="text-xs text-gray-300 mt-1">
+                                  {sublink.description}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+
+                          {/* Sub-submenu */}
+                          {sublink.submenu && (
+                            <div className="ml-3 mt-1 space-y-1">
+                              {sublink.submenu.map((subsub, i) => (
+                                <Link
+                                  key={i}
+                                  href={subsub.href}
+                                  className="block px-3 py-2 font-medium text-sm uppercase text-[#e12222] hover:text-white hover:bg-[#2e2c2a] rounded-md transition"
+                                >
+                                  {subsub.title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </motion.div>
                   </AnimatePresence>
@@ -108,20 +134,35 @@ export default function Header() {
 
         {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button size="lg" className="bg-[#e12222] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
+          >
             <Link href="/reservar" className="w-full">
               Reservar Ahora
             </Link>
           </Button>
           {/* Íconos de redes sociales */}
           <div className="flex items-center gap-3">
-            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Instagram className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
             </Link>
-            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Facebook className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
             </Link>
-            <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <MessageCircle className="h-6 w-6 text-white hover:text-[#e12222] transition-colors duration-200" />
             </Link>
           </div>
@@ -131,42 +172,99 @@ export default function Header() {
       {/* MENÚ MOBILE */}
       <div
         className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-[#121113]/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
+          isOpen
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-full"
         }`}
       >
         <div className="container h-full flex flex-col py-6 px-4">
           <nav className="flex flex-col flex-1 space-y-2">
             {NavLinks.map((link, index) => (
-              <div key={index} className="rounded-lg bg-[#1a1819]/50 shadow-sm overflow-hidden">
+              <div
+                key={index}
+                className="rounded-lg bg-[#1a1819]/50 shadow-sm overflow-hidden"
+              >
                 {link.submenu ? (
                   <>
                     <button
-                      onClick={() => toggleSubmenu(index)}
+                      onClick={() => toggleMainMenu(index)}
                       className="w-full flex justify-between items-center py-4 px-4 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
                     >
                       {link.title}
                       <ChevronDown
                         className={`h-5 w-5 transition-transform duration-300 ${
-                          expandedSubmenu === index ? "rotate-180" : ""
+                          expandedMainIndex === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     <div
                       className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                        expandedSubmenu === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                        expandedMainIndex === index
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="px-6 py-2 bg-[#1f1d1e]/50">
-                        {link.submenu.map((sublink, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            href={sublink.href}
-                            className="block py-3 text-sm text-gray-200 hover:text-[#e12222] transition-colors duration-200"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {sublink.title}
-                          </Link>
-                        ))}
+                        {link.submenu.map((sublink, subIndex) => {
+                          const hasSubsubmenu = !!sublink.submenu;
+                          const isSubOpen =
+                            expandedSubIndex === `${index}-${subIndex}`;
+                          const toggleSubSubmenu = () => {
+                            setExpandedSubIndex(
+                              isSubOpen ? null : `${index}-${subIndex}`
+                            );
+                          };
+
+                          return (
+                            <div key={subIndex} className="mb-2">
+                              <div className="flex justify-between items-center">
+                                <Link
+                                  href={sublink.href || "#"}
+                                  className="block text-sm text-gray-200 hover:text-[#e12222] transition-colors duration-200"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {sublink.title}
+                                </Link>
+                                {hasSubsubmenu && (
+                                  <button
+                                    onClick={toggleSubSubmenu}
+                                    className="text-gray-300 hover:text-[#e12222] ml-2"
+                                  >
+                                    <ChevronRight
+                                      className={`h-4 w-4 transition-transform ${
+                                        isSubOpen ? "rotate-90" : ""
+                                      }`}
+                                    />
+                                  </button>
+                                )}
+                              </div>
+
+                              {/* Sub-submenú */}
+                              {hasSubsubmenu && (
+                                <div
+                                  className={`ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-300 ${
+                                    isSubOpen
+                                      ? "max-h-96 opacity-100"
+                                      : "max-h-0 opacity-0"
+                                  }`}
+                                >
+                                  {sublink.submenu.map(
+                                    (subsub, subsubIndex) => (
+                                      <Link
+                                        key={subsubIndex}
+                                        href={subsub.href}
+                                        className="block text-xs text-gray-100 hover:text-[#e12222] transition-colors duration-200"
+                                        onClick={() => setIsOpen(false)}
+                                      >
+                                        {subsub.title}
+                                      </Link>
+                                    )
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </>
@@ -184,7 +282,7 @@ export default function Header() {
           </nav>
           <div className="mt-6">
             <Button
-              className="w-full bg-[#e12222] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
+              className="w-full bg-gradient-to-r from-[#e12222] to-[#ff4d4d] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
               onClick={() => setIsOpen(false)}
             >
               <Link href="/reservar" className="w-full">
@@ -195,5 +293,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

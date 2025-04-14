@@ -35,13 +35,21 @@ export const NavLinks = [
         submenu: [
             {
                 title: "Buceo para principiantes",
-                href: "/buceo/principiantes",
+                href: "/excursiones/bautismo-submarino",
                 description: "Primeros pasos en el mundo del buceo con instructores certificados.",
             },
             {
                 title: "Buceo para brevetados",
-                href: "/buceo/brevetados",
+                href: "#",
                 description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",
+                submenu: [{
+                    title: "Buceo certificado",
+                    href: "/buceo/brevetados/buceo-certificado",
+                },
+            {
+                title: "Buceo con lobos",
+                href: "/buceo/brevetados/buceo-con-lobos",
+            }]
             },
             {
                 title: "Puntos de buceo en Puerto Madryn",

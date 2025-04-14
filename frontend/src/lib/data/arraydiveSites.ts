@@ -57,7 +57,7 @@ export const diveSites: DiveSite[] = [
     name: "Naufragio Chino Hushung",
     description: "Pesquero chino secuestrado en 2015 por pesca ilegal. Escorado a estribor y preparado solo para exploración externa. Ideal para inmersiones extendidas.",
     difficulty: "Media",
-    depth: "Máxima profundidad 30 metros",
+    depth: "máx. 30 metros",
     certification: "ADV",
     time: "10 min",
     image: "/images/puntos/chino.JPG",

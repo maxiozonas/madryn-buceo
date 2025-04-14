@@ -1,10 +1,8 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
 
-// Importa el componente que usa Leaflet sin SSR
-const DiveSitesPage = dynamic(() => import("./diveSites"), {
+const DiveSitesPage = dynamic(() => import("@/components/diveSites/DiveSites"), {
   ssr: false,
 });
 
