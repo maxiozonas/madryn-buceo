@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Award, ChevronRight, SeparatorHorizontal } from "lucide-react";
+import Image from "next/image";
 
 const items = [
     "Instructores con amplia experiencia en aguas patagónicas",
@@ -40,7 +41,7 @@ export default function CursosIntroSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div className="relative overflow-hidden rounded-xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#121113]/70 to-transparent z-10"></div>
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                         alt="Buceo en Puerto Madryn"
                         className="w-full h-full object-cover aspect-[4/3]"

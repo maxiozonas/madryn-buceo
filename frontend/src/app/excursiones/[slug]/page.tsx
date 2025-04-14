@@ -14,7 +14,7 @@ interface ExcursionPageProps {
   params: { slug: string };
 }
 
-export default function ExcursionPage({ params }: ExcursionPageProps) {
+export default async function ExcursionPage({ params }: ExcursionPageProps) {
   const excursion = excursiones.find((exc) => exc.slug === params.slug);
   if (!excursion) notFound();
 
