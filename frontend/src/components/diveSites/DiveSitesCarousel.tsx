@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { diveSites } from "@/data/arraydiveSites";
+import { diveSites } from "@/lib/data/arraydiveSites";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import {

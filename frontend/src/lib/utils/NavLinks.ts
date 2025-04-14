@@ -44,7 +44,7 @@ export const NavLinks = [
                 description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",
                 submenu: [{
                     title: "Buceo certificado",
-                    href: "/buceo/brevetados/certificado",
+                    href: "/buceo/brevetados/buceo-certificado",
                 },
             {
                 title: "Buceo con lobos",

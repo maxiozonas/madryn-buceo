@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { diveSites } from "@/data/arraydiveSites";
+import { diveSites } from "@/lib/data/arraydiveSites";
 import DiveSitesCarousel from "./DiveSitesCarousel";
 import DiveSitesMap from "./DiveSitesMap";
 
