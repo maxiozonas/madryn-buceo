@@ -11,11 +11,12 @@ import GaleriaSection from "@/components/excursiones/GaleriaSection";
 
 
 interface ExcursionPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function ExcursionPage({ params }: ExcursionPageProps) {
-  const excursion = excursiones.find((exc) => exc.slug === params.slug);
+  const { slug } = await params;
+  const excursion = excursiones.find((exc) => exc.slug === slug);
   if (!excursion) notFound();
 
   return (
