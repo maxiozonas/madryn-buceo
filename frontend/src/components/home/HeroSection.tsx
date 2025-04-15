@@ -26,9 +26,9 @@ export default function HeroSection() {
             Bienvenido a tu próxima aventura
           </h1>
           <p className="text-base md:text-2xl mb-8 font-oceanica uppercase">
-            Sumérgete en una experiencia inolvidable en la Patagonia
+            Sumérgete en una experiencia en la Patagonia
           </p>
-          <Button asChild size="lg" className="bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold">
+          <Button asChild size="lg" className="bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold">
             <Link href="/reservar">Reserva ahora</Link>
           </Button>
         </div>
@@ -38,7 +38,7 @@ export default function HeroSection() {
           <ChevronDown className="h-10 w-10 text-white" />
         </div>
       </div>
-      <div className="h-4 bg-gradient-to-r from-[#e12222] via-[#e12222]/80 to-black" />
+      <div className="h-4 bg-gradient-to-r from-rojo via-rojo/80 to-black" />
     </div>
   )
 }

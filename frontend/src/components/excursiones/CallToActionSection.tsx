@@ -10,14 +10,13 @@ export default function CallToActionSection({ callToAction, buttonText }: CallTo
   return (
     <div
       id="reservar"
-      className="bg-[#e12222] border border-[#e12222] rounded-xl p-8 text-center shadow-lg"
+      className="bg-rojo border border-rojo rounded-xl p-8 text-center shadow-lg"
     >
       <h2 className="text-3xl font-bold mb-4 text-white uppercase font-oceanica">Reserva tu experiencia</h2>
       <p className="text-white font-semibold mb-6 max-w-3xl mx-auto">{callToAction}</p>
       <Button
-        asChild
         size="lg"
-        className="bg-[#121113] text-white text-lg font-semibold"
+        className="bg-negro text-white text-lg font-semibold"
       >
         <Link href="/reservar">{buttonText}</Link>
       </Button>

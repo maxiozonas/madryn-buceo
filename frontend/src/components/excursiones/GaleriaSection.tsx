@@ -8,9 +8,9 @@ interface GaleriaSectionProps {
 
 export default function GaleriaSection({ galleryImages, title }: GaleriaSectionProps) {
   return (
-    <div className="bg-[#252422] rounded-xl p-6 border border-[#403d39] shadow-lg">
+    <div className="bg-negro-secundario rounded-xl p-6 border border-[#403d39] shadow-lg">
       <h2 className="text-3xl font-bold mb-6 text-white flex items-center justify-center uppercase font-oceanica">
-        <Camera className="mr-3 h-6 w-6 text-[#e12222]" />
+        <Camera className="mr-3 h-6 w-6 text-rojo" />
         Galería de Fotos
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

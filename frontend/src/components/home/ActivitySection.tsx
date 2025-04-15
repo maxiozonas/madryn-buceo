@@ -100,15 +100,15 @@ function ActivityCard({
       variants={cardVariants}
       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
     >
-      <Card className="overflow-hidden py-0 border-none shadow-lg bg-[#252422] hover:shadow-xl transition-shadow">
+      <Card className="overflow-hidden p-2 border-none shadow-lg bg-negro-secundario hover:shadow-xl transition-shadow">
         <div className="relative h-64">
           <Image
             src={image || "/placeholder.svg"}
             alt={title}
             fill
-            className="object-cover transition-transform duration-300 hover:scale-110"
+            className="object-cover transition-transform duration-300 hover:scale-110 rounded-2xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />
         </div>
         <CardContent className="p-4 flex flex-col items-center text-center text-white relative">
           <h3 className="text-lg uppercase font-extrabold mb-2 text-white font-oceanica tracking-tight">
@@ -117,7 +117,7 @@ function ActivityCard({
           <p className="text-white/80 mb-4 text-sm">{description}</p>
           <Button
             asChild
-            className="w-full bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold"
+            className="w-full bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold"
           >
             <Link href={link}>Ver más</Link>
           </Button>

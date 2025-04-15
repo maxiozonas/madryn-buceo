@@ -38,13 +38,13 @@ export default function ReseñasSection() {
   ]
 
   return (
-    <section className="py-12 bg-[#252422]/30">
+    <section className="py-12 bg-negro-secundario">
       <div className="container flex flex-col items-center justify-center px-8 mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-4 uppercase font-oceanica tracking-wide shadow-md">
           Lo que dicen nuestros clientes
         </h2>
         <p className="text-center text-white max-w-3xl mx-auto mb-12">
-          Descubre por qué somos el <span className="text-[#ff4d4d] font-bold">centro de buceo mejor valorado</span> en Puerto Madryn
+          Descubre por qué somos el <span className="text-rojo font-bold">centro de buceo mejor valorado</span> en Puerto Madryn
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

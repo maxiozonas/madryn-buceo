@@ -40,9 +40,9 @@ export default function WhyChooseSection() {
         </motion.h2>
         <p className="text-center text-white max-w-3xl mx-auto mb-12 prose-lg">
           Somos el centro de buceo más antiguo de la zona, con{" "}
-          <span className="text-[#ff4d4d] font-bold">más de 40 años</span> de experiencia en{" "}
-          <span className="text-[#ff4d4d] font-bold">Puerto Madryn</span>, la capital nacional del buceo. Combinamos la
-          experiencia de dos generaciones, <span className="text-[#ff4d4d] font-bold">padre e hijo</span>, para ofrecer experiencias de buceo y
+          <span className="text-rojo font-bold">más de 40 años</span> de experiencia en{" "}
+          <span className="text-rojo font-bold">Puerto Madryn</span>, la capital nacional del buceo. Combinamos la
+          experiencia de dos generaciones, <span className="text-rojo font-bold">padre e hijo</span>, para ofrecer experiencias de buceo y
           snorkeling excepcionales.
         </p>
         <motion.div
@@ -52,32 +52,32 @@ export default function WhyChooseSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <FeatureCard
-            icon={<Clock className="h-12 w-12 text-[#e12222]" />}
+            icon={<Clock className="h-12 w-12 text-rojo" />}
             title="Experiencia y Trayectoria"
             description="Con más de cuatro décadas dedicadas al buceo en la región, somos líderes en el campo y conocemos los secretos del Golfo Nuevo como nadie más."
           />
           <FeatureCard
-            icon={<Users className="h-12 w-12 text-[#e12222]" />}
+            icon={<Users className="h-12 w-12 text-rojo" />}
             title="Atención Personalizada"
             description="Nuestro equipo comprometido se asegura de que cada cliente reciba atención personalizada, adaptándose a sus necesidades y habilidades."
           />
           <FeatureCard
-            icon={<Shield className="h-12 w-12 text-[#e12222]" />}
+            icon={<Shield className="h-12 w-12 text-rojo" />}
             title="Seguridad Garantizada"
             description="Nuestros protocolos de seguridad, experiencia y planificación son claves para asegurar que cada inmersión sea una experiencia segura y placentera."
           />
           <FeatureCard
-            icon={<ThumbsUp className="h-12 w-12 text-[#e12222]" />}
+            icon={<ThumbsUp className="h-12 w-12 text-rojo" />}
             title="Reseñas que Hablan por Sí Mismas"
             description="Descubre por qué nuestros clientes nos eligen una y otra vez. Lee las reseñas y testimonios que reflejan la calidad y la excelencia de nuestras experiencias submarinas."
           />
           <FeatureCard
-            icon={<Heart className="h-12 w-12 text-[#e12222]" />}
+            icon={<Heart className="h-12 w-12 text-rojo" />}
             title="Ambiente Cálido y Familiar"
             description="En nuestro centro, te sentirás como en casa desde el momento en que llegues. Nuestro ambiente acogedor y familiar es parte de lo que nos hace especiales."
           />
           <FeatureCard
-            icon={<Anchor className="h-12 w-12 text-[#e12222]" />}
+            icon={<Anchor className="h-12 w-12 text-rojo" />}
             title="Exploramos el Golfo Nuevo"
             description="Exploramos parques naturales, naufragios y la reserva de lobos marinos, ofreciendo experiencias únicas para todos los niveles, desde principiantes hasta Dive Masters."
           />
@@ -86,7 +86,7 @@ export default function WhyChooseSection() {
           <Button
             asChild
             size="lg"
-            className="bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold"
+            className="bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold"
           >
             <Link href="/reservar">¡Sumérgete hoy!</Link>
           </Button>
@@ -118,7 +118,7 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
             {icon}
           </div>
           <h3 className="text-xl font-bold mb-2 text-foreground">{title}</h3>
-          <SeparatorHorizontal className="w-24 h-1 bg-[#e12222] mb-2 rounded-full" />
+          <SeparatorHorizontal className="w-24 h-1 bg-rojo mb-2 rounded-full" />
           <p className="text-muted-foreground prose-p text-center">{description}</p>
         </CardContent>
       </Card>

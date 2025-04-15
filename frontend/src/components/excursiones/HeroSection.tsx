@@ -54,7 +54,7 @@ export default function HeroSection({ title, heroImage, buttonText }: HeroSectio
         <Button
           asChild
           size="lg"
-          className="bg-[#e12222] hover:bg-[#e12222]/80 text-white transition-all duration-300 text-lg font-semibold"
+          className="bg-rojo hover:bg-rojo/80 text-white transition-all duration-300 text-lg font-semibold"
         >
           <Link href="#reservar">{buttonText}</Link>
         </Button>
