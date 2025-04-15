@@ -1,6 +1,5 @@
 import { Curso } from "@/lib/data/Cursos";
 import CursoCard from "./CursoCard";
-import { div, section } from "framer-motion/client";
 
 interface CursoListaProps {
   courses: Curso[];
