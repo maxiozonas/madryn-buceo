@@ -2,6 +2,7 @@ import React from "react";
 import { IntroSection } from "@/components/nosotros/IntroSection";
 import MapWrapper from "@/components/nosotros/MapWrapper";
 import { AboutCardsSection } from "@/components/nosotros/AboutCardsSection";
+import { SocialLinksSection } from "@/components/contacto/SocialLinksSection";
 
 export default function NosotrosPage() {
   return (
@@ -9,6 +10,7 @@ export default function NosotrosPage() {
       <IntroSection />
       <AboutCardsSection/>
       <MapWrapper />
+      <SocialLinksSection />
     </main>
   );
 }
