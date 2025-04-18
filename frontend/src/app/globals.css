@@ -51,7 +51,17 @@
   --color-punch-900: #821a1a;
   --color-punch-950: #470808;
 
-
+  --color-woodsmoke-50: #f7f7f8;
+  --color-woodsmoke-100: #efeef0;
+  --color-woodsmoke-200: #dcd9de;
+  --color-woodsmoke-300: #bcb8c1;
+  --color-woodsmoke-400: #96919f;
+  --color-woodsmoke-500: #7a7483;
+  --color-woodsmoke-600: #635e6b;
+  --color-woodsmoke-700: #514d57;
+  --color-woodsmoke-800: #46424a;
+  --color-woodsmoke-900: #252422;
+  --color-woodsmoke-950: #121113;
 }
 
 body {
@@ -60,6 +70,11 @@ body {
 }
 
 @theme inline {
+  --color-rojo: var(--color-punch-600);
+
+  --color-negro: var(--color-woodsmoke-950);
+  --color-negro-secundario: var(--color-woodsmoke-900);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

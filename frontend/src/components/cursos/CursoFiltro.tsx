@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 interface CursoFIltroProps {
   onFilterChange: (filter: string) => void;
@@ -22,19 +23,20 @@ export default function CursoFiltro({ onFilterChange }: CursoFIltroProps) {
   };
 
   return (
-    <div className="mb-12 flex flex-wrap justify-center gap-4">
+    <div className="mb-12 flex flex-wrap gap-4">
+      <p className="text-xl font-bold text-white font-oceanica uppercase">Filtrar por dificultad: </p>
       {filters.map((filter) => (
-        <button
+        <Button
           key={filter.value}
           onClick={() => handleFilterClick(filter.value)}
-          className={`px-6 py-3 rounded-full font-medium text-sm uppercase font-oceanica transition-all duration-300 ${
+          className={`px-6 py-3 font-medium text-sm uppercase font-oceanica ${
             activeFilter === filter.value
-              ? "bg-[#e12222] text-white shadow-lg cursor-pointer"
-              : "bg-[#1a1917] text-white/80 cursor-pointer border border-[#403d39] hover:bg-[#252422] hover:text-white"
+              ? "bg-rojo text-white shadow-lg cursor-pointer"
+              : "bg-negro-secundario text-white/80 cursor-pointer"
           }`}
         >
           {filter.label}
-        </button>
+        </Button>
       ))}
     </div>
   );

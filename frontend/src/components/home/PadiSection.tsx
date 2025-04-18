@@ -12,13 +12,13 @@ export default function PadiSection() {
                             Centro PADI Oficial
                         </div>
                         <h2 className="mb-4 text-3xl font-bold uppercase text-white">Certifícate con Nosotros</h2>
-                        <p className="mb-6 text-lg text-white/80 prose-2xl text-justify">
+                        <p className="mb-6 text-lg text-white/80 prose-2xl">
                             Como centro PADI, ofrecemos cursos para todos los niveles y apoyo a escuelas de buceo. Nuestros
                             instructores certificados te guiarán en cada paso de tu formación.
                         </p> 
                         <div className="flex flex-wrap gap-4 text-end">
-                            <Button size="lg" className="bg-[#e12222] hover:bg-[#e12222]/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Ver Cursos PADI</Button>
-                            <Button size="lg" className="bg-[#252422] hover:bg-[#252422]/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Checkout para Escuelas</Button>
+                            <Button size="lg" className="bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Ver Cursos PADI</Button>
+                            <Button size="lg" className="bg-negro-secundario hover:bg-negro-secundario/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Checkout para Escuelas</Button>
                         </div>
                     </div>
                     <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
