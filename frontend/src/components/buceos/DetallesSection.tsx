@@ -39,7 +39,10 @@ const getDetailIcon = (slug: string, index: number): ReactNode => {
   return icons[index % icons.length];
 };
 
-export default function DetallesSection({ details, slug }: DetallesSectionProps) {
+export default function DetallesSection({
+  details,
+  slug,
+}: DetallesSectionProps) {
   return (
     <div className="bg-[#252422] rounded-xl p-6 shadow-lg border border-[#403d39]">
       <h2 className="text-3xl font-bold mb-6 text-white text-center flex items-center justify-center uppercase font-oceanica">

@@ -53,7 +53,7 @@ export const buceos: Buceo[] = [
         title: "Buceo con lobos",
         slug:"buceo-con-lobos",
         description:[
-          "Atrévete a vivir una experiencia única buceando con lobos marinos en su hábitat natural. Sumérgete en las aguas de la Patagonia y disfruta de la compañía de estos juguetones animales marinos. Guiado por nuestros instructores profesionales, podrás acercarte a estos curiosos lobos marinos y observar sus comportamientos de cerca. Esta experiencia incluye un pintoresco paseo náutico hasta el área protegida de la Reserva Natural Punta Loma y está diseñada específicamente para buceadores certificados que desean bucear con lobos marinos",], 
+          "Atrévete a vivir una experiencia única buceando con lobos marinos en su hábitat natural. Sumérgete en las aguas de la Patagonia y disfruta de la compañía de estos juguetones animales marinos. Guiado por nuestros instructores profesionales, podrás acercarte a estos curiosos lobos marinos y observar sus comportamientos de cerca. Esta experiencia incluye un pintoresco paseo náutico hasta el área protegida de la Reserva Natural Punta Loma y está diseñada específicamente para buceadores certificados que desean bucear con lobos marinos. Dentro de la reserva tambien tenemos la opción de excursión Snorkeling con lobos",], 
           details: [
           "Duración Total: Aproximadamente 3 horas.",
           "Instructores Profesionales: Acompañamiento de instructores experimentados para asegurar una experiencia segura y emocionante.",
