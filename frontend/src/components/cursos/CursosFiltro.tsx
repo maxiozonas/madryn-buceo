@@ -23,13 +23,14 @@ export default function CursoFiltro({ onFilterChange }: CursoFIltroProps) {
   };
 
   return (
-    <div className="mb-12 flex flex-wrap gap-4">
+    <div className="mb-12 flex flex-wrap items-center gap-4">
       <p className="text-xl font-bold text-white font-oceanica uppercase">Filtrar por dificultad: </p>
       {filters.map((filter) => (
         <Button
+          size="lg"
           key={filter.value}
           onClick={() => handleFilterClick(filter.value)}
-          className={`px-6 py-3 font-medium text-sm uppercase font-oceanica ${
+          className={`font-medium text-lg font-oceanica ${
             activeFilter === filter.value
               ? "bg-rojo text-white shadow-lg cursor-pointer"
               : "bg-negro-secundario text-white/80 cursor-pointer"

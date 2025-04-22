@@ -3,10 +3,9 @@
 import type React from "react"
 import { Anchor, Clock, Heart, SeparatorHorizontal, Shield, ThumbsUp, Users } from "lucide-react"
 import { Card, CardContent } from "../ui/card"
-import { Button } from "../ui/button"
-import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import ButtonRojo from "../ui/button-rojo"
 
 export default function WhyChooseSection() {
   const ref = useRef(null)
@@ -83,13 +82,7 @@ export default function WhyChooseSection() {
           />
         </motion.div>
         <div className="text-center mt-12">
-          <Button
-            asChild
-            size="lg"
-            className="bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold"
-          >
-            <Link href="/reservar">¡Sumérgete hoy!</Link>
-          </Button>
+          <ButtonRojo texto="¡Sumergete hoy!"/>
         </div>
       </div>
     </section>

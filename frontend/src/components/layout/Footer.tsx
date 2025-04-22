@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             title="Tripadvisor"
           >
             <Image
-              src="/images/logo-trip-footer.png"
+              src="/images/footer/logo-trip-footer.png"
               alt="Tripadvisor"
               width={160}
               height={32}
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             title="Madryn Travel"
           >
             <Image
-              src="/images/logo-madryn-footer.png"
+              src="/images/footer/logo-madryn-footer.png"
               alt="Madryn Travel"
               width={160}
               height={32} 
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-center">
           <a/>
             <Image
-              src="/images/footer-widget-logo.png"
+              src="/images/footer/footer-widget-logo.png"
               alt="Tripadvisor"
               width={300}
               height={82}

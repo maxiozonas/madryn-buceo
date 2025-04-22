@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import ButtonRojo from "../ui/button-rojo";
 
 interface HeroSectionProps {
   title: string;
   heroImage: string;
+  miniDescription: string;
   buttonText: string;
 }
 
@@ -21,7 +21,8 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
-export default function HeroSection({ title, heroImage, buttonText }: HeroSectionProps) {
+export default function HeroSection({ title, heroImage, miniDescription }: HeroSectionProps) {
+
   return (
     <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -49,15 +50,9 @@ export default function HeroSection({ title, heroImage, buttonText }: HeroSectio
           initial="hidden"
           animate="visible"
         >
-          Vive una experiencia inolvidable en las aguas de la Patagonia
+          {miniDescription}
         </motion.p>
-        <Button
-          asChild
-          size="lg"
-          className="bg-rojo hover:bg-rojo/80 text-white transition-all duration-300 text-lg font-semibold"
-        >
-          <Link href="#reservar">{buttonText}</Link>
-        </Button>
+        <ButtonRojo texto="Reservar ahora" />
       </div>
     </section>
   );

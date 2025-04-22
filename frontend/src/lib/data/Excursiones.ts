@@ -2,6 +2,7 @@ export type Excursion = {
     title: string;
     slug: string;
     description: string[];
+    miniDescription: string;
     details: string[];
     whatToExpect: { title: string; description: string }[];
     requirements: { title: string; description: string }[];
@@ -16,6 +17,7 @@ export const excursiones: Excursion[] = [
     {
         title: "Snorkeling con Lobos Marinos",
         slug: "snorkeling-con-lobos",
+        miniDescription: "Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural.",
         description: [
             "Embárcate en una aventura inolvidable mientras realizas snorkeling en compañía de los curiosos lobos marinos en su hábitat natural. Con la orientación de nuestro experimentado capitán y nuestros guías especializados, serás llevado al Área Natural Punta Loma.",
             "Durante el paseo náutico hacia la reserva, podrás asombrarte con la increíble fauna de la zona, incluyendo pingüinos, delfines, ballenas y cormoranes, dependiendo de la época del año. Una vez en la reserva, los lobos marinos nadarán libremente a tu alrededor, acercándose por su propia curiosidad.",
@@ -53,12 +55,14 @@ export const excursiones: Excursion[] = [
         ],
     },
     {
-        title: "Bautismo Submarino",
-        slug: "bautismo-submarino",
+        title: "Bautismo de Buceo",
+        slug: "bautismo-buceo",
+        miniDescription: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
         description: [
-            "Descubre el fascinante mundo submarino con nuestro Bautismo de Buceo. Ideal para principiantes, esta actividad te permitirá experimentar la magia del buceo en un entorno seguro y controlado, guiado por nuestros instructores profesionales.",
-            "A diferencia del Discover Scuba Diving, esta actividad es completamente personalizada, ya que el instructor controla todo tu equipo, asegurando que te sientas cómodo y seguro en todo momento.",
-            "Perfecta para aquellos que no se sienten tan seguros como para realizar el Discover Scuba Diving, este bautismo te ofrece una atención individualizada para que disfrutes al máximo de tu primera inmersión y de la asombrosa fauna y flora local."
+            "¿Querés vivir tu primera experiencia de buceo? El Bautismo Submarino es la manera más simple de entrar en este mundo, sin necesidad de saber nadar, ni tener experiencia previa. Tu instructor estará con vos en todo momento, se encargará del equipo, para que vos solo te concentres en disfrutar.",
+            "El buceo te permite flotar libremente bajo el agua, como si estuvieras volando. Es una sensación única, que combina aventura, tranquilidad y una conexión profunda con el entorno. Vas a explorar los paisajes submarinos de la Patagonia y encontrarte cara a cara con peces, estrellas de mar y otras maravillas del fondo marino.",
+            "A diferencia de otras experiencias, este bautismo no requiere teoría, ni manejo del equipo, está pensado para que cualquier persona pueda sumarse y vivir esta experiencia mágica con total confianza!",
+            "¿Buscás una primera experiencia más completa? El Discover Scuba Diving es una alternativa ideal si te gustaría aprender un poco más sobre este mundo. En este programa aprenderás a manejar el equipo, moverte por tu cuenta bajo el agua y explorar más a fondo cómo funciona el buceo. Además, es el punto de partida si te gustaría hacer tu curso de buceo en un futuro."
         ],
         details: [
             "Instructor personalizado: Atención individualizada para cada participante.",
@@ -125,6 +129,7 @@ export const excursiones: Excursion[] = [
     {
         title: "Búsqueda de Delfines",
         slug: "busqueda-delfines",
+        miniDescription: "Embárcate en una aventura inolvidable en el Golfo Nuevo en busca de los fascinantes delfines oscuros.",
         description: [
             "Embárcate en una aventura inolvidable en el Golfo Nuevo en busca de los fascinantes delfines oscuros. A bordo de nuestro bote semirrígido de 9 metros, vivirás una experiencia emocionante y altamente personalizada, con un máximo de 15 pasajeros. Nuestra embarcación parte directamente desde la playa en la magia del mar patagónico.",
             "Guiados por nuestros capitanes expertos, navegaremos hacia las áreas donde los delfines frecuentan. Estos animales, conocidos por su energía, acrobacias y curiosidad, suelen acercarse a las embarcaciones, ofreciendo un espectáculo natural inolvidable.",
@@ -184,6 +189,7 @@ export const excursiones: Excursion[] = [
     {
         title: "Salidas Privadas",
         slug: "salidas-privadas",
+        miniDescription: "Personaliza tu experiencia con salidas exclusivas para ti y tu grupo.",
         description: [
             "¿Buscas una experiencia única y personalizada en las aguas cristalinas de la Patagonia? Nuestras salidas privadas en semirrígido son la opción perfecta para ti.",
             "Con capacidad para hasta 20 pasajeros, te ofrecemos una mañana completa de aventura y exploración en un entorno natural incomparable."

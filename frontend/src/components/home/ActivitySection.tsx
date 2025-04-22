@@ -1,11 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { Button } from "../ui/button"
 import { Card, CardContent } from "../ui/card"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import ButtonRojo from "../ui/button-rojo"
 
 export default function ActivitySection() {
   const ref = useRef(null)
@@ -29,7 +28,7 @@ export default function ActivitySection() {
   return (
     <section
       className="py-20"
-      id="activities"
+      id="actividades"
       ref={ref}
     >
       <motion.div className="container flex flex-col items-center justify-center px-8 mx-auto">
@@ -75,7 +74,6 @@ function ActivityCard({
   title,
   description,
   image,
-  link,
 }: {
   title: string
   description: string
@@ -115,12 +113,7 @@ function ActivityCard({
             {title}
           </h3>
           <p className="text-white/80 mb-4 text-sm">{description}</p>
-          <Button
-            asChild
-            className="w-full bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold"
-          >
-            <Link href={link}>Ver más</Link>
-          </Button>
+          <ButtonRojo texto="Reservar ahora"/>
         </CardContent>
       </Card>
     </motion.div>
