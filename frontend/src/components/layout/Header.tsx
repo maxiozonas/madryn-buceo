@@ -9,6 +9,7 @@ import logo from "../../../public/images/inicio/logo.png";
 import { NavLinks } from "@/lib/data/NavLinks";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import ReservarButton from "../ui/button-rojo"; // Importar el componente
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -134,14 +135,7 @@ export default function Header() {
 
         {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-rojo to-[#ff4d4d] hover:bg-rojo/50 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
-          >
-            <Link href="/reservar" className="w-full">
-              Reservar Ahora
-            </Link>
-          </Button>
+          <ReservarButton texto="Reservar"/>
           {/* Íconos de redes sociales */}
           <div className="flex items-center gap-3">
             <Link
@@ -280,15 +274,8 @@ export default function Header() {
               </div>
             ))}
           </nav>
-          <div className="mt-6">
-            <Button
-              className="w-full bg-gradient-to-r from-rojo to-[#ff4d4d] hover:bg-rojo/50 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              <Link href="/reservar" className="w-full">
-                Reservar Ahora
-              </Link>
-            </Button>
+          <div className="mt-6" onClick={() => setIsOpen(false)}>
+             <ReservarButton texto="Reservar"/> 
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 export interface Curso {
   title: string;
+  slug: string;
   shortDescription: string;
   description: string;
   details: string[];
@@ -11,7 +12,25 @@ export interface Curso {
 export const cursos: { [key in Curso["level"]]: Curso[] } = {
   iniciacion: [
     {
+      title: "Discover Scuba Diving",
+      slug: "discover-scuba-diving",
+      shortDescription: "Una experiencia de buceo única para principiantes, donde aprenderás lo básico y disfrutarás de tu primera inmersión en aguas abiertas.",
+      description:
+        "Si está interesado en el buceo, pero no está seguro de querer inscribirse en una clase de certificación de buceo, Discover Scuba Diving es la manera perfecta de probar las aguas. En muy poco tiempo, aprenderás habilidades básicas de buceo y respirarás por primera vez bajo el agua. Un profesional PADI altamente entrenado te proporcionará el equipo de buceo, te explicará las técnicas básicas de buceo y responderá a cualquier pregunta que puedas tener.",
+      details: [
+        "Duración: 1 día",
+        "Equipamiento completo para tu inmersión.",
+        "introducción al buceo de la mano de tu instructor PADI",
+        "Edad mínima: 10 años",
+        "No requiere certificación previa",
+      ],
+      cardImage: "/images/cursos/scuba-diver.jpg",
+      href: "/cursos/padi/discover-scuba-diving",
+      level: "iniciacion",
+    },
+    {
       title: "Scuba Diver",
+      slug: "scuba-diver",
       shortDescription: "Obtén tu certificación básica de buceo que te permite bucear bajo la supervisión de un profesional hasta 12 metros de profundidad.",
       description:
         "Para aquellos con limitaciones de tiempo o que prefieren una introducción más corta al mundo del buceo, ofrecemos la opción de realizar los primeros tres módulos del curso Open Water Diver. Con esta opción, puedes obtener la certificación de Scuba Diver que te permite bucear hasta 12 metros bajo la supervisión de un profesional. Este curso es un paso intermedio para obtener la certificación Open Water Diver, si ese es tu objetivo final.",
@@ -28,6 +47,7 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
     },
     {
       title: "Open Water Diver",
+      slug: "open-water-diver",
       shortDescription: "Obtén tu certificación básica de buceo que te permite bucear bajo la supervisión de un profesional hasta 18 metros de profundidad.",
       description:
         "Conviértete en un buceador certificado con este curso introductorio. Aprende habilidades esenciales para bucear de forma independiente hasta 18 metros de profundidad.",
@@ -39,13 +59,14 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
         "Certificación PADI válida mundialmente",
       ],
       cardImage: "/images/cursos/open-water-diver.jpg",
-      href: "/cursos/open-water-diver",
+      href: "/cursos/padi/open-water-diver",
       level: "iniciacion",
     },
   ],
   avanzados: [
     {
       title: "Advanced Open Water Diver",
+      slug: "advanced-open-water-diver",
       shortDescription: "Amplía tus habilidades y experiencia de buceo explorando nuevas áreas de interés bajo la supervisión de un instructor.",
       description:
         "Explora nuevas aventuras y perfecciona tus habilidades con 5 buceos de especialidad, como buceo profundo y navegación subacuática.",
@@ -57,11 +78,12 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
         "Requisito: Certificación Open Water Diver",
       ],
       cardImage: "/images/cursos/advanced-open-water.jpg",
-      href: "/cursos/advanced-open-water",
+      href: "/cursos/padi/advanced-open-water",
       level: "avanzados",
     },
     {
       title: "Emergency First Response (EFR)",
+      slug: "emergency-first-response",
       shortDescription: "Aprende técnicas de primeros auxilios y RCP para estar preparado en situaciones de emergencia tanto en tierra como bajo el agua.",
       description:
         "Domina técnicas de primeros auxilios y RCP para responder a emergencias tanto en el buceo como en la vida cotidiana.",
@@ -73,11 +95,12 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
         "Certificación válida para Rescue Diver",
       ],
       cardImage: "/images/cursos/efr-instructor.jpg",
-      href: "/cursos/emergency-first-response",
+      href: "/cursos/padi/emergency-first-response",
       level: "avanzados",
     },
     {
       title: "Rescue Diver",
+      slug: "rescue-diver",
       shortDescription: "Aprende a prevenir y gestionar problemas en el agua y conviértete en un buceador más seguro y consciente.",
       description:
         "Aprende a prevenir y manejar emergencias subacuáticas, convirtiéndote en un buceador más confiado y preparado.",
@@ -89,13 +112,14 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
         "Certificación PADI reconocida mundialmente",
       ],
       cardImage: "/images/cursos/rescue-diver.jpg",
-      href: "/cursos/rescue-diver",
+      href: "/cursos/padi/rescue-diver",
       level: "avanzados",
     },
   ],
   profesional: [
     {
       title: "Divemaster",
+      slug: "divemaster",
       shortDescription: "Avanza en tu carrera de buceo y conviértete en un profesional capacitado para supervisar y guiar a otros buceadores.",
       description:
         "Conviértete en un líder del buceo, guiando a otros buceadores y asistiendo a instructores en este curso profesional intensivo.",
@@ -107,7 +131,7 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
         "Certificación para trabajar en la industria del buceo",
       ],
       cardImage: "/images/cursos/dive-master.jpg",
-      href: "/cursos/divemaster",
+      href: "/cursos/padi/divemaster",
       level: "profesional",
     },
   ],

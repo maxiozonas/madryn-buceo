@@ -24,6 +24,7 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
       <HeroSection
         title={excursion.title}
         heroImage={excursion.heroImage}
+        miniDescription={excursion.miniDescription}
         buttonText={excursion.buttonText}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">
@@ -32,6 +33,7 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
             <div className="lg:col-span-7 space-y-6">
               <DescripcionSection
                 title={excursion.title}
+                slug={excursion.slug}
                 description={excursion.description}
                 cardImage={excursion.cardImage}
               />

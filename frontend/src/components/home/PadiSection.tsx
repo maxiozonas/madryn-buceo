@@ -1,6 +1,7 @@
-import { Button } from "../ui/button";
 import Image from "next/image";
 import imagen from "../../../public/images/inicio/bautismo.jpg";
+import ButtonRojo from "../ui/button-rojo";
+import ButtonNegro from "../ui/button-negro";
 
 export default function PadiSection() {
     return (
@@ -17,9 +18,8 @@ export default function PadiSection() {
                             instructores certificados te guiarán en cada paso de tu formación.
                         </p> 
                         <div className="flex flex-wrap gap-4 text-end">
-                            <Button size="lg" className="bg-rojo hover:bg-rojo/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Ver Cursos PADI</Button>
-                            <Button size="lg" className="bg-negro-secundario hover:bg-negro-secundario/50  text-white transition-all duration-300 text-lg font-semibold cursor-pointer">Checkout para Escuelas</Button>
-                        </div>
+                            <ButtonRojo texto="Ver cursos PADI" />
+                            <ButtonNegro texto="Ver Checkout Escuelas" />                        </div>
                     </div>
                     <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
                         <Image src={imagen} alt="Certificación PADI" fill className="object-cover" />

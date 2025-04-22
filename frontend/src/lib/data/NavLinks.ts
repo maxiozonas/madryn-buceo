@@ -13,8 +13,8 @@ export const NavLinks = [
                 description: "Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural.",
             },
             {
-                title: "Bautismo submarino",
-                href: "/excursiones/bautismo-submarino",
+                title: "Bautismo de buceo",
+                href: "/excursiones/bautismo-buceo",
                 description: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
             },
             {
@@ -34,11 +34,6 @@ export const NavLinks = [
         href: "#",
         submenu: [
             {
-                title: "Buceo para principiantes",
-                href: "/excursiones/bautismo-submarino",
-                description: "Primeros pasos en el mundo del buceo con instructores certificados.",
-            },
-            {
                 title: "Buceo para brevetados",
                 href: "#",
                 description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",
@@ -46,10 +41,10 @@ export const NavLinks = [
                     title: "Buceo certificado",
                     href: "/buceo/brevetados/buceo-certificado",
                 },
-            {
-                title: "Buceo con lobos",
-                href: "/buceo/brevetados/buceo-con-lobos",
-            }]
+                {
+                    title: "Buceo con lobos",
+                    href: "/buceo/brevetados/buceo-con-lobos",
+                }]
             },
             {
                 title: "Puntos de buceo en Puerto Madryn",
