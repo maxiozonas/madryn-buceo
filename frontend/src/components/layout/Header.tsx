@@ -8,7 +8,7 @@ import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import logo from "../../../public/images/inicio/logo.png";
 import { NavLinks } from "@/lib/data/NavLinks";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import ReservarButton from "../ui/button-rojo"; // Importar el componente
 
 export default function Header() {
@@ -137,28 +137,27 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-4">
           <ReservarButton texto="Reservar"/>
           {/* Íconos de redes sociales */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Instagram className="h-6 w-6 text-white hover:text-rojo transition-colors duration-200" />
-            </Link>
-            <Link
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Facebook className="h-6 w-6 text-white hover:text-rojo transition-colors duration-200" />
-            </Link>
-            <Link
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="h-6 w-6 text-white hover:text-rojo transition-colors duration-200" />
-            </Link>
+          <div className="flex items-center gap-3 text-xl">
+        <a
+          href="https://www.facebook.com/madrynbuceo/?fref=ts"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookF className="hover:text-blue-600" />
+        </a>
+        <a
+          href="https://www.instagram.com/madrynbuceo/?hl=es-la"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram className="hover:text-pink-500" />
+        </a>
+        <a href="https://www.tiktok.com/@madrynbuceo" target="_blank" rel="noopener noreferrer">
+          <FaTiktok className="hover:text-white" />
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp className="hover:text-green-600" />
+        </a>
           </div>
         </div>
       </div>

@@ -14,8 +14,8 @@ export type Buceo = {
 
 export const buceos: Buceo[] = [
     {
-        title: "Buceo Certificado",
-        slug: "buceo-certificado",
+        title: "Buceo para brevetados",
+        slug: "buceo-brevetados",
         description: [
             "Descubre las maravillas submarinas de la Patagonia con nuestras experiencias exclusivas para buzos certificados. Sumérgete en aguas patagónicas y explora la biodiversidad marina, incluyendo encuentros cercanos con lobos marinos, naufragios históricos y formaciones rocosas impresionantes llenas de vida. Guiados por nuestros experimentados instructores, te ofrecemos una serie de inmersiones que van a desafiar y enriquecer tus habilidades de buceo, garantizando una aventura inolvidable."
         ],
