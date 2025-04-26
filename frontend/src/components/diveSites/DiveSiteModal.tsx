@@ -17,13 +17,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center">
-      <div className="bg-[#252422] p-6 rounded-xl w-3/4 md:w-1/3 max-h-[80vh] overflow-y-auto">
-        <button
-          onClick={closeModal}
-          className="absolute top-4 right-4 text-white text-2xl"
-        >
-          &times;
-        </button>
+      <div className="bg-[#252422] p-4 md:p-6 rounded-xl w-[90%] md:w-[100vh] max-h-[100vh] overflow-y-auto relative">
         <div className="mb-4">
           <ImageGallery images={site.images} />
         </div>

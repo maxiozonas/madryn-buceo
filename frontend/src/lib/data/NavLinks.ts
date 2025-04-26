@@ -35,16 +35,8 @@ export const NavLinks = [
         submenu: [
             {
                 title: "Buceo para brevetados",
-                href: "#",
+                href: "/buceo/buceo-certificado",
                 description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",
-                submenu: [{
-                    title: "Buceo certificado",
-                    href: "/buceo/brevetados/buceo-certificado",
-                },
-                {
-                    title: "Buceo con lobos",
-                    href: "/buceo/brevetados/buceo-con-lobos",
-                }]
             },
             {
                 title: "Puntos de buceo en Puerto Madryn",

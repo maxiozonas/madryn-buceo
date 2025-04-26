@@ -11,7 +11,7 @@ interface DetallesSectionProps {
 
 const getIconsBySlug = (slug: string): ReactNode[] => {
   switch (slug) {
-    case "buceo-certificado":
+    case "buceo-brevetados":
       return [
         <Clock key="clock" className="h-5 w-5 text-[#e12222]" />,
         <Users key="users" className="h-5 w-5 text-[#e12222]" />,
@@ -55,7 +55,7 @@ export default function DetallesSection({
           let detailContent: ReactNode = detail;
 
           if (
-            slug === "buceo-certificado" &&
+            slug === "buceo-brevetados" &&
             detail.includes("Hacé click y conocelos")
           ) {
             const [before, after] = detail.split("Hacé click y conocelos");
