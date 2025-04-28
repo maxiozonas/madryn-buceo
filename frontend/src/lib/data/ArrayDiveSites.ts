@@ -52,8 +52,7 @@ export const diveSites: DiveSite[] = [
     time: "15 min",
     media: [
       {type : "image" , url: "/images/puntos/mirages/mirages.webp"},
-      {type : "video", url:"/videos/puntos/mirages/mirage1.webm"},
-      {type : "video", url:"/videos/puntos/mirages/mirage2.webm"},
+      {type : "video", url:"/videos/puntos/mirages/mirages1.webm"},
       {type : "image" , url: "/images/puntos/mirages/mirages.webp"},
       {type : "image" , url: "/images/puntos/mirages/mirages2.webp"},
       {type : "image" , url: "/images/puntos/mirages/mirages3.webp"}
