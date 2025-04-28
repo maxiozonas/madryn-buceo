@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <div className="relative h-[450px] rounded-2xl overflow-hidden shadow-lg">
       <Image
-        src="/images/buceo/buceo.JPG"
+        src="/images/buceo/buceo.webp"
         alt="Puerto Madryn Buceo"
         fill
         className="object-cover"

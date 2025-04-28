@@ -19,7 +19,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
     <div className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center">
       <div className="bg-[#252422] p-4 md:p-6 rounded-xl w-[90%] md:w-[100vh] max-h-[100vh] overflow-y-auto relative">
         <div className="mb-4">
-          <ImageGallery images={site.images} />
+          <ImageGallery media={site.media} />
         </div>
 
         <h3 className="text-lg font-bold text-red-500 mb-2">{site.name}</h3>

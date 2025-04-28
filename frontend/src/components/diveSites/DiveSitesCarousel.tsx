@@ -3,12 +3,14 @@
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import React, { useEffect } from "react";
 
 interface Props {
   sites: DiveSite[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
   setSelectedCoords: (coords: [number, number]) => void;
+  certificationFilter: string | null;
   openModal: (site: DiveSite) => void;
 }
 
@@ -17,14 +19,40 @@ export default function DiveSitesCarousel({
   activeIndex,
   setActiveIndex,
   setSelectedCoords,
+  certificationFilter,
   openModal,
 }: Props) {
+  const filteredSites = certificationFilter
+    ? sites.filter((site) => site.certification === certificationFilter)
+    : sites;
+
+  useEffect(() => {
+    if (filteredSites.length > 0 && activeIndex >= filteredSites.length) {
+      setActiveIndex(0);
+      setSelectedCoords(filteredSites[0].coords);
+    }
+  }, [filteredSites, activeIndex, setActiveIndex, setSelectedCoords]);
+
+  if (filteredSites.length === 0) {
+    return (
+      <div className="text-white text-center">
+        No hay sitios disponibles para este filtro.
+      </div>
+    );
+  }
+
+
+  const getCardImage = (media: { type: "image" | "video"; url: string }[]) => {
+    const firstImage = media.find((item) => item.type === "image");
+    return firstImage ? firstImage.url : "/images/placeholder.jpg"; 
+  };
+
   return (
     <div className="w-full overflow-y-hidden overflow-x-auto mt-8">
       <div className="flex gap-4 w-max px-2">
-        {sites.map((site, index) => (
+        {filteredSites.map((site, index) => (
           <Card
-            key={index}
+            key={site.name}
             onClick={() => {
               setSelectedCoords(site.coords);
               setActiveIndex(index);
@@ -36,7 +64,7 @@ export default function DiveSitesCarousel({
           >
             <div className="relative h-[200px] w-full">
               <Image
-                src={site.images[0]}
+                src={getCardImage(site.media)}
                 alt={site.name}
                 fill
                 className="object-cover rounded-t-xl"

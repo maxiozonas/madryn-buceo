@@ -85,7 +85,7 @@ export default function DescriptionSection() {
 
         <div className="relative md:min-h-[450px]">
           <Image
-            src="/images/buceo/descripcion.JPG"
+            src="/images/buceo/descripcion.webp"
             alt="Buceo Puerto Madryn"
             fill
             className="object-cover"

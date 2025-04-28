@@ -5,7 +5,7 @@ export interface DiveSite {
   depth: string;
   certification: string;
   time: string;
-  images: string [];
+  media: { type: "image" | "video"; url: string }[];
   coords: [number, number];
 }
 
@@ -18,7 +18,14 @@ export const diveSites: DiveSite[] = [
     depth: "13 metros aprox",
     certification: "OWD",
     time: "5 min",
-    images:[ "/images/puntos/primavera/primavera.JPG", "/images/puntos/primavera/primavera2.JPG", "/images/puntos/primavera/primavera3.JPG", "/images/puntos/primavera/primavera4.JPG","/images/puntos/primavera/primavera5.JPG"],
+    media: [
+      { type: "image", url: "/images/puntos/primavera/primavera.webp" },
+      { type: "video", url: "/videos/puntos/primavera/primavera1.mp4" },
+      { type: "image", url: "/images/puntos/primavera/primavera2.webp" },
+      { type: "image", url: "/images/puntos/primavera/primavera3.webp" },
+      { type: "image", url: "/images/puntos/primavera/primavera4.webp" },
+      { type: "image", url: "/images/puntos/primavera/primavera5.webp" },
+    ],
     coords: [-42.757, -64.965],
   },
   {
@@ -29,7 +36,10 @@ export const diveSites: DiveSite[] = [
     depth: "18 metros aprox",
     certification: "OWD",
     time: "5 min",
-    images: ["/images/puntos/albatros.JPG"],
+    media: [{type : "image", url:"/images/puntos/albatros/albatros.webp"},
+      {type : "video", url:"/videos/puntos/albatros/albatros1.webm"},
+      {type : "image", url:"/images/puntos/albatros/albatros2.webp"}
+    ],
     coords: [-42.758831653388214, -64.97829731579868],
   },
   {
@@ -40,7 +50,14 @@ export const diveSites: DiveSite[] = [
     depth: "22 metros aprox",
     certification: "OWD",
     time: "15 min",
-    images: ["/images/puntos/mirages.JPG"],
+    media: [
+      {type : "image" , url: "/images/puntos/mirages/mirages.webp"},
+      {type : "video", url:"/videos/puntos/mirages/mirage1.webm"},
+      {type : "video", url:"/videos/puntos/mirages/mirage2.webm"},
+      {type : "image" , url: "/images/puntos/mirages/mirages.webp"},
+      {type : "image" , url: "/images/puntos/mirages/mirages2.webp"},
+      {type : "image" , url: "/images/puntos/mirages/mirages3.webp"}
+    ],
     coords: [-42.75908311304106, -64.95632460663693],
   },
   {
@@ -50,7 +67,13 @@ export const diveSites: DiveSite[] = [
     depth: "10/20 metros aprox",
     certification: "OWD",
     time: "10 min",
-    images: ["/images/puntos/urabain.JPG"],
+    media: [{type : "image" , url: "/images/puntos/urabain/urabain.webp"},
+      {type : "video" , url: "/videos/puntos/urabain/urabain.webm"},
+      {type : "image" , url: "/images/puntos/urabain/urabain2.webp"},
+      {type : "image" , url: "/images/puntos/urabain/urabain3.webp"},
+      {type : "image" , url: "/images/puntos/urabain/urabain4.webp"},
+      {type : "image" , url: "/images/puntos/urabain/urabain5.webp"}
+    ],
     coords: [-42.7605, -64.9700],
   },
   {
@@ -60,7 +83,11 @@ export const diveSites: DiveSite[] = [
     depth: "máx. 30 metros",
     certification: "ADV",
     time: "10 min",
-    images: ["/images/puntos/chino.JPG"],
+    media: [{type :"image" , url: "/images/puntos/chino/chino.webp"},
+      {type :"video" , url: "/videos/puntos/chino/chino1.webm"},
+      {type :"video" , url: "/videos/puntos/chino/chino2.webm"},
+      {type :"image" , url: "/images/puntos/chino/chino2.webp"}
+    ],
     coords: [-42.7615, -64.9720],
   },
   {
@@ -70,7 +97,13 @@ export const diveSites: DiveSite[] = [
     depth: "13 metros",
     certification: "OWD",
     time: "10 min",
-    images: ["/images/puntos/folias.JPG"],
+    media: [{type: "image", url:"/images/puntos/folias/folias.webp"},
+      {type: "image", url:"/images/puntos/folias/folias2.webp"},
+      {type: "video", url:"/videos/puntos/folias/folias1.webm"},
+      {type: "image", url:"/images/puntos/folias/folias3.webp"},
+      {type: "image", url:"/images/puntos/folias/folias4.webp"},
+      {type: "image", url:"/images/puntos/folias/folias5.webp"}
+    ],
     coords: [-42.7630, -64.9740],
   },
 //   {
@@ -80,7 +113,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "3/8 metros",
 //     certification: "Scuba Diver",
 //     time: "10 min",
-//     images: "/images/puntos/cuevas1.JPG",
+//     images: "/images/puntos/cuevas1.webp",
 //     coords: [-42.7803, -64.9950],
 //   },
 //   {
@@ -90,7 +123,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "3/8 metros",
 //     certification: "Scuba Diver",
 //     time: "10 min",
-//     images: "/images/puntos/cuevas2.JPG",
+//     images: "/images/puntos/cuevas2.webp",
 //     coords: [-42.7806, -64.9945],
 //   },
 //   {
@@ -100,7 +133,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "6/12 metros",
 //     certification: "OWD",
 //     time: "15 min",
-//     images: "/images/puntos/piedras1.JPG",
+//     images: "/images/puntos/piedras1.webp",
 //     coords: [-42.7500, -64.9500],
 //   },
 //   {
@@ -110,7 +143,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "6/12 metros",
 //     certification: "OWD",
 //     time: "15 min",
-//     images: "/images/puntos/piedras2.JPG",
+//     images: "/images/puntos/piedras2.webp",
 //     coords: [-42.7490, -64.9490],
 //   },
 //   {
@@ -120,7 +153,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "5/10 metros aprox",
 //     certification: "Scuba Diver",
 //     time: "30 min",
-//     images: "/images/puntos/punta-loma.JPG",
+//     images: "/images/puntos/punta-loma.webp",
 //     coords: [-42.7870, -64.9850],
 //   },
 //   {
@@ -130,7 +163,7 @@ export const diveSites: DiveSite[] = [
 //     depth: "5/10 metros aprox",
 //     certification: "DSD en adelante",
 //     time: "10 min",
-//     images: "/images/puntos/caletaparana.JPG",
+//     images: "/images/puntos/caletaparana.webp",
 //     coords: [-42.7650, -64.9800],
 //   }
 ];

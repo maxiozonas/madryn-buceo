@@ -19,12 +19,14 @@ export default function MapSection() {
       mapRoot.removeAttribute("tabindex");
     }
   }, []);
-  
 
   return (
     <section className="relative isolate z-0 py-1 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold mb-4" style={{ color: "#ff4d4d" }}>
+        <h2
+          className="text-3xl font-semibold mb-4"
+          style={{ color: "#ff4d4d" }}
+        >
           Dónde Estamos
         </h2>
         <p className="text-white text-lg mb-6">
@@ -42,8 +44,8 @@ export default function MapSection() {
             style={{ width: "100%", height: "100%", zIndex: 0 }}
           >
             <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             />
             <Marker position={[-42.780055, -65.018699]} icon={customIcon}>
               <Popup>Balneario Sara - Puerto Madryn</Popup>
