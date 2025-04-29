@@ -12,7 +12,7 @@ export default function HeroSection() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center uppercase font-oceanica px-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wide shadow-md text-center mb-8">
           Puerto Madryn
           <br />
           Capital Nacional del Buceo

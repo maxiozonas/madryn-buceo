@@ -3,16 +3,18 @@ import { useState } from "react";
 
 interface Props {
   media: { type: "image" | "video"; url: string }[];
+  className?: string;
 }
 
-export default function ImageGallery({ media }: Props) {
+export default function ImageGallery({ media, className }: Props) {
   const [current, setCurrent] = useState(0);
 
   const nextMedia = () => setCurrent((prev) => (prev + 1) % media.length);
-  const prevMedia = () => setCurrent((prev) => (prev - 1 + media.length) % media.length);
+  const prevMedia = () =>
+    setCurrent((prev) => (prev - 1 + media.length) % media.length);
 
   return (
-    <div className="relative w-full h-64 md:h-80">
+    <div className={`relative w-full h-64 md:h-80 ${className || ""}`}>
       {media[current].type === "image" ? (
         <Image
           src={media[current].url}

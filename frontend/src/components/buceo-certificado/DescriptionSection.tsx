@@ -1,19 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import ImageGallery from "../diveSites/ImageGallery";
 
 export default function DescriptionSection() {
+  const divingMedia: { type: "image" | "video"; url: string }[] = [
+    { type: "image", url: "/images/buceo/descripcion.webp" },
+    { type: "image", url: "/images/puntos/chino/chino.webp" },
+    { type: "video", url: "/videos/puntos/mirages/mirages1.webm" },
+    { type: "image", url: "/images/puntos/urabain/urabain.webp" },
+    { type: "video", url: "/videos/puntos/folias/folias1.webm" },
+  ];
+
   return (
-    <section className="bg-[#252422] rounded-2xl shadow-xl overflow-hidden border border-[#403d39]">
+    <section className="bg-[#252422] rounded-2xl shadow-lg overflow-hidden border border-[#403d39]">
       <div className="grid md:grid-cols-2">
-        <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
-          <div className="text-white/80 text-base md:text-lg leading-relaxed space-y-6">
-            <p className="text-white text-2xl font-bold mb-4 uppercase font-oceanica text-center md:text-left">
+        <div className="p-4 md:p-6 flex flex-col justify-center space-y-3">
+          <div className="text-white/80 text-sm md:text-base leading-normal space-y-3">
+            <p className="text-white text-xl font-bold mb-2 uppercase font-oceanica text-center md:text-left">
               Descubrí el buceo en su máxima expresión:
             </p>
 
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc list-inside space-y-1">
               <li>
                 Más de{" "}
                 <span className="text-[#e12222] font-semibold">
@@ -70,7 +78,7 @@ export default function DescriptionSection() {
               Si no es favorable, reprogramamos para el día siguiente.
             </p>
 
-            <div className="text-center font-semibold text-lg mt-8">
+            <div className="text-center font-semibold text-base mt-4">
               ¡No te pierdas hacer
               <Link
                 href="/excursiones/snorkeling-con-lobos"
@@ -83,13 +91,8 @@ export default function DescriptionSection() {
           </div>
         </div>
 
-        <div className="relative md:min-h-[450px]">
-          <Image
-            src="/images/buceo/descripcion.webp"
-            alt="Buceo Puerto Madryn"
-            fill
-            className="object-cover"
-          />
+        <div className="relative md:min-h-[400px]">
+          <ImageGallery media={divingMedia} className="h-56 md:h-[500px] w-full" />
         </div>
       </div>
     </section>
