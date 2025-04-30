@@ -36,7 +36,7 @@ export default function QueEsperarSection({ excursion }: QueEsperarSectionProps)
             <div className="flex flex-col lg:flex-row items-center gap-4">
               <div className="flex-shrink-0 p-3 bg-rojo/10 rounded-full">{getExpectIcon(index)}</div>
               <div className="flex-1">
-                <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">{item.title}</h3>
+                <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2 uppercase">{item.title}</h3>
                 <p className="text-white/80 text-sm text-center lg:text-start">{item.description}</p>
               </div>
             </div>

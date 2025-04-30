@@ -42,6 +42,8 @@ const contentVariants = {
 export default function CursoCard({ course }: CursoCardProps) {
   const getBadgeVariant = (level: string) => {
     switch (level) {
+      case "programa":
+        return "default";
       case "iniciacion":
         return "default";
       case "avanzados":
@@ -75,7 +77,7 @@ export default function CursoCard({ course }: CursoCardProps) {
             className="flex justify-between items-center mb-4"
             variants={contentVariants}
           >
-            <h3 className="text-lg uppercase font-extrabold text-white font-oceanica tracking-tight">
+            <h3 className="text-sm uppercase font-extrabold text-white font-oceanica tracking-tight line-clamp-1">
               {course.title}
             </h3>
             <Badge 

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ButtonRojo from "../ui/button-rojo";
+import Image from "next/image";
 
 interface DescripcionSectionProps {
   title: string;
@@ -7,7 +9,7 @@ interface DescripcionSectionProps {
   cardImage: string;
 }
 
-export default function DescripcionSection({ slug, description }: DescripcionSectionProps) {
+export default function DescripcionSection({ slug, description, cardImage }: DescripcionSectionProps) {
   return (
     <div className="bg-negro-secundario rounded-xl overflow-hidden shadow-lg border border-[#403d39] p-2">
       <div className="p-6">
@@ -40,22 +42,22 @@ export default function DescripcionSection({ slug, description }: DescripcionSec
             </p>
           );
         })}
-        {/* {slug === 'bautismo-buceo' && (
+        {slug === 'bautismo-buceo' && (
           <div className="my-4 text-center">
             <Link href="/cursos/padi/discover-scuba-diving">
-              <ButtonRojo texto="Ir a Discover Scuba Diving" />
+              <ButtonRojo texto="Ir a Discover Scuba Diving" fullWidth={true} />
             </Link>
           </div>
-        )} */}
+        )}
       </div>
-      {/* <div className="relative h-[300px]">
+      <div className="relative h-[300px]">
         <Image
           src={cardImage}
-          alt={title}
+          alt="Imagen sobre la excurison"
           fill
-          className="object-cover transition-transform duration-300 hover:scale-105 rounded-xl"
+          className="object-cover transition-transform duration-300 rounded-xl"
         />
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -12,6 +12,7 @@ export default function CursoFiltro({ onFilterChange }: CursoFIltroProps) {
 
   const filters = [
     { label: "Todos", value: "all" },
+    { label: "Programa", value: "programa" },
     { label: "Iniciación", value: "iniciacion" },
     { label: "Avanzados", value: "avanzados" },
     { label: "Profesional", value: "profesional" },

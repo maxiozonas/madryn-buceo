@@ -20,7 +20,7 @@ export default function ImageGallery({ media, className }: Props) {
           src={media[current].url}
           alt="Foto del sitio"
           fill
-          className="object-cover rounded-t-xl"
+          className="object-cover rounded-xl"
           priority
         />
       ) : (
@@ -30,20 +30,20 @@ export default function ImageGallery({ media, className }: Props) {
           autoPlay
           muted
           loop
-          className="w-full h-full object-cover rounded-t-xl"
+          className="w-full h-full object-cover rounded-xl"
         />
       )}
       {media.length > 1 && (
         <>
           <button
             onClick={prevMedia}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded cursor-pointer"
           >
             ‹
           </button>
           <button
             onClick={nextMedia}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded cursor-pointer"
           >
             ›
           </button>

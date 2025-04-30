@@ -33,7 +33,7 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
             <div className="flex flex-col items-center gap-4">
               <div className="p-3 bg-rojo/10 rounded-full">{getRequirementIcon(index)}</div>
               <div>
-                <h3 className="font-semibold text-lg text-white text-center mb-2">{req.title}</h3>
+                <h3 className="font-semibold text-lg text-white text-center mb-2 uppercase">{req.title}</h3>
                 <p className="text-white/80 text-sm text-center">{req.description}</p>
               </div>
             </div>
