@@ -20,7 +20,7 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
     {
       title: "Discover Scuba Diving",
       slug: "discover-scuba-diving",
-      shortDescription: "Una experiencia de buceo única para principiantes, donde aprenderás lo básico y disfrutarás de tu primera inmersión en aguas abiertas.",
+      shortDescription: "Una experiencia de buceo para principiantes, aprenderás lo básico y disfrutarás de tu primera inmersión en aguas abiertas.",
       description:
         "Si está interesado en el buceo, pero no está seguro de querer inscribirse en una clase de certificación de buceo, Discover Scuba Diving es la manera perfecta de probar las aguas. En muy poco tiempo, aprenderás habilidades básicas de buceo y respirarás por primera vez bajo el agua. Un profesional PADI altamente entrenado te proporcionará el equipo de buceo, te explicará las técnicas básicas de buceo y responderá a cualquier pregunta que puedas tener.",
       duration: "2 horas de excursión, aprox 25 minutos de buceo.",
