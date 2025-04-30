@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={inter.className + " container mx-auto"}>
+      <body className={inter.className}>
         <Header />
         {children}
         <Footer/>
