@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "../components/layout/Footer";
 import "leaflet/dist/leaflet.css";
 
 
-const geist = Geist({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={geist.className + "container mx-auto"}>
+      <body className={inter.className + " container mx-auto"}>
         <Header />
         {children}
         <Footer/>
