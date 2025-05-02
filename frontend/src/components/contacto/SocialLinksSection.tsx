@@ -7,7 +7,7 @@ export function SocialLinksSection() {
       <h3 className="text-xl font-semibold text-white mb-4">
         Seguinos en nuestras redes
       </h3>
-      <div className="flex justify-center gap-7 text-3xl" style={{color:"#ff4d4d"
+      <div className="flex justify-center gap-7 text-3xl mb-8" style={{color:"#ff4d4d"
       }}>
         <a
           href="https://www.facebook.com/madrynbuceo/?fref=ts"

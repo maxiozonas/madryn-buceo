@@ -14,7 +14,7 @@ export default function ImageGallery({ media, className }: Props) {
     setCurrent((prev) => (prev - 1 + media.length) % media.length);
 
   return (
-    <div className={`relative w-full h-64 md:h-80 ${className || ""}`}>
+    <div className={`relative w-full ${className || "h-64 md:h-80"}`}>
       {media[current].type === "image" ? (
         <Image
           src={media[current].url}

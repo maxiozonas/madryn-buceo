@@ -34,6 +34,11 @@ export const NavLinks = [
         href: "#",
         submenu: [
             {
+                title: "Buceo para principiantes",
+                href: "/excursiones/bautismo-buceo",
+                description: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
+            },
+            {
                 title: "Buceo para brevetados",
                 href: "/buceo/buceo-certificado",
                 description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",

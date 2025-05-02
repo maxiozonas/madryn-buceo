@@ -9,6 +9,7 @@ import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import CertificationFilter from "./CertificationFilter";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function DiveSitesPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,7 +42,19 @@ export default function DiveSitesPage() {
     }
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
+        <motion.section
+          className="mt-16 mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
     <main className="p-6 max-w-7xl mx-auto space-y-8 relative">
       <button
         onClick={handleGoBack}
@@ -82,5 +95,6 @@ export default function DiveSitesPage() {
         />
       )}
     </main>
+    </motion.section>
   );
 }

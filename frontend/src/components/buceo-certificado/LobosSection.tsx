@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { SeparatorHorizontal } from "lucide-react";
 import ImageGallery from "../diveSites/ImageGallery";
+import Link from "next/link";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -28,46 +29,35 @@ export default function DescriptionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-12 items-stretch">
           <div className="flex flex-col justify-center h-full md:min-h-[500px]">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 inline-flex items-center relative uppercase">
-              ¿Por qué es la capital nacional del buceo?
+              Buceo con Lobos Marinos
             </h2>
 
             <SeparatorHorizontal className="w-full h-1 bg-rojo mb-6 rounded-full" />
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              - Más de 6 naufragios, en los que se pueden realizar increíbles
-              penetraciones.
+            Atrévete a vivir una experiencia única buceando con lobos marinos en su hábitat natural. 
             </p>
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              - Parques rocosos naturales repletos de biodiversidad marina
+            Sumérgete en las aguas de la Patagonia y disfruta de la compañía de estos juguetones animales marinos. 
             </p>
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              - Área Natural Punta Loma como punto de buceo con lobos marinos
-              que estan todo el año.
+            Guiado por nuestros instructores profesionales, podrás acercarte a estos curiosos lobos marinos y observar sus comportamientos de cerca.
             </p>
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              - Más de 12 sitios de buceo con múltiples profundidades y aptos
-              para buzos de todos los niveles.
+            Esta experiencia incluye un pintoresco paseo náutico hasta el área protegida de la Reserva Natural Punta Loma y está diseñada específicamente para buceadores certificados que desean bucear con lobos marinos.
             </p>
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              - Se pueden realizar hasta 2 buceos por día y el lugar es a
-              elección.
+            Dentro de la reserva tambien tenemos la opción de excursion                     <Link
+                      key={"snorkeling"}
+                      href="/excursiones/snorkeling-con-lobos"
+                      className="text-[#e12222] underline hover:text-red-400 transition-colors"
+                    >Snorkeling con lobos</Link>.
             </p>
 
-            <p className="text-white/80 mb-4 leading-relaxed">
-              - Recomendamos por lo menos realizar un buceo de cada uno de los
-              atractivos (parque natural, naufragios y lobitos).
-            </p>
-
-
-            <p className="text-white/80 mb-4 leading-relaxed">
-              - La noche anterior a la excursión se confirma la salida según las
-              condiciones climáticas y del mar. En caso de que no sea favorable,
-              la excursión se pospone al próximo día.
-            </p>
           </div>
           <div className="relative overflow-hidden rounded-xl md:min-h-[500px]">
             <div className="relative h-full">
