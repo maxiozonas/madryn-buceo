@@ -1,33 +1,59 @@
-"use client"
+"use client";
 
-import React from "react"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-export function IntroSection() {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  }
+interface HeroSectionProps {
+  title: string;
+  heroImage: string;
+  miniDescription: string;
+}
 
+const titleVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+};
+
+export default function IntroSection({
+  title,
+  heroImage,
+  miniDescription,
+}: HeroSectionProps) {
   return (
-    <motion.section
-      className="text-center"
-      variants={sectionVariants}
-    >
-      <h1
-        className="text-4xl md:text-5xl font-extrabold mb-6 text-white uppercase tracking-wide shadow-md"
-      >
-        Sobre Nosotros
-      </h1>
-      <p className="text-lg text-white max-w-3xl mx-auto">
-        Somos una operadora con{" "}
-        <span className="text-[#ff4d4d] font-bold">más de 30 años</span>, ofreciendo verdaderas experiencias de buceo y snorkel. Dos generaciones trabajando a la par, con{" "}
-        <span className="text-[#ff4d4d] font-bold">Certificaciones Nacionales e Internacionales</span>, tanto en buceo como en náutica.
-      </p>
-    </motion.section>
-  )
+    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroImage}
+          alt={title}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+      <div className="container mx-auto px-8 py-20 text-center text-white relative z-10">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
+          variants={titleVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {title}
+        </motion.h1>
+        <motion.p
+          className="text-base md:text-2xl mb-8 font-oceanica"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {miniDescription}
+        </motion.p>
+      </div>
+    </section>
+  );
 }

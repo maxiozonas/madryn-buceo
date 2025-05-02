@@ -91,7 +91,7 @@ export const diveSites: DiveSite[] = [
   },
   {
     name: "Naufragio Folias",
-    description: "Barco de 72 metros hundido en los 80′ frente a Playa Paraná. Recostado sobre babor y con parte de su estructura asomando a la superficie. Sus paredes están tapizadas de algas y anémonas.",
+    description: "Barco de 72 metros hundido en los 80′ frente a Playa Paraná. Recostado sobre babor y con parte de su estructura asomando a la superficie.",
     difficulty: "Baja",
     depth: "13 metros",
     certification: "OWD",

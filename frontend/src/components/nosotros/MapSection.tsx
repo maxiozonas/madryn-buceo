@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import customIcon from "../ui/customIcon";
 import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function MapSection() {
   const [isDraggable, setIsDraggable] = useState(false);
@@ -20,7 +21,19 @@ export default function MapSection() {
     }
   }, []);
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
+        <motion.section
+          className="mt-16 mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
     <section className="relative isolate z-0 py-1 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2
@@ -54,5 +67,6 @@ export default function MapSection() {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 }
