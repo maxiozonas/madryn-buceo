@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { motion } from "framer-motion";
 
 interface Props {
   sites: DiveSite[];
@@ -42,6 +43,11 @@ export default function DiveSitesCarousel({
     }
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   const scrollRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 280, behavior: "smooth" }); 
@@ -62,6 +68,13 @@ export default function DiveSitesCarousel({
   };
 
   return (
+        <motion.section
+          className="mt-16 mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
     <div className="relative w-full mt-8">
       <button
         onClick={scrollLeft}
@@ -113,5 +126,6 @@ export default function DiveSitesCarousel({
         <ChevronRight size={24} />
       </button>
     </div>
+    </motion.section>
   );
 }

@@ -2,14 +2,16 @@
 
 import HeroSection from "@/components/buceo-certificado/HeroSection";
 import DescriptionSection from "@/components/buceo-certificado/DescriptionSection";
-import CardsSection from "@/components/buceo-certificado/CardsSection";
+import QueEsperarSection from "@/components/buceo-certificado/QueEsperarSection";
+import LobosSection from "@/components/buceo-certificado/LobosSection";
 
 export default function BuceoCapitalPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-16 space-y-16">
-      <HeroSection />
+    <main>
+      <HeroSection title={"Vení a Puerto Madryn"} heroImage={"/images/buceo/buceo.webp"} miniDescription={"La capital nacional del buceo "} />
       <DescriptionSection />
-      <CardsSection />
+      <QueEsperarSection />
+      <LobosSection />
     </main>
   );
 }

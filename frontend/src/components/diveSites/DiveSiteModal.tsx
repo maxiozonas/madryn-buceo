@@ -1,13 +1,13 @@
 import React from "react";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import ImageGallery from "./ImageGallery";
-import { ChevronLeft } from "lucide-react"; // Add ChevronLeft import
+import { ChevronLeft } from "lucide-react";
 
 interface DiveSiteModalProps {
   isOpen: boolean;
   site: DiveSite | null;
   closeModal: () => void;
-  handleGoBack?: () => void; // Optional prop for go back
+  handleGoBack?: () => void; 
 }
 
 const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
@@ -18,9 +18,18 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
 }) => {
   if (!isOpen || !site) return null;
 
+  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center">
-      <div className="bg-[#252422] p-4 md:p-7 rounded-xl w-[90%] md:w-[100vh] max-h-[96vh] overflow-y-auto relative">
+    <div
+      className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center"
+      onClick={handleOverlayClick}
+    >
+      <div className="bg-[#252422] p-4 md:p-7 rounded-xl w-[90%] md:w-[100vh] max-h-[96vh] overflow-y-hidden  [&::-webkit-scrollbar-track]:rounded-full relative">
         <div className="mb-4">
           <ImageGallery
             media={site.media}
@@ -29,7 +38,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
         </div>
 
         <h3 className="text-lg font-bold text-red-500 mb-1">{site.name}</h3>
-        <p className="text-white/80 mb-1">{site.description}</p>
+        <p className="text-white/80 text-sm mb-2">{site.description}</p>
 
         <div className="grid grid-cols-2 gap-4 text-sm text-white/70 mb-4">
           <div>

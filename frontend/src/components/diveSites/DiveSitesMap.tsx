@@ -6,6 +6,7 @@ import customIcon from "@/components/ui/customIcon";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import CertificationFilter from "./CertificationFilter";
 import "leaflet/dist/leaflet.css";
+import { motion } from "framer-motion";
 
 interface Props {
   selectedCoords: [number, number];
@@ -14,6 +15,11 @@ interface Props {
   setCertificationFilter: (filter: string | null) => void;
   onMarkerClick: (site: DiveSite) => void;
 }
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const DiveSitesMap: React.FC<Props> = ({
   selectedCoords,
@@ -27,6 +33,13 @@ const DiveSitesMap: React.FC<Props> = ({
     : sites;
 
   return (
+    <motion.section
+    className="mt-16 mb-20"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-100px" }}
+    variants={fadeIn}
+  >
     <div className="relative isolate w-full h-[280px] md:h-[420px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
       <MapContainer
         center={selectedCoords}
@@ -73,6 +86,7 @@ const DiveSitesMap: React.FC<Props> = ({
         />
       </div>
     </div>
+    </motion.section>
   );
 };
 
