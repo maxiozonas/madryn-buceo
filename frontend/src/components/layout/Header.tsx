@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -9,11 +9,21 @@ import logo from "../../../public/images/inicio/logo.png"
 import { NavLinks } from "@/lib/data/NavLinks"
 import { motion, AnimatePresence } from "framer-motion"
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
-import ReservarButton from "../ui/button-rojo"; // Importar el componente
+import ButtonRojo from "../ui/button-rojo"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [expandedSubmenu, setExpandedSubmenu] = useState<number | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50) 
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const toggleSubmenu = (index: number) => {
     setExpandedSubmenu(expandedSubmenu === index ? null : index)
@@ -40,7 +50,11 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 shadow-md text-white bg-[#121113] pt-2">
+    <header
+      className={`sticky top-0 z-50 text-white transition-all duration-300 p-3 ${
+        isScrolled ? "bg-negro-secundario shadow-md pt-3" : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
+      }`}
+    >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* LOGO Y BOTÓN DE MENÚ */}
         <div className="flex items-center justify-between w-full lg:w-auto">
@@ -74,7 +88,7 @@ export default function Header() {
                   </button>
                   <AnimatePresence>
                     <motion.div
-                      className="absolute left-0 top-full w-80 bg-[#121113] shadow-lg rounded-md px-4 py-4 hidden group-hover:block"
+                      className="absolute left-0 top-full w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4 hidden group-hover:block"
                       initial="hidden"
                       animate="visible"
                       exit="exit"
@@ -84,7 +98,7 @@ export default function Header() {
                         <Link
                           key={subIndex}
                           href={sublink.href}
-                          className="block px-3 py-3 text-white hover:bg-[#403d39] hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
+                          className="block px-3 py-3 text-white hover:bg-negro-secundario hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
                         >
                           <div className="flex flex-col">
                             <span className="font-medium text-sm uppercase">{sublink.title}</span>
@@ -98,7 +112,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={link.href}
-                  className="px-4 py-2 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
+                  className="px-4 py-2 text-white hover:text-rojo font-medium transition-colors duration-200"
                 >
                   {link.title}
                 </Link>
@@ -107,45 +121,53 @@ export default function Header() {
           ))}
         </nav>
 
- {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
- <div className="hidden lg:flex items-center gap-4">
- <ReservarButton texto="Reservar"/>
- {/* Íconos de redes sociales */}
- <div className="flex items-center gap-3 text-xl">
-<a
- href="https://www.facebook.com/madrynbuceo/?fref=ts"
- target="_blank"
- rel="noopener noreferrer"
->
- <FaFacebookF className="hover:text-blue-600" />
-</a>
-<a
- href="https://www.instagram.com/madrynbuceo/?hl=es-la"
- target="_blank"
- rel="noopener noreferrer"
->
- <FaInstagram className="hover:text-pink-500" />
-</a>
-<a href="https://www.tiktok.com/@madrynbuceo" target="_blank" rel="noopener noreferrer">
- <FaTiktok className="hover:text-white" />
-</a>
-<a href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
- <FaWhatsapp className="hover:text-green-600" />
-</a>
- </div>
+        {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Íconos de redes sociales */}
+          <div className="flex items-center gap-3 text-xl">
+            <a
+              href="https://www.facebook.com/madrynbuceo/?fref=ts"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="hover:text-blue-600" />
+            </a>
+            <a
+              href="https://www.instagram.com/madrynbuceo/?hl=es-la"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-pink-500" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@madrynbuceo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok className="hover:text-rojo" />
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="hover:text-green-600" />
+            </a>
+          </div>
+          <ButtonRojo texto="Reservar" href="/reservar" />
         </div>
       </div>
 
       {/* MENÚ MOBILE */}
       <div
-        className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-[#121113]/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+        className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-negro-secundario/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
         }`}
       >
         <div className="container h-full flex flex-col py-6 px-4">
           <nav className="flex flex-col flex-1 space-y-2">
             {NavLinks.map((link, index) => (
-              <div key={index} className="rounded-lg bg-[#1a1819]/50 shadow-sm overflow-hidden">
+              <div key={index} className="rounded-lg bg-negro-secundario shadow-sm overflow-hidden">
                 {link.submenu ? (
                   <>
                     <button
@@ -160,11 +182,11 @@ export default function Header() {
                       />
                     </button>
                     <div
-                      className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      className={`transition-all duration-300 ease-in-out overflow-hidden bg-negro-secundario ${
                         expandedSubmenu === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
-                      <div className="px-6 py-2 bg-[#1f1d1e]/50">
+                      <div className="px-6 py-2 bg-negro-secundario">
                         {link.submenu.map((sublink, subIndex) => (
                           <Link
                             key={subIndex}

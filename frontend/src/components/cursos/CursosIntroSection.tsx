@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Award, SeparatorHorizontal } from "lucide-react";
 import Image from "next/image";
 import imagen from "../../../public/images/cursos/cursos-1.jpg"
+import logo from "../../../public/images/footer/pngwing.com(1).png"
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -15,15 +16,14 @@ export default function CursosIntroSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn} 
+            variants={fadeIn}
         >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
                 <div className="flex flex-col justify-center">
 
-                    <div className="mb-6 inline-flex items-center justify-center w-60 px-4 py-2 rounded-full bg-rojo/10 border border-rojo/20">
-                        <Award className="mr-2 h-4 w-4 text-rojo" />
-                        <span className="text-rojo font-medium text-sm">Centro PADI Oficial</span>
+                    <div className="mb-4 w-36 inline-flex items-center justify-center rounded-lg bg-muted px-4 py-1.5 text-lg font-medium">
+                        <Image src={logo} alt="Certificación PADI" width={100} height={100} className="object-cover" />
                     </div>
 
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 inline-flex items-center relative uppercase">
@@ -52,7 +52,6 @@ export default function CursosIntroSection() {
                 </div>
 
                 <div className="relative overflow-hidden rounded-xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#121113]/20 to-transparent z-10"></div>
                     <Image
                         src={imagen}
                         alt="Buceo en Puerto Madryn"

@@ -1,6 +1,6 @@
 
 import { notFound } from "next/navigation";
-import { buceos } from "@/lib/data/brevetados";
+import { buceos } from "@/lib/data/Brevetados";
 import HeroSection from "@/components/buceos/HeroSection";
 import DescripcionSection from "@/components/buceos/DescripcionSection";
 import DetallesSection from "@/components/buceos/DetallesSection";

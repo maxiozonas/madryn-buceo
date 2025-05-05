@@ -8,6 +8,7 @@ import QueEsperarSection from "@/components/excursiones/QueEsperarSection";
 import RequerimientosSection from "@/components/excursiones/RequerimientosSection";
 import CallToActionSection from "@/components/excursiones/CallToActionSection";
 import GaleriaSection from "@/components/excursiones/GaleriaSection";
+import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursioesSection";
 
 
 interface ExcursionPageProps {
@@ -25,28 +26,24 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
         title={excursion.title}
         heroImage={excursion.heroImage}
         miniDescription={excursion.miniDescription}
-        buttonText={excursion.buttonText}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-            <div className="lg:col-span-7 space-y-6">
-              <DescripcionSection
-                title={excursion.title}
-                slug={excursion.slug}
-                description={excursion.description}
-                cardImage={excursion.cardImage}
-              />
-            </div>
-            <div className="lg:col-span-5">
-              <DetallesSection details={excursion.details} />
-            </div>
+
+          <div className="lg:col-span-7 space-y-6">
+            <DescripcionSection
+              slug={excursion.slug}
+              description={excursion.description}
+            />
+
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <DetallesSection details={excursion.details} />
+            <RequerimientosSection excursion={excursion} />
           </div>
           <div className="mb-16">
             <QueEsperarSection excursion={excursion} />
-          </div>
-          <div className="mb-16">
-            <RequerimientosSection excursion={excursion} />
           </div>
           <CallToActionSection
             callToAction={excursion.callToAction}
@@ -60,6 +57,9 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
           </div>
         </div>
       </section>
+
+      <OtrasExcursioesSection excursion={excursion} />
+
     </>
   );
 }

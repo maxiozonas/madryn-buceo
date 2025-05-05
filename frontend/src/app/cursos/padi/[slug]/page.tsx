@@ -1,5 +1,5 @@
-import CourseDescription from "@/components/detalles-curso/CourseDescription";
-import CourseDetails from "@/components/detalles-curso/CourseDetails";
+import CourseDescription from "@/components/detalles-curso/CursoDescripcionSection";
+import CourseDetails from "@/components/detalles-curso/CursoDetallesSection";
 import CursoIntroSection from "@/components/detalles-curso/CursoIntroSection";
 import CursoPorqueSection from "@/components/detalles-curso/CursoPorqueSection";
 import { allCursos } from "@/lib/data/Cursos";

@@ -64,12 +64,12 @@
 
 body {
   background: #121113;
-  color: var(--negro);
+  color: var(--color-woodsmoke-950);
 }
 
-/* @utility mask-fade-bottom {
+@utility mask-fade-bottom {
   mask-image: linearGradient(to bottom, black 80%, transparent 100%)
-} */
+}
 
 @theme inline {
   --color-rojo: var(--color-punch-600);

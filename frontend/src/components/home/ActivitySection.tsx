@@ -5,6 +5,8 @@ import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import ButtonRojo from "../ui/button-rojo"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function ActivitySection() {
   const ref = useRef(null)
@@ -27,19 +29,27 @@ export default function ActivitySection() {
 
   return (
     <section
-      className="py-20"
+      className="pb-20 pt-24"
       id="actividades"
       ref={ref}
     >
       <motion.div className="container flex flex-col items-center justify-center px-8 mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12 uppercase font-oceanica tracking-wide shadow-md"
+          className="text-4xl md:text-5xl font-extrabold text-center text-white mb-8 uppercase font-oceanica tracking-wide"
           variants={titleVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           Nuestras Actividades
         </motion.h2>
+        <motion.p
+          className="text-lg text-center text-white mb-12"
+          variants={titleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          Descubre las emocionantes actividades que ofrecemos en la Patagonia.
+        </motion.p>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -74,12 +84,16 @@ function ActivityCard({
   title,
   description,
   image,
+  link
 }: {
   title: string
   description: string
   image: string
   link: string
 }) {
+  const router = useRouter()
+  const slug = link.split('/').pop() || ''
+
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -93,28 +107,44 @@ function ActivityCard({
     },
   }
 
+  const handleNavigate = (e: React.MouseEvent) => {
+    e.preventDefault()
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString())
+    sessionStorage.setItem('transitionSource', slug)
+    router.push(link)
+  }
+
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+      className="group relative bg-[#252422] overflow-hidden shadow-md h-full flex flex-col"
+      layoutId={`card-container-${slug}`}
     >
-      <Card className="overflow-hidden p-2 border-none shadow-lg bg-negro-secundario hover:shadow-xl transition-shadow">
-        <div className="relative h-64">
-          <Image
-            src={image || "/placeholder.svg"}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-110 rounded-2xl"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />
-        </div>
-        <CardContent className="p-4 flex flex-col items-center text-center text-white relative">
-          <h3 className="text-lg uppercase font-extrabold mb-2 text-white font-oceanica tracking-tight">
-            {title}
-          </h3>
-          <p className="text-white/80 mb-4 text-sm">{description}</p>
-          <ButtonRojo texto="Reservar ahora"/>
-        </CardContent>
+      <Card className="overflow-hidden rounded-sm pt-0 border-none shadow-md bg-negro-secundario transition-shadow">
+        <Link href={link} onClick={handleNavigate} className="block">
+          <div className="relative overflow-hidden h-64">
+            <motion.div layoutId={`card-image-container-${slug}`} className="w-full h-full">
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                priority
+                id={`activity-image-${slug}`}
+              />
+            </motion.div>
+          </div>
+          <CardContent className="flex flex-col items-center text-center text-white relative p-6">
+            <motion.h3
+              layoutId={`card-title-${slug}`}
+              className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-[#e12222] transition-colors"
+            >
+              {title}
+            </motion.h3>
+            <p className="text-gray-300 mb-4 flex-grow line-clamp-3">{description}</p>
+            <ButtonRojo texto="Mas información" fullWidth={true} href={link} />
+          </CardContent>
+        </Link>
       </Card>
     </motion.div>
   )

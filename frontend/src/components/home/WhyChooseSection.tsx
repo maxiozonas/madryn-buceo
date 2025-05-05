@@ -27,7 +27,7 @@ export default function WhyChooseSection() {
   }
 
   return (
-    <section className="py-12" ref={ref}>
+    <section className="py-12 bg-negro-secundario" ref={ref}>
       <div className="container flex flex-col items-center justify-center px-8 mx-auto">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-wide shadow-md"
@@ -82,7 +82,7 @@ export default function WhyChooseSection() {
           />
         </motion.div>
         <div className="text-center mt-12">
-          <ButtonRojo texto="¡Sumergete hoy!"/>
+          <ButtonRojo texto="¡Sumergete hoy!" href="/"/>
         </div>
       </div>
     </section>
@@ -105,14 +105,14 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
 
   return (
     <motion.div variants={cardVariants} whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}>
-      <Card className="border-none shadow-md bg-card hover:shadow-xl transition-shadow">
+      <Card className="border-none rounded-none bg-negro transition-shadow">
         <CardContent className="p-4 flex flex-col items-center text-center">
           <div className="mb-4 relative">
             {icon}
           </div>
-          <h3 className="text-xl font-bold mb-2 text-foreground">{title}</h3>
+          <h3 className="text-xl font-bold mb-2 text-white ">{title}</h3>
           <SeparatorHorizontal className="w-24 h-1 bg-rojo mb-2 rounded-full" />
-          <p className="text-muted-foreground prose-p text-center">{description}</p>
+          <p className="text-white/80 prose-p text-center">{description}</p>
         </CardContent>
       </Card>
     </motion.div>

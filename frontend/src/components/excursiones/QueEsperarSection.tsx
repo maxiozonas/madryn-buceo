@@ -1,48 +1,32 @@
 "use client";
 
-import { Anchor, Compass, Heart, LifeBuoy, Ship, Waves } from "lucide-react";
 import { Excursion } from "@/lib/data/Excursiones";
-import { ReactNode } from "react";
+import { Card, CardContent } from "../ui/card";
+import { Compass } from "lucide-react";
 
 interface QueEsperarSectionProps {
   excursion: Excursion;
 }
 
-const getExpectIcon = (index: number): ReactNode => {
-  const icons = [
-    <LifeBuoy key="lifeBuoy" className="h-6 w-6 text-rojo" />,
-    <Compass key="compass" className="h-6 w-6 text-rojo" />,
-    <Ship key="ship" className="h-6 w-6 text-rojo" />,
-    <Waves key="waves" className="h-6 w-6 text-rojo" />,
-    <Heart key="heart" className="h-6 w-6 text-rojo" />,
-    <Anchor key="anchor" className="h-6 w-6 text-rojo" />,
-  ];
-  return icons[index % icons.length];
-};
-
 export default function QueEsperarSection({ excursion }: QueEsperarSectionProps) {
   return (
-    <div className="bg-negro-secundario rounded-xl p-6 border border-[#403d39] shadow-lg">
-      <h2 className="text-3xl font-bold mb-6 text-white flex items-center justify-center uppercase font-oceanica">
-        <Compass className="mr-3 h-6 w-6 text-rojo" />
-        ¿Qué Esperar?
-      </h2>
-      <div className="space-y-4">
-        {excursion.whatToExpect.map((item, index) => (
-          <div
-            key={index}
-            className="bg-negro border-l-4 border-rojo p-5 rounded-lg shadow-md transition-colors duration-300 h-full"
-          >
-            <div className="flex flex-col lg:flex-row items-center gap-4">
-              <div className="flex-shrink-0 p-3 bg-rojo/10 rounded-full">{getExpectIcon(index)}</div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2 uppercase">{item.title}</h3>
-                <p className="text-white/80 text-sm text-center lg:text-start">{item.description}</p>
-              </div>
+    <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+      <CardContent className="p-8">
+        <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+          <Compass className="h-6 w-6 text-rojo" />
+          ¿Qué esperar?
+        </h2>
+        <div className="space-y-6">
+          {excursion.whatToExpect.map((item, index) => (
+            <div key={index} className="border-b border-gray-700 pb-6 last:border-0 last:pb-0">
+              <h3 className="font-bold text-lg text-rojo mb-2">
+                {index + 1}. {item.title}
+              </h3>
+              <p className="text-gray-300">{item.description}</p>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 }

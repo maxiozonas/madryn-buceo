@@ -73,7 +73,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
     >
-      <Card className="border-none shadow-lg bg-white text-[#252422]">
+      <Card className="border-none shadow-lg bg-negro rounded-none text-white">
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
             <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">
@@ -84,7 +84,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
               <p className="text-xs">{review.date}</p>
             </div>
           </div>
-          <div className="flex mb-2">
+          <div className="flex mb-4">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
@@ -92,7 +92,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
               />
             ))}
           </div>
-          <p className="text-[#252422] text-sm">{review.text}</p>
+          <p className="text-md">{review.text}</p>
         </CardContent>
       </Card>
     </motion.div>

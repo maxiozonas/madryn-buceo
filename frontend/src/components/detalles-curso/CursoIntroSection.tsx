@@ -17,7 +17,7 @@ export default function CursoIntroSection({ title, shortDescription, certificati
     return (
         <>
         <section className="relative w-full h-[50vh] overflow-hidden">
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 mask-fade-bottom">
                 <Image
                     src={cardImage}
                     alt="Hero"
@@ -25,7 +25,7 @@ export default function CursoIntroSection({ title, shortDescription, certificati
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
             <div className="container mx-auto relative h-full flex flex-col justify-end pb-12 px-6 text-white">
                 <div className="inline-block bg-ocean rounded text-sm font-semibold mb-2">
@@ -56,7 +56,6 @@ export default function CursoIntroSection({ title, shortDescription, certificati
                 </div>
             </div>
         </section>
-        <div className="h-4 bg-gradient-to-r from-rojo via-rojo/80 to-black" />
         </>
     )
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { Calendar, Shield, Thermometer, BadgeCheck } from "lucide-react";
-import { Buceo } from "@/lib/data/brevetados";
+import { Buceo } from "@/lib/data/Brevetados";
 import { ReactNode } from "react";
 
 interface RequerimientosSectionProps {

@@ -2,26 +2,29 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
+import { ArrowRight } from "lucide-react";
 
 interface ButtonRojoProps {
     texto: string;
+    href: string;
     fullWidth?: boolean;
 }
 
-export default function ButtonRojo({ texto, fullWidth = false }: ButtonRojoProps) {
+export default function ButtonRojo({ texto, href, fullWidth = false }: ButtonRojoProps) {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push("/reservar");
+        router.push(href);
     };
 
     return (
         <Button
             size="lg"
             onClick={handleClick}
-            className={`bg-rojo hover:bg-rojo/50 text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
+            className={`group w-48 bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
         >
             {texto}
+            <ArrowRight className="h-4 w-4 group-hover:ml-2 transition-all duration-300" />
         </Button>
     );
 }

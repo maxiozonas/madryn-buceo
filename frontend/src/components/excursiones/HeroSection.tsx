@@ -8,7 +8,6 @@ interface HeroSectionProps {
   title: string;
   heroImage: string;
   miniDescription: string;
-  buttonText: string;
 }
 
 const titleVariants = {
@@ -25,7 +24,7 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
   return (
     <>
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 mask-fade-bottom">
           <Image
             src={heroImage}
             alt={title}
@@ -33,7 +32,7 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
         <div className="container relative z-10 text-center text-white">
           <motion.h1
@@ -52,10 +51,9 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
           >
             {miniDescription}
           </motion.p>
-          <ButtonRojo texto="Reservar ahora" />
+          <ButtonRojo texto="Reservar ahora" href="/reservar" />
         </div>
       </section>
-      <div className="h-4 bg-gradient-to-r from-rojo via-rojo/80 to-black" />
     </>
   );
 }
