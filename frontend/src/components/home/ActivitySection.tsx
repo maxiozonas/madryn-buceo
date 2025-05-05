@@ -1,12 +1,9 @@
 "use client"
 
-import { Card, CardContent } from "../ui/card"
-import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import ButtonRojo from "../ui/button-rojo"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { excursiones } from "@/lib/data/Excursiones"
+import ExcursionCard from "../excursiones/ExcursionCard"
 
 export default function ActivitySection() {
   const ref = useRef(null)
@@ -56,96 +53,87 @@ export default function ActivitySection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <ActivityCard
-            title="Snorkeling con Lobos"
-            description="Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural."
-            image="/images/inicio/lobos.jpg"
-            link="/excursiones/snorkeling-con-lobos"
-          />
-          <ActivityCard
-            title="Bautismo de Buceo"
-            description="Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros."
-            image="/images/inicio/bautismo.jpg"
-            link="/excursiones/bautismo-de-buceo"
-          />
-          <ActivityCard
-            title="Búsqueda de Delfines"
-            description="Disfruta de un paseo por el mar en busca de delfines y otras especies marinas."
-            image="/images/inicio/delfines.jpeg"
-            link="/excursiones/paseo-nautico-delfines"
-          />
+          {excursiones.slice(0, 3).map((excursion, index) => (
+            <ExcursionCard
+              key={index}
+              title={excursion.title}
+              description={excursion.miniDescription}
+              image={excursion.cardImage}
+              link={`/excursiones/${excursion.slug}`}
+            />
+          ))}
         </motion.div>
       </motion.div>
     </section>
   )
 }
 
-function ActivityCard({
-  title,
-  description,
-  image,
-  link
-}: {
-  title: string
-  description: string
-  image: string
-  link: string
-}) {
-  const router = useRouter()
-  const slug = link.split('/').pop() || ''
+// function ActivityCard({
+//   title,
+//   description,
+//   image,
+//   link
+// }: {
+//   title: string
+//   description: string
+//   image: string
+//   link: string
+// }) {
+//   const router = useRouter()
+//   const slug = link.split('/').pop() || ''
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  }
+//   const cardVariants = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: {
+//       opacity: 1,
+//       y: 0,
+//       transition: {
+//         duration: 0.6,
+//         type: "spring",
+//         stiffness: 100,
+//       },
+//     },
+//   }
 
-  const handleNavigate = (e: React.MouseEvent) => {
-    e.preventDefault()
-    sessionStorage.setItem('scrollPosition', window.scrollY.toString())
-    sessionStorage.setItem('transitionSource', slug)
-    router.push(link)
-  }
+//   const handleNavigate = (e: React.MouseEvent) => {
+//     e.preventDefault()
+//     sessionStorage.setItem('scrollPosition', window.scrollY.toString())
+//     sessionStorage.setItem('transitionSource', slug)
+//     router.push(link)
+//   }
 
-  return (
-    <motion.div
-      variants={cardVariants}
-      className="group relative bg-[#252422] overflow-hidden shadow-md h-full flex flex-col"
-      layoutId={`card-container-${slug}`}
-    >
-      <Card className="overflow-hidden rounded-sm pt-0 border-none shadow-md bg-negro-secundario transition-shadow">
-        <Link href={link} onClick={handleNavigate} className="block">
-          <div className="relative overflow-hidden h-64">
-            <motion.div layoutId={`card-image-container-${slug}`} className="w-full h-full">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                priority
-                id={`activity-image-${slug}`}
-              />
-            </motion.div>
-          </div>
-          <CardContent className="flex flex-col items-center text-center text-white relative p-6">
-            <motion.h3
-              layoutId={`card-title-${slug}`}
-              className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-[#e12222] transition-colors"
-            >
-              {title}
-            </motion.h3>
-            <p className="text-gray-300 mb-4 flex-grow line-clamp-3">{description}</p>
-            <ButtonRojo texto="Mas información" fullWidth={true} href={link} />
-          </CardContent>
-        </Link>
-      </Card>
-    </motion.div>
-  )
-}
+//   return (
+//     <motion.div
+//       variants={cardVariants}
+//       className="group relative bg-[#252422] overflow-hidden shadow-md h-full flex flex-col"
+//       layoutId={`card-container-${slug}`}
+//     >
+//       <Card className="overflow-hidden rounded-sm pt-0 border-none shadow-md bg-negro-secundario transition-shadow">
+//         <Link href={link} onClick={handleNavigate} className="block">
+//           <div className="relative overflow-hidden h-64">
+//             <motion.div layoutId={`card-image-container-${slug}`} className="w-full h-full">
+//               <Image
+//                 src={image}
+//                 alt={title}
+//                 fill
+//                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+//                 priority
+//                 id={`activity-image-${slug}`}
+//               />
+//             </motion.div>
+//           </div>
+//           <CardContent className="flex flex-col items-center text-center text-white relative p-6">
+//             <motion.h3
+//               layoutId={`card-title-${slug}`}
+//               className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-[#e12222] transition-colors"
+//             >
+//               {title}
+//             </motion.h3>
+//             <p className="text-gray-300 mb-4 flex-grow line-clamp-3">{description}</p>
+//             <ButtonRojo texto="Mas información" fullWidth={true} href={link} />
+//           </CardContent>
+//         </Link>
+//       </Card>
+//     </motion.div>
+//   )
+// }

@@ -11,7 +11,7 @@ interface CourseDescriptionProps {
 export default function CourseDescription({ description, learningOutcomes, includes, qualifications }: CourseDescriptionProps) {
     return (
         <div>
-            <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+            <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800">
                 <CardHeader>
                     <CardTitle className="text-2xl font-bold text-white">Descripción</CardTitle>
                 </CardHeader>

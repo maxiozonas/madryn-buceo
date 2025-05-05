@@ -12,11 +12,11 @@ export interface Curso {
   qualifications?: string[];
   href: string;
   cardImage: string;
-  level: "programa" | "iniciacion" | "avanzados" | "profesional";
+  level: "iniciacion" | "avanzados" | "profesional";
 }
 
 export const cursos: { [key in Curso["level"]]: Curso[] } = {
-  programa: [
+  iniciacion: [
     {
       title: "Discover Scuba Diving",
       slug: "discover-scuba-diving",
@@ -35,10 +35,8 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
       ],
       cardImage: "/images/cursos/scuba-diver.jpg",
       href: "/cursos/padi/discover-scuba-diving",
-      level: "programa",
+      level: "iniciacion",
     },
-  ],
-  iniciacion: [
     {
       title: "Scuba Diver",
       slug: "scuba-diver",
@@ -206,7 +204,6 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
 };
 
 export const allCursos: Curso[] = [
-  ...cursos.programa,
   ...cursos.iniciacion,
   ...cursos.avanzados,
   ...cursos.profesional,

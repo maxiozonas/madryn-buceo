@@ -10,7 +10,7 @@ interface DescripcionSectionProps {
 
 export default function DescripcionSection({ slug, description }: DescripcionSectionProps) {
   return (
-    <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+    <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800">
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <FileText className="h-6 w-6 text-rojo" />
