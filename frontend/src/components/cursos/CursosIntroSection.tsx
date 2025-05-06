@@ -12,7 +12,7 @@ const fadeIn = {
 
 export default function CursosIntroSection() {
     return (
-        <motion.section className="mb-20"
+        <motion.section className="mb-20 relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}

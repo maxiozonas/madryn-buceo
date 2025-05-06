@@ -73,7 +73,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
     >
-      <Card className="border-none shadow-lg bg-negro rounded-none text-white">
+      <Card className="border-none h-full shadow-lg bg-negro rounded-none text-white">
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
             <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">

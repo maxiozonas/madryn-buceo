@@ -21,10 +21,10 @@ export default function ButtonRojo({ texto, href, fullWidth = false }: ButtonRoj
         <Button
             size="lg"
             onClick={handleClick}
-            className={`group w-48 bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
+            className={`group bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
         >
             {texto}
-            <ArrowRight className="h-4 w-4 group-hover:ml-2 transition-all duration-300" />
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-all duration-300" />
         </Button>
     );
 }

@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Madryn Buceo",
   description: "PAGINA WEB DE MADRYN BUCEO",
+  icons: {
+    icon: "images/inicio/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode }>) {

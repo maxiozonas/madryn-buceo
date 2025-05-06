@@ -35,15 +35,6 @@ export default function CursoFiltro() {
             Todos
           </button>
           <button
-            onClick={() => handleFilterChange("programa")}
-            className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "programa"
-                ? "bg-rojo text-white"
-                : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
-              }`}
-          >
-            Programas
-          </button>
-          <button
             onClick={() => handleFilterChange("iniciacion")}
             className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "iniciacion"
                 ? "bg-rojo text-white"
@@ -83,7 +74,6 @@ export default function CursoFiltro() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute top-0 right-0 bg-rojo text-white px-3 py-1 text-sm font-medium rounded-l-md">
-                  {curso.level === "programa" && "Programa"}
                   {curso.level === "iniciacion" && "Iniciación"}
                   {curso.level === "avanzados" && "Avanzado"}
                   {curso.level === "profesional" && "Profesional"}

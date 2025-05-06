@@ -129,7 +129,7 @@ export const excursiones: Excursion[] = [
     {
         title: "Búsqueda de Delfines",
         slug: "busqueda-delfines",
-        miniDescription: "Embárcate en una aventura inolvidable en el Golfo Nuevo en busca de los fascinantes delfines oscuros.",
+        miniDescription: "Embárcate en una aventura inolvidable en busca de los fascinantes delfines oscuros.",
         description: [
             "Embárcate en una aventura inolvidable en el Golfo Nuevo en busca de los fascinantes delfines oscuros. A bordo de nuestro bote semirrígido de 9 metros, vivirás una experiencia emocionante y altamente personalizada, con un máximo de 15 pasajeros. Nuestra embarcación parte directamente desde la playa en la magia del mar patagónico.",
             "Guiados por nuestros capitanes expertos, navegaremos hacia las áreas donde los delfines frecuentan. Estos animales, conocidos por su energía, acrobacias y curiosidad, suelen acercarse a las embarcaciones, ofreciendo un espectáculo natural inolvidable.",
