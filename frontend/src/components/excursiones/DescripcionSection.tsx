@@ -1,49 +1,46 @@
-import Link from "next/link";
-import ButtonRojo from "../ui/button-rojo";
-import { Card, CardContent } from "../ui/card";
-import { FileText } from "lucide-react";
+import Link from "next/link"
+import ButtonRojo from "@/components/ui/button-rojo"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight } from "lucide-react"
 
 interface DescripcionSectionProps {
-  slug: string;
-  description: string[];
+  slug: string
+  description: string[]
 }
 
 export default function DescripcionSection({ slug, description }: DescripcionSectionProps) {
   return (
-    <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800">
+    <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800 hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-          <FileText className="h-6 w-6 text-rojo" />
+          <ArrowRight className="h-8 w-8 text-rojo" />
           Descripción
         </h2>
         <div className="space-y-4">
           {description.map((paragraph, index) => {
-            if (slug === 'bautismo-buceo' && paragraph.toLowerCase().includes('discover scuba diving')) {
-              const parts = paragraph.split(/(discover scuba diving)/i);
+            if (slug === "bautismo-buceo" && paragraph.toLowerCase().includes("discover scuba diving")) {
+              const parts = paragraph.split(/(discover scuba diving)/i)
               return (
-                <p key={index} className="text-white/80 leading-relaxed mb-2">
+                <p key={index} className="text-white leading-relaxed mb-2">
                   {parts.map((part, i) =>
-                    part.toLowerCase() === 'discover scuba diving' ? (
-
+                    part.toLowerCase() === "discover scuba diving" ? (
                       <span key={i} className="font-bold text-rojo hover:underline">
-                        <Link href="/cursos/padi/discover-scuba-diving">
-                          {part}
-                        </Link>
+                        <Link href="/cursos/padi/discover-scuba-diving">{part}</Link>
                       </span>
                     ) : (
                       part
-                    )
+                    ),
                   )}
                 </p>
-              );
+              )
             }
             return (
-              <p key={index} className="text-white/80 leading-relaxed mb-2">
+              <p key={index} className="text-white leading-relaxed mb-2">
                 {paragraph}
               </p>
-            );
+            )
           })}
-          {slug === 'bautismo-buceo' && (
+          {slug === "bautismo-buceo" && (
             <div className="my-4 text-center">
               <Link href="/cursos/padi/discover-scuba-diving">
                 <ButtonRojo texto="Ir a Discover Scuba Diving" href="/cursos/padi/discover-scuba-diving" />
@@ -53,5 +50,5 @@ export default function DescripcionSection({ slug, description }: DescripcionSec
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

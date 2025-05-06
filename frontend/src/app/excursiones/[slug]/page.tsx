@@ -8,7 +8,7 @@ import QueEsperarSection from "@/components/excursiones/QueEsperarSection";
 import RequerimientosSection from "@/components/excursiones/RequerimientosSection";
 import CallToActionSection from "@/components/excursiones/CallToActionSection";
 import GaleriaSection from "@/components/excursiones/GaleriaSection";
-import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursioesSection";
+import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursionesSection";
 
 
 interface ExcursionPageProps {

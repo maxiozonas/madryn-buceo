@@ -1,30 +1,86 @@
-"use client";
+"use client"
 
-import { AlertCircle } from "lucide-react";
-import { Excursion } from "@/lib/data/Excursiones";
-import { Card, CardContent } from "../ui/card";
+import { Calendar, Activity, Heart, ArrowRight, Info } from "lucide-react"
+import type { Excursion } from "@/lib/data/Excursiones"
+import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
 interface RequerimientosSectionProps {
-  excursion: Excursion;
+  excursion: Excursion
 }
 
 export default function RequirementsSection({ excursion }: RequerimientosSectionProps) {
+  if (!excursion.requirements || excursion.requirements.length === 0) {
+    return (
+      <Card className="bg-negro-secundario shadow-md border-gray-800 h-full p-0">
+        <CardContent className="p-0 overflow-hidden h-full">
+          <div className="relative w-full h-full" style={{ minHeight: "100%" }}>
+            <Image
+              src={excursion.heroImage}
+              alt="Experiencia sin requisitos especiales"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
+  const getIcon = (title: string) => {
+    const lowerTitle = title.toLowerCase()
+
+    if (lowerTitle.includes("edad")) {
+      return <Calendar className="h-6 w-6 text-rojo" />
+    } else if (lowerTitle.includes("condición") ) {
+      return <Activity className="h-6 w-6 text-rojo" />
+    } else if (lowerTitle.includes("salud") || lowerTitle.includes("aptitud")) {
+      return <Heart className="h-6 w-6 text-rojo" />
+    } else {
+      return <Info className="h-6 w-6 text-rojo" />
+    }
+  }
+
   return (
-    <Card className="bg-negro-secundario shadow-md border-gray-800">
+    <Card className="bg-negro-secundario shadow-md border-gray-800 hover:shadow-xl transition-shadow duration-300 h-full">
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-          <AlertCircle className="h-6 w-6 text-rojo" />
+          <ArrowRight className="h-8 w-8 text-rojo" />
           Requisitos
         </h2>
-        <div className="space-y-4">
-          {excursion.requirements.map((req, index) => (
-            <div key={index} className="border-b border-gray-700 pb-4 last:border-0 last:pb-0">
-              <h3 className="font-bold text-lg text-rojo">{req.title}</h3>
-              <p className="text-gray-300">{req.description}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {excursion.requirements.slice(0, -1).map((req, index) => (
+              <motion.div
+                key={index}
+                className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(req.title)}</div>
+                <h3 className="font-bold text-white text-lg mb-2">{req.title}</h3>
+                <p className="text-white text-sm">{req.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          
+          {excursion.requirements.length > 0 && (
+            <motion.div
+              key="last-requirement"
+              className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center w-full"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: excursion.requirements.length * 0.1 }}
+            >
+              <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(excursion.requirements[excursion.requirements.length - 1].title)}</div>
+              <h3 className="font-bold text-white text-lg mb-2">{excursion.requirements[excursion.requirements.length - 1].title}</h3>
+              <p className="text-white text-sm">{excursion.requirements[excursion.requirements.length - 1].description}</p>
+            </motion.div>
+          )}
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

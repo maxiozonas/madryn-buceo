@@ -37,7 +37,7 @@ export default function CourseDescription({ description, learningOutcomes, inclu
                 </Card>
             )}
             {includes && includes.length > 0 && (
-                <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+                <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800">
                     <CardHeader>
                         <CardTitle className="text-2xl font-bold text-white">¿Qué incluye?</CardTitle>
                     </CardHeader>
@@ -54,7 +54,7 @@ export default function CourseDescription({ description, learningOutcomes, inclu
                 </Card>
             )}
             {qualifications && qualifications.length > 0 && (
-                <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+                <Card className="relative bg-negro-secundario shadow-md mb-8 border-gray-800">
                     <CardHeader>
                         <CardTitle className="text-2xl font-bold text-white">Los PADI Scuba Divers están calificados para:</CardTitle>
                     </CardHeader>

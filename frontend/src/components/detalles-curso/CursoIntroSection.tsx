@@ -16,7 +16,7 @@ export default function CursoIntroSection({ title, shortDescription, certificati
 
     return (
         <>
-        <section className="w-full h-[50vh] overflow-hidden">
+        <section className="w-full h-[30vh] overflow-hidden">
             <div className="absolute inset-0 z-0 mask-fade-bottom">
                 <Image
                     src={cardImage}

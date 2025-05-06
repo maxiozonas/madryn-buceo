@@ -19,7 +19,7 @@ export const NavLinks = [
             },
             {
                 title: "Busqueda de delfines",
-                href: "/excursiones/busqueda-delfines",
+                href: "/excursiones/paseo-nautico-en-busca-de-delfines",
                 description: "Disfruta de un paseo por el mar en busca de delfines y otras especies marinas.",
             },
             {

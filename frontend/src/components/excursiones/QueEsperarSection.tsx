@@ -1,51 +1,97 @@
-"use client";
+"use client"
 
-import { Excursion } from "@/lib/data/Excursiones";
-import { Card, CardContent } from "../ui/card";
-import { Compass, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import type { Excursion } from "@/lib/data/Excursiones"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Shirt,
+  BookOpen,
+  Ship,
+  Waves,
+  Fish,
+  Home,
+  Clock,
+  Map,
+  Users,
+  ArrowRight,
+  Plus,
+  Minus,
+} from "lucide-react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface QueEsperarSectionProps {
-  excursion: Excursion;
+  excursion: Excursion
 }
 
 export default function QueEsperarSection({ excursion }: QueEsperarSectionProps) {
-  const [expandedItem, setExpandedItem] = useState<number | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false)
 
-  const toggleItem = (index: number) => {
-    setExpandedItem(prev => prev === index ? null : index);
-  };
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded)
+  }
 
-  const isExpanded = (index: number) => expandedItem === index;
+  const getIcon = (index: number) => {
+    const icons = [
+      <Shirt key="shirt" className="h-6 w-6 text-rojo" />,
+      <BookOpen key="book" className="h-6 w-6 text-rojo" />,
+      <Ship key="ship" className="h-6 w-6 text-rojo" />,
+      <Waves key="waves" className="h-6 w-6 text-rojo" />,
+      <Fish key="fish" className="h-6 w-6 text-rojo" />,
+      <Home key="home" className="h-6 w-6 text-rojo" />,
+      <Clock key="clock" className="h-6 w-6 text-rojo" />,
+      <Map key="map" className="h-6 w-6 text-rojo" />,
+      <Users key="users" className="h-6 w-6 text-rojo" />,
+    ]
+
+    return icons[index % icons.length]
+  }
 
   return (
-    <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800">
+    <Card className="bg-negro-secundario p-0 shadow-md mb-8 border-gray-800 hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-8">
-        <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-          <Compass className="h-6 w-6 text-rojo" />
-          ¿Qué esperar?
-        </h2>
-        <div className="space-y-6">
-          {excursion.whatToExpect.map((item, index) => (
-            <div key={index} className="border-b border-gray-700 pb-3 last:border-0 last:pb-0">
-              <button 
-                onClick={() => toggleItem(index)}
-                className="w-full flex justify-between items-center text-left font-bold text-lg text-rojo group hover:text-rojo-claro transition-colors duration-200 cursor-pointer py-2 rounded-sm hover:bg-negro/20"
-              >
-                <span>{index + 1}. {item.title}</span>
-                {isExpanded(index) ? 
-                  <ChevronUp className="h-5 w-5 transition-transform duration-300 text-rojo" /> : 
-                  <ChevronDown className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-1 text-rojo" />}
-              </button>
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded(index) ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="text-gray-300 pl-5 border-l-2 border-rojo/40 animate-slideDown py-2">
-                  <p className="text-sm">{item.description}</p>
-                </div>
+        <button
+          onClick={toggleExpanded}
+          className="w-full cursor-pointer flex justify-between items-center text-left font-bold text-2xl text-white hover:text-gray-200 transition-colors duration-200"
+        >
+          <div className="flex items-center gap-2">
+            <ArrowRight className="h-8 w-8 text-rojo" />
+            <span>¿Qué esperar?</span>
+          </div>
+          {isExpanded ? <Minus className="h-7 w-7 text-rojo" /> : <Plus className="h-7 w-7 text-rojo" />}
+        </button>
+
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden mt-6"
+            >
+              <div className="space-y-4">
+                {excursion.whatToExpect.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="mr-4 mt-3 flex items-center justify-center w-10">{getIcon(index)}</div>
+                    <div>
+                      <h3 className="font-bold text-white">
+                        {index + 1}. {item.title}
+                      </h3>
+                      <p className="text-white text-sm mt-2">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </CardContent>
     </Card>
-  );
+  )
 }
