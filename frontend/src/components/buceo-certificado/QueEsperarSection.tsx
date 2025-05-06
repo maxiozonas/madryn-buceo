@@ -2,7 +2,19 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Anchor, Calendar, Compass, Speech, LifeBuoy, Shield, Ship, Thermometer, Waves, BadgeCheck, HeartPulse } from "lucide-react";
+import {
+  Anchor,
+  Clock,
+  Calendar,
+  Compass,
+  Speech,
+  LifeBuoy,
+  Shield,
+  Ship,
+  Thermometer,
+  BadgeCheck,
+  HeartPulse,
+} from "lucide-react";
 
 interface CollapsibleSectionProps {
   title: string;
@@ -15,7 +27,11 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, icon, children }) => {
+const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
+  title,
+  icon,
+  children,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -29,7 +45,7 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, icon, ch
       <div className="bg-[#252422] rounded-xl p-3 lg:p-4 border border-[#403d39] shadow-lg box-border flex flex-col max-w-full mx-auto">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between text-3xl font-bold text-white uppercase font-oceanica mb-4 focus:outline-none hover:text-[#e12222] transition-colors"
+          className="w-full flex items-center justify-between text-xl font-bold text-white font-oceanica mb-4 focus:outline-none hover:text-[#e12222] transition-colors"
         >
           <div className="flex items-center">
             {icon}
@@ -62,9 +78,13 @@ export default function ExpectationsAndRequirements() {
                   <LifeBuoy className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">Equipamiento</h3>
+                <h2 className="font-semibold text-lg mb-6 text-white flex items-center gap-2">
+                    Equipamiento
+                  </h2>
                   <p className="text-white/80 text-sm text-center lg:text-start">
-                    Te proporcionaremos todo el equipo necesario, incluyendo traje de neopreno, máscara, aletas, chaleco compensador, regulador y 1 tanque por cada buceo.
+                    Te proporcionaremos todo el equipo necesario, incluyendo
+                    traje de neopreno, máscara, aletas, chaleco compensador,
+                    regulador y 1 tanque por cada buceo.
                   </p>
                 </div>
               </div>
@@ -75,9 +95,13 @@ export default function ExpectationsAndRequirements() {
                   <Speech className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">Breve Introducción y Orientación</h3>
+                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                    Breve Introducción y Orientación
+                  </h3>
                   <p className="text-white/80 text-sm text-center lg:text-start">
-                    Comenzamos con una breve explicación de los aspectos básicos del buceo y los protocolos de seguridad específicos para cada punto de buceo.
+                    Comenzamos con una breve explicación de los aspectos básicos
+                    del buceo y los protocolos de seguridad específicos para
+                    cada punto de buceo.
                   </p>
                 </div>
               </div>
@@ -88,9 +112,14 @@ export default function ExpectationsAndRequirements() {
                   <Ship className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">Paseo Náutico</h3>
+                <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                    Paseo Náutico
+                  </h3>
                   <p className="text-white/80 text-sm text-center lg:text-start">
-                    Nuestros capitanes experimentados te llevarán al punto de buceo y en el camino está la posibilidad de poder avistar una increíble variedad de fauna marina, como pingüinos, delfines y cormoranes, dependiendo de la época del año.
+                    Nuestros capitanes experimentados te llevarán al punto de
+                    buceo y en el camino está la posibilidad de poder avistar
+                    una increíble variedad de fauna marina, como pingüinos,
+                    delfines y cormoranes, dependiendo de la época del año.
                   </p>
                 </div>
               </div>
@@ -98,12 +127,16 @@ export default function ExpectationsAndRequirements() {
             <div className="bg-[#1a1917] border-l-4 border-[#e12222] p-5 rounded-lg shadow-md hover:bg-[#252422] transition-colors duration-300">
               <div className="flex flex-col lg:flex-row items-center gap-4">
                 <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">
-                  <Waves className="h-6 w-6 text-[#e12222]" />
+                  <Clock className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">Inmersión Guiada</h3>
+                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                    Duración
+                  </h3>
                   <p className="text-white/80 text-sm text-center lg:text-start">
-                    Nuestros guías te acompañarán durante la inmersión en cada sitio de buceo, donde podrás interactuar de cerca con la fauna patagónica en su entorno natural y apreciar la belleza de nuestros naufragios.
+                    La excursión completa dura aproximadamente 2 horas,
+                    dependiendo de la cantidad de inmersiones que realices,
+                    éstas pueden ser hasta 2 en un día
                   </p>
                 </div>
               </div>
@@ -114,9 +147,14 @@ export default function ExpectationsAndRequirements() {
                   <Anchor className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">Regreso y Despedida</h3>
+                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                    Regreso y Despedida
+                  </h3>
                   <p className="text-white/80 text-sm text-center lg:text-start">
-                    Tras la inmersión, regresaremos al centro disfrutando del entorno. Una vez allí, podrás comentar tus experiencias con nuestro equipo y otros turistas, compartiendo recuerdos y anécdotas de la aventura.
+                    Tras la inmersión, regresaremos al centro disfrutando del
+                    entorno. Una vez allí, podrás comentar tus experiencias con
+                    nuestro equipo y otros turistas, compartiendo recuerdos y
+                    anécdotas de la aventura.
                   </p>
                 </div>
               </div>
@@ -135,9 +173,11 @@ export default function ExpectationsAndRequirements() {
                   <Calendar className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white text-center mb-2">Edad Mínima</h3>
+                  <h3 className="font-semibold text-lg text-white text-center mb-2">
+                    Edad Mínima
+                  </h3>
                   <p className="text-white/80 text-sm text-center">
-                    Debes tener al menos 10 años para participar en cursos de buceo.
+                    La edad mínima para participar es de 12 años.
                   </p>
                 </div>
               </div>
@@ -148,9 +188,12 @@ export default function ExpectationsAndRequirements() {
                   <Thermometer className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white text-center mb-2">Condición Física</h3>
+                  <h3 className="font-semibold text-lg text-white text-center mb-2">
+                    Condición Física
+                  </h3>
                   <p className="text-white/80 text-sm text-center">
-                    No se requiere experiencia previa, pero debes estar en buena salud general.
+                    En caso de ser mayor de 65 años, contar con certificado
+                    médico de buena salud.
                   </p>
                 </div>
               </div>
@@ -161,9 +204,12 @@ export default function ExpectationsAndRequirements() {
                   <BadgeCheck className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white text-center mb-2">Certificación</h3>
+                  <h3 className="font-semibold text-lg text-white text-center mb-2">
+                    Certificación
+                  </h3>
                   <p className="text-white/80 text-sm text-center">
-                    Completarás un curso teórico y práctico para obtener tu certificación.
+                    Se requiere certificación correspondiente según la
+                    profundidad del punto de buceo
                   </p>
                 </div>
               </div>
@@ -174,9 +220,13 @@ export default function ExpectationsAndRequirements() {
                   <HeartPulse className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white text-center mb-2">Salud y Aptitud Física</h3>
+                  <h3 className="font-semibold text-lg text-white text-center mb-2">
+                    Salud y Aptitud Física
+                  </h3>
                   <p className="text-white/80 text-sm text-center">
-                    Es importante no tener enfermedades cardíacas u otras condiciones médicas que puedan presentar problemas debido al esfuerzo físico y el impacto con el agua fría.
+                    Es importante no tener enfermedades cardíacas u otras
+                    condiciones médicas que puedan presentar problemas debido al
+                    esfuerzo físico y el impacto con el agua fría.
                   </p>
                 </div>
               </div>

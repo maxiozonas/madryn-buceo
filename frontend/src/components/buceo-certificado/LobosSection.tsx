@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { SeparatorHorizontal } from "lucide-react";
+import { Card, CardContent } from "../ui/card";
 import ImageGallery from "../diveSites/ImageGallery";
 import Link from "next/link";
+import { Waves } from "lucide-react"
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -25,14 +26,16 @@ export default function DescriptionSection() {
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-12 items-stretch">
+          <div className="container mx-auto px-8 ">
+    <Card className="bg-negro-secundario shadow-md border-[#403d39]">
+      <CardContent className="p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_57%] gap-8 lg:gap-12 items-stretch">
           <div className="flex flex-col justify-center h-full md:min-h-[500px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 inline-flex items-center relative uppercase">
+          <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+            <Waves className="h-6 w-6 text-rojo" />
               Buceo con Lobos Marinos
             </h2>
 
-            <SeparatorHorizontal className="w-full h-1 bg-rojo mb-6 rounded-full" />
 
             <p className="text-white/80 mb-4 leading-relaxed">
             Atrévete a vivir una experiencia única buceando con lobos marinos en su hábitat natural. 
@@ -68,7 +71,9 @@ export default function DescriptionSection() {
             </div>
           </div>
         </div>
-      </div>
+        </CardContent>
+        </Card>
+      </div>   
     </motion.section>
   );
 }

@@ -26,7 +26,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 mask-fade-bottom">
         <Image
           src={heroImage}
           alt={title}

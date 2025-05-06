@@ -19,14 +19,14 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
-export default function IntroSection({
+export default function HeroSection({
   title,
   heroImage,
   miniDescription,
 }: HeroSectionProps) {
   return (
     <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 mask-fade-bottom">
         <Image
           src={heroImage}
           alt={title}

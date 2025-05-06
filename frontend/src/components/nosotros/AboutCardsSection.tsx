@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import ImageGallery from "../diveSites/ImageGallery";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { FileClock, House, Users } from "lucide-react";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
   { url: "/images/nosotros/terranova1.jpg", type: "image" },
@@ -26,62 +27,90 @@ export function AboutCardsSection() {
     },
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section ref={ref} className="py-1 px-6">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="mt-16 mb-10 grid grid-cols-1 md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <AboutCard
-            title="Nuestro Local"
-            description="Nuestro local también funciona como museo. Allí podrán disfrutar de artículos encontrados en las profundidades del mar, hasta equipos históricos que se han utilizado a lo largo de los años en el buceo."
-            videoSrc="/videos/local-web.mp4"
-          />
-
-          <AboutCard
-            title="Nuestra Historia"
-            description="Contamos con nuestra propia embarcación, equipos de buceo e indumentaria húmeda o seca, ideales para disfrutar del mar incluso en las frías aguas del invierno."
+    <motion.section
+      className="mt-16 mb-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeIn}
+    >
+      <section ref={ref} className="py-1 px-6">
+        <div className="container mx-auto px-8">
+          <motion.div
+            className="mt-16 mb-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
           >
-            <ImageGallery
-              media={historyMedia}
-              className="h-48 w-full object-cover rounded-t-xl"
+            <AboutCard
+              title={
+                <div className="flex justify-center items-center gap-2">
+                  <House className="h-6 w-6 text-rojo" />
+                  Nuestro Local
+                </div>
+              }
+              description="Nuestro local también funciona como museo. Allí podrán disfrutar de artículos encontrados en las profundidades del mar, hasta equipos históricos que se han utilizado a lo largo de los años en el buceo."
+              videoSrc="/videos/local-web.mp4"
             />
-          </AboutCard>
 
-          <AboutCard
-            title="Nuestro Staff"
-            description="Nuestro Staff está certificado en PADI y, además de bucear en Puerto Madryn, buceamos por todo el mundo."
-            imageSrc="/images/nosotros/staff.JPG"
-          />
-        </motion.div>
-      </div>
-      <div className="flex justify-center mt-7">
-        <a
-          href="#about"
-          className="animate-bounce"
-          aria-label="Bajar a sección siguiente"
-          style={{ color: "#ff4d4d" }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
+            <AboutCard
+              title={
+                <div className="flex justify-center items-center gap-2">
+                  <FileClock className="h-6 w-6 text-rojo" />
+                  Nuestra historia
+                </div>
+              }
+              description="Contamos con nuestra propia embarcación, equipos de buceo e indumentaria húmeda o seca, ideales para disfrutar del mar incluso en las frías aguas del invierno."
+            >
+              <ImageGallery
+                media={historyMedia}
+                className="h-48 w-full object-cover rounded-t-xl"
+              />
+            </AboutCard>
+
+            <AboutCard
+              title={
+                <div className="flex justify-center items-center gap-2">
+                  <Users className="h-6 w-6 text-rojo" />
+                  Nuestro staff
+                </div>
+              }
+              description="Nuestro Staff está certificado en PADI y, además de bucear en Puerto Madryn, buceamos por todo el mundo."
+              imageSrc="/images/nosotros/staff.JPG"
             />
-          </svg>
-        </a>
-      </div>
-    </section>
+          </motion.div>
+        </div>
+        <div className="flex justify-center mt-7">
+          <a
+            href="#about"
+            className="animate-bounce"
+            aria-label="Bajar a sección siguiente"
+            style={{ color: "#ff4d4d" }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </motion.section>
   );
 }
 
@@ -92,7 +121,7 @@ function AboutCard({
   videoSrc,
   children,
 }: {
-  title: string;
+  title: ReactNode;
   description: string;
   imageSrc?: string;
   videoSrc?: string;
@@ -115,11 +144,11 @@ function AboutCard({
       variants={cardVariants}
       whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
     >
-      <Card className="bg-[#252422] text-white overflow-hidden border-none shadow-lg h-full">
+      <Card className="bg-[#252422] text-white overflow-hidden border-[#403d39] shadow-lg h-full">
         <CardHeader>
           <CardTitle
             className="text-lg text-center font-semibold"
-            style={{ color: "#ff4d4d" }}
+            style={{ color: "white" }}
           >
             {title}
           </CardTitle>
@@ -130,7 +159,7 @@ function AboutCard({
         >
           {imageSrc && (
             <div className="relative h-48 rounded-xl overflow-hidden">
-              <Image src={imageSrc} alt={title} fill className="object-cover" />
+              <Image src={imageSrc} alt={""} fill className="object-cover" />
             </div>
           )}
           {videoSrc && (
@@ -146,7 +175,7 @@ function AboutCard({
               {children}
             </div>
           )}
-          <p className="text-white">{description}</p>
+          <p className="text-white/80">{description}</p>
         </CardContent>
       </Card>
     </motion.div>
