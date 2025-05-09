@@ -37,7 +37,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
           />
         </div>
 
-        <h3 className="text-lg font-bold text-red-500 mb-1">{site.name}</h3>
+        <h3 className="text-lg font-bold text-rojo mb-1">{site.name}</h3>
         <p className="text-white/80 text-sm mb-2">{site.description}</p>
 
         <div className="grid grid-cols-2 gap-4 text-sm text-white/70 mb-4">

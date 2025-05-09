@@ -11,7 +11,7 @@ interface CourseDetailsProps {
 export default function CourseDetails({ duration, depth, certification, requirements }: CourseDetailsProps) {
     return (
         <div className="lg:col-span-1 relative">
-            <Card className="sticky top-6 text-white bg-negro-secundario border-gray-800">
+            <Card className="sticky top-6 text-white bg-negro-secundario border-[#403d39]">
               <CardHeader>
                 <CardTitle>Detalles del Curso</CardTitle>
               </CardHeader>

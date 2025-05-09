@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
-import { Binoculars, ChevronRight } from "lucide-react";
+import { ArrowRight,ChevronRight } from "lucide-react";
 import ImageGallery from "../diveSites/ImageGallery";
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ export default function IntroSection() {
             <div className="grid grid-cols-1 lg:grid-cols-[40%_57%] gap-8 lg:gap-12 items-stretch">
               <div className="flex flex-col justify-center h-full">
                 <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2 mt-0">
-                  <Binoculars className="h-6 w-6 text-rojo" />
+                <ArrowRight className="h-8 w-8 text-rojo" />
                   Viví una experiencia única
                 </h2>
                 <ul className="flex flex-col justify-between mb-6">

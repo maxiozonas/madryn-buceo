@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import ImageGallery from "../diveSites/ImageGallery";
 import Link from "next/link";
-import { Waves } from "lucide-react"
+import { ArrowRight} from "lucide-react"
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -32,7 +32,7 @@ export default function DescriptionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[40%_57%] gap-8 lg:gap-12 items-stretch">
           <div className="flex flex-col justify-center h-full md:min-h-[500px]">
           <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-            <Waves className="h-6 w-6 text-rojo" />
+          <ArrowRight className="h-8 w-8 text-rojo" />
               Buceo con Lobos Marinos
             </h2>
 

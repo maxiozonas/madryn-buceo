@@ -57,7 +57,7 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
   }
 
   return (
-    <Card className="bg-negro-secundario shadow-md border-gray-800 hover:shadow-xl transition-shadow duration-300 h-full">
+    <Card className="bg-negro-secundario shadow-md border-[#403d39] hover:shadow-xl transition-shadow duration-300 h-full">
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ArrowRight className="h-8 w-8 text-rojo" />

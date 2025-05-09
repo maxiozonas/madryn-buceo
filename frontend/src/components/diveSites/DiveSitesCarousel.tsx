@@ -4,7 +4,7 @@ import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -15,6 +15,11 @@ interface Props {
   certificationFilter: string | null;
   openModal: (site: DiveSite) => void;
 }
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function DiveSitesCarousel({
   sites,
@@ -39,18 +44,17 @@ export default function DiveSitesCarousel({
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -280, behavior: "smooth" }); 
+      const cardWidth =
+        carouselRef.current.querySelector(".card")?.clientWidth || 280;
+      carouselRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
     }
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 280, behavior: "smooth" }); 
+      const cardWidth =
+        carouselRef.current.querySelector(".card")?.clientWidth || 280;
+      carouselRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
@@ -68,64 +72,75 @@ export default function DiveSitesCarousel({
   };
 
   return (
-        <motion.section
-          className="mt-16 mb-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-        >
-    <div className="relative w-full mt-8">
-      <button
-        onClick={scrollLeft}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700"
-      >
-        <ChevronLeft size={24} />
-      </button>
-
-      <div
-        ref={carouselRef}
-        className="w-full overflow-x-hidden"
-        style={{ scrollBehavior: "smooth" }}
-      >
-        <div className="flex gap-4 w-max px-2">
-          {filteredSites.map((site, index) => (
-            <Card
-              key={site.name}
-              onClick={() => {
-                setSelectedCoords(site.coords);
-                setActiveIndex(index);
-                openModal(site);
-              }}
-              className={`min-w-[280px] bg-[#252422] text-white border-none shadow-lg flex flex-col justify-between hover:scale-95 transition-transform ${
-                activeIndex === index ? "border-2 border-red-600" : ""
-              }`}
+    <motion.section
+      className="mt-16 mb-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeIn}
+    >
+      <div className="relative isolate w-full overflow-hidden shadow-md ">
+        <div className="flex flex-col justify-center h-full min-h-[300px] sm:min-h-[400px]">
+          <div className="relative">
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+              aria-label="Scroll left"
             >
-              <div className="relative h-[200px] w-full">
-                <Image
-                  src={getCardImage(site.media)}
-                  alt={site.name}
-                  fill
-                  className="object-cover rounded-t-xl"
-                />
+              <ChevronLeft size={24} />
+            </button>
+
+            <div
+              ref={carouselRef}
+              className="w-full overflow-x-hidden overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              <div className="flex gap-4 w-max px-2">
+                {filteredSites.map((site, index) => (
+                  <Card
+                    key={site.name}
+                    onClick={() => {
+                      setSelectedCoords(site.coords);
+                      setActiveIndex(index);
+                      openModal(site);
+                    }}
+                    className={`card min-w-[280px] bg-negro-secundario text-white border-[#403d39] shadow-lg flex flex-col justify-between hover:scale-95 transition-transform snap-center p-0 ${
+                      activeIndex === index ? "" : ""
+                    }`}
+                    style={{ borderRadius: 0 }}
+                  >
+                    <div
+                      className="relative h-64"
+                      style={{ borderRadius: 0 }}
+                    >
+                      <Image
+                        src={getCardImage(site.media)}
+                        alt={site.name}
+                        fill
+                        className="object-cover transition-transform duration-300"
+                        style={{ borderRadius: 0 }}
+                      />
+                    </div>
+                    <CardContent className="p-2 text-center w-full mb-4">
+                      <h3 className="text-sm font-bold text-[#e12222]">
+                        {site.name}
+                      </h3>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-              <CardContent className="p-3 justify-center text-center">
-                <h3 className="text-lg font-bold text-red-500 mb-1">
-                  {site.name}
-                </h3>
-              </CardContent>
-            </Card>
-          ))}
+            </div>
+
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
-
-      <button
-        onClick={scrollRight}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700"
-      >
-        <ChevronRight size={24} />
-      </button>
-    </div>
     </motion.section>
   );
 }

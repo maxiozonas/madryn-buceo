@@ -21,13 +21,17 @@ export default function StaffCarousel({ staff }: Props) {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -200, behavior: "smooth" });
+      const cardWidth =
+        carouselRef.current.querySelector(".card")?.clientWidth || 250;
+      carouselRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
+      const cardWidth =
+        carouselRef.current.querySelector(".card")?.clientWidth || 250;
+      carouselRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
@@ -40,46 +44,56 @@ export default function StaffCarousel({ staff }: Props) {
       variants={fadeIn}
     >
       <div className="container mx-auto px-8">
-        <Card className="bg-negro-secundario shadow-md border-[#403d39] p-8">
-          <div className="flex flex-col justify-center h-full md:min-h-[400px]">
-            <h2 className="text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
+        <Card
+          className="bg-negro-secundario shadow-md border-[#403d39] p-4 sm:p-8"
+        >
+          <div className="flex flex-col justify-center h-full min-h-[300px] sm:min-h-[400px]">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
               <Users className="h-6 w-6 text-rojo" />
               Nosotros
             </h2>
-            <CardContent className="p-8 relative">
+            <CardContent className="p-4 sm:p-8 relative">
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-2 rounded-full z-10 hover:bg-[#403d39]"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+                aria-label="Scroll left"
               >
                 <ChevronLeft size={24} />
               </button>
 
               <div
                 ref={carouselRef}
-                className="w-full overflow-x-hidden overflow-y-hidden"
+                className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide overflow-x-hidden snap-x snap-mandatory"
                 style={{ scrollBehavior: "smooth" }}
               >
-                <div className="flex gap-4 w-[200px] px-2">
+                <div className="flex gap-4 w-max px-2">
                   {staff.map((member) => (
                     <Card
                       key={member.name}
-                      className="min-w-[300px] bg-negro text-white border-none shadow-lg flex flex-col justify-between hover:scale-105 transition-transform"
+                      className="card min-w-[250px] sm:min-w-[280px] bg-negro text-white border-[#403d39] shadow-lg flex flex-col justify-between hover:scale-95 transition-transform snap-center p-0"
+                      style={{ borderRadius: 0 }}
                     >
-                      <div className="relative h-[130px] w-full">
+                      <div
+                        className="relative h-64"
+                        style={{ borderRadius: 0 }}
+                      >
                         <Image
                           src={member.media.url}
                           alt={member.name}
                           fill
-                          className="object-cover rounded-t-xl"
+                          className="object-cover transition-transform duration-300"
+                          style={{ borderRadius: 0 }}
                         />
                       </div>
                       <CardContent className="p-2 text-center w-full">
-                        <h3 className="text-sm font-bold text-[#e12222] mb-1">
+                        <h3 className="text-sm sm:text-sm font-bold text-[#e12222]">
                           {member.name}
                         </h3>
-                        <p className="text-white/80 text-xs overflow-hidden text-ellipsis max-h-[3rem] leading-tight">
-                          {member.description}
-                        </p>
+                        <div className="w-[245px]">
+                          <p className="text-white/80 text-xs leading-tight max-h-[5.7em] overflow-hidden flex-grow mb-2">
+                            {member.description}
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   ))}
@@ -88,7 +102,8 @@ export default function StaffCarousel({ staff }: Props) {
 
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-2 rounded-full z-10 hover:bg-[#403d39]"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+                aria-label="Scroll right"
               >
                 <ChevronRight size={24} />
               </button>

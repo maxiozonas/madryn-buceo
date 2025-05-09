@@ -4,6 +4,7 @@ import { useState } from "react";
 interface Props {
   media: { type: "image" | "video"; url: string }[];
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function ImageGallery({ media, className }: Props) {
@@ -20,7 +21,6 @@ export default function ImageGallery({ media, className }: Props) {
           src={media[current].url}
           alt="Foto del sitio"
           fill
-          className="object-cover rounded-xl"
           priority
         />
       ) : (

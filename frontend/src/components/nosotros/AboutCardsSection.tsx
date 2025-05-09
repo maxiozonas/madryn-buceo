@@ -3,7 +3,7 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import ImageGallery from "../diveSites/ImageGallery";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileClock, House, Users } from "lucide-react";
@@ -40,7 +40,7 @@ export function AboutCardsSection() {
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <section ref={ref} className="py-1 px-6">
+      <section ref={ref}>
         <div className="container mx-auto px-8">
           <motion.div
             className="mt-16 mb-10 grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -50,7 +50,7 @@ export function AboutCardsSection() {
           >
             <AboutCard
               title={
-                <div className="flex justify-center items-center gap-2">
+                <div className="flex items-center gap-2">
                   <House className="h-6 w-6 text-rojo" />
                   Nuestro Local
                 </div>
@@ -61,7 +61,7 @@ export function AboutCardsSection() {
 
             <AboutCard
               title={
-                <div className="flex justify-center items-center gap-2">
+                <div className="flex items-center gap-2">
                   <FileClock className="h-6 w-6 text-rojo" />
                   Nuestra historia
                 </div>
@@ -70,13 +70,14 @@ export function AboutCardsSection() {
             >
               <ImageGallery
                 media={historyMedia}
-                className="h-48 w-full object-cover rounded-t-xl"
+                className="h-64 w-full object-cover"
+                style={{ borderRadius: 0 }}
               />
             </AboutCard>
 
             <AboutCard
               title={
-                <div className="flex justify-center items-center gap-2">
+                <div className="flex items-center gap-2">
                   <Users className="h-6 w-6 text-rojo" />
                   Nuestro staff
                 </div>
@@ -85,29 +86,6 @@ export function AboutCardsSection() {
               imageSrc="/images/nosotros/staff.JPG"
             />
           </motion.div>
-        </div>
-        <div className="flex justify-center mt-7">
-          <a
-            href="#about"
-            className="animate-bounce"
-            aria-label="Bajar a sección siguiente"
-            style={{ color: "#ff4d4d" }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
         </div>
       </section>
     </motion.section>
@@ -128,13 +106,30 @@ function AboutCard({
   children?: React.ReactNode;
 }) {
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
         ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.4,
       },
     },
   };
@@ -142,40 +137,48 @@ function AboutCard({
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
     >
-      <Card className="bg-[#252422] text-white overflow-hidden border-[#403d39] shadow-lg h-full">
-        <CardHeader>
-          <CardTitle
-            className="text-lg text-center font-semibold"
-            style={{ color: "white" }}
-          >
-            {title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent
-          className="flex flex-col gap-4 text-sm"
-          style={{ color: "#ffffff" }}
-        >
+      <Card
+        className="overflow-hidden h-full flex flex-col  shadow-lg bg-[#252422] border-[#403d39] hover:shadow-xl transition-shadow p-0"
+        style={{ borderRadius: 0 }}
+      >
+        <div className="relative h-64" style={{ borderRadius: 0 }}>
           {imageSrc && (
-            <div className="relative h-48 rounded-xl overflow-hidden">
-              <Image src={imageSrc} alt={""} fill className="object-cover" />
-            </div>
+            <Image
+              src={imageSrc}
+              alt=""
+              fill
+              className="object-cover transition-transform duration-300"
+              style={{ borderRadius: 0 }}
+            />
           )}
           {videoSrc && (
-            <div className="rounded-xl overflow-hidden">
-              <video controls className="w-full h-48 object-cover">
-                <source src={videoSrc} type="video/mp4" />
-                Tu navegador no admite la reproducción de video.
-              </video>
-            </div>
+            <video
+              controls
+              className="w-full h-full object-cover"
+              style={{ borderRadius: 0 }}
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Tu navegador no admite la reproducción de video.
+            </video>
           )}
-          {children && (
-            <div className="h-48 w-full overflow-hidden rounded-xl">
-              {children}
-            </div>
-          )}
-          <p className="text-white/80">{description}</p>
+          {children}
+        </div>
+        <CardContent className="text-white flex flex-col flex-grow p-4">
+          <motion.div className="mb-4" variants={contentVariants}>
+            <h3 className="text-white font-bold font-oceanica tracking-tight line-clamp-1">
+              {title}
+            </h3>
+          </motion.div>
+          <motion.p
+            className="text-white/80 text-sm flex-grow"
+            variants={contentVariants}
+          >
+            {description}
+          </motion.p>
         </CardContent>
       </Card>
     </motion.div>
