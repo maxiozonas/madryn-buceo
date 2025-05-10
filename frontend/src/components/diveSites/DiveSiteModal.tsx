@@ -7,7 +7,7 @@ interface DiveSiteModalProps {
   isOpen: boolean;
   site: DiveSite | null;
   closeModal: () => void;
-  handleGoBack?: () => void; 
+  handleGoBack?: () => void;
 }
 
 const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
@@ -29,11 +29,19 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
       className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center"
       onClick={handleOverlayClick}
     >
-      <div className="bg-[#252422] p-4 md:p-7 rounded-xl w-[90%] md:w-[100vh] max-h-[96vh] overflow-y-hidden  [&::-webkit-scrollbar-track]:rounded-full relative">
+      <div
+        className="bg-[#252422] p-4 md:p-7 rounded-xl w-[90%] md:w-[100vh] max-h-[96vh] overflow-auto
+[&::-webkit-scrollbar]:w-2
+          [&::-webkit-scrollbar-track]:bg-[#403d39]
+          [&::-webkit-scrollbar-track]:rounded-full
+          [&::-webkit-scrollbar-thumb]:bg-rojo
+          [&::-webkit-scrollbar-thumb]:rounded-full
+          relative"
+      >
         <div className="mb-4">
           <ImageGallery
             media={site.media}
-            className="h-[50vh] md:h-[60vh] w-full"
+            className="h-[50vh] md:h-[70vh] w-full"
           />
         </div>
 
@@ -54,7 +62,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
               <strong>Certificación:</strong> {site.certification}
             </p>
             <p>
-              <strong>Distancia:</strong> {site.time}
+              <strong>Distancia en tiempo:</strong> {site.time}
             </p>
           </div>
         </div>

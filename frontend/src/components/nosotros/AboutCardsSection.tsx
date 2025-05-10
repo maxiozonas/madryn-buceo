@@ -55,7 +55,11 @@ export function AboutCardsSection() {
                   Nuestro Local
                 </div>
               }
-              description="Nuestro local también funciona como museo. Allí podrán disfrutar de artículos encontrados en las profundidades del mar, hasta equipos históricos que se han utilizado a lo largo de los años en el buceo."
+              description={
+                "Nuestro local es mucho más que un punto de encuentro: también funciona como un pequeño museo.\n" +
+                "Vas a poder admirar diversos objetos recuperados del fondo del mar, junto con fósiles y barbas de ballenas que forman parte de la historia natural local.\n" +
+                "Te invitamos a descubrirlo."
+              }
               videoSrc="/videos/local-web.mp4"
             />
 
@@ -66,7 +70,11 @@ export function AboutCardsSection() {
                   Nuestra historia
                 </div>
               }
-              description="Contamos con nuestra propia embarcación, equipos de buceo e indumentaria húmeda o seca, ideales para disfrutar del mar incluso en las frías aguas del invierno."
+              description={
+                "Somos una operadora familiar con más de 40 años compartiendo el mar patagónico.\n" +
+                "Dos generaciones dedicadas a  crear experiencias inolvidables en el mar.\n" +
+                "Amamos lo que hacemos y lo vivimos con cada persona que se anima a descubrir estas aguas."
+              }
             >
               <ImageGallery
                 media={historyMedia}
@@ -82,7 +90,7 @@ export function AboutCardsSection() {
                   Nuestro staff
                 </div>
               }
-              description="Nuestro Staff está certificado en PADI y, además de bucear en Puerto Madryn, buceamos por todo el mundo."
+              description=" Somos un equipo de profesionales certificados por PADI, con experiencia en formación de buzos, salidas recreativas y acompañamiento personalizado en el mar patagónico."
               imageSrc="/images/nosotros/staff.JPG"
             />
           </motion.div>
@@ -142,7 +150,7 @@ function AboutCard({
       whileHover="hover"
     >
       <Card
-        className="overflow-hidden h-full flex flex-col  shadow-lg bg-[#252422] border-[#403d39] hover:shadow-xl transition-shadow p-0"
+        className="overflow-hidden h-full flex flex-col shadow-lg bg-[#252422] border-[#403d39] hover:shadow-xl transition-shadow p-0"
         style={{ borderRadius: 0 }}
       >
         <div className="relative h-64" style={{ borderRadius: 0 }}>
@@ -174,7 +182,7 @@ function AboutCard({
             </h3>
           </motion.div>
           <motion.p
-            className="text-white/80 text-sm flex-grow"
+            className="text-white/80 text-sm flex-grow whitespace-pre-line"
             variants={contentVariants}
           >
             {description}

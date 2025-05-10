@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ButtonRojo from "@/components/ui/button-rojo";
 
 interface HeroSectionProps {
   title: string;
@@ -19,11 +20,7 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
-export default function HeroSection({
-  title,
-  heroImage,
-  miniDescription,
-}: HeroSectionProps) {
+export default function HeroSection({ title, heroImage, miniDescription }: HeroSectionProps) {
   return (
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
@@ -54,6 +51,7 @@ export default function HeroSection({
           >
             {miniDescription}
           </motion.p>
+          <ButtonRojo texto="Contactanos" href="/contacto" />
         </div>
       </section>
     </>
