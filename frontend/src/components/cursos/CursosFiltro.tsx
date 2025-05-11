@@ -65,7 +65,7 @@ export default function CursoFiltro() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCursos.map((curso) => (
-            <Card key={curso.slug} className="group border-gray-800 bg-negro-secundario pt-0 rounded-none">
+            <Card key={curso.slug} className="group border-[#403d39] bg-negro-secundario pt-0 rounded-none">
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={curso.cardImage || "/placeholder.svg?height=400&width=600"}

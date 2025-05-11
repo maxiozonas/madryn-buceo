@@ -6,14 +6,13 @@ import {
   Anchor,
   Clock,
   Calendar,
-  Compass,
   Speech,
   LifeBuoy,
-  Shield,
   Ship,
   Thermometer,
   BadgeCheck,
   HeartPulse,
+  ArrowRight,
 } from "lucide-react";
 
 interface CollapsibleSectionProps {
@@ -70,7 +69,7 @@ export default function ExpectationsAndRequirements() {
         <div className="flex flex-col w-full">
           <CollapsibleSection
             title="¿Qué Esperar?"
-            icon={<Compass className="h-6 w-6 text-[#e12222]" />}
+            icon={<ArrowRight className="h-8 w-8 text-rojo" />}
           >
             <div className="bg-[#1a1917] border-l-4 border-[#e12222] p-5 rounded-lg shadow-md hover:bg-[#252422] transition-colors duration-300">
               <div className="flex flex-col lg:flex-row items-center gap-4">
@@ -78,7 +77,7 @@ export default function ExpectationsAndRequirements() {
                   <LifeBuoy className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                <h2 className="font-semibold text-lg mb-6 text-white flex items-center gap-2">
+                  <h2 className="font-semibold text-lg mb-6 text-white flex items-center gap-2">
                     Equipamiento
                   </h2>
                   <p className="text-white/80 text-sm text-center lg:text-start">
@@ -112,7 +111,7 @@ export default function ExpectationsAndRequirements() {
                   <Ship className="h-6 w-6 text-[#e12222]" />
                 </div>
                 <div className="flex-1">
-                <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                  <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
                     Paseo Náutico
                   </h3>
                   <p className="text-white/80 text-sm text-center lg:text-start">
@@ -165,7 +164,7 @@ export default function ExpectationsAndRequirements() {
         <div className="flex flex-col w-full">
           <CollapsibleSection
             title="Requisitos"
-            icon={<Shield className="h-6 w-6 text-[#e12222]" />}
+            icon={<ArrowRight className="h-8 w-8 text-rojo" />}
           >
             <div className="bg-[#1a1917] border-l-4 border-[#e12222] p-5 rounded-lg shadow-md hover:bg-[#252422] transition-colors duration-300">
               <div className="flex flex-col items-center gap-4">

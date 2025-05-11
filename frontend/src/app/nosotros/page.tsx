@@ -12,7 +12,7 @@ export default function NosotrosPage() {
       <HeroSection
         title={"Sobre Nosotros"}
         heroImage={"/images/nosotros/intro.webp"}
-        miniDescription={`Somos una operadora con más de 30 años, ofreciendo verdaderas experiencias de buceo y snorkel.`}
+        miniDescription={`Somos una operadora de buceo con más de 40 años de trayectoria. Dos generaciones compartiendo auténticas experiencias de buceo y snorkel en el mar patagónico.`}
       />
       <AboutCardsSection />
       <MapWrapper />

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
-import { Binoculars, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import ImageGallery from "../diveSites/ImageGallery";
 import Link from "next/link";
 
@@ -45,19 +45,19 @@ export default function IntroSection() {
 
   return (
     <motion.section
-      className="mt-16 mb-10"
+      className="mt-24 mb-10 relative z-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="container mx-auto px-8 ">
-        <Card className="bg-negro-secundario shadow-md border-[#403d39]">
+      <div className="container mx-auto px-8">
+        <Card className="bg-negro-secundario shadow-md border-[#403d39] hover:shadow-xl transition-shadow duration-300 h-full">
           <CardContent className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-[40%_57%] gap-8 lg:gap-12 items-stretch">
               <div className="flex flex-col justify-center h-full">
                 <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2 mt-0">
-                  <Binoculars className="h-6 w-6 text-rojo" />
+                  <ArrowRight className="h-8 w-8 text-rojo" />
                   Viví una experiencia única
                 </h2>
                 <ul className="flex flex-col justify-between mb-6">
@@ -89,7 +89,7 @@ export default function IntroSection() {
                 </ul>
                 <p className="text-lg font-bold mb-6 text-white gap-1">
                   ¡ No te pierdas hacer{" "}
-                  <Link href="/snorkel" className="text-rojo  hover:underline transition-colors">
+                  <Link href="/snorkel" className="text-rojo hover:underline transition-colors">
                     snorkel con lobos marinos
                   </Link>!
                 </p>

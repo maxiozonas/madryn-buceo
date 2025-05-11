@@ -1,4 +1,5 @@
 "use client";
+
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import customIcon from "../ui/customIcon";
 import "leaflet/dist/leaflet.css";
@@ -37,18 +38,20 @@ export default function MapSection() {
       variants={fadeIn}
     >
       <div className="container mx-auto px-8">
-        <Card className="bg-negro-secundario shadow-md border-[#403d39] p-8">
+        <Card
+          className="bg-negro-secundario shadow-md border-[#403d39] p-8"
+        >
           <section className="relative isolate z-0 py-1 px-6">
             <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
-              <MapPin className="h-6 w-6 text-rojo" />
-              Estamos acá
-            </h2>
-            <p className="text-white/80 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
+                <MapPin className="h-6 w-6 text-rojo" />
+                Estamos acá
+              </h3>
+              <p className="text-white/80 mb-4 leading-relaxed">
                 Los esperamos todo el año en el balneario Sara, sobre el Mar...
               </p>
               <div
-                className="relative isolate w-full h-[300px] rounded-xl overflow-hidden"
+                className="relative isolate w-full h-[400px] overflow-hidden"
                 style={{ zIndex: 0 }}
               >
                 <MapContainer
@@ -60,7 +63,7 @@ export default function MapSection() {
                 >
                   <TileLayer
                     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                    attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
                   />
                   <Marker position={[-42.780055, -65.018699]} icon={customIcon}>
                     <Popup>Balneario Sara - Puerto Madryn</Popup>

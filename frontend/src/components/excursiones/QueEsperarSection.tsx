@@ -47,7 +47,7 @@ export default function QueEsperarSection({ excursion }: QueEsperarSectionProps)
   }
 
   return (
-    <Card className="bg-negro-secundario p-0 shadow-md mb-8 border-gray-800 hover:shadow-xl transition-shadow duration-300">
+    <Card className="bg-negro-secundario p-0 shadow-md mb-8 border-[#403d39] hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-8">
         <button
           onClick={toggleExpanded}

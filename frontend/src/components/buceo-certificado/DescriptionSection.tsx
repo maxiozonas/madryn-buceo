@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "../ui/card";
-import { ClipboardList } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -21,8 +21,8 @@ export default function DescriptionSection() {
       <div className="container mx-auto px-8 ">
         <Card className="bg-negro-secundario shadow-md border-[#403d39]">
           <CardContent className="p-8">
-          <h2 className="text-2xl font-bold mb-6 text-white flex justify-center items-center gap-2">
-              <ClipboardList className="h-6 w-6 text-rojo" />
+          <h2 className="text-2xl font-bold mb-6 text-white flex items-start gap-2">
+          <ArrowRight className="h-8 w-8 text-rojo" />
               Descripción
             </h2>
             <ul className="flex flex-col justify-between h-full">

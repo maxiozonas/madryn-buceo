@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
-import { Wallet } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ButtonRojo from "../ui/button-rojo";
 
 const fadeIn = {
@@ -49,11 +49,11 @@ export default function PricingSection() {
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="container mx-auto px-4 sm:px-8">
+      <div className="container mx-auto px-8">
         <Card className="bg-negro-secundario shadow-md border-[#403d39]">
-          <CardContent className="p-4 sm:p-8">
-            <h2 className="text-xl sm:text-2xl font-bold mb-6 text-white flex justify-center items-center gap-2">
-              <Wallet className="h-6 w-6 text-rojo" />
+          <CardContent className="p-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-6 text-white flex items-start gap-2">
+            <ArrowRight className="h-8 w-8 text-rojo" />
               Opciones y Precios
             </h2>
             <div className="overflow-x-auto">

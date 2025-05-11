@@ -47,7 +47,7 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
   }
 
   return (
-    <Card className="bg-negro-secundario shadow-md mb-8 border-gray-800 hover:shadow-xl transition-shadow duration-300">
+    <Card className="bg-negro-secundario shadow-md mb-8 border-[#403d39] hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ImageIcon className="h-6 w-6 text-rojo" />
