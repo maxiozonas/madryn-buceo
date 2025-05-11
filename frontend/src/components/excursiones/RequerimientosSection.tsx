@@ -13,11 +13,11 @@ interface RequerimientosSectionProps {
 export default function RequirementsSection({ excursion }: RequerimientosSectionProps) {
   if (!excursion.requirements || excursion.requirements.length === 0) {
     return (
-      <Card className="bg-negro-secundario shadow-md border-gray-800 h-full p-0">
-        <CardContent className="p-0 overflow-hidden h-full">
-          <div className="relative w-full h-full" style={{ minHeight: "100%" }}>
+      <Card className="bg-negro-secundario shadow-md border-gray-800 h-full p-0 rounded-2xl">
+        <CardContent className="p-0 overflow-hidden h-full rounded-2xl">
+          <div className="relative w-full h-full rounded-2xl" style={{ minHeight: "100%" }}>
             <Image
-              src={excursion.heroImage}
+              src={excursion.cardImage}
               alt="Experiencia sin requisitos especiales"
               fill
               className="object-cover"
