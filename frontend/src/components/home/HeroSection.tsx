@@ -1,9 +1,6 @@
 "use client"
 
-// import Image from "next/image"
-// import heroImage from "../../../public/images/inicio/hero-image-2.jpg"
 import { ChevronDown } from "lucide-react"
-// import ButtonRojo from "../ui/button-rojo"
 
 export default function HeroSection() {
   const scrollToNextSection = () => {
@@ -19,7 +16,6 @@ export default function HeroSection() {
     <>
       <section className="min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          {/* <Image src={heroImage || "/placeholder.svg"} alt="Video de una excursion" fill className="object-cover" priority /> */}
           <video
             autoPlay
             loop
@@ -38,7 +34,6 @@ export default function HeroSection() {
           <p className="text-base md:text-2xl mb-8 font-oceanica uppercase">
             Sumérgete en una experiencia en la Patagonia
           </p>
-          {/* <ButtonRojo texto="Reservar ahora" href="/reservar" /> */}
         </div>
       </section>
       <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-6">

@@ -61,7 +61,7 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ArrowRight className="h-8 w-8 text-rojo" />
-          Detalles de la Experiencia</h2>
+          Detalles</h2>
         <div className="space-y-4">
           {details.map((detail, index) => (
             <motion.div
@@ -71,8 +71,8 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="mr-4 mt-2 flex items-center justify-center w-10">{getIcon(detail)}</div>
-              <div>
+              <div className="mr-4 flex items-center justify-center w-10 min-w-10">{getIcon(detail)}</div>
+              <div className="flex-1">
                 <h3 className="font-bold text-white">{detail.title}</h3>
                 <p className="text-white text-sm">{detail.description}</p>
               </div>

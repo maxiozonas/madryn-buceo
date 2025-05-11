@@ -26,28 +26,29 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
         title={excursion.title}
         heroImage={excursion.heroImage}
         miniDescription={excursion.miniDescription}
+        callToAction={excursion.callToAction[0]}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">
         <div className="max-w-7xl mx-auto w-full">
-
           <div className="lg:col-span-7 space-y-6">
             <DescripcionSection
               slug={excursion.slug}
               description={excursion.description}
             />
-
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <DetallesSection details={excursion.details} />
             <RequerimientosSection excursion={excursion} />
           </div>
+
           <div className="mb-12 mt-12">
             <CallToActionSection
-              callToAction={excursion.callToAction}
+              callToAction={excursion.callToAction[0]}
               buttonText={excursion.buttonText}
             />
           </div>
+
           <div className="mb-12 mt-12">
             <QueEsperarSection excursion={excursion} />
           </div>

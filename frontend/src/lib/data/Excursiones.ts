@@ -1,7 +1,7 @@
 export type ExcursionDetail = {
   title: string
   description: string
-  icon?: string 
+  icon?: string
 }
 
 export type Excursion = {
@@ -9,10 +9,10 @@ export type Excursion = {
   slug: string
   description: string[]
   miniDescription: string
-  details: ExcursionDetail[] 
+  details: ExcursionDetail[]
   whatToExpect: { title: string; description: string }[]
   requirements?: { title: string; description: string }[]
-  callToAction: string
+  callToAction: { text: string; href: string }[]
   buttonText: string
   heroImage: string
   cardImage: string
@@ -103,8 +103,12 @@ export const excursiones: Excursion[] = [
           "Es importante no tener enfermedades cardíacas u otras condiciones médicas que puedan presentar problemas debido al movimiento de navegación, el esfuerzo físico básico/moderado y el impacto con el agua fría.",
       },
     ],
-    callToAction:
-      "¿Listo para vivir una experiencia única de snorkeling? ¡Reserva tu aventura ahora y descubre la magia de estar cerca de los lobos marinos!",
+    callToAction: [
+      {
+        text: "¿Listo para vivir una experiencia única de snorkeling? ¡Reserva tu aventura ahora y descubre la magia de estar cerca de los lobos marinos!",
+        href: "https://madrynbuceo.outtrip.com/experiences/674f51e8752c8c796efc1f95/snorkel-con-lobos-marinos",
+      },
+    ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/snorkel/lobo-header.webp",
     cardImage: "/images/excursiones/snorkel/lobo-2.webp",
@@ -189,8 +193,12 @@ export const excursiones: Excursion[] = [
           "Es importante no tener afecciones cardíacas, problemas respiratorios u otras condiciones médicas que puedan presentar un riesgo durante la inmersión.",
       },
     ],
-    callToAction:
-      "¿Listo para descubrir el mundo submarino? ¡Reserva tu bautismo de buceo ahora y comienza tu aventura subacuática con nosotros!",
+    callToAction: [
+      {
+        text: "¿Listo para descubrir el mundo submarino? ¡Reserva tu bautismo de buceo ahora y comienza tu aventura subacuática con nosotros!",
+        href: "https://madrynbuceo.outtrip.com/experiences/674f404d7e5b9806387322d6/bautismos-submarinos-",
+      },
+    ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/bautismo/bautismo-header.webp",
     cardImage: "/images/excursiones/bautismo/bautismo-4.webp",
@@ -249,8 +257,12 @@ export const excursiones: Excursion[] = [
           "Finalizamos nuestra travesía regresando a la costa, donde podrás compartir tus impresiones y recuerdos de esta maravillosa experiencia.",
       },
     ],
-    callToAction:
-      "¿Listo para vivir una aventura inolvidable en el mar? ¡Reserva tu paseo ahora y ven a descubrir la magia de los delfines oscuros en su hábitat natural!",
+    callToAction: [
+      {
+        text: "¿Listo para vivir una aventura inolvidable en el mar? ¡Reserva tu paseo ahora y ven a descubrir la magia de los delfines oscuros en su hábitat natural!",
+        href: "https://madrynbuceo.outtrip.com/experiences/67603481407d6f69b98a0f43/paseo-nautico-en-busqueda-de-delfines",
+      },
+    ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/delfines/delfines-header.webp",
     cardImage: "/images/excursiones/delfines/delfines-1.webp",
@@ -305,8 +317,12 @@ export const excursiones: Excursion[] = [
           "Navega por las aguas en busca de los amistosos delfines. Estos paseos no solo te ofrecen la emoción de avistar delfines, sino también la oportunidad de disfrutar de los impresionantes paisajes marinos.",
       },
     ],
-    callToAction:
-      "No dejes pasar la oportunidad de vivir una experiencia única y personalizada en la Patagonia. Contáctanos hoy mismo para reservar tu salida privada en semirrígido y prepárate para una mañana llena de aventuras y descubrimientos.",
+    callToAction: [
+      {
+        text: "No dejes pasar la oportunidad de vivir una experiencia única y personalizada en la Patagonia. Contáctanos hoy mismo para reservar tu salida privada en semirrígido y prepárate para una mañana llena de aventuras y descubrimientos.",
+        href: "https://madrynbuceo.outtrip.com/experiences/67603481407d6f69b98a0f43/paseo-nautico-en-busqueda-de-delfines",
+      },
+    ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/salidas/salidas-header.webp",
     cardImage: "/images/excursiones/salidas/salidas-1.webp",

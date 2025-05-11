@@ -8,6 +8,7 @@ interface HeroSectionProps {
   title: string;
   heroImage: string;
   miniDescription: string;
+  callToAction: { href: string }
 }
 
 const titleVariants = {
@@ -20,7 +21,7 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
-export default function HeroSection({ title, heroImage, miniDescription }: HeroSectionProps) {
+export default function HeroSection({ title, heroImage, miniDescription, callToAction }: HeroSectionProps) {
   return (
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
@@ -51,7 +52,7 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
           >
             {miniDescription}
           </motion.p>
-          <ButtonRojo texto="Reservar ahora" href="/reservar" />
+          <ButtonRojo texto="Reservar ahora" href={callToAction.href} />
         </div>
       </section>
     </>

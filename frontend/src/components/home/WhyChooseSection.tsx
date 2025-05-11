@@ -82,7 +82,7 @@ export default function WhyChooseSection() {
           />
         </motion.div>
         <div className="text-center mt-12">
-          <ButtonRojo texto="¡Sumergete hoy!" href="/"/>
+          <ButtonRojo texto="¡Sumergete hoy!" href="https://madrynbuceo.outtrip.com/"/>
         </div>
       </div>
     </section>

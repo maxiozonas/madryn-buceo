@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 
 export function ContactFormSection() {
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -54,7 +52,6 @@ export function ContactFormSection() {
         pais: "",
         mensaje: "",
       });
-      setCaptchaValue(null);
     } else {
       alert("Error al enviar el formulario. Intente nuevamente.");
     }
@@ -137,19 +134,13 @@ export function ContactFormSection() {
                 className="w-full p-2 rounded bg-[#1e1e1e] border border-[#403d39] text-white placeholder-white focus:ring-2 focus:ring-red-600 focus:border-red-600 focus:outline-none"
               />
 
-              <div className="flex justify-center rounded">
-                <ReCAPTCHA
-                  sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                  onChange={setCaptchaValue}
-                />
-              </div>
-
               <Button
                 type="submit"
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold"
-                disabled={!captchaValue || loading}
+                className="group w-full bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer"
+                disabled={loading}
               >
                 {loading ? "Enviando..." : "Enviar"}
+                <Send className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-all duration-300" />
               </Button>
 
               {success && (

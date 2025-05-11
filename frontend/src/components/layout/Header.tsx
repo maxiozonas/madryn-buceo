@@ -52,7 +52,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 text-white transition-all duration-300 p-3 ${
-        isScrolled ? "bg-negro-secundario shadow-md pt-3" : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
+        isScrolled || isOpen ? "bg-negro-secundario shadow-md pt-3" : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
       }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -213,14 +213,8 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-6">
-            <Button
-              className="w-full bg-[#e12222] hover:scale-105 hover:shadow-lg text-white transition-all duration-300 text-lg font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              <Link href="/reservar" className="w-full">
-                Reservar Ahora
-              </Link>
-            </Button>
+              <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} />
+
           </div>
         </div>
       </div>

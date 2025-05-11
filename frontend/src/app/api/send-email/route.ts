@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const response = await resend.emails.send({
       from: 'Tu sitio <no-reply@tusitio.com>',
-      to: 'evalleygarcia@gmail.com',
+      to: 'maxiozonas10@gmail.com',
       subject: 'Nuevo mensaje de contacto',
       html: `
         <h2>Nuevo mensaje de contacto</h2>
