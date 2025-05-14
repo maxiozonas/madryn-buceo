@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "@/components/nosotros/HeroSection";
 import MapWrapper from "@/components/nosotros/MapWrapper";
 import { AboutCardsSection } from "@/components/nosotros/AboutCardsSection";
-import { SocialLinksSection } from "@/components/contacto/SocialLinksSection";
+// import { SocialLinksSection } from "@/components/contacto/SocialLinksSection";
 import StaffCarousel from "@/components/nosotros/StaffCardCarousel";
 import { staff } from "@/lib/data/Staff";
 
@@ -17,7 +17,7 @@ export default function NosotrosPage() {
       <AboutCardsSection />
       <MapWrapper />
       <StaffCarousel staff={staff} />
-      <SocialLinksSection />
+      {/* <SocialLinksSection /> */}
     </main>
   );
 }

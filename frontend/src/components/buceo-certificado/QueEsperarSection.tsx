@@ -35,7 +35,7 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
 
   return (
     <motion.section
-      className="mt-5 mb-1"
+      className="mt-4 mb-1"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}

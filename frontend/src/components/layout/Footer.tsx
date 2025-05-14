@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
             />
         </div>
         <div className="text-center text-sm">
-  <p>Desde <span className="font-bold">1992</span> buceando en la patagonia...</p>
+  <p>Desde <span className="font-bold">1983</span> buceando en la patagonia...</p>
         </div>
         <div className="text-center text-sm">
           <p>© {new Date().getFullYear()} Madryn Buceo. Todos los derechos reservados.</p>

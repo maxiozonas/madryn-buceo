@@ -13,7 +13,7 @@ export interface Staff {
         media: {type: "image", url: "/images/nosotros/intro.webp"}},
     {   name :"Julian Bala", 
         description:"Capitán e instructor PADI. Acompaña a la empresa desde hace más de 15 años. Amante del fútbol, hincha de Estudiantes.",
-        media: {type: "image", url: "/images/nosotros/intro.webp"}},
+        media: {type: "image", url: "/images/nosotros/Staff/julian.webp"}},
     {   name :"Mauro Mazzanti", 
         description:" Dive Master formado en el centro, acompaña las salidas comprometido con la seguridad y el buen desarrollo de cada inmersión",
         media: {type: "image", url: "/images/nosotros/intro.webp"}},

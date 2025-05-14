@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "../ui/card";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import ImageGallery from "../diveSites/ImageGallery";
+import { SeparatorHorizontal } from "lucide-react";
 import Link from "next/link";
+import ImageGallery from "../nosotros/ImageGallery";
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -20,91 +20,78 @@ export default function IntroSection() {
     { type: "video", url: "/videos/puntos/folias/folias1.webm" },
   ];
 
-  const details = [
-    {
-      text: "Más de 6 naufragios ideales para realizar exploraciones submarinas inolvidables.",
-      linkText: "6 naufragios",
-      href: "/buceo/puntos-de-buceo",
-    },
-    {
-      text: "Parques rocosos naturales repletos de vida.",
-      linkText: "Parques rocosos naturales",
-      href: "/buceo/puntos-de-buceo",
-    },
-    {
-      text: "Buceo con lobos marinos en su hábitat natural todo el año.",
-      linkText: "",
-      href: "",
-    },
-    {
-      text: "Más de 12 sitios de buceo para todos los niveles.",
-      linkText: "12 sitios de buceo",
-      href: "/buceo/puntos-de-buceo",
-    },
-  ];
-
   return (
     <motion.section
-      className="mt-24 mb-10 relative z-20"
+      className="mt-20 mb-10 relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
       <div className="container mx-auto px-8">
-        <Card className="bg-negro-secundario shadow-md border-[#403d39] hover:shadow-xl transition-shadow duration-300 h-full">
-          <CardContent className="p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-[40%_57%] gap-8 lg:gap-12 items-stretch">
-              <div className="flex flex-col justify-center h-full">
-                <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2 mt-0">
-                  <ArrowRight className="h-8 w-8 text-rojo" />
-                  Viví una experiencia única
-                </h2>
-                <ul className="flex flex-col justify-between mb-6">
-                  {details.map((item, index) => (
-                    <li
-                      key={index}
-                      className="text-gray-300 flex items-start mb-6"
-                    >
-                      <span className="text-rojo mr-2 font-bold">
-                        <ChevronRight />
-                      </span>
-                      <span>
-                        {item.text.split(item.linkText).map((part, i, arr) => (
-                          <span key={i}>
-                            {part}
-                            {i < arr.length - 1 && (
-                              <Link
-                                href={item.href}
-                                className="text-rojo hover:underline"
-                              >
-                                {item.linkText}
-                              </Link>
-                            )}
-                          </span>
-                        ))}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-lg font-bold mb-6 text-white gap-1">
-                  ¡ No te pierdas hacer{" "}
-                  <Link href="/snorkel" className="text-rojo hover:underline transition-colors">
-                    snorkel con lobos marinos
-                  </Link>!
-                </p>
-              </div>
-              <div className="relative overflow-hidden rounded-xl md:min-h-[500px]">
-                <div className="relative h-full">
-                  <ImageGallery
-                    media={divingMedia}
-                    className="h-56 md:h-[500px] w-full"
-                  />
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_56%] gap-8 lg:gap-12">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 inline-flex items-center relative uppercase">
+              Viví una experiencia única
+            </h2>
+
+            <SeparatorHorizontal className="w-full h-1 bg-rojo mb-6 rounded-full" />
+
+            <p className="text-white/80 mb-4 leading-relaxed">
+            Más de {" "}
+              <span className="text-rojo font-semibold">
+                6 naufragios
+              </span>{" "}
+              ideales para realizar exploraciones submarinas inolvidables.
+            </p>
+
+            <p className="text-white/80 mb-4 leading-relaxed">
+              Sumérgete en{" "}
+              <span className="text-rojo font-semibold">
+                parques rocosos naturales
+              </span>{" "}
+              repletos de vida marina.
+            </p>
+
+            <p className="text-white/80 mb-4 leading-relaxed">
+              Disfruta de{" "}
+              <span className="text-rojo font-semibold">
+                buceo con lobos marinos
+              </span>{" "}
+              en su hábitat natural, una experiencia única disponible todo el
+              año.
+            </p>
+
+            <p className="text-white/80 mb-4 leading-relaxed">
+              Descubre más de{" "}
+              <Link
+                href="/buceo/puntos-de-buceo"
+                className="text-rojo font-semibold hover:underline"
+              >
+                12 sitios de buceo
+              </Link>{" "}
+              para todos los niveles.
+            </p>
+
+            <p className="text-white/80 mb-4 leading-relaxed">
+              ¡No te pierdas la oportunidad de hacer{" "}
+              <Link
+                href="/excursiones/snorkeling-con-lobos"
+                className="text-rojo font-semibold hover:underline"
+              >
+                snorkel con lobos marinos
+              </Link>
+              !{" "}
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-xl">
+            <ImageGallery
+              media={divingMedia}
+              className="w-full h-full object-cover aspect-[4/3]"
+            />
+          </div>
+        </div>
       </div>
     </motion.section>
   );

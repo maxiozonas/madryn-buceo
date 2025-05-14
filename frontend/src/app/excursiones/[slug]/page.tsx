@@ -1,4 +1,4 @@
-
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { excursiones } from "@/lib/data/Excursiones";
 import HeroSection from "@/components/excursiones/HeroSection";
@@ -13,6 +13,53 @@ import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursionesSec
 
 interface ExcursionPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: ExcursionPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  
+  const excursion = excursiones.find((exc) => exc.slug === slug);
+  
+  if (!excursion) {
+    return {
+      title: "Excursión no encontrada | Madryn Buceo",
+      icons: {
+        icon: "/images/inicio/logo.png",
+        apple: "/images/inicio/logo.png",
+      },
+    };
+  }
+  
+  return {
+    title: `${excursion.title} | Madryn Buceo`,
+    description: excursion.miniDescription,
+    icons: {
+      icon: "/images/inicio/logo.png",
+      apple: "/images/inicio/logo.png",
+    },
+    openGraph: {
+      title: `${excursion.title} | Madryn Buceo`,
+      description: excursion.miniDescription,
+      url: `https://madrynbuceo.com/excursiones/${slug}`,
+      siteName: "Madryn Buceo",
+      locale: "es_AR",
+      type: "website",
+      images: [
+        {
+          url: excursion.heroImage,
+          width: 1200,
+          height: 630,
+          alt: excursion.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${excursion.title} | Madryn Buceo`,
+      description: excursion.miniDescription,
+      images: [excursion.heroImage],
+    },
+  };
 }
 
 export default async function ExcursionPage({ params }: ExcursionPageProps) {
