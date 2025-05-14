@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, TwitterIcon as TikTok } from "lucide-react"
+import { MapPin, Phone, Mail } from "lucide-react"
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
 // import Image from "next/image"
 // import heroImage from "../../../public/images/nosotros/intro.webp"
