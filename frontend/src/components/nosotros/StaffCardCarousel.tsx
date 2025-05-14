@@ -70,7 +70,7 @@ export default function StaffCarousel({ staff }: Props) {
                   {staff.map((member) => (
                     <Card
                       key={member.name}
-                      className="card min-w-[250px] sm:min-w-[280px] bg-negro text-white border-[#403d39] shadow-lg flex flex-col justify-between hover:scale-95 transition-transform snap-center p-0"
+                      className="card min-w-[250px] sm:min-w-[280px] bg-negro text-white border-[#403d39] shadow-lg flex flex-col hover:scale-95 transition-transform snap-center p-0"
                       style={{ borderRadius: 0 }}
                     >
                       <div
@@ -86,11 +86,13 @@ export default function StaffCarousel({ staff }: Props) {
                         />
                       </div>
                       <CardContent className="p-2 text-center w-full">
-                        <h3 className="text-sm sm:text-sm font-bold text-[#e12222]">
-                          {member.name}
-                        </h3>
-                        <div className="w-[245px]">
-                          <p className="text-white/80 text-xs leading-tight max-h-[5.7em] overflow-hidden flex-grow mb-2">
+                        <div className="h-2 flex items-center justify-center">
+                          <h3 className="text-sm sm:text-sm font-bold text-[#e12222]">
+                            {member.name}
+                          </h3>
+                        </div>
+                        <div className="w-[245px] mt-2">
+                          <p className="text-white/80 text-xs leading-tight max-h-[8.7em]  overflow-hidden flex-grow mb-2">
                             {member.description}
                           </p>
                         </div>
