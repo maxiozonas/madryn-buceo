@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, TwitterIcon as TikTok } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
 // import Image from "next/image"
 // import heroImage from "../../../public/images/nosotros/intro.webp"
 import ContactoForm from "@/components/contacto/ContactoForm"
@@ -82,7 +82,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         className="bg-rojo p-3 rounded-full text-white hover:bg-opacity-80 transition-colors"
                       >
-                        <FaFacebookF className="h-6 w-6" />
+                        <FaFacebook className="h-6 w-6" />
                       </a>
                       <a
                         href="https://www.instagram.com/madrynbuceo/?hl=es-la"
