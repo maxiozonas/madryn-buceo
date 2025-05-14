@@ -3,7 +3,6 @@
 import { Card, CardContent } from "../ui/card";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -12,7 +11,7 @@ const fadeIn = {
 export default function DescriptionSection() {
   return (
     <motion.section
-      className="mt-16 mb-10"
+      className="mt-2 mb-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}

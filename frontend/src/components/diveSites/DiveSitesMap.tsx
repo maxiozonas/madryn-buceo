@@ -34,58 +34,58 @@ const DiveSitesMap: React.FC<Props> = ({
 
   return (
     <motion.section
-    className="mt-16 mb-20"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-100px" }}
-    variants={fadeIn}
-  >
-    <div className="relative isolate w-full h-[280px] md:h-[420px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
-      <MapContainer
-        center={selectedCoords}
-        zoom={13}
-        scrollWheelZoom={false}
-        style={{ width: "100%", height: "100%" }}
-        dragging={true}
-      >
-        <TileLayer
-          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-          attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
-        />
-        {filteredSites.map((site) => (
-          <Marker
-            key={site.name}
-            position={site.coords}
-            icon={customIcon}
-            eventHandlers={{
-              click: () => onMarkerClick(site),
-            }}
-          >
-            <Popup>{site.name}</Popup>
-            <Tooltip
-              direction="top"
-              offset={[0, -20]}
-              opacity={1}
-              permanent={false}
-              className="leaflet-tooltip-custom"
+      className="mb-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeIn}
+    >
+      <div className="relative isolate h-[280px] md:h-[420px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
+        <MapContainer
+          center={selectedCoords}
+          zoom={13}
+          scrollWheelZoom={false}
+          style={{ width: "100%", height: "100%" }}
+          dragging={true}
+        >
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+          />
+          {filteredSites.map((site) => (
+            <Marker
+              key={site.name}
+              position={site.coords}
+              icon={customIcon}
+              eventHandlers={{
+                click: () => onMarkerClick(site),
+              }}
             >
-              <div
-                className="px-2 py-1 bg-[#252422] text-white text-xs font-semibold rounded-md shadow-md"
-                style={{ backgroundColor: "#252422", boxShadow: "none" }}
+              <Popup>{site.name}</Popup>
+              <Tooltip
+                direction="top"
+                offset={[0, -20]}
+                opacity={1}
+                permanent={false}
+                className="leaflet-tooltip-custom"
               >
-                {site.name}
-              </div>
-            </Tooltip>
-          </Marker>
-        ))}
-      </MapContainer>
-      <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 z-[1000] hidden sm:block">
-        <CertificationFilter
-          certificationFilter={certificationFilter}
-          setCertificationFilter={setCertificationFilter}
-        />
+                <div
+                  className="px-2 py-1 bg-[#252422] text-white text-xs font-semibold rounded-md shadow-md"
+                  style={{ backgroundColor: "#252422", boxShadow: "none" }}
+                >
+                  {site.name}
+                </div>
+              </Tooltip>
+            </Marker>
+          ))}
+        </MapContainer>
+        <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 z-[1000] hidden sm:block">
+          <CertificationFilter
+            certificationFilter={certificationFilter}
+            setCertificationFilter={setCertificationFilter}
+          />
+        </div>
       </div>
-    </div>
     </motion.section>
   );
 };

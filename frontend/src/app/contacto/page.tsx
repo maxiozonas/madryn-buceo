@@ -82,7 +82,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         className="bg-rojo p-3 rounded-full text-white hover:bg-opacity-80 transition-colors"
                       >
-                        <Facebook className="h-6 w-6" />
+                        <FaFacebookF className="h-6 w-6" />
                       </a>
                       <a
                         href="https://www.instagram.com/madrynbuceo/?hl=es-la"
@@ -90,7 +90,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         className="bg-rojo p-3 rounded-full text-white hover:bg-opacity-80 transition-colors"
                       >
-                        <Instagram className="h-6 w-6" />
+                        <FaInstagram className="h-6 w-6" />
                       </a>
                       <a
                         href="https://www.tiktok.com/@madrynbuceo"
@@ -98,7 +98,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         className="bg-rojo p-3 rounded-full text-white hover:bg-opacity-80 transition-colors"
                       >
-                        <TikTok className="h-6 w-6" />
+                        <FaTiktok className="h-6 w-6" />
                       </a>
                       <a
                         href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0"

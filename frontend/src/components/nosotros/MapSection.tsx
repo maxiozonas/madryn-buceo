@@ -1,78 +1,104 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import customIcon from "../ui/customIcon";
-import "leaflet/dist/leaflet.css";
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Card } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 
 export default function MapSection() {
-  const [isDraggable, setIsDraggable] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsDraggable(window.innerWidth >= 768);
-    }
-  }, []);
-
-  useEffect(() => {
-    const mapRoot = document.querySelector(".leaflet-container");
-    if (mapRoot) {
-      mapRoot.removeAttribute("tabindex");
-    }
-  }, []);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.4,
+      },
+    },
+  };
+
   return (
     <motion.section
-      className="mt-16 mb-20"
+      className="mt-6 mb-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
       <div className="container mx-auto px-8">
-        <Card
-          className="bg-negro-secundario shadow-md border-[#403d39] p-8"
+        <motion.div
+          className="mt-8 mb-10"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <section className="relative isolate z-0 py-1 px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
-                <MapPin className="h-6 w-6 text-rojo" />
-                Estamos acá
-              </h3>
-              <p className="text-white/80 mb-4 leading-relaxed">
-                Los esperamos todo el año en el balneario Sara, sobre el Mar...
-              </p>
-              <div
-                className="relative isolate w-full h-[400px] overflow-hidden"
-                style={{ zIndex: 0 }}
-              >
-                <MapContainer
-                  center={[-42.780055, -65.018699]}
-                  zoom={17}
-                  scrollWheelZoom={false}
-                  dragging={isDraggable}
-                  style={{ width: "100%", height: "100%", zIndex: 0 }}
-                >
-                  <TileLayer
-                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                    attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
-                  />
-                  <Marker position={[-42.780055, -65.018699]} icon={customIcon}>
-                    <Popup>Balneario Sara - Puerto Madryn</Popup>
-                  </Marker>
-                </MapContainer>
+          <motion.div variants={cardVariants} whileHover="hover">
+            <Card className="overflow-hidden h-full flex flex-col shadow-lg bg-[#252422] border-[#403d39] hover:shadow-xl transition-shadow p-0 rounded-lg">
+              <div className="relative h-64 rounded-t-lg">
+                <iframe
+                  className="h-full w-full rounded-t-lg"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2928.441243190807!2d-65.017134!3d-42.779021!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbe024aaf5130b587%3A0x67d8409a6b02a656!2sMadryn%20Buceo!5e0!3m2!1ses!2sar!4v1747014001371!5m2!1ses!2sar"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
-            </div>
-          </section>
-        </Card>
+              <CardContent className="text-white flex flex-col flex-grow p-4">
+                <motion.div
+                  className="mb-4 flex justify-center"
+                  variants={contentVariants}
+                >
+                  <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <MapPin className="h-6 w-6 text-rojo" />
+                    Estamos acá
+                  </h2>
+                </motion.div>
+                <motion.p
+                  className="text-white/80 text-sm text-center whitespace-pre-line"
+                  variants={contentVariants}
+                >
+                  Los esperamos todo el año en el balneario Sara, sobre el
+                  Mar...
+                </motion.p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
       </div>
     </motion.section>
   );

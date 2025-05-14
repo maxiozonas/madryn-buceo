@@ -20,14 +20,9 @@ export default function CheckoutPage() {
           <div className="lg:col-span-7 space-y-6">
             <TableSection />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-start">
-            <div className="w-full">
+
               <DetallesSection />
-            </div>
-            <div className="w-full">
               <RequirementosSection />
-            </div>
-          </div>
         </div>
       </section>
     </>

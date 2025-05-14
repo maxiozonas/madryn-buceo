@@ -1,18 +1,30 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, Calendar, Heart, Info, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Heart,
+  Info,
+  BookMarked,
+  BadgeCheck,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function RequirementosSection() {
-  const [openSections, setOpenSections] = useState<Record<"OpenWater" | "Advanced", boolean>>({ OpenWater: false, Advanced: false });
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
-  const toggleSection = (program: "OpenWater" | "Advanced") => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [program]: !prev[program],
-    }));
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const requirements = [
@@ -22,14 +34,17 @@ export default function RequirementosSection() {
         {
           title: "Teoría y piscina",
           description: "Haber completado teoría y piscina (Referral).",
+          icon: BookMarked,
         },
         {
           title: "Certificado médico",
-          description: "Certificado médico apto (< 12 meses).",
+          description: "Certificado médico apto ( < 12 meses ).",
+          icon: Heart,
         },
         {
           title: "Edad mínima",
           description: "Edad mínima 10 años.",
+          icon: Calendar,
         },
       ],
     },
@@ -39,83 +54,75 @@ export default function RequirementosSection() {
         {
           title: "Certificación",
           description: "Certificación Open Water.",
+          icon: BadgeCheck,
+        },
+        {
+          title: "Certificado médico",
+          description: "Certificado médico apto ( < 12 meses ).",
+          icon: Heart,
         },
         {
           title: "eLearning",
           description: "Haber completado el eLearning Advanced (si aplica).",
-        },
-        {
-          title: "Certificado médico",
-          description: "Certificado médico apto (< 12 meses).",
+          icon: Info,
         },
       ],
     },
   ];
 
-  const getIcon = (title: string) => {
-    const lowerTitle = title.toLowerCase();
-
-    if (lowerTitle.includes("edad")) {
-      return <Calendar className="h-6 w-6 text-rojo" />;
-    } else if (lowerTitle.includes("salud") || lowerTitle.includes("certificado médico")) {
-      return <Heart className="h-6 w-6 text-rojo" />;
-    } else {
-      return <Info className="h-6 w-6 text-rojo" />;
-    }
-  };
-
   return (
-    <Card className="bg-negro-secundario shadow-md border-[#403d39] hover:shadow-xl transition-shadow duration-300 h-full">
-      <CardContent className="p-8">
-        <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-          <ArrowRight className="h-8 w-8 text-rojo" />
-          Requisitos
-        </h2>
-        <div className="grid grid-cols-1 gap-4">
+    <motion.section
+      className="mt-8 mb-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeIn}
+    >
+      <div className="container mx-auto ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {requirements.map((program, programIndex) => (
-            <div key={programIndex} className="space-y-4">
-              <button
-                onClick={() => toggleSection(program.program.replace(" ", "") as "OpenWater" | "Advanced")}
-                className="w-full flex items-center justify-between text-xl font-semibold text-white bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
-              >
-                <span>{program.program}</span>
-                {openSections[program.program.replace(" ", "") as "OpenWater" | "Advanced"] ? (
-                  <ChevronUp className="h-6 w-6 text-rojo" />
-                ) : (
-                  <ChevronDown className="h-6 w-6 text-rojo" />
-                )}
-              </button>
-              <AnimatePresence>
-                {openSections[program.program.replace(" ", "") as "OpenWater" | "Advanced"] && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+            <Card
+              key={programIndex}
+              className="bg-negro-secundario shadow-md border-[#403d39] w-full hover:shadow-xl transition-shadow duration-300"
+            >
+              <CardContent className="p-8">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={staggerContainer}
+                >
+                  <motion.h3
+                    className="text-xl font-semibold text-white mb-4 flex items-center gap-2"
+                    variants={fadeIn}
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {program.items.map((req, reqIndex) => (
-                        <motion.div
-                          key={reqIndex}
-                          className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: reqIndex * 0.1 }}
-                        >
-                          <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(req.title)}</div>
-                          <h4 className="font-bold text-white text-lg mb-2">{req.title}</h4>
-                          <p className="text-white text-sm">{req.description}</p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                    <ArrowRight className="h-6 w-6 text-rojo" />
+                    Requisitos {program.program}
+                  </motion.h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {program.items.map((req, reqIndex) => (
+                      <motion.div
+                        key={reqIndex}
+                        className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center"
+                        variants={fadeIn}
+                        transition={{ delay: reqIndex * 0.1 }}
+                      >
+                        <div className="mb-4 bg-negro/60 p-4 rounded-full">
+                          <req.icon className="h-6 w-6 text-rojo" />
+                        </div>
+                        <h4 className="font-bold text-white text-lg mb-2">
+                          {req.title}
+                        </h4>
+                        <p className="text-white text-sm">{req.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </CardContent>
+            </Card>
           ))}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </motion.section>
   );
 }

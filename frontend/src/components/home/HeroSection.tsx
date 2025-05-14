@@ -22,8 +22,8 @@ export default function HeroSection() {
             muted
             preload="auto"
             className="object-cover w-full h-full">
-            <track kind="captions" srcLang="es" src="/videos/inicio/video1.mp4" />
-            <source src="/videos/inicio/video1.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="es" src="/videos/inicio/video1--optimizado.mp4" />
+            <source src="/videos/inicio/video1--optimizado.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/20" />
         </div>

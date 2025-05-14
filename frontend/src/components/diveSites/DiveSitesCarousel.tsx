@@ -73,13 +73,13 @@ export default function DiveSitesCarousel({
 
   return (
     <motion.section
-      className="mt-16 mb-20"
+      className="mb-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="relative isolate w-full overflow-hidden shadow-md ">
+      <div className="relative isolate overflow-hidden shadow-md">
         <div className="flex flex-col justify-center h-full min-h-[300px] sm:min-h-[400px]">
           <div className="relative">
             <button
@@ -92,7 +92,7 @@ export default function DiveSitesCarousel({
 
             <div
               ref={carouselRef}
-              className="w-full overflow-x-hidden overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
+              className="overflow-x-hidden overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
               style={{ scrollBehavior: "smooth" }}
             >
               <div className="flex gap-4 w-max px-2">
@@ -122,7 +122,7 @@ export default function DiveSitesCarousel({
                       />
                     </div>
                     <CardContent className="p-2 text-center w-full mb-4">
-                      <h3 className="text-sm font-bold text-[#e12222]">
+                      <h3 className="text-sm font-bold text-white/80">
                         {site.name}
                       </h3>
                     </CardContent>

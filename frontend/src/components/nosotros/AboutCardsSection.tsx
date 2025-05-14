@@ -2,15 +2,16 @@
 
 import React, { ReactNode } from "react";
 import Image from "next/image";
-import ImageGallery from "../diveSites/ImageGallery";
+import ImageGallery from "./ImageGallery";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileClock, House, Users } from "lucide-react";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
-  { url: "/images/nosotros/terranova1.jpg", type: "image" },
-  { url: "/images/nosotros/terranova2.JPG", type: "image" },
+  { url: "/images/nosotros/GaleriaLocal/galeriaLocal2.webp", type: "image" },
+  { url: "/images/nosotros/GaleriaLocal/galeriaLocal1.webp", type: "image" },
+  { url: "/images/nosotros/GaleriaLocal/galeriaLocal3.webp", type: "image" },
 ];
 
 export function AboutCardsSection() {
@@ -34,7 +35,7 @@ export function AboutCardsSection() {
 
   return (
     <motion.section
-      className="mt-16 mb-10"
+      className="mt-26 mb-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -56,12 +57,15 @@ export function AboutCardsSection() {
                 </div>
               }
               description={
-                "Nuestro local es mucho más que un punto de encuentro: también funciona como un pequeño museo.\n" +
-                "Vas a poder admirar diversos objetos recuperados del fondo del mar, junto con fósiles y barbas de ballenas que forman parte de la historia natural local.\n" +
+                "Nuestro local es mucho más que un punto de encuentro: también funciona como un pequeño museo. Vas a poder admirar diversos objetos recuperados del fondo del mar, junto con fósiles y barbas de ballenas que forman parte de la historia natural local.\n" +
                 "Te invitamos a descubrirlo."
-              }
-              videoSrc="/videos/local-web.mp4"
-            />
+              }>
+              <ImageGallery
+                media={historyMedia}
+                className="absolute inset-0 w-full h-full"
+                style={{ borderRadius: 0 }}/>
+              </AboutCard>
+      
 
             <AboutCard
               title={
@@ -71,16 +75,11 @@ export function AboutCardsSection() {
                 </div>
               }
               description={
-                "Somos una operadora familiar con más de 40 años compartiendo el mar patagónico.\n" +
-                "Dos generaciones dedicadas a  crear experiencias inolvidables en el mar.\n" +
+                "Somos una operadora familiar con más de 40 años compartiendo el mar patagónico. Dos generaciones dedicadas a  crear experiencias inolvidables en el mar.\n" +
                 "Amamos lo que hacemos y lo vivimos con cada persona que se anima a descubrir estas aguas."
               }
+              videoSrc="/images/nosotros/docu.mp4"
             >
-              <ImageGallery
-                media={historyMedia}
-                className="h-64 w-full object-cover"
-                style={{ borderRadius: 0 }}
-              />
             </AboutCard>
 
             <AboutCard

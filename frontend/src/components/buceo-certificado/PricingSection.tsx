@@ -43,7 +43,7 @@ export default function PricingSection() {
 
   return (
     <motion.section
-      className="mt-16 mb-20"
+      className="mt-2 mb-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -53,7 +53,7 @@ export default function PricingSection() {
         <Card className="bg-negro-secundario shadow-md border-[#403d39]">
           <CardContent className="p-8">
             <h2 className="text-xl sm:text-2xl font-bold mb-6 text-white flex items-start gap-2">
-            <ArrowRight className="h-8 w-8 text-rojo" />
+              <ArrowRight className="h-8 w-8 text-rojo" />
               Opciones y Precios
             </h2>
             <div className="overflow-x-auto">
