@@ -1,5 +1,5 @@
 import Image from "next/image";
-import imagen from "../../../public/images/footer/pngwing.com.png";
+import imagen from "../../../public/images/footer/pngwing.com(1).png";
 export default function CursoPorqueSection() {
   return (
     <div className="bg-negro-secundario rounded-xl shadow-lg p-6 border border-[#403d39] text-white">
@@ -13,13 +13,14 @@ export default function CursoPorqueSection() {
       <div className="flex items-center justify-center mt-6">
         <Image
           src={imagen}
-          width={70}
-          height={50}
+          width={120}
+          height={120}
           alt="PADI Certification"
+          className="bg-white rounded-full p-2"
         />
         <div className="ml-6">
-          <h4 className="font-semibold mb-2">Certificación PADI</h4>
-          <p className="text-sm text-white/80">
+          <h4 className="text-sm font-semibold mb-2">Certificación PADI</h4>
+          <p className="text-xs text-white/80">
             PADI es la certificadora de buceo número 1 a nivel mundial, reconocida por su excelencia
             en formación y estándares de seguridad.
           </p>

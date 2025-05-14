@@ -6,7 +6,6 @@ import Image from "next/image"
 import { ImageIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 
 interface GaleriaSectionProps {
   galleryImages: string[]
@@ -55,12 +54,9 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
         </h2>
         <div className="block sm:hidden mb-4">
           {galleryImages.length > 0 && (
-            <motion.div
+            <div
               className="relative h-64 rounded-lg overflow-hidden cursor-pointer"
-              whileHover={{ scale: 1.03 }}
               onClick={() => openModal(0)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
             >
               <Image
                 src={galleryImages[0] || "/placeholder.svg?height=300&width=400"}
@@ -77,20 +73,16 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                   Ver galería ({galleryImages.length} imágenes)
                 </button>
               </div>
-            </motion.div>
+            </div>
           )}
         </div>
 
         <div className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
-            <motion.div
+            <div
               key={index}
               className="relative h-64 rounded-lg overflow-hidden cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -5 }}
               onClick={() => openModal(index)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
             >
               <Image
                 src={image || "/placeholder.svg?height=300&width=400"}
@@ -107,29 +99,21 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro-primario/90 to-transparent h-16 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-3">
                 <span className="text-white text-sm font-medium">Imagen {index + 1} de {galleryImages.length}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </CardContent>
 
-      <AnimatePresence>
-        {selectedImage !== null && (
-          <motion.div
+      {selectedImage !== null && (
+          <div
             className="fixed inset-0 z-50 bg-negro-primario/90 flex items-center justify-center p-4"
             onClick={closeModal}
             onKeyDown={handleKeyDown}
             tabIndex={0}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
           >
-            <motion.div
+            <div
               className="relative max-w-5xl w-full h-[80vh] flex flex-col bg-negro-secundario/20 backdrop-blur-md rounded-xl overflow-hidden border border-gray-700/30"
               onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
               <button
                 className="absolute top-4 right-4 z-10 bg-negro-secundario/90 p-2 rounded-full text-white hover:bg-rojo transition-colors shadow-lg hover:scale-110 transform duration-200"
@@ -148,12 +132,8 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
               </button>
 
               <div className="relative flex-1 flex items-center justify-center p-4">
-                <motion.div
+                <div
                   key={selectedImage}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
                   className="flex items-center justify-center"
                 >
                   <div className="relative w-[800px] h-[500px] mx-auto">
@@ -167,19 +147,17 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                       quality={90}
                     />
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               <div className="absolute inset-y-0 left-0 flex items-center">
-                <motion.button
+                <button
                   className="bg-negro-secundario/90 p-3 rounded-full text-white hover:bg-rojo transition-colors ml-4 shadow-lg hover:scale-110 transform duration-200"
                   onClick={(e) => {
                     e.stopPropagation()
                     prevImage()
                   }}
                   aria-label="Imagen anterior"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -190,19 +168,17 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
-                </motion.button>
+                </button>
               </div>
 
               <div className="absolute inset-y-0 right-0 flex items-center">
-                <motion.button
+                <button
                   className="bg-negro-secundario/90 p-3 rounded-full text-white hover:bg-rojo transition-colors mr-4 shadow-lg hover:scale-110 transform duration-200"
                   onClick={(e) => {
                     e.stopPropagation()
                     nextImage()
                   }}
                   aria-label="Imagen siguiente"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +189,7 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </motion.button>
+                </button>
               </div>
 
               <div className="absolute bottom-4 left-4 bg-negro-secundario/90 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg backdrop-blur-sm">
@@ -267,10 +243,9 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                   </div>
                 )}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
     </Card>
   )
 }

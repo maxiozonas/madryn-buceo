@@ -1,23 +1,12 @@
 
-import { motion } from "framer-motion";
 import { Award, SeparatorHorizontal } from "lucide-react";
 import Image from "next/image";
 import imagen from "../../../public/images/cursos/cursos-1.jpg"
 import logo from "../../../public/images/footer/pngwing.com(1).png"
 
-const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 export default function CursosIntroSection() {
     return (
-        <motion.section className="mb-20 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-        >
+        <section className="mb-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
                 <div className="flex flex-col justify-center">
@@ -65,6 +54,6 @@ export default function CursosIntroSection() {
                     </div>
                 </div>
             </div>
-        </motion.section>
+        </section>
     )
 }

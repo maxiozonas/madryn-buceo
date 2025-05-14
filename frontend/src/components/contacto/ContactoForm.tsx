@@ -72,7 +72,7 @@ export default function ContactoForm() {
                   <Input
                     placeholder="Tu nombre"
                     {...field}
-                    className="bg-negro-secundario border-none text-white placeholder:text-white/70"
+                    className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -90,7 +90,7 @@ export default function ContactoForm() {
                   <Input
                     placeholder="tu@email.com"
                     {...field}
-                    className="bg-negro-secundario border-none text-white placeholder:text-white/70"
+                    className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -110,7 +110,7 @@ export default function ContactoForm() {
                   <Input
                     placeholder="Tu número de teléfono"
                     {...field}
-                    className="bg-negro-secundario border-none text-white placeholder:text-white/70"
+                    className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -128,7 +128,7 @@ export default function ContactoForm() {
                   <Input
                     placeholder="Asunto de tu mensaje"
                     {...field}
-                    className="bg-negro-secundario border-none text-white placeholder:text-white/70"
+                    className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -147,7 +147,7 @@ export default function ContactoForm() {
                 <Textarea
                   placeholder="Escribe tu mensaje aquí..."
                   {...field}
-                  className="bg-negro-secundario border-none text-white min-h-[150px] placeholder:text-white/70"
+                  className="bg-negro border-none text-white min-h-[150px] placeholder:text-white/70 focus:ring-0 focus:border-none"
                 />
               </FormControl>
               <FormMessage />

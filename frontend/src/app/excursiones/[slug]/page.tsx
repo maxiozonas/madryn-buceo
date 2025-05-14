@@ -90,15 +90,16 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
           </div>
 
           <div className="mb-12 mt-12">
+            <QueEsperarSection excursion={excursion} />
+          </div>
+
+          <div className="mb-12 mt-12">
             <CallToActionSection
               callToAction={excursion.callToAction[0]}
               buttonText={excursion.buttonText}
             />
           </div>
 
-          <div className="mb-12 mt-12">
-            <QueEsperarSection excursion={excursion} />
-          </div>
           <div className="mb-12 mt-12">
             <GaleriaSection
               galleryImages={excursion.galleryImages}

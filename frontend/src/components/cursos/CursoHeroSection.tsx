@@ -1,19 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import ButtonRojo from "../ui/button-rojo";
 import image from "../../../public/images/inicio/hero-image-2.jpg"
 
-const titleVariants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
 
 export default function HeroSection() {
 
@@ -31,23 +20,16 @@ export default function HeroSection() {
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
         <div className="container relative z-10 text-center text-white">
-          <motion.h1
+          <h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
-            variants={titleVariants}
-            initial="hidden"
-            animate="visible"
           >
             Cursos PADI
-          </motion.h1>
-          <motion.p
+          </h1>
+          <p
             className="text-base md:text-2xl mb-8 font-oceanica"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
           >
             Certifícate con nosotros y descubre un mundo de posibilidades bajo el agua.
-          </motion.p>
-          <ButtonRojo texto="Reservar ahora" href="/reservar" />
+          </p>
         </div>
       </section>
     </>

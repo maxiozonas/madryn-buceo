@@ -1,72 +1,71 @@
-import { motion } from "framer-motion"
 import { Card } from "../ui/card"
 import Link from "next/link"
 import Image from "next/image"
 import { CardContent } from "../ui/card"
 import ButtonRojo from "../ui/button-rojo"
+import { useRouter } from "next/navigation"
 
 export default function ExcursionCard({
   title,
   description,
   image,
-  link
+  link,
+  bg
 }: {
   title: string
   description: string
   image: string
   link: string
+  bg?: boolean
 }) {
-  const slug = link.split('/').pop() || ''
+  const router = useRouter()
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    router.push(link)
   }
 
   return (
-    <motion.div
-      variants={cardVariants}
-      className="group relative bg-[#252422] overflow-hidden shadow-md h-full flex flex-col"
-      layoutId={`card-container-${slug}`}
+    <div
+      className={bg ? "group relative bg-negro overflow-hidden shadow-md h-full flex flex-col" : "group relative bg-negro-secundario overflow-hidden shadow-md h-full flex flex-col"}
     >
-      <Card className="overflow-hidden p-0 border-none rounded-none shadow-md bg-negro-secundario transition-shadow h-full">
-        <Link href={link} className="h-full flex flex-col">
+      <Card className={bg ? "overflow-hidden p-0 border-none rounded-none shadow-md bg-negro transition-shadow h-full" : "overflow-hidden p-0 border-none rounded-none shadow-md bg-negro-secundario transition-shadow h-full"}>
+        <Link href={link} className="h-full flex flex-col" onClick={handleClick}>
           <div className="relative overflow-hidden h-64">
-            <motion.div layoutId={`card-image-container-${slug}`} className="w-full h-full rounded-none">
+            <div 
+              className="w-full h-full rounded-none"
+            >
               <Image
                 src={image}
                 alt={title}
                 fill
                 className="w-full h-full object-cover rounded-none transition-transform duration-500 group-hover:scale-110"
                 priority
-                id={`excursion-image-${slug}`}
               />
-            </motion.div>
+            </div>
           </div>
-          <CardContent className="flex flex-col items-center text-center text-white relative p-6 flex-grow justify-between">
-            <motion.h3
-              layoutId={`card-title-${slug}`}
+          <CardContent className={bg ? "flex flex-col items-center text-center text-white relative p-6 flex-grow justify-between" : "flex flex-col items-center text-center text-white relative p-6 flex-grow justify-between"}>
+            <h3
               className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-[#e12222] transition-colors"
             >
               {title}
-            </motion.h3>
-            <div className="flex-grow mb-6">
-              <p className="text-gray-300 line-clamp-3">{description}</p>
+            </h3>
+            <div className={bg ? "flex-grow mb-6" : "flex-grow mb-6"}>
+              <p 
+                className="text-gray-300 line-clamp-3"
+              >{description}</p>
             </div>
-            <div className="mt-auto w-full">
-              <ButtonRojo texto="Mas información" fullWidth={true} href={link} />
+            <div className={bg ? "mt-auto w-full" : "mt-auto w-full"}>
+              <ButtonRojo 
+                texto="Mas información" 
+                fullWidth={true} 
+                href={link} 
+              />
             </div>
           </CardContent>
         </Link>
       </Card>
-    </motion.div>
+    </div>
   )
 }

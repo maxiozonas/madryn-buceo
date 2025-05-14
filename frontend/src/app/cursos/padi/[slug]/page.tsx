@@ -2,6 +2,7 @@ import CourseDescription from "@/components/detalles-curso/CursoDescripcionSecti
 import CourseDetails from "@/components/detalles-curso/CursoDetallesSection";
 import CursoIntroSection from "@/components/detalles-curso/CursoIntroSection";
 import CursoPorqueSection from "@/components/detalles-curso/CursoPorqueSection";
+import OtrosCursosSection from "@/components/detalles-curso/OtrosCursosSection";
 import { allCursos } from "@/lib/data/Cursos";
 import { SeparatorHorizontal } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -49,11 +50,13 @@ export default async function DetalleCursoPage({ params }: DetallePageCursoPageP
                 duration={curso.duration}
                 depth={curso.depth}
                 certification={curso.certification}
-                requirements={curso.requirements} />
+                requirements={curso.requirements}
+                slug={curso.slug} />
             </div>
           </div>
         </div>
       </section>
+      <OtrosCursosSection />
     </>
 
   )
