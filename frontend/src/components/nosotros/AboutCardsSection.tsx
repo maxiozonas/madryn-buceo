@@ -78,7 +78,7 @@ export function AboutCardsSection() {
                 "Somos una operadora familiar con más de 40 años compartiendo el mar patagónico. Dos generaciones dedicadas a  crear experiencias inolvidables en el mar.\n" +
                 "Amamos lo que hacemos y lo vivimos con cada persona que se anima a descubrir estas aguas."
               }
-              videoSrc="/images/nosotros/docu.mp4"
+              videoSrc="/videos/nosotros/docu.mp4"
             >
             </AboutCard>
 

@@ -29,10 +29,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
       className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center"
       onClick={handleOverlayClick}
     >
-<div
-  className="bg-[#252422] p-2 md:p-3 rounded-xl w-[90%] max-w-3xl max-h-[96vh] overflow-auto overflow-x-hidden overflow-y-hidden"
->
-
+      <div className="bg-[#252422] p-2 md:p-3 rounded-xl w-[90%] max-w-3xl max-h-[96vh] overflow-auto overflow-x-hidden overflow-y-hidden">
         <div className="mb-2 overflow-visible">
           <ImageGallery media={site.media} />
         </div>
