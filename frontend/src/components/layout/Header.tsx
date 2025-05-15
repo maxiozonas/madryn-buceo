@@ -13,11 +13,12 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [expandedSubmenu, setExpandedSubmenu] = useState<number | null>(null)
+  const [hoveredSubmenu, setHoveredSubmenu] = useState<number | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50) 
+      setIsScrolled(window.scrollY > 50)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -51,7 +52,9 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 text-white transition-all duration-300 p-3 ${
-        isScrolled || isOpen ? "bg-negro-secundario shadow-md pt-3" : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
+        isScrolled || isOpen
+          ? "bg-negro-secundario shadow-md pt-3"
+          : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
       }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -78,34 +81,47 @@ export default function Header() {
         {/* MENÚ DESKTOP */}
         <nav className="hidden lg:flex items-center space-x-1">
           {NavLinks.map((link, index) => (
-            <div key={index} className="relative group">
+            <div
+              key={index}
+              className="relative"
+              onMouseEnter={() => setHoveredSubmenu(index)}
+              onMouseLeave={() => setHoveredSubmenu(null)}
+            >
               {link.submenu ? (
                 <>
-                  <button className="flex items-center px-4 py-2 text-white hover:text-[#e12222] font-medium cursor-pointer transition-colors duration-200">
+                  <button
+                    className="flex items-center px-4 py-2 text-white hover:text-[#e12222] font-medium cursor-pointer transition-colors duration-200"
+                  >
                     {link.title}
-                    <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                    <ChevronDown
+                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${
+                        hoveredSubmenu === index ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
                   <AnimatePresence>
-                    <motion.div
-                      className="absolute left-0 top-full w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4 hidden group-hover:block"
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={submenuVariants}
-                    >
-                      {link.submenu.map((sublink, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={sublink.href}
-                          className="block px-3 py-3 text-white hover:bg-negro-secundario hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
-                        >
-                          <div className="flex flex-col">
-                            <span className="font-medium text-sm uppercase">{sublink.title}</span>
-                            <span className="text-xs text-gray-300 mt-1">{sublink.description}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </motion.div>
+                    {hoveredSubmenu === index && (
+                      <motion.div
+                        className="absolute mt-7 w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4"
+                        variants={submenuVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                      >
+                        {link.submenu.map((sublink, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={sublink.href}
+                            className="block px-3 py-3 text-white hover:bg-negro-secundario hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
+                          >
+                            <div className="flex flex-col">
+                              <span className="font-medium text-sm uppercase">{sublink.title}</span>
+                              <span className="text-xs text-gray-300 mt-1">{sublink.description}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
                   </AnimatePresence>
                 </>
               ) : (
@@ -212,7 +228,7 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-6">
-              {/* <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} /> */}
+            {/* <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} /> */}
           </div>
         </div>
       </div>

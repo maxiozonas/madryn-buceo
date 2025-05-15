@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import Footer from "../components/layout/Footer";
+import Footer from "@/components/layout/Footer";
 import "leaflet/dist/leaflet.css";
-import TransitionProvider from "@/components/transitions/TransitionProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 
@@ -64,9 +63,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
     <html lang="es">
       <body className={inter.className}>
         <Header />
-        <TransitionProvider>
-          {children}
-        </TransitionProvider>
+        {children}
         <Footer/>
         <WhatsAppButton />
       </body>

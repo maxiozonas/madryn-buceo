@@ -37,13 +37,17 @@ export default function WhyChooseSection() {
         >
           ¿Por qué elegirnos?
         </motion.h2>
-        <p className="text-center text-white max-w-3xl mx-auto mb-12 prose-lg">
+        <motion.p className="text-center text-white max-w-3xl mx-auto mb-12 prose-lg"
+          variants={titleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           Somos el centro de buceo más antiguo de la zona, con{" "}
           <span className="text-rojo font-bold">más de 40 años</span> de experiencia en{" "}
           <span className="text-rojo font-bold">Puerto Madryn</span>, la capital nacional del buceo. Combinamos la
           experiencia de dos generaciones, <span className="text-rojo font-bold">padre e hijo</span>, para ofrecer experiencias de buceo y
           snorkeling excepcionales.
-        </p>
+        </motion.p>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}

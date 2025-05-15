@@ -3,6 +3,7 @@
 import Image from "next/image";
 import ButtonRojo from "../ui/button-rojo";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   title: string;
@@ -24,8 +25,11 @@ export default function HeroSection({ title, heroImage, miniDescription, callToA
   return (
     <>
       <section className="h-[90vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <motion.div
           className="absolute inset-0 z-0 mask-fade-bottom"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
           <Image
             src={heroImage}
@@ -34,23 +38,35 @@ export default function HeroSection({ title, heroImage, miniDescription, callToA
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 z-0 bg-black/50" />
-        </div>
+          <motion.div className="absolute inset-0 z-0 bg-black/50" />
+        </motion.div>
         <div className="container mb-20 relative z-10 text-center text-white">
-          <h1
+          <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
             {title}
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
             className="text-base md:text-2xl mb-8 font-oceanica"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
             {miniDescription}
-          </p>
-          <ButtonRojo 
-            texto="Reservar ahora" 
-            href={callToAction.href} 
-          />
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <ButtonRojo
+              texto="Reservar ahora"
+              href={callToAction.href}
+            />
+          </motion.div>
         </div>
       </section>
       <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-6">
