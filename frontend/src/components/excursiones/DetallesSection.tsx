@@ -66,15 +66,15 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
           {details.map((detail, index) => (
             <motion.div
               key={index}
-              className="flex items-start bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
+              className="flex flex-col lg:flex-row items-center gap-4 bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="mr-4 flex items-center justify-center w-10 min-w-10">{getIcon(detail)}</div>
-              <div className="flex-1">
+              <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">{getIcon(detail)}</div>
+              <div className="flex-1 flex flex-col items-center lg:items-start ">
                 <h3 className="font-bold text-white">{detail.title}</h3>
-                <p className="text-white text-sm">{detail.description}</p>
+                <p className="text-white text-sm text-center lg:text-start">{detail.description}</p>
               </div>
             </motion.div>
           ))}

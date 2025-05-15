@@ -29,14 +29,14 @@ export default function CursoFiltro() {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => handleFilterChange("todos")}
-            className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "todos" ? "bg-rojo text-white" : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
+            className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${activeFilter === "todos" ? "bg-rojo text-white" : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
               }`}
           >
             Todos
           </button>
           <button
             onClick={() => handleFilterChange("iniciacion")}
-            className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "iniciacion"
+            className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${activeFilter === "iniciacion"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
               }`}
@@ -45,7 +45,7 @@ export default function CursoFiltro() {
           </button>
           <button
             onClick={() => handleFilterChange("avanzados")}
-            className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "avanzados"
+            className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${activeFilter === "avanzados"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
               }`}
@@ -54,7 +54,7 @@ export default function CursoFiltro() {
           </button>
           <button
             onClick={() => handleFilterChange("profesional")}
-            className={`px-6 py-2 rounded-full transition-colors cursor-pointer ${activeFilter === "profesional"
+            className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${activeFilter === "profesional"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
               }`}
@@ -73,7 +73,7 @@ export default function CursoFiltro() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute top-0 right-0 bg-rojo text-white px-3 py-1 text-sm font-medium rounded-l-md">
+                <div className="absolute top-0 right-0 bg-rojo text-white px-3 py-1 text-sm font-medium">
                   {curso.level === "iniciacion" && "Iniciación"}
                   {curso.level === "avanzados" && "Avanzado"}
                   {curso.level === "profesional" && "Profesional"}

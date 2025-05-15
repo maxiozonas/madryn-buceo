@@ -9,7 +9,6 @@ import logo from "../../../public/images/inicio/logo.png"
 import { NavLinks } from "@/lib/data/NavLinks"
 import { motion, AnimatePresence } from "framer-motion"
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
-import ButtonRojo from "../ui/button-rojo"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -154,7 +153,7 @@ export default function Header() {
               <FaWhatsapp className="hover:text-green-600" />
             </a>
           </div>
-          <ButtonRojo texto="Reservar" href="/reservar" />
+          {/* <ButtonRojo texto="Reservar" href="/reservar" /> */}
         </div>
       </div>
 
@@ -213,8 +212,7 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-6">
-              <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} />
-
+              {/* <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} /> */}
           </div>
         </div>
       </div>

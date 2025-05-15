@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "../components/layout/Footer";
 import "leaflet/dist/leaflet.css";
+import TransitionProvider from "@/components/transitions/TransitionProvider";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -62,8 +64,11 @@ export default function RootLayout({ children }: Readonly<{children: React.React
     <html lang="es">
       <body className={inter.className}>
         <Header />
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
         <Footer/>
+        <WhatsAppButton />
       </body>
     </html>
   );

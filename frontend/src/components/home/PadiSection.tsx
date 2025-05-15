@@ -86,9 +86,9 @@ export default function PadiSection() {
                                 <Image 
                                     src={logo} 
                                     alt="Certificación PADI" 
-                                    width={170} 
+                                    width={100} 
                                     height={60} 
-                                    className="object-contain bg-white p-1 rounded" 
+                                    className="object-contain bg-white p-1 rounded-full" 
                                 />
                             </motion.div>
                         </motion.div>

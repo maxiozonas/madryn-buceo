@@ -111,7 +111,7 @@ export const excursiones: Excursion[] = [
     ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/snorkel/lobo-header.webp",
-    cardImage: "/images/excursiones/snorkel/lobo-2.webp",
+    cardImage: "/images/excursiones/snorkel/lobo-header.webp",
     galleryImages: [
       "/images/excursiones/snorkel/lobo-1.webp",
       "/images/excursiones/snorkel/lobo-2.webp",
@@ -201,7 +201,7 @@ export const excursiones: Excursion[] = [
     ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/bautismo/bautismo-header.webp",
-    cardImage: "/images/excursiones/bautismo/bautismo-4.webp",
+    cardImage: "/images/excursiones/bautismo/bautismo-header.webp",
     galleryImages: [
       "/images/excursiones/bautismo/bautismo-1.webp",
       "/images/excursiones/bautismo/bautismo-2.webp",
@@ -265,7 +265,7 @@ export const excursiones: Excursion[] = [
     ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/delfines/delfines-header.webp",
-    cardImage: "/images/excursiones/delfines/delfines-1.webp",
+    cardImage: "/images/excursiones/delfines/delfines-header.webp",
     galleryImages: [
       "/images/excursiones/delfines/delfines-1.webp",
       "/images/excursiones/delfines/delfines-2.webp",
@@ -325,12 +325,12 @@ export const excursiones: Excursion[] = [
     ],
     buttonText: "Reserva Ahora",
     heroImage: "/images/excursiones/salidas/salidas-header.webp",
-    cardImage: "/images/excursiones/salidas/salidas-1.webp",
+    cardImage: "/images/excursiones/salidas/salidas-header.webp",
     galleryImages: [
       "/images/excursiones/salidas/salidas-1.webp",
-      "/images/excursiones/salidas/salidas-2.webp",
+      "/images/excursiones/salidas/salidas-5.webp",
+      "/images/excursiones/salidas/salidas-6.webp",
       "/images/excursiones/salidas/salidas-3.webp",
-      "/images/excursiones/salidas/salidas-4.webp",
     ],
   },
 ]

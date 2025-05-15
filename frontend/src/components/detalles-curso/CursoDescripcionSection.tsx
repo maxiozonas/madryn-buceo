@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Check } from "lucide-react";
+import { Check, BookOpen, Award, Package, Briefcase } from "lucide-react";
 
 interface CourseDescriptionProps {
     description: string;
@@ -13,16 +13,22 @@ export default function CourseDescription({ description, learningOutcomes, inclu
         <div>
             <Card className="relative bg-negro-secundario shadow-md mb-8 border-[#403d39]">
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-white">Descripción</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-white flex items-center gap-2">
+                        <BookOpen className="h-6 w-6 text-rojo" />
+                        Descripción
+                    </CardTitle>
                 </CardHeader>
                 <CardContent className="px-8 pb-8">
                     <p className="text-gray-300 whitespace-pre-line">{description}</p>
                 </CardContent>
             </Card>
             {learningOutcomes && learningOutcomes.length > 0 && (
-                <Card className="bg-negro-secundario shadow-md mb-8 border-[#403d39]">
+                <Card className="relative bg-negro-secundario shadow-md mb-8 border-[#403d39]">
                     <CardHeader>
-                        <CardTitle className="text-2xl font-bold text-white">Lo que aprenderás</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-white flex items-center gap-2">
+                            <Award className="h-6 w-6 text-rojo" />
+                            Lo que aprenderás
+                        </CardTitle>
                     </CardHeader>
                     <CardContent className="px-8 pb-8">
                         <ul className="space-y-3">
@@ -39,7 +45,10 @@ export default function CourseDescription({ description, learningOutcomes, inclu
             {includes && includes.length > 0 && (
                 <Card className="relative bg-negro-secundario shadow-md mb-8 border-[#403d39]">
                     <CardHeader>
-                        <CardTitle className="text-2xl font-bold text-white">¿Qué incluye?</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-white flex items-center gap-2">
+                            <Package className="h-6 w-6 text-rojo" />
+                            ¿Qué incluye?
+                        </CardTitle>
                     </CardHeader>
                     <CardContent className="px-8 pb-8">
                         <ul className="space-y-3">
@@ -56,7 +65,10 @@ export default function CourseDescription({ description, learningOutcomes, inclu
             {qualifications && qualifications.length > 0 && (
                 <Card className="relative bg-negro-secundario shadow-md mb-8 border-[#403d39]">
                     <CardHeader>
-                        <CardTitle className="text-2xl font-bold text-white">Los PADI Scuba Divers están calificados para:</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-white flex items-center gap-2">
+                            <Briefcase className="h-6 w-6 text-rojo" />
+                            Los PADI Scuba Divers están calificados para:
+                        </CardTitle>
                     </CardHeader>
                     <CardContent className="px-8 pb-8">
                         <ul className="space-y-3">

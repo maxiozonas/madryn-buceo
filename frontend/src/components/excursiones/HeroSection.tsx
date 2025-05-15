@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import ButtonRojo from "../ui/button-rojo";
+import { ChevronDown } from "lucide-react";
 
 interface HeroSectionProps {
   title: string;
@@ -11,21 +11,22 @@ interface HeroSectionProps {
   callToAction: { href: string }
 }
 
-const titleVariants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
+const scrollToNextSection = () => {
+  const nextSection = document.getElementById('descripcion');
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    console.warn("Element with ID 'descripcion' not found for scrolling.");
+  }
+}
 
 export default function HeroSection({ title, heroImage, miniDescription, callToAction }: HeroSectionProps) {
   return (
     <>
-      <section className="h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 mask-fade-bottom">
+      <section className="h-[90vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 mask-fade-bottom"
+        >
           <Image
             src={heroImage}
             alt={title}
@@ -35,26 +36,29 @@ export default function HeroSection({ title, heroImage, miniDescription, callToA
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
-        <div className="container relative z-10 text-center text-white">
-          <motion.h1
+        <div className="container mb-20 relative z-10 text-center text-white">
+          <h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
-            variants={titleVariants}
-            initial="hidden"
-            animate="visible"
           >
             {title}
-          </motion.h1>
-          <motion.p
+          </h1>
+          <p
             className="text-base md:text-2xl mb-8 font-oceanica"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
           >
             {miniDescription}
-          </motion.p>
-          <ButtonRojo texto="Reservar ahora" href={callToAction.href} />
+          </p>
+          <ButtonRojo 
+            texto="Reservar ahora" 
+            href={callToAction.href} 
+          />
         </div>
       </section>
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-6">
+        <button className="animate-bounce cursor-pointer bg-none flex flex-col items-center gap-2" onClick={scrollToNextSection}>
+          <p className="text-white font-medium">Explora más</p>
+          <ChevronDown className="h-10 w-10 text-white" />
+        </button>
+      </div>
     </>
   );
 }

@@ -42,7 +42,7 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
       slug: "scuba-diver",
       shortDescription: "Obtén tu certificación básica de buceo que te permite bucear bajo la supervisión de un profesional hasta 12 metros de profundidad.",
       description:
-        "Para aquellos con limitaciones de tiempo o que prefieren una introducción más corta al mundo del buceo, ofrecemos la opción de realizar los primeros tres módulos del curso Open Water Diver. Con esta opción, puedes obtener la certificación de Scuba Diver que te permite bucear hasta 12 metros bajo la supervisión de un profesional. Este curso es un paso intermedio para obtener la certificación Open Water Diver, si ese es tu objetivo final.",
+        "¿Querés empezar a bucear pero todavía no estás listo para comprometerte con el curso completo? Tenemos una excelente alternativa para iniciarte en este mundo: podés realizar los primeros tres módulos del curso Open Water Diver y obtener la certificación Scuba Diver. Esta opción es ideal para quienes desean empezar a explorar el buceo de forma gradual, con sesiones más cortas y acompañamiento constante. Con esta certificación vas a poder bucear hasta 12 metros de profundidad, siempre acompañado por un profesional, y te permite avanzar luego hacia el Open Water Diver si querés seguir tu formación.",
       duration: "Teoría online 3-7 hs, curso completo 2-3 días.",
       depth: "12 metros",
       includes: [
@@ -67,7 +67,7 @@ export const cursos: { [key in Curso["level"]]: Curso[] } = {
     {
       title: "Open Water Diver",
       slug: "open-water-diver",
-      shortDescription: "Obtén tu certificación básica de buceo que te permite bucear bajo la supervisión de un profesional hasta 18 metros de profundidad.",
+      shortDescription: "Certificate como buzo de aguas abiertas y accede a sitios de buceo exclusivos hasta 18 metros de profundidad en cualquier lugar del mundo.",
       description:
         "El curso Advanced Open Water PADI Internacional se enfoca en mejorar tus habilidades de buceo e incrementar confianza y a desarrollar tus destrezas de buceo mediante la realización de especialidades. Este curso incluye 5 buceos especializados. De los 5 módulos de especialidad, dos son obligatorios: Buceo Profundo y Navegación Submarina. Los otros tres módulos son a elección, seleccionados del manual de PADI, lo que permite personalizar tu experiencia de aprendizaje. Tienes hasta un año para completar el curso.Una de las especialidades opcionales que puedes elegir es el buceo con lobos marinos en el área natural protegida, dentro del módulo de Naturalista.",
       duration: "Teoría online 5-10 hs, curso completo 4-5 días.",

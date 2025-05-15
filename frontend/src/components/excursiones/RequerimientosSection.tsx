@@ -4,7 +4,6 @@ import { Calendar, Activity, Heart, ArrowRight, Info } from "lucide-react"
 import type { Excursion } from "@/lib/data/Excursiones"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
-import { motion } from "framer-motion"
 
 interface RequerimientosSectionProps {
   excursion: Excursion
@@ -12,12 +11,21 @@ interface RequerimientosSectionProps {
 
 export default function RequirementsSection({ excursion }: RequerimientosSectionProps) {
   if (!excursion.requirements || excursion.requirements.length === 0) {
+    let imageSrc = excursion.cardImage;
+    
+    if (excursion.slug.includes("salidas")) {
+      imageSrc = "/images/excursiones/salidas/salidas-5.webp";
+    }
+    else if (excursion.slug.includes("delfines")) {
+      imageSrc = "/images/excursiones/delfines/delfines-2.webp";
+    }
+    
     return (
       <Card className="bg-negro-secundario shadow-md border-gray-800 h-full p-0 rounded-2xl">
         <CardContent className="p-0 overflow-hidden h-full rounded-2xl">
           <div className="relative w-full h-full rounded-2xl" style={{ minHeight: "100%" }}>
             <Image
-              src={excursion.cardImage}
+              src={imageSrc}
               alt="Experiencia sin requisitos especiales"
               fill
               className="object-cover"
@@ -52,32 +60,26 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
         <div className="grid grid-cols-1 gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {excursion.requirements.slice(0, -1).map((req, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
               >
                 <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(req.title)}</div>
                 <h3 className="font-bold text-white text-lg mb-2">{req.title}</h3>
                 <p className="text-white text-sm">{req.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
           
           {excursion.requirements.length > 0 && (
-            <motion.div
+            <div
               key="last-requirement"
               className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center w-full"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: excursion.requirements.length * 0.1 }}
             >
               <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(excursion.requirements[excursion.requirements.length - 1].title)}</div>
               <h3 className="font-bold text-white text-lg mb-2">{excursion.requirements[excursion.requirements.length - 1].title}</h3>
               <p className="text-white text-sm">{excursion.requirements[excursion.requirements.length - 1].description}</p>
-            </motion.div>
+            </div>
           )}
         </div>
       </CardContent>

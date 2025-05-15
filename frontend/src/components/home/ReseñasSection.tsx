@@ -13,7 +13,6 @@ import { useEffect } from "react"
 export default function ReseñasSection() {
   const controls = useAnimation();
   
-  // Start animations when component is in view
   useEffect(() => {
     controls.start('visible');
   }, [controls]);
@@ -21,31 +20,30 @@ export default function ReseñasSection() {
   const reseña: Reseña[] = [
     {
       id: 1,
-      name: "María González",
+      name: "Andrés Thomas Guldman",
       rating: 5,
-      text: "¡Experiencia increíble! El equipo de Madryn Buceo es muy profesional y la experiencia de bucear con lobos marinos fue inolvidable.",
-      date: "Marzo 2023",
-      image: "/placeholder.svg?height=50&width=50",
+      text: "Experiencia inolvidable. Mejor relación calidad-precio. Los chicos todos muy buena onda, muy amables. Mucha paciencia para enseñar, se preocuparon de hasta el más mínimo detalle para que todo sea espectacular. Recomiendo el snorkeling con lobos marinos.",
+      date: "En la ultima semana",
+      image: "/images/reseñas/reseña 1.png",
     },
     {
       id: 2,
-      name: "Juan Pérez",
+      name: "Veronica Giorlando",
       rating: 5,
-      text: "Mi primer bautismo de buceo y no pudo haber sido mejor. Los instructores son muy pacientes y te hacen sentir seguro en todo momento.",
-      date: "Febrero 2023",
-      image: "/placeholder.svg?height=50&width=50",
+      text: "Increible experiencia de snorkel con lobos marinos. Muy profesionales todos explicando cada tema para una excelente excursion. Tienen todo para q se disfrute: trajes, ponchos, guardarropa",
+      date: "Hace 3 semanas",
+      image: "/images/reseñas/reseñas 2.png",
     },
     {
       id: 3,
       name: "Laura Martínez",
       rating: 5,
-      text: "Hice el curso Open Water y la experiencia fue excelente. Muy recomendable para quienes quieren certificarse.",
-      date: "Enero 2023",
-      image: "/placeholder.svg?height=50&width=50",
+      text: "Increíble la atención y calidad de servicio que prestan, un equipo joven, enérgico, muy conocedores del buceo, me permitió disfrutar del proceso de obtener mis certificaciones PADI, 100% recomendados, mención especial para Lucio (instructor), Julián (capitán de la embarcación), Kamila y Mauro.",
+      date: "Hace 5 meses",
+      image: "/images/reseñas/reseñas 3.png",
     },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -157,7 +155,6 @@ export default function ReseñasSection() {
 }
 
 function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
-  // Card animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -179,7 +176,6 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
     }
   };
 
-  // Star animation variants
   const starContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -227,20 +223,21 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
           </motion.div>
           
           <motion.div 
-            className="flex mb-4"
+            className="flex mb-4 items-center"
             variants={starContainerVariants}
           >
+            <Image src={googleLogo} alt="Google" width={20} height={20} className="mr-2"/>
             {[...Array(5)].map((_, i) => (
               <motion.div key={i} variants={starVariants}>
                 <Star
-                  className={`h-4 w-4 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+                  className={`h-5 w-5 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
                 />
               </motion.div>
             ))}
           </motion.div>
           
           <motion.p 
-            className="text-md"
+            className="text-md line-clamp-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
