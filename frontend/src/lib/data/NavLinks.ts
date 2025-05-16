@@ -24,7 +24,7 @@ export const NavLinks = [
         },
         {
           title: "nav.excursions.private.title",
-          href: "/excursiones/saltitleas-privadas",
+          href: "/excursiones/salidas-privadas",
           description: "nav.excursions.private.description",
         },
       ],

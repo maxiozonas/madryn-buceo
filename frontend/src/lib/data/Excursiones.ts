@@ -8,7 +8,7 @@ export type Excursion = {
   title: string
   slug: string
   description: string[]
-  miniDescription: string
+  miniDescription: string 
   details: ExcursionDetail[]
   whatToExpect: { title: string; description: string }[]
   requirements?: { title: string; description: string }[]

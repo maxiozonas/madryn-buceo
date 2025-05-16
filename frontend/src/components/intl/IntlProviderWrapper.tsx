@@ -17,7 +17,6 @@ export default function IntlProviderWrapper({
   const [currentLocale, setCurrentLocale] = useState(locale)
 
   useEffect(() => {
-    // Leer el locale desde localStorage al montar el componente
     const storedLocale = localStorage.getItem("locale") || locale
     setCurrentLocale(storedLocale as "es" | "en")
   }, [locale])

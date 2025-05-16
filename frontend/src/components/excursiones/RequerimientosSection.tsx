@@ -26,7 +26,7 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
           <div className="relative w-full h-full rounded-2xl" style={{ minHeight: "100%" }}>
             <Image
               src={imageSrc}
-              alt=""
+              alt="formattedMessage({ id: `${excursion.title}.noRequirementsAlt` })"
               fill
               className="object-cover"
             />

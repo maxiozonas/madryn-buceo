@@ -10,18 +10,29 @@ import CallToActionSection from "@/components/excursiones/CallToActionSection";
 import GaleriaSection from "@/components/excursiones/GaleriaSection";
 import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursionesSection";
 
-interface ExcursionPageProps {
-  params: Promise<{ slug: string }>;
+import esLocale from "@/app/locales/es.json";
+import enLocale from "@/app/locales/en.json";
+
+type LocaleMessages = Record<string, string>;
+function getTranslation(id: string, locale: string = "es") {
+  const messages = locale === "en" ? enLocale as LocaleMessages : esLocale as LocaleMessages;
+  return messages[id] || id;
 }
 
-export async function generateMetadata({ params }: ExcursionPageProps): Promise<Metadata> {
+interface ExcursionPageProps {
+  params: Promise<{ slug: string }>;
+  searchParams?: { locale?: string };
+}
+
+export async function generateMetadata({ params, searchParams }: ExcursionPageProps): Promise<Metadata> {
   const { slug } = await params;
+  const locale = searchParams?.locale || "es";
   
   const excursion = excursiones.find((exc) => exc.slug === slug);
   
   if (!excursion) {
     return {
-      title: "Excursión no encontrada | Madryn Buceo",
+      title: locale === "en" ? "Excursion not found | Madryn Buceo" : "Excursión no encontrada | Madryn Buceo",
       icons: {
         icon: "/images/inicio/logo.png",
         apple: "/images/inicio/logo.png",
@@ -29,39 +40,42 @@ export async function generateMetadata({ params }: ExcursionPageProps): Promise<
     };
   }
   
+  const translatedTitle = getTranslation(excursion.title, locale);
+  const translatedDescription = getTranslation(excursion.miniDescription, locale);
+  
   return {
-    title: `${excursion.title} | Madryn Buceo`,
-    description: excursion.miniDescription,
+    title: `${translatedTitle} | Madryn Buceo`,
+    description: translatedDescription,
     icons: {
       icon: "/images/inicio/logo.png",
       apple: "/images/inicio/logo.png",
     },
     openGraph: {
-      title: `${excursion.title} | Madryn Buceo`,
-      description: excursion.miniDescription,
+      title: `${translatedTitle} | Madryn Buceo`,
+      description: translatedDescription,
       url: `https://madrynbuceo.com/excursiones/${slug}`,
       siteName: "Madryn Buceo",
-      locale: "es_AR",
+      locale: locale === "en" ? "en_US" : "es_AR",
       type: "website",
       images: [
         {
           url: excursion.heroImage,
           width: 1200,
           height: 630,
-          alt: excursion.title,
+          alt: translatedTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${excursion.title} | Madryn Buceo`,
-      description: excursion.miniDescription,
+      title: `${translatedTitle} | Madryn Buceo`,
+      description: translatedDescription,
       images: [excursion.heroImage],
     },
   };
 }
 
-export default async function ExcursionPage({ params }: ExcursionPageProps) {
+export default async function ExcursionPage({ params, searchParams }: ExcursionPageProps) {
   const { slug } = await params;
   const excursion = excursiones.find((exc) => exc.slug === slug);
   if (!excursion) notFound();

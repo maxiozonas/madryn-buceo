@@ -176,7 +176,7 @@ export default function Header() {
                       onClick={() => toggleSubmenu(index)}
                       className="w-full flex justify-between items-center py-4 px-4 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
                     >
-                      {link.title}
+                      <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
                       <ChevronDown
                         className={`h-5 w-5 transition-transform duration-300 ${
                           expandedSubmenu === index ? "rotate-180" : ""
@@ -196,7 +196,7 @@ export default function Header() {
                             className="block py-3 text-sm text-gray-200 hover:text-[#e12222] transition-colors duration-200"
                             onClick={() => setIsOpen(false)}
                           >
-                            {sublink.title}
+                            <FormattedMessage id={`${sublink.title}`} defaultMessage={sublink.title} />
                           </Link>
                         ))}
                       </div>
@@ -208,13 +208,17 @@ export default function Header() {
                     className="block py-4 px-4 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.title}
+                    <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
                   </Link>
                 )}
               </div>
             ))}
           </nav>
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center">
+            <div className="border-t border-gray-700 pt-4">
+              <h3 className="text-sm font-medium text-gray-400 mb-2 px-4">Idioma / Language</h3>
+              <LanguageSwitcher isMobile={true} />
+            </div>
           </div>
         </div>
       </div>
