@@ -6,9 +6,10 @@ import logo from "../../../public/images/footer/pngwing.com(1).png"
 import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
 import { motion } from "framer-motion";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function PadiSection() {
-    // Animation variants
+    const intl = useIntl();
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
@@ -62,9 +63,9 @@ export default function PadiSection() {
                     viewport={{ once: true, amount: 0.3 }}
                     variants={fadeIn}
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-wide shadow-md">Cursos PADI</h2>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-wide shadow-md"><FormattedMessage id="home.padi.title" /></h2>
                     <p className="text-center text-white max-w-3xl mx-auto mb-12 prose-lg">
-                        Certifícate con nosotros y descubre un mundo de posibilidades bajo el agua.
+                        <FormattedMessage id="home.padi.description" />
                     </p>
                 </motion.div>
                 <div className="w-full grid items-center gap-8 lg:grid-cols-2">
@@ -78,7 +79,7 @@ export default function PadiSection() {
                             className="flex sm:items-center gap-4 sm:justify-between mb-4"
                             variants={fadeIn}
                         >
-                            <h2 className="text-2xl md:text-3xl font-bold uppercase text-white">Certifícate con Nosotros</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold uppercase text-white"><FormattedMessage id="home.padi.subTitle" /></h2>
                             <motion.div 
                                 className="flex justify-start sm:justify-end"
                                 variants={logoAnimation}
@@ -95,21 +96,23 @@ export default function PadiSection() {
                         <motion.p 
                             className="mb-6 text-lg text-white/80 prose-2xl"
                             variants={fadeIn}
-                        >
-                            Como <span className="font-bold text-rojo">centro autorizado PADI</span>, ofrecemos una amplia gama de cursos de buceo para todos los niveles, desde principiantes hasta avanzados, y brindamos apoyo especializado a escuelas de buceo.
-                        </motion.p>
+                            dangerouslySetInnerHTML={{ 
+                                __html: intl.formatMessage({ id: 'home.padi.paragraph.1' })
+                            }}
+                        />
                         <motion.p 
                             className="mb-6 text-lg text-white/80 prose-2xl"
                             variants={fadeIn}
-                        >
-                            Nuestro equipo de <span className="font-bold text-rojo">instructores certificados</span> te guiará paso a paso en tu formación, garantizando una experiencia segura, profesional y emocionante en cada inmersión.
-                        </motion.p>
+                            dangerouslySetInnerHTML={{ 
+                                __html: intl.formatMessage({ id: 'home.padi.paragraph.2' })
+                            }}
+                        />
                         <motion.div 
                             className="flex flex-wrap gap-4 text-end"
                             variants={fadeIn}
                         >
-                            <ButtonRojo texto="Ver cursos PADI" href="/cursos/padi" />
-                            <ButtonNegro texto="Ver Checkout Escuelas" href="/cursos/checkout" />
+                            <ButtonRojo texto={<FormattedMessage id="home.padi.button.1" />} href="/cursos/padi" />
+                            <ButtonNegro texto={<FormattedMessage id="home.padi.button.2" />} href="/cursos/checkout" />
                         </motion.div>
                     </motion.div>
                     <motion.div 

@@ -9,40 +9,17 @@ import { Reseña } from "@/lib/types/reseñas"
 import { Button } from "../ui/button"
 import Link from "next/link"
 import { useEffect } from "react"
+import { reseñas } from "@/lib/data/Reseñas"
+import { FormattedMessage, useIntl } from "react-intl"
+
 
 export default function ReseñasSection() {
   const controls = useAnimation();
+  const intl = useIntl();
   
   useEffect(() => {
     controls.start('visible');
   }, [controls]);
-
-  const reseña: Reseña[] = [
-    {
-      id: 1,
-      name: "Andrés Thomas Guldman",
-      rating: 5,
-      text: "Experiencia inolvidable. Mejor relación calidad-precio. Los chicos todos muy buena onda, muy amables. Mucha paciencia para enseñar, se preocuparon de hasta el más mínimo detalle para que todo sea espectacular. Recomiendo el snorkeling con lobos marinos.",
-      date: "En la ultima semana",
-      image: "/images/reseñas/reseña 1.png",
-    },
-    {
-      id: 2,
-      name: "Veronica Giorlando",
-      rating: 5,
-      text: "Increible experiencia de snorkel con lobos marinos. Muy profesionales todos explicando cada tema para una excelente excursion. Tienen todo para q se disfrute: trajes, ponchos, guardarropa",
-      date: "Hace 3 semanas",
-      image: "/images/reseñas/reseñas 2.png",
-    },
-    {
-      id: 3,
-      name: "Laura Martínez",
-      rating: 5,
-      text: "Increíble la atención y calidad de servicio que prestan, un equipo joven, enérgico, muy conocedores del buceo, me permitió disfrutar del proceso de obtener mis certificaciones PADI, 100% recomendados, mención especial para Lucio (instructor), Julián (capitán de la embarcación), Kamila y Mauro.",
-      date: "Hace 5 meses",
-      image: "/images/reseñas/reseñas 3.png",
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -111,22 +88,23 @@ export default function ReseñasSection() {
           className="text-4xl md:text-5xl font-extrabold text-center text-white mb-4 uppercase font-oceanica tracking-wide shadow-md"
           variants={titleVariants}
         >
-          Lo que dicen nuestros clientes
+          <FormattedMessage id="home.reseñas.title" />
         </motion.h2>
         <motion.p 
           className="text-center text-white max-w-3xl mx-auto mb-12"
           variants={titleVariants}
-        >
-          Descubre por qué somos el <span className="text-rojo font-bold">centro de buceo mejor valorado</span> en Puerto Madryn
-        </motion.p>
+          dangerouslySetInnerHTML={{ 
+            __html: intl.formatMessage({ id: 'home.reseñas.description' })
+          }}
+        />
 
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={cardContainerVariants}
         >
           <AnimatePresence>
-            {reseña.map((review, index) => (
-              <ReseñaCard key={review.id} review={review} index={index} />
+            {reseñas.map((reseña, index) => (
+              <ReseñaCard key={reseña.id} reseña={reseña} index={index} />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -145,7 +123,7 @@ export default function ReseñasSection() {
               className="bg-white hover:bg-white text-black text-lg font-semibold cursor-pointer flex items-center gap-2"
             >
               <Image src={googleLogo} alt="Google" width={24} height={24} />
-              Ver todas las reseñas en Google
+              <FormattedMessage id="home.reseñas.button" />
             </Button>
           </Link>
         </motion.div>
@@ -154,7 +132,7 @@ export default function ReseñasSection() {
   )
 }
 
-function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
+function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -214,11 +192,11 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
             transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
           >
             <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">
-              <Image src={review.image || "/placeholder.svg"} alt={review.name} fill className="object-cover" />
+              <Image src={reseña.image || "/placeholder.svg"} alt={reseña.name} fill className="object-cover" />
             </div>
             <div>
-              <h4 className="font-medium">{review.name}</h4>
-              <p className="text-xs">{review.date}</p>
+              <h4 className="font-medium"><FormattedMessage id={reseña.name} /></h4>
+              <p className="text-xs"><FormattedMessage id={reseña.date} /></p>
             </div>
           </motion.div>
           
@@ -230,7 +208,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
             {[...Array(5)].map((_, i) => (
               <motion.div key={i} variants={starVariants}>
                 <Star
-                  className={`h-5 w-5 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+                  className={`h-5 w-5 ${i < reseña.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
                 />
               </motion.div>
             ))}
@@ -242,7 +220,7 @@ function ReseñaCard({ review, index }: { review: Reseña; index: number }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
           >
-            {review.text}
+            <FormattedMessage id={reseña.text} />
           </motion.p>
         </CardContent>
       </Card>

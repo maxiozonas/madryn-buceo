@@ -6,6 +6,7 @@ import { Card, CardContent } from "../ui/card"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import ButtonRojo from "../ui/button-rojo"
+import { FormattedMessage } from "react-intl";
 
 export default function WhyChooseSection() {
   const ref = useRef(null)
@@ -35,14 +36,10 @@ export default function WhyChooseSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          ¿Por qué elegirnos?
+          <FormattedMessage id="home.whychoose.title" />
         </motion.h2>
         <p className="text-center text-white max-w-3xl mx-auto mb-12 prose-lg">
-          Somos el centro de buceo más antiguo de la zona, con{" "}
-          <span className="text-rojo font-bold">más de 40 años</span> de experiencia en{" "}
-          <span className="text-rojo font-bold">Puerto Madryn</span>, la capital nacional del buceo. Combinamos la
-          experiencia de dos generaciones, <span className="text-rojo font-bold">padre e hijo</span>, para ofrecer experiencias de buceo y
-          snorkeling excepcionales.
+          <FormattedMessage id="home.whychoose.description" />
         </p>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -52,44 +49,44 @@ export default function WhyChooseSection() {
         >
           <FeatureCard
             icon={<Clock className="h-12 w-12 text-rojo" />}
-            title="Experiencia y Trayectoria"
-            description="Con más de cuatro décadas dedicadas al buceo en la región, somos líderes en el campo y conocemos los secretos del Golfo Nuevo como nadie más."
+            title={<FormattedMessage id="home.whychoose.feature1.title" />}
+            description={<FormattedMessage id="home.whychoose.feature1.description" />}
           />
           <FeatureCard
             icon={<Users className="h-12 w-12 text-rojo" />}
-            title="Atención Personalizada"
-            description="Nuestro equipo comprometido se asegura de que cada cliente reciba atención personalizada, adaptándose a sus necesidades y habilidades."
+            title={<FormattedMessage id="home.whychoose.feature2.title" />}
+            description={<FormattedMessage id="home.whychoose.feature2.description" />}
           />
           <FeatureCard
             icon={<Shield className="h-12 w-12 text-rojo" />}
-            title="Seguridad Garantizada"
-            description="Nuestros protocolos de seguridad, experiencia y planificación son claves para asegurar que cada inmersión sea una experiencia segura y placentera."
+            title={<FormattedMessage id="home.whychoose.feature3.title" />}
+            description={<FormattedMessage id="home.whychoose.feature3.description" />}
           />
           <FeatureCard
             icon={<ThumbsUp className="h-12 w-12 text-rojo" />}
-            title="Reseñas que Hablan por Sí Mismas"
-            description="Descubre por qué nuestros clientes nos eligen una y otra vez. Lee las reseñas y testimonios que reflejan la calidad y la excelencia de nuestras experiencias submarinas."
+            title={<FormattedMessage id="home.whychoose.feature4.title" />}
+            description={<FormattedMessage id="home.whychoose.feature4.description" />}
           />
           <FeatureCard
             icon={<Heart className="h-12 w-12 text-rojo" />}
-            title="Ambiente Cálido y Familiar"
-            description="En nuestro centro, te sentirás como en casa desde el momento en que llegues. Nuestro ambiente acogedor y familiar es parte de lo que nos hace especiales."
+            title={<FormattedMessage id="home.whychoose.feature5.title" />}
+            description={<FormattedMessage id="home.whychoose.feature5.description" />}
           />
           <FeatureCard
             icon={<Anchor className="h-12 w-12 text-rojo" />}
-            title="Exploramos el Golfo Nuevo"
-            description="Exploramos parques naturales, naufragios y la reserva de lobos marinos, ofreciendo experiencias únicas para todos los niveles, desde principiantes hasta Dive Masters."
+            title={<FormattedMessage id="home.whychoose.feature6.title" />}
+            description={<FormattedMessage id="home.whychoose.feature6.description" />}
           />
         </motion.div>
         <div className="text-center mt-12">
-          <ButtonRojo texto="¡Sumergete hoy!" href="https://madrynbuceo.outtrip.com/"/>
+          <ButtonRojo texto={<FormattedMessage id="home.whychoose.button" />} href="https://madrynbuceo.outtrip.com/"/>
         </div>
       </div>
     </section>
   )
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: React.ReactNode; description: React.ReactNode }) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
