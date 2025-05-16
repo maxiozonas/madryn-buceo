@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import ImageGallery from "./ImageGallery";
-import { ChevronLeft } from "lucide-react";
+import { BadgeCheck, Ruler, Gauge, MapPinned } from "lucide-react";
+import { FormattedMessage } from "react-intl";
 
 interface DiveSiteModalProps {
   isOpen: boolean;
@@ -14,7 +17,6 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
   isOpen,
   site,
   closeModal,
-  handleGoBack,
 }) => {
   if (!isOpen || !site) return null;
 
@@ -26,54 +28,78 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center"
+      className="fixed inset-0 bg-black/50 z-[2000] flex justify-center items-center p-4"
       onClick={handleOverlayClick}
     >
-      <div className="bg-[#252422] p-2 md:p-3 rounded-xl w-[90%] max-w-3xl max-h-[96vh] overflow-auto overflow-x-hidden overflow-y-hidden">
-        <div className="mb-2 overflow-visible">
-          <ImageGallery media={site.media} />
-        </div>
-
-        <h3 className="text-lg font-bold text-rojo mb-1">{site.name}</h3>
-        <p className="text-white/80 text-sm mb-2">{site.description}</p>
-
-        <div className="grid grid-cols-2 gap-4 text-sm text-white/80 mb-2">
-          <div>
-            <p>
-              <strong>Dificultad:</strong> {site.difficulty}
-            </p>
-            <p>
-              <strong>Profundidad:</strong> {site.depth}
-            </p>
+      <div className="bg-[#252422] rounded-xl w-full max-w-5xl max-h-[96vh] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 md:p-6">
+          <div className="lg:col-span-2">
+            <ImageGallery media={site.media} />
           </div>
-          <div>
-            <p>
-              <strong>Certificación:</strong> {site.certification}
-            </p>
-            <p>
-              <strong>Distancia:</strong> {site.time}
-            </p>
+
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-rojo mb-2"><FormattedMessage id={site.name}/></h3>
+              <p className="text-white/80 text-sm mb-4"><FormattedMessage id={site.description}/></p>
+
+              <div className="grid grid-cols-1 gap-2 text-sm text-white/80 mb-4">
+                <p className="flex items-center gap-2">
+                  <Gauge className="w-5 h-5 text-rojo" />
+                  <strong>
+                    <FormattedMessage
+                      id="diveSite.difficulty"
+                      defaultMessage="Difficulty"
+                    />
+                    :
+                  </strong>{" "}
+                  {site.difficulty}
+                </p>
+                <p className="flex items-center gap-2">
+                  <Ruler className="w-5 h-5 text-rojo" />
+                  <strong>
+                    <FormattedMessage
+                      id="depth"
+                      defaultMessage="Depth"
+                    />
+                    :
+                  </strong>{" "}
+                  {site.depth}
+                </p>
+                <p className="flex items-center gap-2">
+                  <BadgeCheck className="w-5 h-5 text-rojo" />
+                  <strong>
+                    <FormattedMessage
+                      id="certification"
+                      defaultMessage="Certification"
+                    />
+                    :
+                  </strong>{" "}
+                  {site.certification}
+                </p>
+                <p className="flex items-center gap-2">
+                  <MapPinned className="w-5 h-5 text-rojo" />
+                  <strong>
+                    <FormattedMessage
+                      id="diveSite.time"
+                      defaultMessage="Distance"
+                    />
+                    :
+                  </strong>{" "}
+                  {site.time}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <button
+                onClick={closeModal}
+                className="w-full py-2 px-4 bg-rojo text-white rounded-lg hover:bg-rojo/80 transition"
+              >
+                <FormattedMessage id="diveSite.close" defaultMessage="Close" />
+              </button>
+            </div>
           </div>
         </div>
-
-        <div className="mt-2">
-          <button
-            onClick={closeModal}
-            className="w-full py-2 px-4 bg-rojo text-white rounded-lg hover:bg-rojo/80 transition"
-          >
-            Cerrar
-          </button>
-        </div>
-
-        {handleGoBack && (
-          <button
-            onClick={handleGoBack}
-            className="absolute top-3 left-3 bg-[#252422] text-white border border-rojo rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#403d39] transition z-[2100]"
-            aria-label="Volver"
-          >
-            <ChevronLeft className="w-5 h-5 text-rojo" />
-          </button>
-        )}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
+import { FormattedMessage } from "react-intl";
 
 export default function MapSection() {
   const containerVariants = {
@@ -85,15 +86,14 @@ export default function MapSection() {
                 >
                   <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
                     <MapPin className="h-6 w-6 text-rojo" />
-                    Estamos acá
+                    <FormattedMessage id="here" defaultMessage="here" />
                   </h2>
                 </motion.div>
                 <motion.p
                   className="text-white/80 text-sm text-center whitespace-pre-line"
                   variants={contentVariants}
                 >
-                  Los esperamos todo el año en el balneario Sara, sobre el
-                  Mar...
+                  <FormattedMessage id="see.you" defaultMessage="About Us" />
                 </motion.p>
               </CardContent>
             </Card>

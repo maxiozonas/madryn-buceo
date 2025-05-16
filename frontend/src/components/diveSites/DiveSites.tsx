@@ -8,6 +8,7 @@ import DiveSiteModal from "./DiveSiteModal";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import CertificationFilter from "./CertificationFilter";
 import HeroSection from "./HeroSection";
+import { FormattedMessage } from "react-intl";
 
 export default function DiveSitesPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,9 +35,9 @@ export default function DiveSitesPage() {
   return (
     <>
       <HeroSection
-        title={"Puntos de buceo"}
+        title={<FormattedMessage id ={"diving.spots"}/>}
         heroImage={"/images/buceo/divesites.webp"}
-        miniDescription={"Conocé los mejores lugares para bucear en la región."}
+        miniDescription={<FormattedMessage id ={"diving.des"}/>}
       />
       <div className="container mx-auto px-8">
         <div className="flex justify-center mb-4 block sm:hidden">

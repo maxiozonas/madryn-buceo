@@ -13,7 +13,7 @@ export default function CursoLista({ courses }: CursoListaProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {courses.length > 0 ? (
           courses.map((course) => (
-            <CursoCard key={course.title} course={course} />
+            <CursoCard key={course.slug} course={course} />
           ))
         ) : (
           <p className="text-white/80 text-center col-span-full">
