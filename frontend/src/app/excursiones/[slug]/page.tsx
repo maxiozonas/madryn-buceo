@@ -10,7 +10,6 @@ import CallToActionSection from "@/components/excursiones/CallToActionSection";
 import GaleriaSection from "@/components/excursiones/GaleriaSection";
 import OtrasExcursioesSection from "@/components/excursiones/OtrasExcursionesSection";
 
-
 interface ExcursionPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -69,11 +68,12 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
 
   return (
     <>
-      <HeroSection
+<HeroSection
         title={excursion.title}
         heroImage={excursion.heroImage}
         miniDescription={excursion.miniDescription}
         callToAction={excursion.callToAction[0]}
+        altText={`${excursion.title}`}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">
         <div className="max-w-7xl mx-auto w-full">

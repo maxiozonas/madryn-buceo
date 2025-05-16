@@ -3,9 +3,11 @@
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
 import { ArrowRight } from "lucide-react";
+import { ReactNode } from "react";
+
 
 interface ButtonNegroProps {
-    texto: string;
+    texto: ReactNode;
     href: string;
     fullWidth?: boolean;
 }

@@ -4,9 +4,10 @@ import { useRouter } from "next/navigation";
 import { Button } from "./button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ReactNode } from "react"
 
 interface ButtonRojoProps {
-    texto: string;
+    texto: ReactNode 
     href: string;
     fullWidth?: boolean;
     layoutId?: string;

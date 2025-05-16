@@ -6,6 +6,7 @@ import Image from "next/image"
 import { ImageIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
+import { FormattedMessage } from "react-intl"
 
 interface GaleriaSectionProps {
   galleryImages: string[]
@@ -50,7 +51,7 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ImageIcon className="h-6 w-6 text-rojo" />
-          Galería
+          <FormattedMessage id="Gallery.text" />
         </h2>
         <div className="block sm:hidden mb-4">
           {galleryImages.length > 0 && (
@@ -93,11 +94,11 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
               <div className="absolute inset-0 bg-negro-primario/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <button className="text-white cursor-pointer font-medium bg-rojo px-4 py-2 rounded-md hover:bg-rojo/80 transition-all duration-200 transform group-hover:scale-105 shadow-lg flex items-center gap-2">
                   <ImageIcon className="h-5 w-5" />
-                  Ver imagen
+                  <FormattedMessage id="see.image" />
                 </button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro-primario/90 to-transparent h-16 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-3">
-                <span className="text-white text-sm font-medium">Imagen {index + 1} de {galleryImages.length}</span>
+                <span className="text-white text-sm font-medium">{index + 1} / {galleryImages.length}</span>
               </div>
             </div>
           ))}
