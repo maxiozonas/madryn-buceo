@@ -4,16 +4,15 @@ import HeroSection from "@/components/cursos/checkout/HeroSection";
 import DetallesSection from "@/components/cursos/checkout/DetallesSection";
 import RequirementosSection from "@/components/cursos/checkout/RequerimentosSection";
 import TableSection from "@/components/cursos/checkout/TableSection";
+import { FormattedMessage } from "react-intl";
 
 export default function CheckoutPage() {
   return (
     <>
       <HeroSection
-        title={"Check-out - Pruebas de Aguas Abiertas"}
+        title={"Checkout"}
         heroImage={"/images/nosotros/terranova2.JPG"}
-        miniDescription={
-          "Completá tu certificación PADI en la Patagonia. Entrenamiento real, paisajes submarinos únicos y tu credencial digital lista apenas apruebes."
-        }
+        miniDescription={<FormattedMessage id="checkout.subtitulo" />}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">
         <div className="max-w-7xl mx-auto w-full">
@@ -21,8 +20,8 @@ export default function CheckoutPage() {
             <TableSection />
           </div>
 
-              <DetallesSection />
-              <RequirementosSection />
+          <DetallesSection />
+          <RequirementosSection />
         </div>
       </section>
     </>

@@ -1,15 +1,16 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Clock, ArrowDown, Check } from "lucide-react";
+import { ReactNode } from "react";
 
 interface CursoIntroSectionProps {
-    title: string;
-    shortDescription: string;
-    certification?: string;
-    duration?: string;
-    depth?: string;
+    title: ReactNode;
+    shortDescription: ReactNode;
+    certification?: ReactNode;
+    duration?: ReactNode;
+    depth?: ReactNode;
     cardImage: string;
-    level: string;
+    level: ReactNode;
 }
 
 export default function CursoIntroSection({ title, shortDescription, certification, duration, depth, cardImage, level }: CursoIntroSectionProps) {

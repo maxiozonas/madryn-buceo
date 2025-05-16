@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface HeroSectionProps {
-  title: string;
+  title: ReactNode;
   heroImage: string;
-  miniDescription: string;
+  miniDescription: ReactNode;
 }
 
 const titleVariants = {
@@ -30,7 +31,7 @@ export default function HeroSection({
         <div className="absolute inset-0 z-0 mask-fade-bottom">
           <Image
             src={heroImage}
-            alt={title}
+            alt={""}
             fill
             className="object-cover"
             priority

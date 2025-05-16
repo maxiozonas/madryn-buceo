@@ -6,6 +6,7 @@ import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { Staff } from "@/lib/data/Staff";
+import { FormattedMessage } from "react-intl";
 
 interface Props {
   staff: Staff[];
@@ -50,7 +51,7 @@ export default function StaffCarousel({ staff }: Props) {
           <div className="flex flex-col justify-center h-full min-h-[300px] sm:min-h-[400px]">
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white flex justify-center items-center gap-2">
               <Users className="h-6 w-6 text-rojo" />
-              Nosotros
+              <FormattedMessage id="our.team" defaultMessage="About Us" />
             </h2>
             <CardContent className="p-4 sm:p-8 relative">
               <button
@@ -93,7 +94,7 @@ export default function StaffCarousel({ staff }: Props) {
                         </div>
                         <div className="w-[245px] mt-2">
                           <p className="text-white/80 text-xs leading-tight max-h-[8.7em]  overflow-hidden flex-grow mb-2">
-                            {member.description}
+                            <FormattedMessage id={member.description} defaultMessage="About Us" />
                           </p>
                         </div>
                       </CardContent>

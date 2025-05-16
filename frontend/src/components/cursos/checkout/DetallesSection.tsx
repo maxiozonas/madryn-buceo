@@ -3,27 +3,29 @@
 import { LifeBuoy, Award, Star, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
+import { ReactNode } from "react";
 
 export default function DetallesSection() {
   const details = [
     {
-      title: "Equipo de buceo",
-      description: "Todo el equipo de buceo necesario (traje, chaleco, regulador, computadora, tanque y lastre).",
+      title: <FormattedMessage id={"equipment"}/>,
+      description: <FormattedMessage id={"equipment2"}/>,
       icon: "lifebuoy",
     },
     {
-      title: "Supervisión",
-      description: "Supervisión por instructor PADI.",
+      title: <FormattedMessage id={"supervision"}/>,
+      description: <FormattedMessage id={"supervision2"}/>,
       icon: "award",
     },
     {
-      title: "Certificación",
-      description: "Tramitación de la tarjeta digital correspondiente al finalizar.",
+      title: <FormattedMessage id={"Certification"}/>,
+      description: <FormattedMessage id={"certification2"}/>,
       icon: "star",
     },
   ];
 
-  const getIcon = (detail: { title?: string; description?: string; icon: unknown; }) => {
+  const getIcon = (detail: { title?: ReactNode; description?: ReactNode; icon: unknown; }) => {
     switch ((detail.icon as string).toLowerCase()) {
       case "lifebuoy":
         return <LifeBuoy className="h-6 w-6 text-rojo" />;
@@ -41,7 +43,7 @@ export default function DetallesSection() {
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ArrowRight className="h-8 w-8 text-rojo" />
-          Qué incluye (ambos programas)
+          <FormattedMessage id={"queincluye"}/>
         </h2>
         <div className="space-y-4">
           {details.map((detail, index) => (

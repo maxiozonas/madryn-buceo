@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileClock, House, Users } from "lucide-react";
+import { FormattedMessage } from "react-intl";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
   { url: "/images/nosotros/GaleriaLocal/galeriaLocal2.webp", type: "image" },
@@ -53,12 +54,11 @@ export function AboutCardsSection() {
               title={
                 <div className="flex items-center gap-2">
                   <House className="h-6 w-6 text-rojo" />
-                  Nuestro Local
+                  <FormattedMessage id ={"our.store"}/>
                 </div>
               }
               description={
-                "Nuestro local es mucho más que un punto de encuentro: también funciona como un pequeño museo. Vas a poder admirar diversos objetos recuperados del fondo del mar, junto con fósiles y barbas de ballenas que forman parte de la historia natural local.\n" +
-                "Te invitamos a descubrirlo."
+                <FormattedMessage id ={"our.store2"}/>
               }>
               <ImageGallery
                 media={historyMedia}
@@ -71,12 +71,11 @@ export function AboutCardsSection() {
               title={
                 <div className="flex items-center gap-2">
                   <FileClock className="h-6 w-6 text-rojo" />
-                  Nuestra historia
+                  <FormattedMessage id ={"our.history"}/>
                 </div>
               }
               description={
-                "Somos una operadora familiar con más de 40 años compartiendo el mar patagónico. Dos generaciones dedicadas a  crear experiencias inolvidables en el mar.\n" +
-                "Amamos lo que hacemos y lo vivimos con cada persona que se anima a descubrir estas aguas."
+                <FormattedMessage id ={"our.history2"}/>
               }
               videoSrc="/videos/nosotros/docu.mp4"
             >
@@ -86,10 +85,10 @@ export function AboutCardsSection() {
               title={
                 <div className="flex items-center gap-2">
                   <Users className="h-6 w-6 text-rojo" />
-                  Nuestro staff
+                  <FormattedMessage id ={"our.staff"}/>
                 </div>
               }
-              description=" Somos un equipo de profesionales certificados por PADI, con experiencia en formación de buzos, salidas recreativas y acompañamiento personalizado en el mar patagónico."
+              description={<FormattedMessage id ={"our.staff2"}/>}
               imageSrc="/images/nosotros/staff.JPG"
             />
           </motion.div>
@@ -107,7 +106,7 @@ function AboutCard({
   children,
 }: {
   title: ReactNode;
-  description: string;
+  description: ReactNode;
   imageSrc?: string;
   videoSrc?: string;
   children?: React.ReactNode;
@@ -169,7 +168,7 @@ function AboutCard({
               style={{ borderRadius: 0 }}
             >
               <source src={videoSrc} type="video/mp4" />
-              Tu navegador no admite la reproducción de video.
+              <FormattedMessage id ={"browser"}/>
             </video>
           )}
           {children}
@@ -181,7 +180,7 @@ function AboutCard({
             </h3>
           </motion.div>
           <motion.p
-            className="text-white/80 text-sm flex-grow whitespace-pre-line"
+            className="text-white/80 text-sm flex-grow whitespace-pre-line "
             variants={contentVariants}
           >
             {description}
