@@ -21,12 +21,13 @@ function getTranslation(id: string, locale: string = "es") {
 
 interface ExcursionPageProps {
   params: Promise<{ slug: string }>;
-  searchParams?: { locale?: string };
+  searchParams?: Promise<{ locale?: string }>;
 }
 
 export async function generateMetadata({ params, searchParams }: ExcursionPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const locale = searchParams?.locale || "es";
+  const awaitedSearchParams = await searchParams;
+  const locale = awaitedSearchParams?.locale || "es";
   
   const excursion = excursiones.find((exc) => exc.slug === slug);
   
@@ -75,7 +76,7 @@ export async function generateMetadata({ params, searchParams }: ExcursionPagePr
   };
 }
 
-export default async function ExcursionPage({ params, searchParams }: ExcursionPageProps) {
+export default async function ExcursionPage({ params }: ExcursionPageProps) {
   const { slug } = await params;
   const excursion = excursiones.find((exc) => exc.slug === slug);
   if (!excursion) notFound();

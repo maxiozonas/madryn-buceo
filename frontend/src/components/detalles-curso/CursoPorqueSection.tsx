@@ -1,7 +1,9 @@
 import Image from "next/image";
-import imagen from "../../../public/images/footer/pngwing.com(1).png";
 import { FormattedMessage } from "react-intl";
 export default function CursoPorqueSection() {
+
+  const logo = "https://drive.google.com/uc?export=view&id=16CG2pJMJm8nXif2CVRnEBzoiZe0BZOK5";
+
   return (
     <div className="bg-negro-secundario rounded-xl shadow-lg p-6 border border-[#403d39] text-white">
       <h3 className="text-2xl font-bold mb-4">
@@ -20,11 +22,12 @@ export default function CursoPorqueSection() {
       </p>
       <div className="flex items-center justify-center mt-6">
         <Image
-          src={imagen}
+          src={logo}
           width={120}
           height={120}
           alt="PADI Certification"
           className="bg-white rounded-full p-2"
+          priority
         />
         <div className="ml-6">
           <h4 className="text-sm font-semibold mb-2">

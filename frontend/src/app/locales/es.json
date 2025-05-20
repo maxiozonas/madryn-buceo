@@ -23,7 +23,6 @@
   "nav.courses.checkout.description": "Coordiná con tu escuela el próximo check-out en Puerto Madryn.",
   "nav.about": "Nosotros",
   "nav.contact": "Contacto",
-
   "home.hero.title": "Bienvenidos a Puerto Madryn",
   "home.hero.description": "Descubre la belleza natural de la Patagonia con nosotros.",
   "home.hero.button.bookNow": "Reservar ahora",
@@ -67,13 +66,11 @@
   "home.reseña.3.text": "Increíble la atención y calidad de servicio que prestan, un equipo joven, enérgico, muy conocedores del buceo, me permitió disfrutar del proceso de obtener mis certificaciones PADI, 100% recomendados, mención especial para Lucio (instructor), Julián (capitán de la embarcación), Kamila y Mauro.",
   "home.reseña.3.date": "Hace 5 meses",
   "home.reseña.3.image": "/images/reseñas/reseñas 3.png",
-
   "footer.text.1": "Centro de buceo: B. Brown 1900 - Bajada 5 - Balneario Sara, Puerto Madryn - Patagonia Argentina",
   "footer.text.2": "Teléfono: +5492804564422",
   "footer.text.3": "Email: madrynbuceo@hotmail.com",
   "footer.text.4": "Desde 1983 buceando en la patagonia...",
   "footer.text.5": "© 2025 Madryn Buceo. Todos los derechos reservados.",
-
   "courses.padi.title": "Cursos PADI",
   "courses.padi.description": "Certifícate con nosotros y descubre un mundo de posibilidades bajo el agua.",
   "courses.padi.subTitle.1": "¿Por qué certificarte con nosotros?",
@@ -85,7 +82,6 @@
   "courses.padi.badge.1": "Centro PADI Oficial",
   "courses.padi.subTitle.2": "Nuestros Cursos",
   "courses.padi.subTitle.3": "Elige el curso que más te interese",
-
   "cursos.section.title": "Nuestros Cursos",
   "cursos.section.subtitle": "Elige el curso que más te interese",
   "cursos.filters.todos": "Todos",
@@ -101,7 +97,6 @@
   "cursos.avanzados.advanced.shortDescription": "Mejora tus habilidades de buceo.",
   "cursos.profesional.divemaster.title": "PADI Divemaster",
   "cursos.profesional.divemaster.shortDescription": "Conviértete en un líder de buceo profesional.",
-
   "cursos.discover.title": "Discover Scuba Diving",
   "cursos.discover.shortDescription": "Una experiencia de buceo para principiantes, aprenderás lo básico y disfrutarás de tu primera inmersión en aguas abiertas.",
   "cursos.discover.description": "Si estás interesado en el buceo pero no estás seguro de querer inscribirte en un curso de certificación, Discover Scuba Diving es la manera perfecta de probar las aguas. En muy poco tiempo, aprenderás habilidades básicas de buceo y respirarás bajo el agua por primera vez. Un profesional PADI altamente capacitado te proporcionará el equipo de buceo, te explicará las técnicas básicas de buceo y responderá cualquier pregunta que puedas tener.",
@@ -113,7 +108,6 @@
   "cursos.discover.requirements.1": "No requiere certificación previa",
   "cursos.discover.level": "iniciacion",
   "cursos.discover.certification": "Sin certificación",
-
   "cursos.scuba.title": "Scuba Diver",
   "cursos.scuba.shortDescription": "Obtén tu certificación básica de buceo que te permite bucear bajo la supervisión de un profesional hasta 12 metros de profundidad.",
   "cursos.scuba.description": "¿Querés empezar a bucear pero todavía no estás listo para comprometerte con el curso completo? Tenemos una excelente alternativa para iniciarte en este mundo: podés realizar los primeros tres módulos del curso Open Water Diver y obtener la certificación Scuba Diver. Esta opción es ideal para quienes desean empezar a explorar el buceo de forma gradual, con sesiones más cortas y acompañamiento constante. Con esta certificación vas a poder bucear hasta 12 metros de profundidad, siempre acompañado por un profesional, y te permite avanzar luego hacia el Open Water Diver si querés seguir tu formación.",
@@ -129,7 +123,6 @@
   "cursos.scuba.qualifications.2": "Continuar su formación en buceo completando la certificación PADI Open Water Diver y tomando ciertos cursos de especialidad.",
   "cursos.scuba.certification": "Scuba Diver PADI",
   "cursos.scuba.level": "iniciacion",
-
   "cursos.owd.title": "Open Water Diver",
   "cursos.owd.shortDescription": "Certifícate como buzo de aguas abiertas y accede a sitios de buceo exclusivos hasta 18 metros de profundidad en cualquier lugar del mundo.",
   "cursos.owd.description": "El curso Open Water Diver PADI está diseñado para convertirte en un buceador seguro y competente. A través de formación teórica y práctica, aprenderás a montar y usar el equipo de buceo, controlar tu flotabilidad, interactuar respetuosamente con la vida marina y gestionar problemas comunes. El curso incluye sesiones en piscina, inmersiones en aguas abiertas y teoría online para prepararte para aventuras de buceo en todo el mundo. Con esta certificación, podrás bucear hasta 18 metros de profundidad de forma independiente o con un compañero.",
@@ -147,7 +140,6 @@
   "cursos.owd.learningOutcomes.4": "Gestiona problemas comunes.",
   "cursos.owd.certification": "Open Water Diver PADI",
   "cursos.owd.level": "iniciacion",
-
   "cursos.avanzados": "Avanzados",
   "cursos.AOW.title": "Advanced Open Water",
   "cursos.AOW.shortDescription": "Amplía tus habilidades y experiencia de buceo explorando nuevas áreas de interés bajo la supervisión de un instructor.",
@@ -164,7 +156,6 @@
   "cursos.AOW.learningOutcomes.2": "Usa una brújula y aprende sobre navegación submarina.",
   "cursos.AOW.certification": "Advanced Open Water PADI",
   "cursos.AOW.level": "avanzados",
-
   "cursos.efr.title": "Emergency First Response (EFR)",
   "cursos.efr.shortDescription": "Aprende técnicas de primeros auxilios y RCP para estar preparado en situaciones de emergencia tanto en tierra como bajo el agua.",
   "cursos.efr.description": "El curso Emergency First Response (EFR) te proporciona los conocimientos y habilidades necesarios para manejar situaciones de emergencia tanto en tierra como relacionadas con el buceo. Aprenderás a realizar RCP (Reanimación Cardiopulmonar), utilizar un DEA (Desfibrilador Externo Automático), controlar hemorragias, manejar lesiones y enfermedades, y responder ante emergencias. Este curso es un requisito previo para el curso Rescue Diver y es reconocido internacionalmente como un programa de formación en primeros auxilios de alta calidad.",
@@ -175,7 +166,6 @@
   "cursos.efr.learningOutcomes.2": "Aumentar las posibilidades de supervivencia del paciente",
   "cursos.efr.certification": "Emergency First Response PADI",
   "cursos.efr.level": "avanzados",
-
   "cursos.rescue.title": "Rescue Diver",
   "cursos.rescue.shortDescription": "Aprende a prevenir y gestionar problemas en el agua y conviértete en un buceador más seguro y consciente.",
   "cursos.rescue.description": "El curso Rescue Diver se centra principalmente en ejercicios de rescate tanto dentro como fuera del agua, con un enfoque menor en el buceo recreativo. Los participantes completarán 5 módulos que incluyen prácticas de rescate y teoría, siguiendo el manual de PADI. Este curso está diseñado para prepararte en habilidades de rescate en diversas situaciones y para supervisar el bienestar de tus compañeros de buceo. El curso PADI Rescue Diver te cambiará la forma de bucear de la mejor manera posible. Aprende a identificar y solucionar problemas menores antes de que se conviertan en problemas grandes, gana mucha confianza y diviértete seriamente en el camino. Descubre por qué innumerables buceadores dicen que el Rescue Diver es su curso de buceo favorito.",
@@ -190,7 +180,6 @@
   "cursos.rescue.learningOutcomes.2": "Usar un kit de oxígeno de emergencia",
   "cursos.rescue.certification": "Rescue Diver PADI",
   "cursos.rescue.level": "avanzados",
-
   "cursos.profesional": "Profesional",
   "cursos.divemaster.title": "Divemaster",
   "cursos.divemaster.shortDescription": "Avanza en tu carrera de buceo y conviértete en un profesional capacitado para supervisar y guiar a otros buceadores.",
@@ -210,7 +199,6 @@
   "cursos.divemaster.learningOutcomes.3": "Dirige el entrenamiento de actualización.",
   "cursos.divemaster.certification": "Divemaster PADI",
   "cursos.divemaster.level": "profesional",
-
   "contact.form.name.label": "Nombre",
   "contact.form.name.placeholder": "Tu nombre",
   "contact.form.name.error": "El nombre debe tener al menos 2 caracteres",
@@ -370,47 +358,30 @@
   "otrasExcursionesSection.title": "Otras excursiones",
   "excursionCard.button.moreInfo": "Más información",
   "hero.exploreMore": "Explora más",
-
   "time": "Duración",
   "depth": "Profundidad",
   "certification": "Certificación",
   "requirements": "Requisitos",
   "requestInfo": "Solicitar más información",
-
   "cursos.description.title": "Descripción",
   "courseDetails.title.program": "Detalles del programa",
   "courseDetails.title.course": "Detalles del curso",
   "cursos.includes.title": "¿Qué incluye?",
-
   "cursos.qualifications.title": "Los PADI Scuba Divers están calificados para:",
-
   "porque.title": "¿Por qué certificarte con Madryn Buceo?",
-
   "porque.texto": "Explora el fascinante mundo submarino en la impresionante Patagonia con nuestros cursos de buceo, diseñados para todos los niveles. Como centro de buceo PADI, garantizamos la más alta calidad de instrucción y seguridad. Descubre por qué Puerto Madryn es reconocido como la capital nacional del buceo, ofreciéndote una experiencia única en las aguas del Golfo Nuevo",
-
   "porque.padi": "PADI es la certificadora de buceo número 1 a nivel mundial, reconocida por su excelencia en formación y estándares de seguridad.",
-
-  "certi.padi":"Certificación PADI",
-  "otros.cursos":"Otros cursos que podrían interesarte",
-
-  "checkout.subtitulo":"Completá tu certificación PADI en la Patagonia. Entrenamiento real, paisajes submarinos únicos y tu credencial digital lista apenas apruebes.",
-
-  "contact.us":"Contactanos",
-
+  "certi.padi": "Certificación PADI",
+  "otros.cursos": "Otros cursos que podrían interesarte",
+  "checkout.subtitulo": "Completá tu certificación PADI en la Patagonia. Entrenamiento real, paisajes submarinos únicos y tu credencial digital lista apenas apruebes.",
+  "contact.us": "Contactanos",
   "equipment": "Equipo de buceo",
-
   "equipment2": "Todo el equipo de buceo necesario (traje, chaleco, regulador, computadora, tanque y lastre).",
-
   "supervision": "Supervisión",
-
-  "supervision2":  "Supervisión por instructor PADI.",
-
+  "supervision2": "Supervisión por instructor PADI.",
   "Certification": "Certificación",
-
   "certification2": "Tramitación de la tarjeta digital correspondiente al finalizar.",
-
   "queincluye": "Qué incluye (ambos programas)",
-
   "requirements.section.title.openWater": "Requisitos Open Water",
   "requirements.section.title.advanced": "Requisitos Advanced",
   "requirements.openWater.theory.title": "Teoría y piscina",
@@ -425,7 +396,6 @@
   "requirements.advanced.medical.description": "Certificado médico apto ( < 12 meses ).",
   "requirements.advanced.elearning.title": "eLearning",
   "requirements.advanced.elearning.description": "Haber completado el eLearning Advanced (si aplica).",
-
   "tableSection.title": "Modalidades disponibles",
   "tableSection.program.openWater": "Open Water Check-out",
   "tableSection.dives.openWater": "4 inmersiones evaluadas",
@@ -437,7 +407,6 @@
   "tableSection.target.advanced": "Buzos Open Water que buscan el siguiente nivel",
   "tableSection.button.reserve": "Reservar",
   "tableSection.note": "* Profundidad, Navegación Submarina y tres aventuras a elección (p. ej., Flotabilidad, Naufragio, Naturalista).",
-
   "our.store": "Nuestro Local",
   "our.store2": "Nuestro local es mucho más que un punto de encuentro: también funciona como un pequeño museo. Vas a poder admirar diversos objetos recuperados del fondo del mar, junto con fósiles y barbas de ballenas que forman parte de la historia natural local. Te invitamos a descubrirlo.",
   "our.history": "Nuestra historia",
@@ -445,94 +414,115 @@
   "our.staff": "Nuestro staff",
   "our.staff2": "Somos un equipo de profesionales certificados por PADI, con experiencia en formación de buzos, salidas recreativas y acompañamiento personalizado en el mar patagónico.",
   "browser": "Tu navegador no admite la reproducción de video.",
-
-  "about.us":"Sobre nosotros",
-  "about.us2":"Somos una operadora de buceo con más de 40 años de trayectoria. Dos generaciones compartiendo auténticas experiencias de buceo y snorkel en el mar patagónico.",
-
-    "here":"Estamos acá",
-
-  "see.you":"Los esperamos todo el año en el balneario Sara, sobre el Mar...",
-
-  "our.team":"Nuestro equipo",
-
-   "marcelo.d":"Fundador de Madryn Buceo. Capitan con más de 40 años de experiencia, ha acompañado a miles de pasajeros en su primer experiencia en buceo y snorkel.",
-
-  "lucio.d":"Encargado de la empresa e Instructor de cursos PADI . Acompaña a la empresa con su carisma, su buen sentido del humor y pasión por el buceo.",
-
-  "julian.d":"Capitán e instructor PADI con amplia experiencia. Acompaña a la empresa desde hace más de 15 años. Amante del fútbol, hincha de Estudiantes",
-
-  "mauro.d":"Dive Master formado en nuestro centro y traductor de inglés. Acompaña las excursiones comprometiéndose con la seguridad, el disfrute de los pasajeros y el buen desarrollo de cada excursión.",
-
-  "saira.d":"Técnica en turismo, encargada de la administración, venta y atención al público. Recibe a nuestros pasajeros con la mejor atención y se encarga de brindar toda la información sobre nuestros servicios.",
-
+  "about.us": "Sobre nosotros",
+  "about.us2": "Somos una operadora de buceo con más de 40 años de trayectoria. Dos generaciones compartiendo auténticas experiencias de buceo y snorkel en el mar patagónico.",
+  "here": "Estamos acá",
+  "see.you": "Los esperamos todo el año en el balneario Sara, sobre el Mar...",
+  "our.team": "Nuestro equipo",
+  "marcelo.d": "Fundador de Madryn Buceo. Capitan con más de 40 años de experiencia, ha acompañado a miles de pasajeros en su primer experiencia en buceo y snorkel.",
+  "lucio.d": "Encargado de la empresa e Instructor de cursos PADI . Acompaña a la empresa con su carisma, su buen sentido del humor y pasión por el buceo.",
+  "julian.d": "Capitán e instructor PADI con amplia experiencia. Acompaña a la empresa desde hace más de 15 años. Amante del fútbol, hincha de Estudiantes",
+  "mauro.d": "Dive Master formado en nuestro centro y traductor de inglés. Acompaña las excursiones comprometiéndose con la seguridad, el disfrute de los pasajeros y el buen desarrollo de cada excursión.",
+  "saira.d": "Técnica en turismo, encargada de la administración, venta y atención al público. Recibe a nuestros pasajeros con la mejor atención y se encarga de brindar toda la información sobre nuestros servicios.",
   "camila.d": "Dive Master formada en nuestro centro y futura bióloga marina. Acompaña a las excursiones contagiando su entusiasmo por la vida marina con una tonada muy especial.",
-
-
   "diveSite.difficulty": "Dificultad",
-  "diveSite.time":"Distancia",
-  "diveSite.close":"Cerrar",
-
+  "diveSite.time": "Distancia",
+  "diveSite.close": "Cerrar",
   "diveSites.primavera.name": "Naufragio Primavera",
   "diveSites.primavera.description": "Es un barco pesquero pequeño, y el naufragio más nuevo en nuestro golfo, por lo cual está en pleno proceso de poblarse completamente de vida marina.",
   "diveSites.primavera.difficulty": "Media/Baja",
   "diveSites.primavera.depth": "13 metros",
-
   "diveSites.albatros.name": "Naufragio Albatros",
   "diveSites.albatros.description": "El buque Albatros es un pesquero de 30 metros, hundido en septiembre de 1998 para crear un sitio de buceo recreativo, colmado de vida por su antigüedad.",
   "diveSites.albatros.difficulty": "Media",
   "diveSites.albatros.depth": "22 metros",
-
   "diveSites.miralles.name": "Naufragio Miralles",
   "diveSites.miralles.description": "En marzo de 2004, este buque de 70 metros fue hundido para crear un sitio de buceo recreativo. Cuenta con espacios internos amplios lo cual permite penetraciones seguras. Alberga una gran variedad de vida marina.",
   "diveSites.miralles.difficulty": "Media",
   "diveSites.miralles.depth": "24 metros",
-
   "diveSites.urabain.name": "Naufragio Urabain",
   "diveSites.urabain.description": "En el año 2018, un barco pesquero frigorífico fue hundido para crear un nuevo sitio de buceo, este naufragio ofrece una estructura amplia para explorar bajo el agua.",
   "diveSites.urabain.difficulty": "Media/Baja",
   "diveSites.urabain.depth": "20 metros aprox",
-
   "diveSites.chinoHushung.name": "Naufragio Chino Hushung",
   "diveSites.chinoHushung.description": "Es un barco pesquero chino que fue secuestrado en 2016 debido a la pesca ilegal en mar argentino por la prefectura naval. Posee 78 metros de eslora.",
   "diveSites.chinoHushung.difficulty": "Media/Alta",
   "diveSites.chinoHushung.depth": "30 metros",
-
   "diveSites.folias.name": "Naufragio Folias",
   "diveSites.folias.description": "Barco pesquero de 72 mts. de eslora hundido a principios de los 80’ sobre las costas de Playa Paraná, víctima de un incendio provocado de manera intencional. Parte de su estructura asoma a la superficie.",
   "diveSites.folias.difficulty": "Baja",
   "diveSites.folias.depth": "12 metros",
-
   "diveSites.emma.name": "Naufragio Emma",
   "diveSites.emma.description": "Goleta de madera que desempeñó diversas tareas en las costas patagónicas chilenas y argentinas. En 1947 se hundió frente a Puerto Madryn tras sufrir un incendio.",
   "diveSites.emma.difficulty": "Baja",
   "diveSites.emma.depth": "16 metros",
-
   "diveSites.parqueNuevo.name": "Parque Nuevo",
   "diveSites.parqueNuevo.description": "Parque artificial formado por diferentes atractivos como partes de barcos, restos de avionetas, que fueron invadidos por la naturaleza del lugar.",
   "diveSites.parqueNuevo.difficulty": "Baja",
   "diveSites.parqueNuevo.depth": "10 metros",
-
   "diveSites.puntaCuevas.name": "Parque Natural Punta Cuevas",
   "diveSites.puntaCuevas.description": "Es un hermoso arrecife natural, su fondo rocoso presenta cañadones submarinos habitados por una abundante diversidad de peces e invertebrados. Destaca por la gran variedad de pólipos de colores que tapizan sus aleros.",
   "diveSites.puntaCuevas.difficulty": "Baja",
   "diveSites.puntaCuevas.depth": "12 metros",
-
   "diveSites.caletaParana.name": "Caleta de Paraná (Restinga Punta Este)",
   "diveSites.caletaParana.description": "Sitio de buceo sencillo ideal para primeras experiencias o entrenamientos donde veremos el fondo natural de nuestras aguas repleto de vida marina.",
   "diveSites.caletaParana.difficulty": "Baja",
   "diveSites.caletaParana.depth": "10 metros",
-
   "diveSites.puntaLoma.name": "Reserva Natural Punta Loma",
   "diveSites.puntaLoma.description": "Reserva natural con una colonia estable de lobos marinos donde buceamos rodeados de estos hermosos y cariñosos animales, además de ver el fondo natural de nuestras aguas lleno de diversidad marina.",
   "diveSites.puntaLoma.difficulty": "Baja",
   "diveSites.puntaLoma.depth": "8 metros",
-
   "diveSites.lasPiedras.name": "Parque Las Piedras",
   "diveSites.lasPiedras.description": "Su estructura del arrecife natural rocoso brinda múltiples refugios para la fauna marina, convirtiéndose en un punto de gran atractivo para el buceo recreativo y la fotografía submarina.",
   "diveSites.lasPiedras.difficulty": "Baja",
   "diveSites.lasPiedras.depth": "12 metros",
-
-  "diving.spots":"Puntos de buceo",
-  "diving.des":"Conocé los mejores lugares para bucear en la región.",
-    "Todas":"Todas"
+  "diving.spots": "Puntos de buceo",
+  "diving.des": "Conocé los mejores lugares para bucear en la región.",
+  "Todas": "Todas",
+  "diveCertification.title": "Bucea en Puerto Madryn",
+  "diveCertification.miniDescription": "Capital nacional del buceo",
+  "diveCertification.button": "Reservar ahora",
+  "diveCertification.description.subTitle": "Viví una experiencia única",
+  "diveCertification.description.text1": "Más de <span style=\"color: red; font-weight: semibold;\">6 naufragios</span> ideales para realizar exploraciones submarinas inolvidables.",
+  "diveCertification.description.text2": "Sumérgete en <span style=\"color: red; font-weight: semibold;\">parques rocosos naturales</span> repletos de vida marina.",
+  "diveCertification.description.text3": "Disfruta de <span style=\"color: red; font-weight: semibold;\">buceo con lobos marinos</span> en su hábitat natural, una experiencia única disponible todo el año.",
+  "diveCertification.description.text4": "Descubre más de <span style=\"color: red; font-weight: semibold;\">12 sitios de buceo</span> para todos los niveles.",
+  "diveCertification.description.text5": "¡No te pierdas la oportunidad de hacer <span style=\"color: red; font-weight: semibold;\">snorkel con lobos marinos</span>!",
+  "diveCertification.description2.title": "Descripción",
+  "diveCertification.description2.text6.1": "Descubrí las maravillas submarinas de Puerto Madryn, la Capital Nacional del Buceo. Este destino único te espera con experiencias exclusivas para buzos certificados, en un entorno natural inigualable.",
+  "diveCertification.description2.text6.2": "Sumérgete en aguas patagónicas y explora la biodiversidad marina, incluyendo encuentros cercanos con lobos marinos, naufragios históricos y formaciones rocosas impresionantes llenas de vida.",
+  "diveCertification.description2.text6.3": "Guiados por nuestros experimentados instructores, te ofrecemos una serie de inmersiones que van a desafiar y enriquecer tus habilidades de buceo, garantizando una aventura inolvidable. Recomendamos realizar al menos 4 inmersiones para disfrutar de todos nuestros atractivos.",
+  "diveCertification.whatToExpect.title": "¿Qué esperar?",
+  "diveCertification.whatToExpect.text1.title": "Equipamiento",
+  "diveCertification.whatToExpect.text1.text": "Te proporcionaremos todo el equipo necesario, incluyendo traje de neopreno, máscara, aletas, chaleco compensador, regulador y 1 tanque por cada buceo.",
+  "diveCertification.whatToExpect.text2.title": "Breve Introducción y Orientación",
+  "diveCertification.whatToExpect.text2.text": "Comenzamos con una breve explicación de los aspectos básicos del buceo y los protocolos de seguridad específicos para cada punto de buceo.",
+  "diveCertification.whatToExpect.text3.title": "Paseo Náutico",
+  "diveCertification.whatToExpect.text3.text": "Nuestros capitanes experimentados te llevarán al punto de buceo y en el camino está la posibilidad de poder avistar una increíble variedad de fauna marina, como pingüinos, delfines y cormoranes, dependiendo de la época del año.",
+  "diveCertification.whatToExpect.text4.title": "Duración",
+  "diveCertification.whatToExpect.text4.text": "La excursión completa dura aproximadamente 2 horas, dependiendo de la cantidad de inmersiones que realices, éstas pueden ser hasta 2 en un día",
+  "diveCertification.whatToExpect.text5.title": "Regreso y Despedida",
+  "diveCertification.whatToExpect.text5.text": "Tras la inmersión, regresaremos al centro disfrutando del entorno. Una vez allí, podrás comentar tus experiencias con nuestro equipo y otros turistas, compartiendo recuerdos y anécdotas de la aventura.",
+  "diveCertification.requirements.title": "Requisitos",
+  "diveCertification.requirements.text1.title": "Edad minima",
+  "diveCertification.requirements.text1.text": "La edad minima para participar es de 12 años",
+  "diveCertification.requirements.text2.title": "Condición Física",
+  "diveCertification.requirements.text2.text": "En caso de ser mayor de 65 años, contar con certificado médico de buena salud.",
+  "diveCertification.requirements.text3.title": "Certificación",
+  "diveCertification.requirements.text3.text": "Se requiere certificación correspondiente según la profundidad del punto de buceo",
+  "diveCertification.requirements.text4.title": "Salud y Aptitud Física",
+  "diveCertification.requirements.text4.text": "Es importante no tener enfermedades cardíacas u otras condiciones médicas que puedan presentar problemas debido al esfuerzo físico y el impacto con el agua fría.",
+  "diveCertification.seaLobos.title": "Buceo con lobos marinos",
+  "diveCertification.seaLobos.text": "Atrévete a vivir una experiencia única buceando con lobos marinos en su hábitat natural.",
+  "diveCertification.seaLobos.text2": "Esta experiencia incluye un pintoresco paseo náutico de 20 km de navegación, hasta el área protegida de la Reserva Natural Punta Loma y está diseñada específicamente para buceadores certificados que desean bucear con lobos marinos.",
+  "diveCertification.seaLobos.text3": "Dentro de la reserva también tenemos la opción de excursión Snorkeling con lobos.",
+  "diveCertification.seaLobos.buttonSnorkeling": "Snorkeling con lobos",
+  "diveCertification.seaLobos.buttonBuceo": "Buceo con lobos",
+  "diveCertification.tablePrice.title": "Opciones y Precios",
+  "diveCertification.tablePrice.text": "1 Buceo",
+  "diveCertification.tablePrice.text2": "2 Buceos en un día",
+  "diveCertification.tablePrice.text3": "1 Buceo con lobos",
+  "diveCertification.tablePrice.text4": "1 Buceo con lobos + 1 Buceo extra",
+  "diveCertification.tablePrice.text5": "1 Buceo + Snorkeling con lobos",
+  "diveCertification.altText": "Imagen de buceo en Puerto Madryn"
 }

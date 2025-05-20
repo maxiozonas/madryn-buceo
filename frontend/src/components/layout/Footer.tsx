@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <footer
       className="w-full text-white py-6 px-6 mt-auto"
@@ -16,7 +19,7 @@ const Footer: React.FC = () => {
             title="Tripadvisor"
           >
             <Image
-              src="/images/footer/logo-trip-footer.png"
+              src="https://drive.google.com/uc?export=view&id=1LMHGiD3f2cW22C566vpZTf7PZVr7BPHY"
               alt="Tripadvisor"
               width={160}
               height={32}
@@ -31,7 +34,7 @@ const Footer: React.FC = () => {
             title="Madryn Travel"
           >
             <Image
-              src="/images/footer/logo-madryn-footer.png"
+              src="https://drive.google.com/uc?export=view&id=1sRbVeSpQsT7aVrKYjeyK4W0e4orvfZTK"
               alt="Madryn Travel"
               width={160}
               height={32} 
@@ -40,21 +43,21 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="text-center text-sm">
-          <p>Centro de buceo: B. Brown 1900 - Bajada 5 - Balneario Sara, Puerto Madryn - Patagonia Argentina</p>
-          <p>Teléfono: +5492804564422</p>
-          <p>Email: madrynbuceo@hotmail.com</p>
+          <p><FormattedMessage id="footer.text.1" /></p>
+          <p><FormattedMessage id="footer.text.2" /></p>
+          <p><FormattedMessage id="footer.text.3" /></p>
         </div>
         <div className="flex justify-center">
           <a/>
             <Image
-              src="/images/footer/footer-widget-logo.png"
+              src="https://drive.google.com/uc?export=view&id=1UYGW2CZiB2ljaAp-yh5TUR6xOezXg7P3"
               alt="Tripadvisor"
               width={300}
               height={82}
             />
         </div>
         <div className="text-center text-sm">
-  <p>Desde <span className="font-bold">1983</span> buceando en la patagonia...</p>
+          <p><FormattedMessage id="footer.text.4" /></p>
         </div>
         <div className="text-center text-sm">
           <p>© {new Date().getFullYear()} Madryn Buceo. Todos los derechos reservados.</p>
@@ -62,6 +65,5 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
 
-export default Footer;

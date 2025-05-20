@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import imagen from "../../../public/images/inicio/bautismo.jpg";
-import logo from "../../../public/images/footer/pngwing.com(1).png"
 import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
 import { motion } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
 
 export default function PadiSection() {
+    const imagen = "https://drive.google.com/uc?export=download&id=109Qaf04-VJqortfl-iJhqnV5gBaKzEJ7";
+    const logo = "https://drive.google.com/uc?export=view&id=16CG2pJMJm8nXif2CVRnEBzoiZe0BZOK5";
+    
     const intl = useIntl();
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
@@ -122,7 +123,7 @@ export default function PadiSection() {
                         viewport={{ once: true, amount: 0.3 }}
                         variants={imageAnimation}
                     >
-                        <Image src={imagen} alt="Certificación PADI" fill className="object-cover" />
+                        <Image src={imagen} priority alt="Certificación PADI" fill className="object-cover" />
                     </motion.div>
                 </div>
             </div>

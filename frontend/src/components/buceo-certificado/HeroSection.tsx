@@ -1,57 +1,105 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from "next/image"
+import ButtonRojo from "../ui/button-rojo"
+import { ChevronDown } from "lucide-react"
+import { FormattedMessage } from "react-intl"
+import { motion } from "framer-motion"
 
 interface HeroSectionProps {
-  title: string;
-  heroImage: string;
-  miniDescription: string;
+  heroImage: string
+  title?: string  
+  miniDescription?: string  
 }
 
-const titleVariants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
+const scrollToNextSection = () => {
+  const nextSection = document.getElementById("descripcion")
+  if (nextSection) {
+    const headerOffset = 80;
+    const elementPosition = nextSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  } else {
+    console.warn("Element with ID 'descripcion' not found for scrolling.")
+  }
+}
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
-};
-
-export default function HeroSection({ title, heroImage, miniDescription }: HeroSectionProps) {
+export default function HeroSection({
+  heroImage,
+}: HeroSectionProps) {
+  const callToAction = { href: "/buceo-certificado" }
+  const altText = "diveCertification.altText"
+  
   return (
     <>
-      <section className="h-[50vh] flex items-center justify-center overflow-hidden">
+      <motion.section 
+        className="h-[90vh] flex items-center justify-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
         <div className="absolute inset-0 z-0 mask-fade-bottom">
           <Image
             src={heroImage}
-            alt={title}
+            alt=""
             fill
             className="object-cover"
             priority
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
-        <div className="container relative z-10 text-center text-white">
-          <motion.h1
+        <span className="sr-only">
+          <FormattedMessage id={altText} />
+        </span>
+        <div className="container mb-20 relative z-10 text-center text-white">
+          <motion.h1 
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
-            variants={titleVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
           >
-            {title}
+            <FormattedMessage id="diveCertification.title" />
           </motion.h1>
-          <motion.p
+          <motion.p 
             className="text-base md:text-2xl mb-8 font-oceanica"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
           >
-            {miniDescription}
+            <FormattedMessage id="diveCertification.miniDescription" />
           </motion.p>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            <ButtonRojo
+              texto={<FormattedMessage id="diveCertification.button" />}
+              href={callToAction.href}
+            />
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <motion.button 
+          className="animate-bounce cursor-pointer bg-none flex flex-col items-center gap-2"
+          onClick={scrollToNextSection}
+        >
+          <p className="text-white font-medium">
+            <FormattedMessage id="hero.exploreMore" />
+          </p>
+          <ChevronDown className="h-10 w-10 text-white" />
+        </motion.button>
+      </motion.div>
     </>
-  );
+  )
 }

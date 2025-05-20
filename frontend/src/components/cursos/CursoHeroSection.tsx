@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import image from "../../../public/images/inicio/hero-image-2.jpg"
 import { FormattedMessage } from "react-intl";
 
 
 export default function HeroSection() {
+  const image = "https://drive.google.com/uc?export=view&id=1f61rt5N-l9vWZ0rVazrtWLFNZe72rP9x"
 
   return (
     <>

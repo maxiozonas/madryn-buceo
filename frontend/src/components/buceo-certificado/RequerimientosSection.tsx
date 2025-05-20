@@ -1,11 +1,10 @@
 "use client"
 
 import {
-  Anchor,
-  Speech,
-  LifeBuoy,
-  Ship,
-  Clock,
+  Calendar,
+  Thermometer,
+  BadgeCheck,
+  HeartPulse,
   ArrowRight,
   Plus,
   Minus,
@@ -15,7 +14,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { FormattedMessage } from "react-intl"
 import { Card, CardContent } from "@/components/ui/card"
 
-export default function QueEsperarSection() {
+export default function RequerimientosSection() {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const toggleExpanded = () => {
@@ -24,36 +23,31 @@ export default function QueEsperarSection() {
 
   const getIcon = (index: number) => {
     const icons = [
-      <LifeBuoy key="lifeBuoy" className="h-6 w-6 text-rojo" />,
-      <Speech key="speech" className="h-6 w-6 text-rojo" />,
-      <Anchor key="anchor" className="h-6 w-6 text-rojo" />,
-      <Ship key="ship" className="h-6 w-6 text-rojo" />,
-      <Clock key="clock" className="h-6 w-6 text-rojo" />,
+      <Calendar key="calendar" className="h-6 w-6 text-rojo" />,
+      <Thermometer key="thermometer" className="h-6 w-6 text-rojo" />,
+      <BadgeCheck key="badge" className="h-6 w-6 text-rojo" />,
+      <HeartPulse key="heart" className="h-6 w-6 text-rojo" />,
     ]
 
     return icons[index % icons.length]
   }
 
-  const whatToExpect = [
+  const requirements = [
     {
-      title: "diveCertification.whatToExpect.text1.title",
-      description: "diveCertification.whatToExpect.text1.text",
+      title: "diveCertification.requirements.text1.title",
+      description: "diveCertification.requirements.text1.text",
     },
     {
-      title: "diveCertification.whatToExpect.text2.title",
-      description: "diveCertification.whatToExpect.text2.text",
+      title: "diveCertification.requirements.text2.title",
+      description: "diveCertification.requirements.text2.text",
     },
     {
-      title: "diveCertification.whatToExpect.text3.title",
-      description: "diveCertification.whatToExpect.text3.text",
+      title: "diveCertification.requirements.text3.title",
+      description: "diveCertification.requirements.text3.text",
     },
     {
-      title: "diveCertification.whatToExpect.text4.title",
-      description: "diveCertification.whatToExpect.text4.text",
-    },
-    {
-      title: "diveCertification.whatToExpect.text5.title",
-      description: "diveCertification.whatToExpect.text5.text",
+      title: "diveCertification.requirements.text4.title",
+      description: "diveCertification.requirements.text4.text",
     },
   ]
 
@@ -67,7 +61,7 @@ export default function QueEsperarSection() {
           <div className="flex items-center gap-2">
             <ArrowRight className="h-8 w-8 text-rojo" />
             <span>
-              <FormattedMessage id="diveCertification.whatToExpect.title" />
+              <FormattedMessage id="diveCertification.requirements.title" />
             </span>
           </div>
           {isExpanded ? <Minus className="h-7 w-7 text-rojo" /> : <Plus className="h-7 w-7 text-rojo" />}
@@ -82,21 +76,21 @@ export default function QueEsperarSection() {
               transition={{ duration: 0.3 }}
               className="overflow-hidden mt-6"
             >
-              <div className="space-y-4">
-                {whatToExpect.map((item, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {requirements.map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex flex-col lg:flex-row items-center gap-4 bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
+                    className="flex flex-col items-center gap-4 bg-negro/40 p-4 rounded-lg hover:bg-negro/60 transition-colors duration-200"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">{getIcon(index)}</div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
+                    <div>
+                      <h3 className="font-semibold text-lg text-white text-center mb-2">
                         {index + 1}. <FormattedMessage id={item.title} />
                       </h3>
-                      <p className="text-white/80 text-sm text-center lg:text-start">
+                      <p className="text-white/80 text-sm text-center">
                         <FormattedMessage id={item.description} />
                       </p>
                     </div>

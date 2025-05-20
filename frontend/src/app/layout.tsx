@@ -5,7 +5,6 @@ import "./globals.css"
 import Header from "@/components/layout/Header"
 import Footer from "../components/layout/Footer"
 import "leaflet/dist/leaflet.css"
-import TransitionProvider from "@/components/transitions/TransitionProvider"
 import WhatsAppButton from "@/components/ui/WhatsAppButton"
 import ClientIntlProvider from "./ClientIntlProvider"
 
@@ -67,7 +66,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientIntlProvider locale="es">
           <Header />
-          <TransitionProvider>{children}</TransitionProvider>
+          {children}
           <Footer />
           <WhatsAppButton />
         </ClientIntlProvider>

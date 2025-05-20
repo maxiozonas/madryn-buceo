@@ -63,6 +63,7 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                 src={galleryImages[0] || "/placeholder.svg?height=300&width=400"}
                 alt={`${title} - Imagen destacada`}
                 fill
+                priority
                 className="object-cover transition-transform duration-300 brightness-50"
               />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -89,6 +90,7 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                 src={image || "/placeholder.svg?height=300&width=400"}
                 alt={`${title} - Imagen ${index + 1}`}
                 fill
+                priority
                 className="object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-50"
               />
               <div className="absolute inset-0 bg-negro-primario/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -201,7 +203,6 @@ export default function GaleriaSection({ galleryImages, title }: GaleriaSectionP
                 {galleryImages.length > 5 ? (
                   <div className="flex space-x-1 bg-negro-secundario/90 px-3 py-2 rounded-full shadow-lg backdrop-blur-sm">
                     {[...Array(Math.min(5, galleryImages.length))].map((_, i) => {
-                      // Create a range of 5 dots centered around the current image
                       let adjustedIndex;
                       if (selectedImage < 2) {
                         adjustedIndex = i;
