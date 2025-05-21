@@ -3,6 +3,8 @@ import { Badge } from "../ui/badge";
 import { Curso } from "@/lib/data/Cursos";
 import Image from "next/image";
 import ButtonRojo from "../ui/button-rojo";
+import { FormattedMessage } from "react-intl";
+import { ReactNode } from "react";
 
 interface CursoCardProps {
   course: Curso;
@@ -10,15 +12,15 @@ interface CursoCardProps {
 
 
 export default function CursoCard({ course }: CursoCardProps) {
-  const getBadgeVariant = (level: string) => {
+  const getBadgeVariant = (level: ReactNode) => {
     switch (level) {
       case "programa":
         return "default";
-      case "iniciacion":
+      case "cursos.filters.iniciacion":
         return "default";
-      case "avanzados":
+      case "cursos.filters.avanzados":
         return "secondary";
-      case "profesional":
+      case "cursos.filters.profesional":
         return "destructive";
       default:
         return "outline";
@@ -31,7 +33,7 @@ export default function CursoCard({ course }: CursoCardProps) {
         <div className="relative h-64">
           <Image
             src={course.cardImage}
-            alt={course.title}
+            alt={""}
             width={500}
             height={500}
             className="object-cover transition-transform duration-300"
@@ -42,19 +44,19 @@ export default function CursoCard({ course }: CursoCardProps) {
             className="flex justify-between items-center mb-4"
           >
             <h3 className="text-sm uppercase font-extrabold text-white font-oceanica tracking-tight line-clamp-1">
-              {course.title}
+              <FormattedMessage id={course.title} />
             </h3>
             <Badge  
-              variant={getBadgeVariant(course.level)}
+              variant={getBadgeVariant(<FormattedMessage id={course.level} />)}
               className="uppercase text-xs font-semibold rounded-md"
             >
-              {course.level}
+              <FormattedMessage id={course.level} />
             </Badge>
           </div>
           <p 
             className="text-white/80 mb-4 text-sm flex-grow"
           >
-            {course.shortDescription}
+           <FormattedMessage id={course.shortDescription}/>
           </p>
           <div className="mt-auto">
             <ButtonRojo

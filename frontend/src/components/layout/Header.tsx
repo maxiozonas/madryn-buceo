@@ -9,6 +9,9 @@ import logo from "../../../public/images/inicio/logo.png"
 import { NavLinks } from "@/lib/data/NavLinks"
 import { motion, AnimatePresence } from "framer-motion"
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
+import { FormattedMessage } from "react-intl"
+import LanguageSwitcher from "../ui/languageSwitcher"
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -58,7 +61,6 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* LOGO Y BOTÓN DE MENÚ */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <Image
@@ -78,7 +80,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* MENÚ DESKTOP */}
+
         <nav className="hidden lg:flex items-center space-x-1">
           {NavLinks.map((link, index) => (
             <div
@@ -89,39 +91,32 @@ export default function Header() {
             >
               {link.submenu ? (
                 <>
-                  <button
-                    className="flex items-center px-4 py-2 text-white hover:text-[#e12222] font-medium cursor-pointer transition-colors duration-200"
-                  >
-                    {link.title}
-                    <ChevronDown
-                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${
-                        hoveredSubmenu === index ? "rotate-180" : ""
-                      }`}
-                    />
+                  <button className="flex items-center px-4 py-2 text-white hover:text-[#e12222] font-medium cursor-pointer transition-colors duration-200">
+                  <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
+
+                    <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                   </button>
                   <AnimatePresence>
-                    {hoveredSubmenu === index && (
-                      <motion.div
-                        className="absolute mt-7 w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4"
-                        variants={submenuVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                      >
-                        {link.submenu.map((sublink, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            href={sublink.href}
-                            className="block px-3 py-3 text-white hover:bg-negro-secundario hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
-                          >
-                            <div className="flex flex-col">
-                              <span className="font-medium text-sm uppercase">{sublink.title}</span>
-                              <span className="text-xs text-gray-300 mt-1">{sublink.description}</span>
-                            </div>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
+                    <motion.div
+                      className="absolute left-0 top-full w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4 hidden group-hover:block"
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={submenuVariants}
+                    >
+                      {link.submenu.map((sublink, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={sublink.href}
+                          className="block px-3 py-3 text-white hover:bg-negro-secundario hover:text-[#e12222] rounded-md mb-2 transition-colors duration-200"
+                        >
+                          <div className="flex flex-col">
+                            <span className="font-medium text-sm uppercase"><FormattedMessage id={`${sublink.title}`} defaultMessage={sublink.title} /></span>
+                            <span className="text-xs text-gray-300 mt-1"><FormattedMessage id={`${sublink.description}`} defaultMessage={sublink.description} /></span>
+                          </div>
+                        </Link>
+                      ))}
+                    </motion.div>
                   </AnimatePresence>
                 </>
               ) : (
@@ -129,16 +124,16 @@ export default function Header() {
                   href={link.href}
                   className="px-4 py-2 text-white hover:text-rojo font-medium transition-colors duration-200"
                 >
-                  {link.title}
+                  <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
                 </Link>
               )}
             </div>
           ))}
         </nav>
 
-        {/* CONTENEDOR PARA BOTÓN Y REDES SOCIALES */}
+
         <div className="hidden lg:flex items-center gap-4">
-          {/* Íconos de redes sociales */}
+
           <div className="flex items-center gap-3 text-xl">
             <a
               href="https://www.facebook.com/madrynbuceo/?fref=ts"
@@ -169,11 +164,11 @@ export default function Header() {
               <FaWhatsapp className="hover:text-green-600" />
             </a>
           </div>
-          {/* <ButtonRojo texto="Reservar" href="/reservar" /> */}
+          <LanguageSwitcher />
         </div>
       </div>
 
-      {/* MENÚ MOBILE */}
+
       <div
         className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-negro-secundario/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
@@ -189,7 +184,7 @@ export default function Header() {
                       onClick={() => toggleSubmenu(index)}
                       className="w-full flex justify-between items-center py-4 px-4 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
                     >
-                      {link.title}
+                      <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
                       <ChevronDown
                         className={`h-5 w-5 transition-transform duration-300 ${
                           expandedSubmenu === index ? "rotate-180" : ""
@@ -209,7 +204,7 @@ export default function Header() {
                             className="block py-3 text-sm text-gray-200 hover:text-[#e12222] transition-colors duration-200"
                             onClick={() => setIsOpen(false)}
                           >
-                            {sublink.title}
+                            <FormattedMessage id={`${sublink.title}`} defaultMessage={sublink.title} />
                           </Link>
                         ))}
                       </div>
@@ -221,14 +216,17 @@ export default function Header() {
                     className="block py-4 px-4 text-white hover:text-[#e12222] font-medium transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.title}
+                    <FormattedMessage id={`${link.title}`} defaultMessage={link.title} />
                   </Link>
                 )}
               </div>
             ))}
           </nav>
-          <div className="mt-6">
-            {/* <ButtonRojo texto="Reservar Ahora" href="https://madrynbuceo.outtrip.com/" fullWidth={true} /> */}
+          <div className="mt-6 flex justify-center">
+            <div className="border-t border-gray-700 pt-4">
+              <h3 className="text-sm font-medium text-gray-400 mb-2 px-4">Idioma / Language</h3>
+              <LanguageSwitcher isMobile={true} />
+            </div>
           </div>
         </div>
       </div>

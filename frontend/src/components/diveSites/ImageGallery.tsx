@@ -130,7 +130,7 @@ export default function ImageGallery({ media, className, style }: Props) {
               />
             </svg>
           </button>
-          <div className="absolute bottom-2 left-2 bg-negro-secundario/90 px-2 py-1 rounded-full text-white text-xs">
+          <div className="absolute top-2 left-2 bg-negro-secundario/90 px-2 py-1 rounded-full text-white text-xs">
             {current + 1} / {media.length}
           </div>
         </>

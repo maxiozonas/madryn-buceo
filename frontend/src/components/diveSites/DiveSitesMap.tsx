@@ -40,7 +40,7 @@ const DiveSitesMap: React.FC<Props> = ({
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="relative isolate h-[280px] md:h-[420px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
+      <div className="relative isolate h-[280px] md:h-[520px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
         <MapContainer
           center={selectedCoords}
           zoom={13}

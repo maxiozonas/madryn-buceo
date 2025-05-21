@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Clock, Users, LifeBuoy, Award, Fish, UserPlus, Anchor, Star, Shuffle, Map, ThumbsUp, User, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { FormattedMessage } from "react-intl"
 import type { ExcursionDetail } from "@/lib/data/Excursiones"
 
 interface DetallesSectionProps {
@@ -42,18 +43,7 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
       }
     }
 
-    const lowerTitle = detail.title.toLowerCase()
-    if (lowerTitle.includes("duración") || lowerTitle.includes("hora")) {
-      return <Clock className="h-6 w-6 text-rojo" />
-    } else if (lowerTitle.includes("guía") || lowerTitle.includes("instructor")) {
-      return <Award className="h-6 w-6 text-rojo" />
-    } else if (lowerTitle.includes("equipamiento") || lowerTitle.includes("equipo")) {
-      return <LifeBuoy className="h-6 w-6 text-rojo" />
-    } else if (lowerTitle.includes("todos") || lowerTitle.includes("público")) {
-      return <Users className="h-6 w-6 text-rojo" />
-    } else {
-      return <Award className="h-6 w-6 text-rojo" />
-    }
+    return <Award className="h-6 w-6 text-rojo" />
   }
 
   return (
@@ -61,7 +51,8 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
       <CardContent className="p-8">
         <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
           <ArrowRight className="h-8 w-8 text-rojo" />
-          Detalles</h2>
+          <FormattedMessage id="detallesSection.title" />
+        </h2>
         <div className="space-y-4">
           {details.map((detail, index) => (
             <motion.div
@@ -72,9 +63,13 @@ export default function DetallesSection({ details }: DetallesSectionProps) {
               transition={{ delay: index * 0.1 }}
             >
               <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">{getIcon(detail)}</div>
-              <div className="flex-1 flex flex-col items-center lg:items-start ">
-                <h3 className="font-bold text-white">{detail.title}</h3>
-                <p className="text-white text-sm text-center lg:text-start">{detail.description}</p>
+              <div className="flex-1 flex flex-col items-center lg:items-start">
+                <h3 className="font-bold text-white">
+                  <FormattedMessage id={detail.title} />
+                </h3>
+                <p className="text-white text-sm text-center lg:text-start">
+                  <FormattedMessage id={detail.description} />
+                </p>
               </div>
             </motion.div>
           ))}

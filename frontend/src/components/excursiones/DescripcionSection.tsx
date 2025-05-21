@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import ButtonRojo from "@/components/ui/button-rojo"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
+import { FormattedMessage } from "react-intl"
 
 interface DescripcionSectionProps {
   slug: string
@@ -15,36 +18,41 @@ export default function DescripcionSection({ slug, description }: DescripcionSec
         <CardContent className="p-4">
           <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
             <ArrowRight className="h-8 w-8 text-rojo" />
-            Descripción
+            <FormattedMessage id="descripcionSection.title" />
           </h2>
           <div className="space-y-4">
-            {description.map((paragraph, index) => {
-              if (slug === "bautismo-buceo" && paragraph.toLowerCase().includes("discover scuba diving")) {
-                const parts = paragraph.split(/(discover scuba diving)/i)
+            {description.map((descKey, index) => {
+              if (slug === "bautismo-buceo") {
                 return (
                   <p key={index} className="text-white leading-relaxed mb-2">
-                    {parts.map((part, i) =>
-                      part.toLowerCase() === "discover scuba diving" ? (
-                        <span key={i} className="font-bold text-rojo hover:underline">
-                          <Link href="/cursos/padi/discover-scuba-diving">{part}</Link>
-                        </span>
-                      ) : (
-                        part
-                      ),
-                    )}
+                    <FormattedMessage
+                      id={descKey}
+                      values={{
+                        discoverScubaDiving: (
+                          <span className="font-bold text-rojo hover:underline">
+                            <Link href="/cursos/padi/discover-scuba-diving">
+                              <FormattedMessage id="descripcionSection.discoverScubaDiving" />
+                            </Link>
+                          </span>
+                        ),
+                      }}
+                    />
                   </p>
                 )
               }
               return (
                 <p key={index} className="text-white leading-relaxed mb-2">
-                  {paragraph}
+                  <FormattedMessage id={descKey} />
                 </p>
               )
             })}
             {slug === "bautismo-buceo" && (
               <div className="my-4 text-center">
                 <Link href="/cursos/padi/discover-scuba-diving">
-                  <ButtonRojo texto="Ir a Discover Scuba Diving" href="/cursos/padi/discover-scuba-diving" />
+                  <ButtonRojo
+                    texto={<FormattedMessage id="descripcionSection.button.discoverScubaDiving" />}
+                    href="/cursos/padi/discover-scuba-diving"
+                  />
                 </Link>
               </div>
             )}

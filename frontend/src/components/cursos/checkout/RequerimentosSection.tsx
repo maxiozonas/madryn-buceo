@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 export default function RequirementosSection() {
   const fadeIn = {
@@ -29,41 +30,43 @@ export default function RequirementosSection() {
 
   const requirements = [
     {
-      program: "Open Water",
+      program: "openWater",
+      titleKey: "requirements.section.title.openWater",
       items: [
         {
-          title: "Teoría y piscina",
-          description: "Haber completado teoría y piscina (Referral).",
+          title: "requirements.openWater.theory.title",
+          description: "requirements.openWater.theory.description",
           icon: BookMarked,
         },
         {
-          title: "Certificado médico",
-          description: "Certificado médico apto ( < 12 meses ).",
+          title: "requirements.openWater.medical.title",
+          description: "requirements.openWater.medical.description",
           icon: Heart,
         },
         {
-          title: "Edad mínima",
-          description: "Edad mínima 10 años.",
+          title: "requirements.openWater.age.title",
+          description: "requirements.openWater.age.description",
           icon: Calendar,
         },
       ],
     },
     {
-      program: "Advanced",
+      program: "advanced",
+      titleKey: "requirements.section.title.advanced",
       items: [
         {
-          title: "Certificación",
-          description: "Certificación Open Water.",
+          title: "requirements.advanced.certification.title",
+          description: "requirements.advanced.certification.description",
           icon: BadgeCheck,
         },
         {
-          title: "Certificado médico",
-          description: "Certificado médico apto ( < 12 meses ).",
+          title: "requirements.advanced.medical.title",
+          description: "requirements.advanced.medical.description",
           icon: Heart,
         },
         {
-          title: "eLearning",
-          description: "Haber completado el eLearning Advanced (si aplica).",
+          title: "requirements.advanced.elearning.title",
+          description: "requirements.advanced.elearning.description",
           icon: Info,
         },
       ],
@@ -72,13 +75,13 @@ export default function RequirementosSection() {
 
   return (
     <motion.section
-      className="mt-8 mb-12"
+      className="mt-8 mb-2"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="container mx-auto ">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {requirements.map((program, programIndex) => (
             <Card
@@ -97,7 +100,10 @@ export default function RequirementosSection() {
                     variants={fadeIn}
                   >
                     <ArrowRight className="h-6 w-6 text-rojo" />
-                    Requisitos {program.program}
+                    <FormattedMessage
+                      id={program.titleKey}
+                      defaultMessage={`Requirements ${program.program}`}
+                    />
                   </motion.h3>
                   <div className="grid grid-cols-1 gap-4">
                     {program.items.map((req, reqIndex) => (
@@ -111,9 +117,14 @@ export default function RequirementosSection() {
                           <req.icon className="h-6 w-6 text-rojo" />
                         </div>
                         <h4 className="font-bold text-white text-lg mb-2">
-                          {req.title}
+                          <FormattedMessage id={req.title} defaultMessage={req.title} />
                         </h4>
-                        <p className="text-white text-sm">{req.description}</p>
+                        <p className="text-white text-sm">
+                          <FormattedMessage
+                            id={req.description}
+                            defaultMessage={req.description}
+                          />
+                        </p>
                       </motion.div>
                     ))}
                   </div>

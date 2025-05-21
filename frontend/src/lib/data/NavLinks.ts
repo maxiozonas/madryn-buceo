@@ -1,77 +1,78 @@
 export const NavLinks = [
     {
-        title: "Inicio",
-        href: "/",
+      title: "nav.home",
+      href: "/",
     },
     {
-        title: "Excursiones",
-        href: "#",
-        submenu: [
-            {
-                title: "Snorkeling con lobos",
-                href: "/excursiones/snorkeling-con-lobos",
-                description: "Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural.",
-            },
-            {
-                title: "Bautismo de buceo",
-                href: "/excursiones/bautismo-buceo",
-                description: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
-            },
-            {
-                title: "Busqueda de delfines",
-                href: "/excursiones/paseo-nautico-en-busca-de-delfines",
-                description: "Disfruta de un paseo por el mar en busca de delfines y otras especies marinas.",
-            },
-            {
-                title: "Salidas Privadas",
-                href: "/excursiones/salidas-privadas",
-                description: "Personaliza tu experiencia con salidas exclusivas para ti y tu grupo.",
-            },
-        ],
+      title: "nav.excursions",
+      href: "#",
+      submenu: [
+        {
+          title: "nav.excursions.snorkeling.title",
+          href: "/excursiones/snorkeling-con-lobos",
+          description: "nav.excursions.snorkeling.description",
+        },
+        {
+          title: "nav.excursions.baptism.title",
+          href: "/excursiones/bautismo-buceo",
+          description: "nav.excursions.baptism.description",
+        },
+        {
+          title: "nav.excursions.dolphins.title",
+          href: "/excursiones/paseo-nautico-en-busca-de-delfines",
+          description: "nav.excursions.dolphins.description",
+        },
+        {
+          title: "nav.excursions.private.title",
+          href: "/excursiones/salidas-privadas",
+          description: "nav.excursions.private.description",
+        },
+      ],
     },
     {
-        title: "Buceo",
-        href: "#",
-        submenu: [
-            {
-                title: "Buceo para principiantes",
-                href: "/excursiones/bautismo-buceo",
-                description: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
-            },
-            {
-                title: "Buceo para brevetados",
-                href: "/buceo/buceo-certificado",
-                description: "Inmersiones para buceadores certificados en los mejores puntos de la Patagonia.",
-            },
-            {
-                title: "Puntos de buceo en Puerto Madryn",
-                href: "/buceo/puntos-de-buceo",
-                description: "Descubre los mejores lugares para bucear en Puerto Madryn y sus alrededores.",
-            },
-        ],
+      title: "nav.diving",
+      href: "#",
+      submenu: [
+        {
+          title: "nav.diving.beginner.title",
+          href: "/excursiones/bautismo-buceo",
+          description: "nav.diving.beginner.description",
+        },
+        {
+          title: "nav.diving.certified.title",
+          href: "/buceo/buceo-certificado",
+          description: "nav.diving.certified.description",
+        },
+        {
+          title: "nav.diving.spots.title",
+          href: "/buceo/puntos-de-buceo",
+          description: "nav.diving.spots.description",
+        },
+      ],
     },
     {
-        title: "Cursos de buceo",
-        href: "/cursos",
-        submenu: [
-            {
-                title: "Cursos PADI",
-                href: "/cursos/padi",
-                description: "Explora todos nuestros cursos de buceo para todos los niveles.",
-            },
-            {
-                title: "Checkout para escuelas",
-                href: "/cursos/checkout",
-                description: "Coordiná con tu escuela el próximo check-out en Puerto Madryn.",
-            },
-        ],
+      title: "nav.courses",
+      href: "/cursos",
+      submenu: [
+        {
+          title: "nav.courses.padi.title",
+          href: "/cursos/padi",
+          description: "nav.courses.padi.description",
+        },
+        {
+          title: "nav.courses.checkout.title",
+          href: "/cursos/checkout",
+          description: "nav.courses.checkout.description",
+        },
+      ],
     },
     {
-        title: "Nosotros",
-        href: "/nosotros",
+      title: "nav.about",
+      href: "/nosotros",
     },
     {
-        title: "Contacto",
-        href: "/contacto",
+      title: "nav.contact",
+      href: "/contacto",
     },
-]
+  ]
+  

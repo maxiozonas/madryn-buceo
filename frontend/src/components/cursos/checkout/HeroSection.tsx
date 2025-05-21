@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ButtonRojo from "@/components/ui/button-rojo";
+import { ReactNode } from "react";
+import { FormattedMessage } from "react-intl";
 
 interface HeroSectionProps {
   title: string;
   heroImage: string;
-  miniDescription: string;
+  miniDescription: ReactNode;
 }
 
 const titleVariants = {
@@ -51,7 +53,7 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
           >
             {miniDescription}
           </motion.p>
-          <ButtonRojo texto="Contactanos" href="/contacto" />
+          <ButtonRojo texto={<FormattedMessage id="contact.us" />} href="/contacto" />
         </div>
       </section>
     </>

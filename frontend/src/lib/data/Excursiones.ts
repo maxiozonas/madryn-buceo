@@ -8,7 +8,7 @@ export type Excursion = {
   title: string
   slug: string
   description: string[]
-  miniDescription: string
+  miniDescription: string 
   details: ExcursionDetail[]
   whatToExpect: { title: string; description: string }[]
   requirements?: { title: string; description: string }[]
@@ -17,99 +17,93 @@ export type Excursion = {
   heroImage: string
   cardImage: string
   galleryImages: string[]
+  galleryVideos?: string[] 
 }
 
 export const excursiones: Excursion[] = [
   {
-    title: "Snorkeling con Lobos Marinos",
+    title: "excursions.snorkeling.title",
     slug: "snorkeling-con-lobos",
-    miniDescription: "Vive la experiencia única de nadar junto a los lobos marinos en su hábitat natural.",
+    miniDescription: "excursions.snorkeling.miniDescription",
     description: [
-      "Embárcate en una aventura inolvidable mientras realizas snorkeling en compañía de los curiosos lobos marinos en su hábitat natural. Con la orientación de nuestro experimentado capitán y nuestros guías especializados, serás llevado al Área Natural Punta Loma.",
-      "Durante el paseo náutico hacia la reserva, podrás asombrarte con la increíble fauna de la zona, incluyendo pingüinos, delfines, ballenas y cormoranes, dependiendo de la época del año.",
-      "Una vez en la reserva, los lobos marinos nadarán libremente a tu alrededor, acercándote por su propia curiosidad. Esta interacción cercana y natural garantiza momentos mágicos que quedarán grabados en tu memoria para siempre.",
+      "excursions.snorkeling.description.0",
+      "excursions.snorkeling.description.1",
+      "excursions.snorkeling.description.2",
     ],
     details: [
       {
-        title: "Duración",
-        description: "Aproximadamente 2:30 horas.",
+        title: "excursions.snorkeling.details.duration.title",
+        description: "excursions.snorkeling.details.duration.description",
         icon: "clock",
       },
       {
-        title: "Guía personalizado",
-        description: "Presente para ayudar, guiar y acompañar en todo momento.",
+        title: "excursions.snorkeling.details.guide.title",
+        description: "excursions.snorkeling.details.guide.description",
         icon: "user",
       },
       {
-        title: "Equipamiento",
-        description: "Brindamos equipamiento de snorkeling completo.",
+        title: "excursions.snorkeling.details.equipment.title",
+        description: "excursions.snorkeling.details.equipment.description",
         icon: "lifeBuoy",
       },
       {
-        title: "Para todos",
-        description: "Ideal para familias, amigos o individuos aventureros.",
+        title: "excursions.snorkeling.details.forAll.title",
+        description: "excursions.snorkeling.details.forAll.description",
         icon: "users",
       },
       {
-        title: "Sin experiencia previa",
-        description: "No necesitas experiencia previa y tampoco saber nadar.",
+        title: "excursions.snorkeling.details.noExperience.title",
+        description: "excursions.snorkeling.details.noExperience.description",
         icon: "thumbsUp",
       },
     ],
     whatToExpect: [
       {
-        title: "Equipamiento",
-        description:
-          "Te proporcionaremos todo el equipo necesario, incluyendo máscara, snorkel, traje de neopreno y aletas.",
+        title: "excursions.snorkeling.whatToExpect.equipment.title",
+        description: "excursions.snorkeling.whatToExpect.equipment.description",
       },
       {
-        title: "Breve Introducción y Orientación",
-        description:
-          "Comenzamos con una breve explicación de los aspectos básicos del snorkeling y los protocolos de seguridad.",
+        title: "excursions.snorkeling.whatToExpect.briefing.title",
+        description: "excursions.snorkeling.whatToExpect.briefing.description",
       },
       {
-        title: "Paseo Náutico",
-        description:
-          "Nuestros capitanes experimentados te llevarán en un paseo náutico hacia la Reserva Natural Punta Loma. En el camino, tendrás la oportunidad de avistar una increíble variedad de fauna, como pingüinos, delfines, ballenas y cormoranes, dependiendo de la época del año.",
+        title: "excursions.snorkeling.whatToExpect.boatTrip.title",
+        description: "excursions.snorkeling.whatToExpect.boatTrip.description",
       },
       {
-        title: "Snorkelling Guiado",
-        description:
-          "Nuestros guías te acompañarán en la Reserva Natural Punta Loma, donde podrás estar cerca de los lobos marinos en su entorno natural y disfrutar de una experiencia segura y emocionante.",
+        title: "excursions.snorkeling.whatToExpect.guidedSnorkeling.title",
+        description: "excursions.snorkeling.whatToExpect.guidedSnorkeling.description",
       },
       {
-        title: "Interacción con la Fauna",
-        description:
-          "Disfruta de la interacción cercana con los lobos marinos mientras nadan a tu alrededor en su entorno natural.",
+        title: "excursions.snorkeling.whatToExpect.wildlifeInteraction.title",
+        description: "excursions.snorkeling.whatToExpect.wildlifeInteraction.description",
       },
       {
-        title: "Regreso y Despedida",
-        description:
-          "Al final de la experiencia, disfrutarás del paseo de regreso, deleitándote con los impresionantes paisajes de la Patagonia. De vuelta en el centro de buceo, podrás compartir tus impresiones y recuerdos de esta aventura inolvidable.",
+        title: "excursions.snorkeling.whatToExpect.return.title",
+        description: "excursions.snorkeling.whatToExpect.return.description",
       },
     ],
     requirements: [
       {
-        title: "Edad Mínima",
-        description: "La edad mínima para participar es de 6 años en el verano, de 8 en el invierno (consultar).",
+        title: "excursions.snorkeling.requirements.minAge.title",
+        description: "excursions.snorkeling.requirements.minAge.description",
       },
       {
-        title: "Condición Física",
-        description: "En caso de ser mayor de 65 años debes contar con un certificado médico de buena salud",
+        title: "excursions.snorkeling.requirements.physicalCondition.title",
+        description: "excursions.snorkeling.requirements.physicalCondition.description",
       },
       {
-        title: "Salud y Aptitud Física",
-        description:
-          "Es importante no tener enfermedades cardíacas u otras condiciones médicas que puedan presentar problemas debido al movimiento de navegación, el esfuerzo físico básico/moderado y el impacto con el agua fría.",
+        title: "excursions.snorkeling.requirements.health.title",
+        description: "excursions.snorkeling.requirements.health.description",
       },
     ],
     callToAction: [
       {
-        text: "¿Listo para vivir una experiencia única de snorkeling? ¡Reserva tu aventura ahora y descubre la magia de estar cerca de los lobos marinos!",
+        text: "excursions.snorkeling.callToAction.text",
         href: "https://madrynbuceo.outtrip.com/experiences/674f51e8752c8c796efc1f95/snorkel-con-lobos-marinos",
       },
     ],
-    buttonText: "Reserva Ahora",
+    buttonText: "excursions.snorkeling.buttonText",
     heroImage: "/images/excursiones/snorkel/lobo-header.webp",
     cardImage: "/images/excursiones/snorkel/lobo-header.webp",
     galleryImages: [
@@ -118,88 +112,86 @@ export const excursiones: Excursion[] = [
       "/images/excursiones/snorkel/lobo-3.webp",
       "/images/excursiones/snorkel/lobo-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839502/GX013260_1_lfsh8r.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839486/GX019812_1_mbvdht.mp4",
+    ]
   },
   {
-    title: "Bautismo de Buceo",
+    title: "excursions.bautismo.title",
     slug: "bautismo-buceo",
-    miniDescription: "Anímate a descubrir el mundo submarino y sumérgete en la aventura con nosotros.",
+    miniDescription: "excursions.bautismo.miniDescription",
     description: [
-      "¿Querés vivir tu primera experiencia de buceo? El Bautismo Submarino es la manera más simple de entrar en este mundo, sin necesidad de saber nadar, ni tener experiencia previa. Tu instructor estará con vos en todo momento, se encargará del equipo, para que vos solo te concentres en disfrutar.",
-      "El buceo te permite flotar libremente bajo el agua, como si estuvieras volando. Es una sensación única, que combina aventura, tranquilidad y una conexión profunda con el entorno. Vas a explorar los paisajes submarinos de la Patagonia y encontrarte cara a cara con peces, estrellas de mar y otras maravillas del fondo marino.",
-      "A diferencia de otras experiencias, este bautismo no requiere teoría, ni manejo del equipo, está pensado para que cualquier persona pueda sumarse y vivir esta experiencia mágica con total confianza!",
-      "¿Buscás una primera experiencia más completa? El Discover Scuba Diving es una alternativa ideal si te gustaría aprender un poco más sobre este mundo. En este programa aprenderás a manejar el equipo, moverte por tu cuenta bajo el agua y explorar más a fondo cómo funciona el buceo. Además, es el punto de partida si te gustaría hacer tu curso de buceo en un futuro.",
+      "excursions.bautismo.description.0",
+      "excursions.bautismo.description.1",
+      "excursions.bautismo.description.2",
+      "excursions.bautismo.description.3",
     ],
     details: [
       {
-        title: "Instructor personalizado",
-        description: "Atención individualizada para cada participante.",
+        title: "excursions.bautismo.details.instructor.title",
+        description: "excursions.bautismo.details.instructor.description",
         icon: "award",
       },
       {
-        title: "Duración",
-        description: "1 hora y 30 minutos, con 20 minutos dedicados a la práctica y la inmersión.",
+        title: "excursions.bautismo.details.duration.title",
+        description: "excursions.bautismo.details.duration.description",
         icon: "clock",
       },
       {
-        title: "Para todos",
-        description:
-          "No necesitas experiencia previa y tampoco saber nadar, cualquiera puede acceder a esta excursión.",
+        title: "excursions.bautismo.details.forAll.title",
+        description: "excursions.bautismo.details.forAll.description",
         icon: "users",
       },
       {
-        title: "Mundo submarino",
-        description: "Conoce la grandiosa diversidad marina que se encuentra en la Patagonia!",
+        title: "excursions.bautismo.details.underwater.title",
+        description: "excursions.bautismo.details.underwater.description",
         icon: "fish",
       },
     ],
     whatToExpect: [
       {
-        title: "Equipamiento",
-        description:
-          "Te proporcionaremos el traje de neopreno en nuestro local antes de partir hacia el lugar de inmersión. El resto del equipo, incluyendo máscara, regulador y tanque, será proporcionado en el sitio de buceo.",
+        title: "excursions.bautismo.whatToExpect.equipment.title",
+        description: "excursions.bautismo.whatToExpect.equipment.description",
       },
       {
-        title: "Breve Introducción y Orientación",
-        description:
-          "Comenzamos con una breve explicación de lo que necesitas saber para tu experiencia, algunos conocimientos básicos y el instructor se encargará del resto.",
+        title: "excursions.bautismo.whatToExpect.briefing.title",
+        description: "excursions.bautismo.whatToExpect.briefing.description",
       },
       {
-        title: "Sesión de Práctica en Superficie",
-        description: "Realizarás una práctica en superficie para familiarizarte con el equipo y las técnicas de buceo.",
+        title: "excursions.bautismo.whatToExpect.practice.title",
+        description: "excursions.bautismo.whatToExpect.practice.description",
       },
       {
-        title: "Inmersión Guiada",
-        description:
-          "Nuestros instructores te llevarán a una inmersión controlada, donde el mismo se encargará del control del equipo mientras te centras en explorar el mundo submarino en compañía de peces, estrellas de mar, anémonas y otras maravillas del ecosistema marino.",
+        title: "excursions.bautismo.whatToExpect.dive.title",
+        description: "excursions.bautismo.whatToExpect.dive.description",
       },
       {
-        title: "Regreso y Despedida",
-        description:
-          "Al final de la experiencia, regresarás al centro de buceo, donde podrás compartir tus impresiones y recibir una breve evaluación de tu instructor.",
+        title: "excursions.bautismo.whatToExpect.return.title",
+        description: "excursions.bautismo.whatToExpect.return.description",
       },
     ],
     requirements: [
       {
-        title: "Edad Mínima",
-        description: "La edad mínima para participar es de 8 años (consultar para más detalles).",
+        title: "excursions.bautismo.requirements.minAge.title",
+        description: "excursions.bautismo.requirements.minAge.description",
       },
       {
-        title: "Condición Física",
-        description: "En caso de ser mayor de 65 años, debes contar con un certificado médico de buena salud.",
+        title: "excursions.bautismo.requirements.physicalCondition.title",
+        description: "excursions.bautismo.requirements.physicalCondition.description",
       },
       {
-        title: "Salud y Aptitud Física",
-        description:
-          "Es importante no tener afecciones cardíacas, problemas respiratorios u otras condiciones médicas que puedan presentar un riesgo durante la inmersión.",
+        title: "excursions.bautismo.requirements.health.title",
+        description: "excursions.bautismo.requirements.health.description",
       },
     ],
     callToAction: [
       {
-        text: "¿Listo para descubrir el mundo submarino? ¡Reserva tu bautismo de buceo ahora y comienza tu aventura subacuática con nosotros!",
+        text: "excursions.bautismo.callToAction.text",
         href: "https://madrynbuceo.outtrip.com/experiences/674f404d7e5b9806387322d6/bautismos-submarinos-",
       },
     ],
-    buttonText: "Reserva Ahora",
+    buttonText: "excursions.bautismo.buttonText",
     heroImage: "/images/excursiones/bautismo/bautismo-header.webp",
     cardImage: "/images/excursiones/bautismo/bautismo-header.webp",
     galleryImages: [
@@ -208,62 +200,63 @@ export const excursiones: Excursion[] = [
       "/images/excursiones/bautismo/bautismo-3.webp",
       "/images/excursiones/bautismo/bautismo-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747840099/GX013204_1_zvezcz.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839859/GX012838_1_ormbgw.mp4"
+    ]
   },
   {
-    title: "Paseo Náutico en Busca de Delfines",
+    title: "excursions.delfines.title",
     slug: "paseo-nautico-en-busca-de-delfines",
-    miniDescription: "Embárcate en una aventura inolvidable en busca de delfines.",
+    miniDescription: "excursions.delfines.miniDescription",
     description: [
-      "Navega por las aguas del golfo Nuevo en busca de los fascinantes delfines oscuros. A bordo de nuestro bote semirrigido de 9 metros, vivirás una experiencia emocionante y altamente personalizada, con un máximo de 15 pasajeros. Nuestra embarcación parte directamente desde la playa en la magia del mar patagonico.",
-      "Guiados por nuestros capitanes expertos, navegaremos hacia las áreas donde los delfines frecuentan. Estos animales, conocidos por su energía, acrobacias y curiosidad, suelen acercarse a las embarcaciones, ofreciendo un espectáculo natural inolvidable.",
-      "Además de avistar diversas especies de aves y fauna local, dependiendo del trayecto podemos llegar a ver lugares icónicos como el Naufragio Folías, Punta Cuevas o  El doradillo. Perfecto para familias, amigos y aventureros individuales.",
+      "excursions.delfines.description.0",
+      "excursions.delfines.description.1",
+      "excursions.delfines.description.2",
     ],
     details: [
       {
-        title: "Duración",
-        description: "Aproximadamente 2 horas (puede extenderse según condiciones del mar y avistamientos).",
+        title: "excursions.delfines.details.duration.title",
+        description: "excursions.delfines.details.duration.description",
         icon: "clock",
       },
       {
-        title: "Para todos",
-        description: "Apto para Todo Público.",
+        title: "excursions.delfines.details.forAll.title",
+        description: "excursions.delfines.details.forAll.description",
         icon: "users",
       },
       {
-        title: "Grupo reducido",
-        description: "Máximo 15 pasajeros para una experiencia personalizada.",
+        title: "excursions.delfines.details.smallGroup.title",
+        description: "excursions.delfines.details.smallGroup.description",
         icon: "userPlus",
       },
       {
-        title: "Embarque",
-        description: "Directo desde la costa, deben asistir con ropa y calzado apto para mojarse hasta las rodillas.",
+        title: "excursions.delfines.details.boarding.title",
+        description: "excursions.delfines.details.boarding.description",
         icon: "anchor",
       },
     ],
     whatToExpect: [
       {
-        title: "Equipamiento",
-        description:
-          "Nuestra embarcación está equipada con elementos de seguridad y chalecos salvavidas para todos los pasajeros.",
+        title: "excursions.delfines.whatToExpect.equipment.title",
+        description: "excursions.delfines.whatToExpect.equipment.description",
       },
       {
-        title: "Paseo Guiado",
-        description:
-          "Nos dirigimos a las aguas del Golfo Nuevo, donde nuestros guías bilingües te proporcionarán información sobre la diversa variedad de aves y fauna marina, además de recorrer lugares históricos y emblemáticos del lugar.",
+        title: "excursions.delfines.whatToExpect.guidedTour.title",
+        description: "excursions.delfines.whatToExpect.guidedTour.description",
       },
       {
-        title: "Regreso y Despedida",
-        description:
-          "Finalizamos nuestra travesía regresando a la costa, donde podrás compartir tus impresiones y recuerdos de esta maravillosa experiencia.",
+        title: "excursions.delfines.whatToExpect.return.title",
+        description: "excursions.delfines.whatToExpect.return.description",
       },
     ],
     callToAction: [
       {
-        text: "¿Listo para vivir una aventura inolvidable en el mar? ¡Reserva tu paseo ahora y ven a descubrir la magia de los delfines oscuros en su hábitat natural!",
+        text: "excursions.delfines.callToAction.text",
         href: "https://madrynbuceo.outtrip.com/experiences/67603481407d6f69b98a0f43/paseo-nautico-en-busqueda-de-delfines",
       },
     ],
-    buttonText: "Reserva Ahora",
+    buttonText: "excursions.delfines.buttonText",
     heroImage: "/images/excursiones/delfines/delfines-header.webp",
     cardImage: "/images/excursiones/delfines/delfines-header.webp",
     galleryImages: [
@@ -272,65 +265,62 @@ export const excursiones: Excursion[] = [
       "/images/excursiones/delfines/delfines-3.webp",
       "/images/excursiones/delfines/delfines-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841017/GX010414_1_or3jp5.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841035/GX017534_goty_1_st2fpr.mp4"
+    ]
   },
   {
-    title: "Salidas Privadas",
+    title: "excursions.salidas.title",
     slug: "salidas-privadas",
-    miniDescription: "Personaliza tu experiencia con salidas exclusivas para ti y tu grupo.",
+    miniDescription: "excursions.salidas.miniDescription",
     description: [
-      "¿Buscas una experiencia única y personalizada en las aguas cristalinas de la Patagonia? Nuestras salidas privadas en semirrígido son la opción perfecta para ti. Con capacidad para hasta 15 pasajeros, te ofrecemos una mañana completa de aventura y exploración en un entorno natural incomparable, adaptamos la aventura a tus preferencias y necesidades.",
+      "excursions.salidas.description.0",
     ],
     details: [
       {
-        title: "Atención Personalizada",
-        description:
-          "Con un grupo reducido, nuestros guías pueden enfocarse en brindar una atención más detallada y personalizada, asegurando que tu experiencia sea segura y memorable.",
+        title: "excursions.salidas.details.personalized.title",
+        description: "excursions.salidas.details.personalized.description",
         icon: "star",
       },
       {
-        title: "Flexibilidad",
-        description:
-          "Disfruta de la flexibilidad para elegir tus actividades favoritas y adaptar el itinerario según tus intereses.",
+        title: "excursions.salidas.details.flexibility.title",
+        description: "excursions.salidas.details.flexibility.description",
         icon: "shuffle",
       },
       {
-        title: "Exploración Exclusiva",
-        description:
-          "Accede a sitios de buceo y snorkel menos concurridos, disfrutando de la tranquilidad y la belleza de la Patagonia sin las multitudes.",
+        title: "excursions.salidas.details.exclusive.title",
+        description: "excursions.salidas.details.exclusive.description",
         icon: "map",
       },
     ],
     whatToExpect: [
       {
-        title: "Snorkel con Lobos Marinos",
-        description:
-          "Sumérgete en las aguas y disfruta de la compañía de estos juguetones animales marinos en su hábitat natural. Guiado por nuestros instructores profesionales, tendrás la oportunidad de acercarte a los curiosos lobos marinos y observar sus comportamientos de cerca.",
+        title: "excursions.salidas.whatToExpect.snorkeling.title",
+        description: "excursions.salidas.whatToExpect.snorkeling.description",
       },
       {
-        title: "Buceo en Sitios Espectaculares",
-        description:
-          "Si eres buceador certificado, o quieres vivir tu primera experiencia de buceo, podrás explorar el fascinante mundo submarino de la Patagonia. Descubre naufragios, coloridos arrecifes y la abundante vida marina que habita estas aguas.",
+        title: "excursions.salidas.whatToExpect.diving.title",
+        description: "excursions.salidas.whatToExpect.diving.description",
       },
       {
-        title: "Paseos Náuticos en Búsqueda de Delfines",
-        description:
-          "Navega por las aguas en busca de los amistosos delfines. Estos paseos no solo te ofrecen la emoción de avistar delfines, sino también la oportunidad de disfrutar de los impresionantes paisajes marinos.",
+        title: "excursions.salidas.whatToExpect.dolphinTour.title",
+        description: "excursions.salidas.whatToExpect.dolphinTour.description",
       },
     ],
     callToAction: [
       {
-        text: "No dejes pasar la oportunidad de vivir una experiencia única y personalizada en la Patagonia. Contáctanos hoy mismo para reservar tu salida privada en semirrígido y prepárate para una mañana llena de aventuras y descubrimientos.",
-        href: "https://madrynbuceo.outtrip.com/experiences/67603481407d6f69b98a0f43/paseo-nautico-en-busqueda-de-delfines",
+        text: "excursions.salidas.callToAction.text",
+        href: "/contacto",
       },
     ],
-    buttonText: "Reserva Ahora",
+    buttonText: "excursions.salidas.buttonText",
     heroImage: "/images/excursiones/salidas/salidas-header.webp",
     cardImage: "/images/excursiones/salidas/salidas-header.webp",
     galleryImages: [
       "/images/excursiones/salidas/salidas-1.webp",
-      "/images/excursiones/salidas/salidas-5.webp",
-      "/images/excursiones/salidas/salidas-6.webp",
       "/images/excursiones/salidas/salidas-3.webp",
+      "/images/excursiones/salidas/salidas-4.webp",
     ],
   },
 ]

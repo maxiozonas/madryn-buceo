@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { FormattedMessage } from "react-intl"
 
 interface QueEsperarSectionProps {
   excursion: Excursion
@@ -55,7 +56,9 @@ export default function QueEsperarSection({ excursion }: QueEsperarSectionProps)
         >
           <div className="flex items-center gap-2">
             <ArrowRight className="h-8 w-8 text-rojo" />
-            <span>¿Qué esperar?</span>
+            <span>
+              <FormattedMessage id="queEsperarSection.title" />
+            </span>
           </div>
           {isExpanded ? <Minus className="h-7 w-7 text-rojo" /> : <Plus className="h-7 w-7 text-rojo" />}
         </button>
@@ -81,9 +84,11 @@ export default function QueEsperarSection({ excursion }: QueEsperarSectionProps)
                     <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">{getIcon(index)}</div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
-                        {index + 1}. {item.title}
+                        <FormattedMessage id={item.title} />
                       </h3>
-                      <p className="text-white/80 text-sm text-center lg:text-start">{item.description}</p>
+                      <p className="text-white/80 text-sm text-center lg:text-start">
+                        <FormattedMessage id={item.description} />
+                      </p>
                     </div>
                   </motion.div>
                 ))}

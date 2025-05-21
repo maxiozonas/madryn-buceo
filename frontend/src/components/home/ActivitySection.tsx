@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { excursiones } from "@/lib/data/Excursiones";
 import ExcursionCard from "../excursiones/ExcursionCard";
+import { FormattedMessage } from "react-intl";
 
 export default function ActivitySection() {
   const ref = useRef(null)
@@ -37,7 +38,7 @@ export default function ActivitySection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          Nuestras Actividades
+          <FormattedMessage id="home.activity.title" />
         </motion.h2>
         <motion.p
           className="text-lg text-center text-white mb-12"
@@ -45,7 +46,7 @@ export default function ActivitySection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          Descubre las emocionantes actividades que ofrecemos en la Patagonia.
+          <FormattedMessage id="home.activity.description" />
         </motion.p>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"

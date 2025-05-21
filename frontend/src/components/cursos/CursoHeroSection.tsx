@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import image from "../../../public/images/inicio/hero-image-2.jpg"
+import { FormattedMessage } from "react-intl";
 
 
 export default function HeroSection() {
+  const image = "https://drive.google.com/uc?export=view&id=1f61rt5N-l9vWZ0rVazrtWLFNZe72rP9x"
 
   return (
     <>
@@ -23,12 +24,12 @@ export default function HeroSection() {
           <h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
           >
-            Cursos PADI
+            <FormattedMessage id="courses.padi.title" />
           </h1>
           <p
             className="text-base md:text-2xl mb-8 font-oceanica"
           >
-            Certifícate con nosotros y descubre un mundo de posibilidades bajo el agua.
+            <FormattedMessage id="courses.padi.description" />
           </p>
         </div>
       </section>

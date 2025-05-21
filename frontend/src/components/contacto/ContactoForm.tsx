@@ -10,20 +10,33 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react"
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
-  email: z.string().email({ message: "Ingresa un correo electrónico válido" }),
-  phone: z.string().min(8, { message: "Ingresa un número de teléfono válido" }),
-  subject: z.string().min(5, { message: "El asunto debe tener al menos 5 caracteres" }),
-  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres" }),
-})
-
-type FormValues = z.infer<typeof formSchema>
+import { FormattedMessage, useIntl } from "react-intl"
 
 export default function ContactoForm() {
+  const intl = useIntl() 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: intl.formatMessage({ id: "contact.form.name.error" }),
+    }),
+    email: z.string().email({
+      message: intl.formatMessage({ id: "contact.form.email.error" }),
+    }),
+    phone: z.string().min(8, {
+      message: intl.formatMessage({ id: "contact.form.phone.error" }),
+    }),
+    subject: z.string().min(5, {
+      message: intl.formatMessage({ id: "contact.form.subject.error" }),
+    }),
+    message: z.string().min(10, {
+      message: intl.formatMessage({ id: "contact.form.message.error" }),
+    }),
+  })
+
+  type FormValues = z.infer<typeof formSchema>
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -43,16 +56,16 @@ export default function ContactoForm() {
       const result = await sendEmail(data)
       if (result.success) {
         setFormStatus('success')
-        alert('Mensaje enviado con éxito')
+        alert(intl.formatMessage({ id: "contact.form.success.alert" }))
         form.reset()
       } else {
         setFormStatus('error')
-        alert('Error al enviar el mensaje')
+        alert(intl.formatMessage({ id: "contact.form.error.alert" }))
       }
     } catch (error) {
       console.error("Error al enviar el correo:", error)
       setFormStatus('error')
-      alert('Error al enviar el mensaje. Por favor intenta nuevamente.')
+      alert(intl.formatMessage({ id: "contact.form.error.alert" }))
     } finally {
       setIsSubmitting(false)
     }
@@ -67,10 +80,12 @@ export default function ContactoForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Nombre</FormLabel>
+                <FormLabel className="text-white">
+                  <FormattedMessage id="contact.form.name.label" defaultMessage="Nombre" />
+                </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Tu nombre"
+                    placeholder={intl.formatMessage({ id: "contact.form.name.placeholder" })}
                     {...field}
                     className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
@@ -85,10 +100,12 @@ export default function ContactoForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Email</FormLabel>
+                <FormLabel className="text-white">
+                  <FormattedMessage id="contact.form.email.label" defaultMessage="Email" />
+                </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="tu@email.com"
+                    placeholder={intl.formatMessage({ id: "contact.form.email.placeholder" })}
                     {...field}
                     className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
@@ -105,10 +122,12 @@ export default function ContactoForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Teléfono</FormLabel>
+                <FormLabel className="text-white">
+                  <FormattedMessage id="contact.form.phone.label" defaultMessage="Teléfono" />
+                </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Tu número de teléfono"
+                    placeholder={intl.formatMessage({ id: "contact.form.phone.placeholder" })}
                     {...field}
                     className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
@@ -123,10 +142,12 @@ export default function ContactoForm() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Asunto</FormLabel>
+                <FormLabel className="text-white">
+                  <FormattedMessage id="contact.form.subject.label" defaultMessage="Asunto" />
+                </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Asunto de tu mensaje"
+                    placeholder={intl.formatMessage({ id: "contact.form.subject.placeholder" })}
                     {...field}
                     className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
                   />
@@ -142,12 +163,14 @@ export default function ContactoForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Mensaje</FormLabel>
+              <FormLabel className="text-white">
+                <FormattedMessage id="contact.form.message.label" defaultMessage="Mensaje" />
+              </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Escribe tu mensaje aquí..."
+                  placeholder={intl.formatMessage({ id: "contact.form.message.placeholder" })}
                   {...field}
-                  className="bg-negro border-none text-white min-h-[150px] placeholder:text-white/70 focus:ring-0 focus:border-none"
+                  className="števbg-negro border-none text-white min-h-[150px] placeholder:text-white/70 focus:ring-0 focus:border-none"
                 />
               </FormControl>
               <FormMessage />
@@ -155,24 +178,28 @@ export default function ContactoForm() {
           )}
         />
 
-        <Button type="submit" className="w-full bg-rojo hover:bg-rojo/90 text-white cursor-pointer" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          className="w-full bg-rojo hover:bg-rojo/90 text-white cursor-pointer"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Enviando...
+              <FormattedMessage id="contact.form.submitting" defaultMessage="Enviando..." />
             </>
           ) : formStatus === 'success' ? (
             <>
               <CheckCircle className="mr-2 h-4 w-4" />
-              Mensaje enviado
+              <FormattedMessage id="contact.form.success" defaultMessage="Mensaje enviado" />
             </>
           ) : formStatus === 'error' ? (
             <>
               <AlertCircle className="mr-2 h-4 w-4" />
-              Intentar nuevamente
+              <FormattedMessage id="contact.form.error" defaultMessage="Intentar nuevamente" />
             </>
           ) : (
-            "Enviar mensaje"
+            <FormattedMessage id="contact.form.submit" defaultMessage="Enviar mensaje" />
           )}
         </Button>
       </form>

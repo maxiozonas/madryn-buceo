@@ -6,6 +6,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 interface Props {
   sites: DiveSite[];
@@ -98,7 +99,7 @@ export default function DiveSitesCarousel({
               <div className="flex gap-4 w-max px-2">
                 {filteredSites.map((site, index) => (
                   <Card
-                    key={site.name}
+                    key={site.difficulty}
                     onClick={() => {
                       setSelectedCoords(site.coords);
                       setActiveIndex(index);
@@ -123,7 +124,7 @@ export default function DiveSitesCarousel({
                     </div>
                     <CardContent className="p-2 text-center w-full mb-4">
                       <h3 className="text-sm font-bold text-white/80">
-                        {site.name}
+                        <FormattedMessage id={site.name}/>
                       </h3>
                     </CardContent>
                   </Card>
