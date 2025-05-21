@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { FormattedMessage } from "react-intl"
-import { motion } from "framer-motion"
 
 export default function HeroSection() {
   const scrollToNextSection = () => {

@@ -85,7 +85,7 @@ export default function Header() {
           {NavLinks.map((link, index) => (
             <div
               key={index}
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setHoveredSubmenu(index)}
               onMouseLeave={() => setHoveredSubmenu(null)}
             >
@@ -98,9 +98,9 @@ export default function Header() {
                   </button>
                   <AnimatePresence>
                     <motion.div
-                      className="absolute left-0 top-full w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4 hidden group-hover:block"
+                      className={`absolute left-0 top-full w-80 bg-negro-secundario shadow-lg rounded-md px-4 py-4 ${hoveredSubmenu === index ? 'block' : 'hidden'}`}
                       initial="hidden"
-                      animate="visible"
+                      animate={hoveredSubmenu === index ? "visible" : "exit"}
                       exit="exit"
                       variants={submenuVariants}
                     >
