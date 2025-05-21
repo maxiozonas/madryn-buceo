@@ -5,10 +5,10 @@ import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
 import { motion } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
+import logo from "../../../public/images/footer/pngwing.com(1).png";
+import imagen from "../../../public/images/excursiones/bautismo/bautismo-1.webp"
 
 export default function PadiSection() {
-    const imagen = "https://drive.google.com/uc?export=download&id=109Qaf04-VJqortfl-iJhqnV5gBaKzEJ7";
-    const logo = "https://drive.google.com/uc?export=view&id=16CG2pJMJm8nXif2CVRnEBzoiZe0BZOK5";
     
     const intl = useIntl();
     const fadeIn = {

@@ -118,6 +118,7 @@ export default async function ExcursionPage({ params }: ExcursionPageProps) {
           <div className="mb-12 mt-12">
             <GaleriaSection
               galleryImages={excursion.galleryImages}
+              galleryVideos={excursion.galleryVideos}
               title={excursion.title}
             />
           </div>

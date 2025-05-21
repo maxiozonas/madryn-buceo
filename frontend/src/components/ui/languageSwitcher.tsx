@@ -69,7 +69,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         <button
           onClick={() => handleChange({ target: { value: "es" } } as React.ChangeEvent<HTMLSelectElement>)}
           className={cn(
-            "flex flex-col items-center p-3 rounded-lg transition-all duration-200",
+            "flex flex-col items-center p-3 rounded-lg transition-all duration-200 cursor-pointer",
             locale === "es" ? "bg-negro-secundario ring-2 ring-[#e12222]" : "bg-negro-secundario/50"
           )}
           aria-label="Cambiar a Español"
@@ -88,7 +88,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         <button
           onClick={() => handleChange({ target: { value: "en" } } as React.ChangeEvent<HTMLSelectElement>)}
           className={cn(
-            "flex flex-col items-center p-3 rounded-lg transition-all duration-200",
+            "flex flex-col items-center p-3 rounded-lg transition-all duration-200 cursor-pointer",
             locale === "en" ? "bg-negro-secundario ring-2 ring-[#e12222]" : "bg-negro-secundario/50"
           )}
           aria-label="Switch to English"
@@ -125,7 +125,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
     <div className="relative" onMouseLeave={handleMouseLeave}>
       <button
         ref={buttonRef}
-        className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-negro-secundario transition-colors duration-200"
+        className="flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer hover:bg-negro-secundario transition-colors duration-200"
         aria-label="Seleccionar idioma"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         onMouseEnter={handleMouseEnter}
@@ -150,7 +150,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           <button
             onClick={() => handleChange({ target: { value: "es" } } as React.ChangeEvent<HTMLSelectElement>)}
             className={cn(
-              "flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-negro-secundario/80 transition-colors duration-200",
+              "flex items-center gap-2 w-full px-3 py-2 text-left cursor-pointer hover:bg-negro-secundario/80 hover:text-[#e12222] transition-colors duration-200",
               locale === "es" && "bg-negro-secundario/80"
             )}
           >
@@ -168,7 +168,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           <button
             onClick={() => handleChange({ target: { value: "en" } } as React.ChangeEvent<HTMLSelectElement>)}
             className={cn(
-              "flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-negro-secundario/80 transition-colors duration-200",
+              "flex items-center gap-2 w-full px-3 py-2 text-left cursor-pointer hover:bg-negro-secundario/80 hover:text-[#e12222] transition-colors duration-200",
               locale === "en" && "bg-negro-secundario/80"
             )}
           >

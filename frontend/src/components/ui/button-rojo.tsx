@@ -8,16 +8,19 @@ import { ReactNode } from "react"
 
 interface ButtonRojoProps {
     texto: ReactNode 
-    href: string;
+    href?: string;
     fullWidth?: boolean;
     layoutId?: string;
+    onClick?: () => void;
 }
 
-export default function ButtonRojo({ texto, href, fullWidth = false, layoutId }: ButtonRojoProps) {
+export default function ButtonRojo({ texto, href, fullWidth = false, layoutId, onClick }: ButtonRojoProps) {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(href);
+        if (href) {
+            router.push(href);
+        }
     };
 
     if (layoutId) {
@@ -33,7 +36,7 @@ export default function ButtonRojo({ texto, href, fullWidth = false, layoutId }:
             >
                 <Button
                     size="lg"
-                    onClick={handleClick}
+                    onClick={onClick || handleClick}
                     className={`group bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
                 >
                     {texto}
@@ -46,7 +49,7 @@ export default function ButtonRojo({ texto, href, fullWidth = false, layoutId }:
     return (
         <Button
             size="lg"
-            onClick={handleClick}
+            onClick={onClick || handleClick}
             className={`group bg-rojo rounded-sm hover:bg-rojo text-white transition-all duration-300 text-lg font-semibold cursor-pointer ${fullWidth ? 'w-full' : ''}`}
         >
             {texto}

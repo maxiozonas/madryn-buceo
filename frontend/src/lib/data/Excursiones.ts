@@ -17,6 +17,7 @@ export type Excursion = {
   heroImage: string
   cardImage: string
   galleryImages: string[]
+  galleryVideos?: string[] 
 }
 
 export const excursiones: Excursion[] = [
@@ -103,14 +104,18 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.snorkeling.buttonText",
-    heroImage: "https://drive.google.com/uc?export=view&id=1f61rt5N-l9vWZ0rVazrtWLFNZe72rP9x",
-    cardImage: "https://drive.google.com/uc?export=view&id=1f61rt5N-l9vWZ0rVazrtWLFNZe72rP9x",
+    heroImage: "/images/excursiones/snorkel/lobo-header.webp",
+    cardImage: "/images/excursiones/snorkel/lobo-header.webp",
     galleryImages: [
-      "https://drive.google.com/uc?export=view&id=17s8A9qBO_LkxV5Vxz4sCz7ocu60b_vgM",
-      "https://drive.google.com/uc?export=view&id=1dfQ_ElSItkXM_BanEBVsXQEox6VCwbhM",
-      "https://drive.google.com/uc?export=view&id=1rncEDIY9Ghx_nQwHBDmWDJAwHI9LURlF",
-      "https://drive.google.com/uc?export=view&id=1bq0JPzIB1jSeM81TWu1fugcdQiN0s_L6",
+      "/images/excursiones/snorkel/lobo-1.webp",
+      "/images/excursiones/snorkel/lobo-2.webp",
+      "/images/excursiones/snorkel/lobo-3.webp",
+      "/images/excursiones/snorkel/lobo-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839502/GX013260_1_lfsh8r.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839486/GX019812_1_mbvdht.mp4",
+    ]
   },
   {
     title: "excursions.bautismo.title",
@@ -187,14 +192,18 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.bautismo.buttonText",
-    heroImage: "https://drive.google.com/uc?export=view&id=1vu0MC7NhOGP5Ne0EivwqsrfYUm0mISQm",
-    cardImage: "https://drive.google.com/uc?export=view&id=1vu0MC7NhOGP5Ne0EivwqsrfYUm0mISQm",
+    heroImage: "/images/excursiones/bautismo/bautismo-header.webp",
+    cardImage: "/images/excursiones/bautismo/bautismo-header.webp",
     galleryImages: [
-      "https://drive.google.com/uc?export=view&id=1UclvBvyXy1kov-a50Gut26hd9nT3Dt0f",
-      "https://drive.google.com/uc?export=view&id=18ajKPkwy0cgriox33mTm-cI4IUXhLe1e",
-      "https://drive.google.com/uc?export=view&id=1wI8wqX-MrSAqvUzGd73DIQOYgPXgR1GC",
-      "https://drive.google.com/uc?export=view&id=1hTWmgR_cpAlfAzR7jj_Q-cD_UP-pcSld",
+      "/images/excursiones/bautismo/bautismo-1.webp",
+      "/images/excursiones/bautismo/bautismo-2.webp",
+      "/images/excursiones/bautismo/bautismo-3.webp",
+      "/images/excursiones/bautismo/bautismo-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747840099/GX013204_1_zvezcz.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839859/GX012838_1_ormbgw.mp4"
+    ]
   },
   {
     title: "excursions.delfines.title",
@@ -248,14 +257,18 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.delfines.buttonText",
-    heroImage: "https://drive.google.com/uc?export=view&id=1TU8THawD7g-VCPCzhcRAfXiYHdoOnGvi",
-    cardImage: "https://drive.google.com/uc?export=view&id=1TU8THawD7g-VCPCzhcRAfXiYHdoOnGvi",
+    heroImage: "/images/excursiones/delfines/delfines-header.webp",
+    cardImage: "/images/excursiones/delfines/delfines-header.webp",
     galleryImages: [
-      "https://drive.google.com/uc?export=view&id=1W3XmOfHYfwXtQnjeQe4U72Sd0SSz-1YZ",
-      "https://drive.google.com/uc?export=view&id=1hYx5vQDghxcIPlEuMGIfgLGMbAMgugdh",
-      "https://drive.google.com/uc?export=view&id=1EP3RuZZA3DjJbvDVpcTaAXiokUvsXt_j",
-      "https://drive.google.com/uc?export=view&id=1ysBMYIrDhcWIccPa-uOg8Kz3Hx0F6vvf",
+      "/images/excursiones/delfines/delfines-1.webp",
+      "/images/excursiones/delfines/delfines-2.webp",
+      "/images/excursiones/delfines/delfines-3.webp",
+      "/images/excursiones/delfines/delfines-4.webp",
     ],
+    galleryVideos: [
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841017/GX010414_1_or3jp5.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841035/GX017534_goty_1_st2fpr.mp4"
+    ]
   },
   {
     title: "excursions.salidas.title",
@@ -298,17 +311,16 @@ export const excursiones: Excursion[] = [
     callToAction: [
       {
         text: "excursions.salidas.callToAction.text",
-        href: "https://madrynbuceo.outtrip.com/experiences/67603481407d6f69b98a0f43/paseo-nautico-en-busqueda-de-delfines",
+        href: "/contacto",
       },
     ],
     buttonText: "excursions.salidas.buttonText",
-    heroImage: "https://drive.google.com/uc?export=view&id=1C6QpOKVpM1uuQqVzVjQC0GIVjV42xS-1",
-    cardImage: "https://drive.google.com/uc?export=view&id=1C6QpOKVpM1uuQqVzVjQC0GIVjV42xS-1",
+    heroImage: "/images/excursiones/salidas/salidas-header.webp",
+    cardImage: "/images/excursiones/salidas/salidas-header.webp",
     galleryImages: [
-      "https://drive.google.com/uc?export=view&id=1zz1Tx0sFT2hE3QHDiD3zCeRRJS8vCSYY",
-      "https://drive.google.com/uc?export=view&id=1kiiaPaTVGNuyJzDUj62gxaE-GWvQAfAL",
-      "https://drive.google.com/uc?export=view&id=1jkwuc7s7bRE_d2Qa9WQuhZxkFzKDTOOQ",
-      "https://drive.google.com/uc?export=view&id=1lbULPrD6jtzA6kL5RuysG18RaootLrbC",
+      "/images/excursiones/salidas/salidas-1.webp",
+      "/images/excursiones/salidas/salidas-3.webp",
+      "/images/excursiones/salidas/salidas-4.webp",
     ],
   },
 ]

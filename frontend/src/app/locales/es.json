@@ -524,5 +524,7 @@
   "diveCertification.tablePrice.text3": "1 Buceo con lobos",
   "diveCertification.tablePrice.text4": "1 Buceo con lobos + 1 Buceo extra",
   "diveCertification.tablePrice.text5": "1 Buceo + Snorkeling con lobos",
-  "diveCertification.altText": "Imagen de buceo en Puerto Madryn"
+  "diveCertification.altText": "Imagen de buceo en Puerto Madryn",
+  "contact.info.email.label": "Email",
+  "contact.info.email": "madrynbuceo@hotmail.com"
 }

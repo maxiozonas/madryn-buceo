@@ -84,7 +84,7 @@ export default function QueEsperarSection({ excursion }: QueEsperarSectionProps)
                     <div className="flex-shrink-0 p-3 bg-[#e12222]/10 rounded-full">{getIcon(index)}</div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg text-white text-center lg:text-start mb-2">
-                        {index + 1}. <FormattedMessage id={item.title} />
+                        <FormattedMessage id={item.title} />
                       </h3>
                       <p className="text-white/80 text-sm text-center lg:text-start">
                         <FormattedMessage id={item.description} />
