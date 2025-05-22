@@ -77,7 +77,7 @@ export function AboutCardsSection() {
               description={
                 <FormattedMessage id ={"our.history2"}/>
               }
-              videoSrc="/videos/nosotros/docu.mp4"
+              videoSrc="https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753439/docu_wtmto4.mp4"
             >
             </AboutCard>
 

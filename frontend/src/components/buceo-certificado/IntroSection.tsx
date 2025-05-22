@@ -9,9 +9,9 @@ export default function IntroSection() {
   const divingMedia: { type: "image" | "video"; url: string }[] = [
     { type: "image", url: "/images/buceo/descripcion.webp" },
     { type: "image", url: "/images/puntos/chino/chino.webp" },
-    { type: "video", url: "/videos/puntos/mirages/mirages1.webm" },
+    { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875248/mirages1_vg6pog.webm" },
     { type: "image", url: "/images/puntos/urabain/urabain.webp" },
-    { type: "video", url: "/videos/puntos/folias/folias1.webm" },
+    { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875312/folias1_vdkark.webm" },
   ];
 
   return (

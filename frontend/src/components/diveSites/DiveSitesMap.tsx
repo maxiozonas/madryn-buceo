@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import customIcon from "@/components/ui/customIcon";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import CertificationFilter from "./CertificationFilter";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
+import L from "leaflet";
 
 interface Props {
   selectedCoords: [number, number];
@@ -28,6 +29,16 @@ const DiveSitesMap: React.FC<Props> = ({
   setCertificationFilter,
   onMarkerClick,
 }) => {
+  const mapRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (mapRef.current) {
+      setTimeout(() => {
+        mapRef.current?.invalidateSize();
+      }, 100);
+    }
+  }, []);
+
   const filteredSites = certificationFilter
     ? sites.filter((site) => site.certification === certificationFilter)
     : sites;
@@ -40,17 +51,18 @@ const DiveSitesMap: React.FC<Props> = ({
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeIn}
     >
-      <div className="relative isolate h-[280px] md:h-[520px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
+      <div className="relative isolate h-[360px] md:h-[520px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
         <MapContainer
           center={selectedCoords}
           zoom={13}
           scrollWheelZoom={false}
           style={{ width: "100%", height: "100%" }}
           dragging={true}
+          ref={mapRef}
         >
           <TileLayer
             url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-            attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+            attribution='© <a href="https://www.esri.com/">Esri</a>'
           />
           {filteredSites.map((site) => (
             <Marker
