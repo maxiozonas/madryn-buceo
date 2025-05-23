@@ -45,7 +45,7 @@ export default function CursoFiltro() {
           <button
             onClick={() => handleFilterChange("cursos.filters.iniciacion")}
             className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
-              activeFilter === "iniciacion"
+              activeFilter === "cursos.filters.iniciacion"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
             }`}
@@ -55,7 +55,7 @@ export default function CursoFiltro() {
           <button
             onClick={() => handleFilterChange("cursos.filters.avanzados")}
             className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
-              activeFilter === "avanzados"
+              activeFilter === "cursos.filters.avanzados"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
             }`}
@@ -65,7 +65,7 @@ export default function CursoFiltro() {
           <button
             onClick={() => handleFilterChange("cursos.filters.profesional")}
             className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
-              activeFilter === "profesional"
+              activeFilter === "cursos.filters.profesional"
                 ? "bg-rojo text-white"
                 : "bg-negro-secundario text-gray-300 hover:bg-gray-800"
             }`}

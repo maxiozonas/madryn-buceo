@@ -5,7 +5,6 @@ import CourseDescription from "@/components/detalles-curso/CursoDescripcionSecti
 import CourseDetails from "@/components/detalles-curso/CursoDetallesSection";
 import CursoIntroSection from "@/components/detalles-curso/CursoIntroSection";
 import CursoPorqueSection from "@/components/detalles-curso/CursoPorqueSection";
-import OtrosCursosSection from "@/components/detalles-curso/OtrosCursosSection";
 import { SeparatorHorizontal } from "lucide-react";
 import { Curso } from "@/lib/data/Cursos";
 
@@ -19,9 +18,9 @@ export default function DetalleCursoClient({ curso }: DetalleCursoClientProps) {
       <CursoIntroSection
         title={<FormattedMessage id={curso.title} />}
         shortDescription={<FormattedMessage id={curso.shortDescription} />}
-        certification={<FormattedMessage id={curso.certification} />}
-        duration={<FormattedMessage id={curso.duration} />}
-        depth={<FormattedMessage id={curso.depth} />}
+        certification={curso.certification ? <FormattedMessage id={curso.certification} /> : undefined}
+        duration={curso.duration ? <FormattedMessage id={curso.duration} /> : undefined}
+        depth={curso.depth ? <FormattedMessage id={curso.depth} /> : undefined}
         cardImage={curso.cardImage}
         level={<FormattedMessage id={curso.level} />}
       />
@@ -46,13 +45,11 @@ export default function DetalleCursoClient({ curso }: DetalleCursoClientProps) {
                 depth={curso.depth}
                 certification={curso.certification}
                 requirements={curso.requirements}
-                slug={curso.slug}
               />
             </div>
           </div>
         </div>
       </section>
-      <OtrosCursosSection />
     </>
   );
 }

@@ -14,7 +14,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.1.text",
       date: "home.reseña.1.date",
-      image: "/images/reseñas/reseña 1.png",
+      image: "/images/reseñas/reseña-1.png",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.2.text",
       date: "home.reseña.2.date",
-      image: "/images/reseñas/reseñas 2.png",
+      image: "/images/reseñas/reseñas-2.png",
     },
     {
       id: 3,
@@ -30,6 +30,6 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.3.text",
       date: "home.reseña.3.date",
-      image: "/images/reseñas/reseñas 3.png",
+      image: "/images/reseñas/reseñas-3.png",
     },
 ];

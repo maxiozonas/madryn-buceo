@@ -64,7 +64,7 @@ export async function sendEmail(data: ContactFormData) {
 
     const mailOptions = {
       from: `"Madryn Buceo" <${process.env.EMAIL_USER}>`,
-      to: 'maxiozonas10@gmail.com',
+      to: 'madrynbuceo@hotmail.com',
       replyTo: validatedData.email,
       subject: `Nuevo mensaje de contacto: ${validatedData.subject}`,
       text: `

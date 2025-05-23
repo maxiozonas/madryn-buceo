@@ -83,6 +83,7 @@ export default function GaleriaSection({ galleryImages, galleryVideos = [], titl
                   src={allMedia[0].src || "/placeholder.svg?height=300&width=400"}
                   alt={`${title} - Imagen destacada`}
                   fill
+                  priority
                   className="object-cover transition-transform duration-300 brightness-50"
                 />
               ) : (
@@ -123,6 +124,7 @@ export default function GaleriaSection({ galleryImages, galleryVideos = [], titl
                   src={media.src || "/placeholder.svg?height=300&width=400"}
                   alt={`${title} - Imagen ${index + 1}`}
                   fill
+                  priority
                   className="object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-50"
                 />
               ) : (

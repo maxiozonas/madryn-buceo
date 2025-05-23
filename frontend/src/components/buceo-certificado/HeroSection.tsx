@@ -31,7 +31,7 @@ const scrollToNextSection = () => {
 export default function HeroSection({
   heroImage,
 }: HeroSectionProps) {
-  const callToAction = { href: "/buceo-certificado" }
+  const callToAction = { href: "/contacto" }
   const altText = "diveCertification.altText"
   
   return (
