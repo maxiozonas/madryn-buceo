@@ -59,14 +59,12 @@ export default function ImageGallery({ media, className, style }: Props) {
   }
 
   return (
-<div
-  className={`relative w-full h-[50vh] max-w-full md:h-[432px] overflow-hidden rounded-xl ${
-    className || ""
-  }`}
-  style={style}
->
-
-
+    <div
+      className={`relative w-full h-[50vh] max-w-full md:h-[432px] overflow-hidden rounded-xl ${
+        className || ""
+      }`}
+      style={style}
+    >
       {media[current].type === "image" ? (
         <Image
           src={media[current].url || "/images/placeholder.jpg"}
@@ -76,7 +74,9 @@ export default function ImageGallery({ media, className, style }: Props) {
           className="w-full h-full max-w-full max-h-full object-contain rounded-xl"
           sizes="(max-width: 768px) 90vw, 768px"
           priority
-          onError={() => console.error("Error loading image:", media[current].url)}
+          onError={() =>
+            console.error("Error loading image:", media[current].url)
+          }
         />
       ) : (
         <video
@@ -92,7 +92,7 @@ export default function ImageGallery({ media, className, style }: Props) {
         <>
           <button
             onClick={prevMedia}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors cursor-pointer"
             aria-label="Media anterior"
           >
             <svg
@@ -112,7 +112,7 @@ export default function ImageGallery({ media, className, style }: Props) {
           </button>
           <button
             onClick={nextMedia}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors cursor-pointer"
             aria-label="Media siguiente"
           >
             <svg

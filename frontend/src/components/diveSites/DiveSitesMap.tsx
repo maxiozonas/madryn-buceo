@@ -54,7 +54,7 @@ const DiveSitesMap: React.FC<Props> = ({
       <div className="relative isolate h-[360px] md:h-[520px] rounded-xl overflow-hidden shadow-md border border-[#403d39] z-0">
         <MapContainer
           center={selectedCoords}
-          zoom={13}
+          zoom={12}
           scrollWheelZoom={false}
           style={{ width: "100%", height: "100%" }}
           dragging={true}
@@ -91,12 +91,18 @@ const DiveSitesMap: React.FC<Props> = ({
             </Marker>
           ))}
         </MapContainer>
-        <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 z-[1000] hidden sm:block">
+        <div className="hidden sm:block absolute bottom-4 left-4 z-[1000]">
           <CertificationFilter
             certificationFilter={certificationFilter}
             setCertificationFilter={setCertificationFilter}
           />
         </div>
+      </div>
+      <div className="sm:hidden mt-6 px-3">
+        <CertificationFilter
+          certificationFilter={certificationFilter}
+          setCertificationFilter={setCertificationFilter}
+        />
       </div>
     </motion.section>
   );

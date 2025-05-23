@@ -49,7 +49,7 @@ export const diveSites: DiveSite[] = [
       },
       { type: "image", url: "/images/puntos/albatros/albatros2.webp" },
     ],
-    coords: [-42.758831653388214, -64.97829731579868],
+    coords: [-42.772176671466276, -65.00268587567936],
   },
   {
     name: "diveSites.miralles.name",
@@ -73,7 +73,7 @@ export const diveSites: DiveSite[] = [
       { type: "image", url: "/images/puntos/mirages/mirages3.webp" },
       { type: "image", url: "/images/puntos/mirages/miralles4.webp" },
     ],
-    coords: [-42.75908311304106, -64.95632460663693],
+    coords: [-42.779059040732605, -64.98180054843917],
   },
   {
     name: "diveSites.urabain.name",
@@ -138,7 +138,7 @@ export const diveSites: DiveSite[] = [
       { type: "image", url: "/images/puntos/folias/folias4.webp" },
       { type: "image", url: "/images/puntos/folias/folias5.webp" },
     ],
-    coords: [-42.763, -64.974],
+    coords: [-42.79393030124875, -64.93821467050833],
   },
   {
     name: "diveSites.emma.name",
@@ -148,7 +148,7 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "5 min",
     media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
-    coords: [-42.7803, -64.995],
+    coords: [-42.76477721055545, -65.01671570280027],
   },
   {
     name: "diveSites.parqueNuevo.name",
@@ -158,7 +158,7 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "5 min",
     media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
-    coords: [-42.7806, -64.9945],
+    coords: [-42.766697529064395, -65.02275419633675],
   },
   {
     name: "diveSites.puntaCuevas.name",
@@ -171,7 +171,7 @@ export const diveSites: DiveSite[] = [
       { type: "image", url: "/images/puntos/folias/folias.webp" },
       { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753438/puntacuevas_e0sewd.mp4" },
     ],
-    coords: [-42.75, -64.95],
+    coords: [-42.77900291600345, -64.99946429862112],
   },
   {
     name: "diveSites.caletaParana.name",
@@ -191,7 +191,7 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "30 min",
     media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
-    coords: [-42.787, -64.985],
+    coords: [-42.81233204545886, -64.89998144500629],
   },
   {
     name: "diveSites.lasPiedras.name",
@@ -201,6 +201,6 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "15 min",
     media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
-    coords: [-42.765, -64.98],
+    coords: [-42.734299379311864, -65.03257410915717],
   },
 ];

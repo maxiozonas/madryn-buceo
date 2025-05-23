@@ -127,7 +127,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
                 <div className="mt-4">
                   <button
                     onClick={closeModal}
-                    className="w-full py-2 px-4 bg-rojo text-white rounded-lg hover:bg-rojo/80 transition"
+                    className="w-full py-2 px-4 bg-rojo text-white rounded-lg hover:bg-rojo/80 transition cursor-pointer"
                   >
                     <FormattedMessage id="diveSite.close" defaultMessage="Close" />
                   </button>

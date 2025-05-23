@@ -15,7 +15,7 @@ const CertificationFilter: React.FC<CertificationFilterProps> = ({
       <select
         value={certificationFilter || ""}
         onChange={(e) => setCertificationFilter(e.target.value || null)}
-        className="bg-negro-secundario border border-rojo rounded px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-sm"
+        className="bg-negro-secundario border border-rojo rounded px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-sm cursor-pointer"
       >
         <option value="" style={{ color: "#e12222" }}>
           <FormattedMessage id ={"Todas"}/>

@@ -85,7 +85,7 @@ export default function DiveSitesCarousel({
           <div className="relative">
             <button
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2 cursor-pointer"
               aria-label="Scroll left"
             >
               <ChevronLeft size={24} />
@@ -105,7 +105,7 @@ export default function DiveSitesCarousel({
                       setActiveIndex(index);
                       openModal(site);
                     }}
-                    className={`card min-w-[280px] bg-negro-secundario text-white border-[#403d39] shadow-lg flex flex-col justify-between hover:scale-95 transition-transform snap-center p-0 ${
+                    className={`card min-w-[280px] bg-negro-secundario text-white border-[#403d39] shadow-lg flex flex-col justify-between hover:scale-95 transition-transform snap-center p-0 cursor-pointer ${
                       activeIndex === index ? "" : ""
                     }`}
                     style={{ borderRadius: 0 }}
@@ -134,7 +134,7 @@ export default function DiveSitesCarousel({
 
             <button
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2 cursor-pointer"
               aria-label="Scroll right"
             >
               <ChevronRight size={24} />

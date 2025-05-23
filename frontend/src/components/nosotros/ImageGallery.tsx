@@ -37,15 +37,43 @@ export default function ImageGallery({ media, className }: Props) {
         <>
           <button
             onClick={prevMedia}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded cursor-pointer"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors cursor-pointer"
+            aria-label="Media anterior"
           >
-            ‹
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
           </button>
           <button
             onClick={nextMedia}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded cursor-pointer"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-negro-secundario/90 text-rojo p-2 rounded-full hover:bg-rojo hover:text-white transition-colors cursor-pointer"
+            aria-label="Media siguiente"
           >
-            ›
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
           </button>
         </>
       )}

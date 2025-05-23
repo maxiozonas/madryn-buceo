@@ -56,7 +56,7 @@ export default function StaffCarousel({ staff }: Props) {
             <CardContent className="p-4 sm:p-8 relative">
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-negro text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={24} />
@@ -105,7 +105,7 @@ export default function StaffCarousel({ staff }: Props) {
 
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#252422] text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-negro text-white p-3 rounded-full z-10 hover:bg-[#403d39] sm:p-2"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={24} />
