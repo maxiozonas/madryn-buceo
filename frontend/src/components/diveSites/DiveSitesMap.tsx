@@ -8,6 +8,7 @@ import CertificationFilter from "./CertificationFilter";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
 import L from "leaflet";
+import { FormattedMessage} from "react-intl";
 
 interface Props {
   selectedCoords: [number, number];
@@ -73,7 +74,7 @@ const DiveSitesMap: React.FC<Props> = ({
                 click: () => onMarkerClick(site),
               }}
             >
-              <Popup>{site.name}</Popup>
+              <Popup><FormattedMessage id={site.name}/></Popup>
               <Tooltip
                 direction="top"
                 offset={[0, -20]}
@@ -85,7 +86,7 @@ const DiveSitesMap: React.FC<Props> = ({
                   className="px-2 py-1 bg-[#252422] text-white text-xs font-semibold rounded-md shadow-md"
                   style={{ backgroundColor: "#252422", boxShadow: "none" }}
                 >
-                  {site.name}
+                  <FormattedMessage id ={site.name}/>
                 </div>
               </Tooltip>
             </Marker>
