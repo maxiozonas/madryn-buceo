@@ -55,7 +55,7 @@ export default function PricingSection() {
                   <div className="text-center">{item.option}</div>
                   <div className="text-center">{item.cost}</div>
                   <div className="text-center w-full md:w-auto">
-                    <ButtonRojo texto={"Reservar"} href={item.reserveLink} />
+                    <ButtonRojo texto={<FormattedMessage id="book" />} href={item.reserveLink} />
                   </div>
                 </div>
               ))}
