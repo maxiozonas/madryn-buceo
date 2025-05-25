@@ -5,8 +5,6 @@ import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
 import { motion } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
-import logo from "../../../public/images/footer/pngwing.com(1).png";
-import imagen from "../../../public/images/excursiones/bautismo/bautismo-1.webp"
 
 export default function PadiSection() {
     
@@ -86,7 +84,7 @@ export default function PadiSection() {
                                 variants={logoAnimation}
                             >
                                 <Image 
-                                    src={logo} 
+                                    src={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102588/pngwing.com_1_kbr7nw.png"} 
                                     alt="Certificación PADI" 
                                     width={100} 
                                     height={60} 
@@ -123,7 +121,7 @@ export default function PadiSection() {
                         viewport={{ once: true, amount: 0.3 }}
                         variants={imageAnimation}
                     >
-                        <Image src={imagen} priority alt="Certificación PADI" fill className="object-cover" />
+                        <Image src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748091224/bautismo_fizpfd.jpg" priority alt="Certificación PADI" fill className="object-cover" />
                     </motion.div>
                 </div>
             </div>

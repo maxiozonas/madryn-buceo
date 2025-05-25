@@ -15,9 +15,9 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
     let imageSrc = excursion.cardImage
 
     if (excursion.slug.includes("salidas")) {
-      imageSrc = "/images/excursiones/salidas/salidas-5.webp"
+      imageSrc = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102581/salidas-5_tadnaz.webp"
     } else if (excursion.slug.includes("delfines")) {
-      imageSrc = "/images/excursiones/delfines/delfines-2.webp"
+      imageSrc = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102546/delfines-2_dtop9v.webp"
     }
 
     return (

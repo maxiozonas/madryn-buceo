@@ -14,7 +14,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.1.text",
       date: "home.reseña.1.date",
-      image: "/images/reseñas/reseña-1.png",
+      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102534/rese%C3%B1a-1_akz0gk.png",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.2.text",
       date: "home.reseña.2.date",
-      image: "/images/reseñas/reseñas-2.png",
+      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102534/rese%C3%B1as-2_ji9t09.png",
     },
     {
       id: 3,
@@ -30,6 +30,6 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.3.text",
       date: "home.reseña.3.date",
-      image: "/images/reseñas/reseñas-3.png",
+      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102533/rese%C3%B1as-3_ves2ng.png",
     },
 ];

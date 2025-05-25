@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 
 
 export default function HeroSection() {
-  const image = "https://drive.google.com/uc?export=view&id=1f61rt5N-l9vWZ0rVazrtWLFNZe72rP9x"
+  const image = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748178531/G0135558_yojydu.jpg"
 
   return (
     <>

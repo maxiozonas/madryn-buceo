@@ -35,8 +35,8 @@ export async function generateMetadata({ params, searchParams }: ExcursionPagePr
     return {
       title: locale === "en" ? "Excursion not found | Madryn Buceo" : "Excursión no encontrada | Madryn Buceo",
       icons: {
-        icon: "/images/inicio/logo.png",
-        apple: "/images/inicio/logo.png",
+        icon: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
+        apple: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
       },
     };
   }
@@ -48,8 +48,8 @@ export async function generateMetadata({ params, searchParams }: ExcursionPagePr
     title: `${translatedTitle} | Madryn Buceo`,
     description: translatedDescription,
     icons: {
-      icon: "/images/inicio/logo.png",
-      apple: "/images/inicio/logo.png",
+      icon: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
+      apple: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
     },
     openGraph: {
       title: `${translatedTitle} | Madryn Buceo`,

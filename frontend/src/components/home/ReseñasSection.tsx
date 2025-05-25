@@ -4,7 +4,6 @@ import { Star } from "lucide-react"
 import { Card, CardContent } from "../ui/card"
 import Image from "next/image"
 import { motion, useAnimation, AnimatePresence } from "framer-motion"
-import googleLogo from "../../../public/images/inicio/google.png"
 import { Reseña } from "@/lib/types/reseñas"
 import { Button } from "../ui/button"
 import Link from "next/link"
@@ -122,7 +121,7 @@ export default function ReseñasSection() {
             <Button
               className="bg-white hover:bg-white text-black text-lg font-semibold cursor-pointer flex items-center gap-2"
             >
-              <Image src={googleLogo} alt="Google" width={24} height={24} />
+              <Image src={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102663/google_bx9cwm.png"} alt="Google" width={24} height={24} />
               <FormattedMessage id="home.reseñas.button" />
             </Button>
           </Link>
@@ -204,7 +203,7 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
             className="flex mb-4 items-center"
             variants={starContainerVariants}
           >
-            <Image src={googleLogo} alt="Google" width={20} height={20} className="mr-2"/>
+            <Image src={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102663/google_bx9cwm.png"} alt="Google" width={20} height={20} className="mr-2"/>
             {[...Array(5)].map((_, i) => (
               <motion.div key={i} variants={starVariants}>
                 <Star

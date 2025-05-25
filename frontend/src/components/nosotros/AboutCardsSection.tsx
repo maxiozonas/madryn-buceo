@@ -10,9 +10,9 @@ import { FileClock, House, Users } from "lucide-react";
 import { FormattedMessage } from "react-intl";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
-  { url: "/images/nosotros/GaleriaLocal/galeriaLocal2.webp", type: "image" },
-  { url: "/images/nosotros/GaleriaLocal/galeriaLocal1.webp", type: "image" },
-  { url: "/images/nosotros/GaleriaLocal/galeriaLocal3.webp", type: "image" },
+  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102693/galeriaLocal2_nxa28x.webp", type: "image" },
+  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102690/galeriaLocal1_xagqad.webp", type: "image" },
+  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102687/galeriaLocal3_wrb28t.webp", type: "image" },
 ];
 
 export function AboutCardsSection() {
@@ -89,7 +89,7 @@ export function AboutCardsSection() {
                 </div>
               }
               description={<FormattedMessage id ={"our.staff2"}/>}
-              imageSrc="/images/nosotros/staff.JPG"
+              imageSrc="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748091254/staff_nrcxj9.jpg"
             />
           </motion.div>
         </div>

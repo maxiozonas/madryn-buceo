@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import spain from "../../../public/images/flags/spain.svg"
-import uk from "../../../public/images/flags/uk.svg"
 
 interface LanguageSwitcherProps {
   isMobile?: boolean;
@@ -54,11 +52,11 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
 
   const flags = {
     es: {
-      src: spain,
+      src: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102589/spain_x0dq7z.svg",
       alt: "Bandera de España"
     },
     en: {
-      src: uk,
+      src: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102589/uk_xdxy8p.svg",
       alt: "UK Flag"
     }
   }

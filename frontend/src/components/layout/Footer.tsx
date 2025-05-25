@@ -19,7 +19,7 @@ export default function Footer() {
             title="Tripadvisor"
           >
             <Image
-              src="https://drive.google.com/uc?export=view&id=1LMHGiD3f2cW22C566vpZTf7PZVr7BPHY"
+              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102584/logo-trip-footer_omt51e.png"
               alt="Tripadvisor"
               width={160}
               height={32}
@@ -34,7 +34,7 @@ export default function Footer() {
             title="Madryn Travel"
           >
             <Image
-              src="https://drive.google.com/uc?export=view&id=1sRbVeSpQsT7aVrKYjeyK4W0e4orvfZTK"
+              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102586/logo-madryn-footer_qsilvz.png"
               alt="Madryn Travel"
               width={160}
               height={32} 
@@ -50,7 +50,7 @@ export default function Footer() {
         <div className="flex justify-center">
           <a/>
             <Image
-              src="https://drive.google.com/uc?export=view&id=1UYGW2CZiB2ljaAp-yh5TUR6xOezXg7P3"
+              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102583/footer-widget-logo_hvzu7u.png"
               alt="Tripadvisor"
               width={300}
               height={82}

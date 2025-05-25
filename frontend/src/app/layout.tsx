@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/images/inicio/logo.png",
-    apple: "/images/inicio/logo.png",
+    icon: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
+    apple: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
   },
   openGraph: {
     title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/inicio/logo.png",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
         width: 800,
         height: 600,
         alt: "Madryn Buceo Logo",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
     description: "Excursiones, cursos y certificaciones de buceo en Puerto Madryn, Patagonia Argentina.",
-    images: ["/images/inicio/logo.png"],
+    images: ["https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png"],
   },
   robots: {
     index: true,

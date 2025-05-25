@@ -7,10 +7,10 @@ import { FormattedMessage, useIntl } from "react-intl";
 export default function IntroSection() {
   const intl = useIntl();
   const divingMedia: { type: "image" | "video"; url: string }[] = [
-    { type: "image", url: "/images/buceo/descripcion.webp" },
-    { type: "image", url: "/images/puntos/chino/chino.webp" },
+    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102581/galeria1_elkzuh.webp" },
+    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748112130/G0453282_ynfn94.jpg" },
     { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875248/mirages1_vg6pog.webm" },
-    { type: "image", url: "/images/puntos/urabain/urabain.webp" },
+    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102579/galeria2_ssjzkv.webp" },
     { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875312/folias1_vdkark.webm" },
   ];
 

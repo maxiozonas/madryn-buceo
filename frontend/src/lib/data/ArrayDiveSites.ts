@@ -18,19 +18,34 @@ export const diveSites: DiveSite[] = [
     certification: "Open Water Diver",
     time: "5 min",
     media: [
-      { type: "image", url: "/images/puntos/primavera/primavera.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102617/primavera3_tfnods.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753441/primavera2_npvlju.mp4",
       },
-      { type: "image", url: "/images/puntos/primavera/primavera2.webp" },
-      { type: "image", url: "/images/puntos/primavera/primavera3.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102619/primavera2_xgpmbj.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102617/primavera_ja6nhb.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753441/primavera1_ondpqv.mp4",
       },
-      { type: "image", url: "/images/puntos/primavera/primavera4.webp" },
-      { type: "image", url: "/images/puntos/primavera/primavera5.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102609/primavera4_oqtchh.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102606/primavera5_sbiopb.webp",
+      },
     ],
     coords: [-42.757, -64.965],
   },
@@ -42,12 +57,18 @@ export const diveSites: DiveSite[] = [
     certification: "Open Water Diver",
     time: "5 min",
     media: [
-      { type: "image", url: "/images/puntos/albatros/albatros.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102600/albatros_wagiho.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753441/albatros1_bce9ad.webm",
       },
-      { type: "image", url: "/images/puntos/albatros/albatros2.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102596/albatros2_pz17jp.webp",
+      },
     ],
     coords: [-42.772176671466276, -65.00268587567936],
   },
@@ -59,19 +80,26 @@ export const diveSites: DiveSite[] = [
     certification: "Advanced OWD",
     time: "15 min",
     media: [
-      { type: "image", url: "/images/puntos/mirages/mirages.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102614/mirages_cb5hjp.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753441/miralles_iy8y5s.mp4",
       },
-      { type: "image", url: "/images/puntos/mirages/mirages.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102608/mirages2_p9vtdm.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753440/miralles2_tya3p0.mp4",
       },
-      { type: "image", url: "/images/puntos/mirages/mirages2.webp" },
-      { type: "image", url: "/images/puntos/mirages/mirages3.webp" },
-      { type: "image", url: "/images/puntos/mirages/miralles4.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102597/mirages3_zmkx7b.webp",
+      },
     ],
     coords: [-42.779059040732605, -64.98180054843917],
   },
@@ -83,15 +111,30 @@ export const diveSites: DiveSite[] = [
     certification: "Open Water Diver",
     time: "10 min",
     media: [
-      { type: "image", url: "/images/puntos/urabain/urabain.webp" },
-      { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753435/urabain_s6s0gy.webm" },
-      { type: "image", url: "/images/puntos/urabain/urabain2.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain3.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain4.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain5.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain6.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain7.webp" },
-      { type: "image", url: "/images/puntos/urabain/urabain8.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102639/urabain3_x59dh5.webp",
+      },
+      {
+        type: "video",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753435/urabain_s6s0gy.webm",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102631/urabain2_xolgqs.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102629/urabain4_lpydo1.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102621/urabain_fxwvxx.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102620/urabain5_ptoqzv.webp",
+      },
     ],
     coords: [-42.7605, -64.97],
   },
@@ -103,7 +146,10 @@ export const diveSites: DiveSite[] = [
     certification: "Advanced OWD",
     time: "10 min",
     media: [
-      { type: "image", url: "/images/puntos/chino/chino.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102630/chino2_pyk5ox.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753455/chino1_qnyr0p.webm",
@@ -116,7 +162,6 @@ export const diveSites: DiveSite[] = [
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753444/chino3_qhhkub.mp4",
       },
-      { type: "image", url: "/images/puntos/chino/chino2.webp" },
     ],
     coords: [-42.7615, -64.972],
   },
@@ -128,15 +173,30 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "15 min",
     media: [
-      { type: "image", url: "/images/puntos/folias/folias.webp" },
-      { type: "image", url: "/images/puntos/folias/folias2.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102637/folias5_eegmaf.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102642/folias_ixwlq4.webp",
+      },
       {
         type: "video",
         url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753436/folias1_swbr9g.webm",
       },
-      { type: "image", url: "/images/puntos/folias/folias3.webp" },
-      { type: "image", url: "/images/puntos/folias/folias4.webp" },
-      { type: "image", url: "/images/puntos/folias/folias5.webp" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102643/folias3_x4gm7w.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102635/folias4_kagc7j.webp",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102639/folias2_j7zj3n.webp",
+      },
     ],
     coords: [-42.79393030124875, -64.93821467050833],
   },
@@ -147,7 +207,7 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.emma.depth",
     certification: "Scuba Diver",
     time: "5 min",
-    media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
     coords: [-42.76477721055545, -65.01671570280027],
   },
   {
@@ -157,7 +217,7 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.parqueNuevo.depth",
     certification: "Scuba Diver",
     time: "5 min",
-    media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
     coords: [-42.766697529064395, -65.02275419633675],
   },
   {
@@ -168,8 +228,22 @@ export const diveSites: DiveSite[] = [
     certification: "Scuba Diver",
     time: "15 min",
     media: [
-      { type: "image", url: "/images/puntos/folias/folias.webp" },
-      { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753438/puntacuevas_e0sewd.mp4" },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110005/WhatsApp_Image_2025-05-19_at_12.57.56_1_lkfrqs.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110005/WhatsApp_Image_2025-05-19_at_12.57.56_kpxdbc.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110003/WhatsApp_Image_2025-05-19_at_12.57.55_xkh5aj.jpg",
+      },
+      {
+        type: "video",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753438/puntacuevas_e0sewd.mp4",
+      },
     ],
     coords: [-42.77900291600345, -64.99946429862112],
   },
@@ -180,7 +254,7 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.caletaParana.depth",
     certification: "Scuba Diver",
     time: "10 min",
-    media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
     coords: [-42.749, -64.949],
   },
   {
@@ -190,7 +264,16 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.puntaLoma.depth",
     certification: "Scuba Diver",
     time: "30 min",
-    media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
+    media: [
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110127/puntaloma2_o85uvz.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110119/puntaloma1_zhwaow.jpg",
+      },
+    ],
     coords: [-42.81233204545886, -64.89998144500629],
   },
   {
@@ -200,7 +283,7 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.lasPiedras.depth",
     certification: "Scuba Diver",
     time: "15 min",
-    media: [{ type: "image", url: "/images/puntos/folias/folias.webp" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
     coords: [-42.734299379311864, -65.03257410915717],
   },
 ];

@@ -36,7 +36,7 @@ export default function DiveSitesPage() {
     <>
       <HeroSection
         title={<FormattedMessage id ={"diving.spots"}/>}
-        heroImage={"/images/buceo/divesites.webp"}
+        heroImage={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102583/divesites_nprtbc.webp"}
         miniDescription={<FormattedMessage id ={"diving.des"}/>}
       />
       <div className="container mx-auto px-8">
