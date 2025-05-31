@@ -107,13 +107,13 @@ export const excursiones: Excursion[] = [
     heroImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111666/G0222062_upwqk8.jpg",
     cardImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111666/G0222062_upwqk8.jpg",
     galleryImages: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102544/lobo-4_xgunem.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102544/lobo-2_vbqty5.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102544/lobo-3_okndfk.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102536/lobo-1_cl4hdu.webp",
+      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699356/IMG_2225_a3esbd.jpg",
+      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699315/G0257730_cm7zyw.jpg",
+      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699309/GOPR8581_amfrco.jpg",
+      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699307/IMG_2203_naonah.jpg",
     ],
     galleryVideos: [
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839502/GX013260_1_lfsh8r.mp4",
+      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748699421/GX015072_wfh0lr.mp4",
       "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839486/GX019812_1_mbvdht.mp4",
     ]
   },

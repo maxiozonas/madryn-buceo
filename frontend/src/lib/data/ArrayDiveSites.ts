@@ -82,23 +82,27 @@ export const diveSites: DiveSite[] = [
     media: [
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102614/mirages_cb5hjp.webp",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698124/IMG_2209_hh14gh.jpg",
       },
       {
         type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753441/miralles_iy8y5s.mp4",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748698270/GH018218_dceedt.mp4",
       },
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102608/mirages2_p9vtdm.webp",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698121/464810858_27198941499754168_8250281170148689569_n_goef7u.jpg",
       },
       {
         type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753440/miralles2_tya3p0.mp4",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748698437/GH018211_bvruzh.mp4",
       },
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102597/mirages3_zmkx7b.webp",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698125/GOPR8204_imrqah.jpg",
+      },
+            {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698153/G0060367_bc5tkn.jpg",
       },
     ],
     coords: [-42.779059040732605, -64.98180054843917],
@@ -148,19 +152,27 @@ export const diveSites: DiveSite[] = [
     media: [
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102630/chino2_pyk5ox.webp",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698633/IMG_2235_af5bn1.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698632/IMG_2258_hexhhv.jpg",
       },
       {
         type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753455/chino1_qnyr0p.webm",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748698792/GX011040_kcmtks.mp4",
       },
       {
-        type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753455/chino2_zwhslj.webm",
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698629/IMG_2293_h0gaok.jpg",
       },
-      {
-        type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753444/chino3_qhhkub.mp4",
+            {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698628/IMG_2273_t4dptr.jpg",
+      },
+                  {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698629/IMG_2299_sxpzdi.jpg",
       },
     ],
     coords: [-42.7615, -64.972],
@@ -217,7 +229,12 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.parqueNuevo.depth",
     certification: "Scuba Diver",
     time: "5 min",
-    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697301/IMG_2245_tvp7va.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697302/IMG_2220_du89kp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697301/29196829_1844414142300253_3505204453298929664_n_at13u6.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697298/IMG_2207_g5bf0o.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697297/IMG_2205_npkkhe.jpg" }
+    ],
     coords: [-42.766697529064395, -65.02275419633675],
   },
   {
@@ -230,20 +247,33 @@ export const diveSites: DiveSite[] = [
     media: [
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110005/WhatsApp_Image_2025-05-19_at_12.57.56_1_lkfrqs.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110005/WhatsApp_Image_2025-05-19_at_12.57.56_kpxdbc.jpg",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748696753/IMG_2213_yprbx5.jpg",
       },
       {
         type: "image",
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110003/WhatsApp_Image_2025-05-19_at_12.57.55_xkh5aj.jpg",
       },
       {
-        type: "video",
-        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753438/puntacuevas_e0sewd.mp4",
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748696740/IMG_2246_nakm6x.jpg",
       },
+      {
+        type: "video",
+        url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748696833/GX014767_b5rj9q.mp4",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748696771/G0237866_d9bvem.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748696740/GX017821_-_frame_at_0m0s_uwqkdf.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748696756/IMG_2256_timrt3.jpg",
+      },
+      
     ],
     coords: [-42.77900291600345, -64.99946429862112],
   },
@@ -254,7 +284,11 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.caletaParana.depth",
     certification: "Scuba Diver",
     time: "10 min",
-    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699003/IMG_2214_buyguh.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699002/IMG_2226_ua9brq.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699002/IMG_2251_cp1xbu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699001/IMG_2210_qa70jq.jpg" }
+    ],
     coords: [-42.749, -64.949],
   },
   {
@@ -267,12 +301,29 @@ export const diveSites: DiveSite[] = [
     media: [
       {
         type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697527/IMG_2260_wsyhcu.jpg",
+      },
+      {
+        type: "image",
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110127/puntaloma2_o85uvz.jpg",
       },
       {
         type: "image",
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110119/puntaloma1_zhwaow.jpg",
       },
+            {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697527/GX015467_-_frame_at_0m13s_ufyski.jpg",
+      },
+{
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697527/464678161_27169256919389293_4018327767793814721_n_wkvnf1.jpg",
+      },
+      {
+        type: "image",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697527/IMG_2227_v1iv4d.jpg",
+      },
+      
     ],
     coords: [-42.81233204545886, -64.89998144500629],
   },
@@ -283,7 +334,12 @@ export const diveSites: DiveSite[] = [
     depth: "diveSites.lasPiedras.depth",
     certification: "Scuba Diver",
     time: "15 min",
-    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748110254/parquenuevo_vosgac.jpg" }],
+    media: [{ type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697801/IMG_2206_mscbes.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697803/464803529_27184937277821257_6738654526236211925_n_pkupww.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697802/IMG_2255_u1fgqu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697803/IMG_2228_e9v3ua.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748697804/464149890_27147354271579558_2534001931330962887_n_cy9kk0.jpg" }
+    ],
     coords: [-42.734299379311864, -65.03257410915717],
   },
 ];
