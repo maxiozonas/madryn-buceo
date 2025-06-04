@@ -73,7 +73,7 @@ export default function TableSection() {
                           defaultMessage="Reserve"
                         />
                       }
-                      href={item.reserveLink}
+                      href="/contacto"
                     />
                   </div>
                 </div>

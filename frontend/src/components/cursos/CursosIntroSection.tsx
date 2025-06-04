@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FormattedMessage, useIntl } from "react-intl";
 
 export default function CursosIntroSection() {
-    const imagen = "https://drive.google.com/uc?export=view&id=1yr4gLXUVvKKcXDU_h-BuASESSqulL7OK"
+    const imagen = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748995439/GOPR1373_yz9rgw.jpg"
     const logo = "https://drive.google.com/uc?export=view&id=16CG2pJMJm8nXif2CVRnEBzoiZe0BZOK5"
 
     const intl = useIntl();

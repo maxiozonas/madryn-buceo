@@ -11,7 +11,7 @@ import PricingSection from "@/components/buceo-certificado/PricingSection";
 export default function BuceoCapitalPage() {
   return (
     <main>
-      <HeroSection title={"BUCEA EN PUERTO MADRYN"} heroImage={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748091074/buceo_oo1naz.webp"} miniDescription={"Capital nacional del buceo"} />
+      <HeroSection title={"BUCEA EN PUERTO MADRYN"} heroImage={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748994557/G0123167_ui3btj.jpg"} miniDescription={"Capital nacional del buceo"} />
       <IntroSection />
       <DescriptionSection />
       <div className="container mx-auto px-8">

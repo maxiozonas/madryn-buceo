@@ -47,7 +47,7 @@ export const diveSites: DiveSite[] = [
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102606/primavera5_sbiopb.webp",
       },
     ],
-    coords: [-42.757, -64.965],
+    coords: [-42.76500, -65.02181],
   },
   {
     name: "diveSites.albatros.name",
@@ -129,7 +129,7 @@ export const diveSites: DiveSite[] = [
       },
       {
         type: "image",
-        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102629/urabain4_lpydo1.webp",
+        url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748994415/32105353_1917038135037853_4587005521436868608_n_sdzmgd.jpg",
       },
       {
         type: "image",
@@ -140,7 +140,7 @@ export const diveSites: DiveSite[] = [
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102620/urabain5_ptoqzv.webp",
       },
     ],
-    coords: [-42.7605, -64.97],
+    coords: [-42.76995, -64.99426],
   },
   {
     name: "diveSites.chinoHushung.name",
@@ -175,7 +175,7 @@ export const diveSites: DiveSite[] = [
         url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748698629/IMG_2299_sxpzdi.jpg",
       },
     ],
-    coords: [-42.7615, -64.972],
+    coords: [-42.76869, -65.00061],
   },
   {
     name: "diveSites.folias.name",
@@ -289,7 +289,7 @@ export const diveSites: DiveSite[] = [
       { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699002/IMG_2251_cp1xbu.jpg" },
       { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699001/IMG_2210_qa70jq.jpg" }
     ],
-    coords: [-42.749, -64.949],
+    coords: [-42.78224, -64.95508],
   },
   {
     name: "diveSites.puntaLoma.name",

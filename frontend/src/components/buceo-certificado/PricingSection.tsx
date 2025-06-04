@@ -10,29 +10,29 @@ export default function PricingSection() {
     {
       option: <FormattedMessage id="diveCertification.tablePrice.text" />,
       cost: "$ 150000",
-      reserveLink: "/reservas/1-buceo",
+      reserveLink: "https://madrynbuceo.outtrip.com/experiences/674f57531750a62ddd20d8fc/salidas-para-buzos-certificados-",
     },
     {
       option: <FormattedMessage id="diveCertification.tablePrice.text2" />,
       cost: "$ 220000",
-      reserveLink: "/reservas/2-buceos",
+      reserveLink: "https://madrynbuceo.outtrip.com/experiences/682661fe810540d31a9d08cd/2-salidas-para-buzos-certificados",
     },
     {
       option: <FormattedMessage id="diveCertification.tablePrice.text3" />,
       cost: "$ 230000",
       reserveLink:
-        "https://madrynbuceo.outtrip.com/experiences/674f51e8752c8c796efc1f95/snorkel-con-lobos-marinos",
+        "https://madrynbuceo.outtrip.com/experiences/682666f7ab220b5cafcac9fa/buceo-con-lobos-marinos",
     },
     {
       option: <FormattedMessage id="diveCertification.tablePrice.text4" />,
       cost: "$ 360000",
       reserveLink:
-        "https://madrynbuceo.outtrip.com/experiences/67603b229c7fb90464e77a91/discover-con-lobos-marinos",
+        "https://madrynbuceo.outtrip.com/experiences/682672e2819c650e78093dd9/1-buceo-con-lobos-+-1-buceo-extra",
     },
     {
       option: <FormattedMessage id="diveCertification.tablePrice.text5" />,
       cost: "$ 250000",
-      reserveLink: "/reservas/buceo-snorkeling",
+      reserveLink: "https://madrynbuceo.outtrip.com/experiences/6826771a810540be359d1a07/1-buceo-+-snorkeling-con-lobos",
     },
   ];
 

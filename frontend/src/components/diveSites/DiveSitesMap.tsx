@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import customIcon from "@/components/ui/customIcon";
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
-import CertificationFilter from "./CertificationFilter";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
 import L from "leaflet";
@@ -27,7 +26,6 @@ const DiveSitesMap: React.FC<Props> = ({
   selectedCoords,
   sites,
   certificationFilter,
-  setCertificationFilter,
   onMarkerClick,
 }) => {
   const mapRef = useRef<L.Map | null>(null);
@@ -92,18 +90,6 @@ const DiveSitesMap: React.FC<Props> = ({
             </Marker>
           ))}
         </MapContainer>
-        <div className="hidden sm:block absolute bottom-4 left-4 z-[1000]">
-          <CertificationFilter
-            certificationFilter={certificationFilter}
-            setCertificationFilter={setCertificationFilter}
-          />
-        </div>
-      </div>
-      <div className="sm:hidden mt-6 px-3">
-        <CertificationFilter
-          certificationFilter={certificationFilter}
-          setCertificationFilter={setCertificationFilter}
-        />
       </div>
     </motion.section>
   );

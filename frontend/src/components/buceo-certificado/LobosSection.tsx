@@ -48,7 +48,7 @@ export default function DescriptionSection() {
             className="relative h-[350px] w-full overflow-hidden rounded-lg"
           >
             <Image
-              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102590/buceoLobos_zuje95.webp"
+              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748994571/IMG_2260_su53bd.jpg"
               alt="Buceo con Lobos Marinos"
               fill
               className="object-cover"
