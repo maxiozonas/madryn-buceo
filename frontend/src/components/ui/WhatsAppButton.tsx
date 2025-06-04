@@ -3,12 +3,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 
 interface WhatsAppButtonProps {
-  phoneNumber?: string;
   message?: string;
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
-  phoneNumber, 
   message = "Hola, me gustaría obtener más información sobre sus servicios de buceo."
 }) => {
   const phone = "+5492804564422";
