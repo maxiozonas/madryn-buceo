@@ -102,14 +102,14 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
 
   return (
     <motion.div variants={cardVariants} whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}>
-      <Card className="border-none rounded-none bg-negro transition-shadow">
+      <Card className="border-none rounded-none bg-negro transition-shadow h-full">
         <CardContent className="p-4 flex flex-col items-center text-center">
           <div className="mb-4 relative">
             {icon}
           </div>
           <h3 className="text-xl font-bold mb-2 text-white ">{title}</h3>
           <SeparatorHorizontal className="w-24 h-1 bg-rojo mb-2 rounded-full" />
-          <p className="text-white/80 prose-p text-center">{description}</p>
+          <p className="text-white/80 prose-p text-center mt-auto">{description}</p>
         </CardContent>
       </Card>
     </motion.div>
