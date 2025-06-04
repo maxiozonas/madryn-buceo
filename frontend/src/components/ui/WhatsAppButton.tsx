@@ -11,15 +11,12 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   phoneNumber, 
   message = "Hola, me gustaría obtener más información sobre sus servicios de buceo."
 }) => {
-  // Usar variable de entorno o un valor de respaldo (que no se expone en el código cliente)
-  const phone = phoneNumber || process.env.WHATSAPP_PHONE || "";
+  const phone = "+5492804564422";
   
-  // Formato internacional para el número de teléfono (sin el '+')
   const formattedPhone = phone.startsWith('+') 
     ? phone.substring(1) 
     : phone;
   
-  // Crear la URL de WhatsApp con el número y mensaje
   const whatsappUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
   
   return (
