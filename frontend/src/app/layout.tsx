@@ -13,32 +13,20 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
-  description:
-    "Descubre el fascinante mundo submarino con Madryn Buceo. Ofrecemos excursiones de buceo, cursos y certificaciones para todos los niveles en las cristalinas aguas de Puerto Madryn, Patagonia Argentina.",
-  keywords: [
-    "buceo",
-    "Puerto Madryn",
-    "Patagonia",
-    "excursiones submarinas",
-    "cursos de buceo",
-    "vida marina",
-    "turismo aventura",
-  ],
+  description: "Descubre el fascinante mundo submarino con Madryn Buceo. Ofrecemos excursiones de buceo, cursos y certificaciones para todos los niveles en las cristalinas aguas de Puerto Madryn, Patagonia Argentina.",
+  keywords: ["buceo", "Puerto Madryn", "Patagonia", "excursiones submarinas", "cursos de buceo", "vida marina", "turismo aventura"],
   authors: [{ name: "Madryn Buceo" }],
   creator: "Madryn Buceo",
   publisher: "Madryn Buceo",
   metadataBase: new URL("https://madrynbuceo.com"),
-  formatDetection: {
-    telephone: false,
-  },
+  formatDetection: { telephone: false },
   icons: {
     icon: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
     apple: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
   },
   openGraph: {
     title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
-    description:
-      "Descubre el fascinante mundo submarino con Madryn Buceo. Excursiones, cursos y certificaciones en Puerto Madryn.",
+    description: "Descubre el fascinante mundo submarino con Madryn Buceo. Excursiones, cursos y certificaciones en Puerto Madryn.",
     url: "https://madrynbuceo.com",
     siteName: "Madryn Buceo",
     locale: "es_AR",
@@ -55,11 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
-    description:
-      "Excursiones, cursos y certificaciones de buceo en Puerto Madryn, Patagonia Argentina.",
-    images: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png",
-    ],
+    description: "Excursiones, cursos y certificaciones de buceo en Puerto Madryn, Patagonia Argentina.",
+    images: ["https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102649/logo_keh8c8.png"],
   },
   robots: {
     index: true,
@@ -78,7 +63,21 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Meta Pixel Code */}
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P62Y9L646D"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P62Y9L646D');
+          `}
+        </Script>
+
+        {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
