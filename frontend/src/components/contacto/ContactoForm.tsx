@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react"
 import { FormattedMessage, useIntl } from "react-intl"
 
 export default function ContactoForm() {
-  const intl = useIntl() 
+  const intl = useIntl()
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle")
 
   const formSchema = z.object({
     name: z.string().min(2, {
@@ -28,8 +28,8 @@ export default function ContactoForm() {
     phone: z.string().min(8, {
       message: intl.formatMessage({ id: "contact.form.phone.error" }),
     }),
-    subject: z.string().min(5, {
-      message: intl.formatMessage({ id: "contact.form.subject.error" }),
+    subject: z.string({
+      required_error: intl.formatMessage({ id: "contact.form.subject.error" }),
     }),
     message: z.string().min(10, {
       message: intl.formatMessage({ id: "contact.form.message.error" }),
@@ -44,27 +44,27 @@ export default function ContactoForm() {
       name: "",
       email: "",
       phone: "",
-      subject: "",
+      subject: undefined,
       message: "",
     },
   })
 
   async function onSubmit(data: FormValues) {
     setIsSubmitting(true)
-    setFormStatus('idle')
+    setFormStatus("idle")
     try {
       const result = await sendEmail(data)
       if (result.success) {
-        setFormStatus('success')
+        setFormStatus("success")
         alert(intl.formatMessage({ id: "contact.form.success.alert" }))
         form.reset()
       } else {
-        setFormStatus('error')
+        setFormStatus("error")
         alert(intl.formatMessage({ id: "contact.form.error.alert" }))
       }
     } catch (error) {
       console.error("Error al enviar el correo:", error)
-      setFormStatus('error')
+      setFormStatus("error")
       alert(intl.formatMessage({ id: "contact.form.error.alert" }))
     } finally {
       setIsSubmitting(false)
@@ -145,13 +145,39 @@ export default function ContactoForm() {
                 <FormLabel className="text-white">
                   <FormattedMessage id="contact.form.subject.label" defaultMessage="Asunto" />
                 </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={intl.formatMessage({ id: "contact.form.subject.placeholder" })}
-                    {...field}
-                    className="bg-negro border-none text-white placeholder:text-white/70 focus:ring-0 focus:border-none"
-                  />
-                </FormControl>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger id="select-contact" className="cursor-pointer bg-negro border-none w-full text-white placeholder:text-white/70 focus:ring-0 focus:border-none data-[placeholder]:text-white/70">
+                      <SelectValue placeholder={intl.formatMessage({ id: "contact.form.subject.placeholder" })} />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="bg-negro text-white border-negro-secundario">
+                    <SelectItem
+                      className="focus:bg-rojo focus:text-white cursor-pointer"
+                      value={intl.formatMessage({ id: "contact.form.subject.option.excursions" })}
+                    >
+                      <FormattedMessage id="contact.form.subject.option.excursions" />
+                    </SelectItem>
+                    <SelectItem
+                      className="focus:bg-rojo focus:text-white cursor-pointer"
+                      value={intl.formatMessage({ id: "contact.form.subject.option.diving" })}
+                    >
+                      <FormattedMessage id="contact.form.subject.option.diving" />
+                    </SelectItem>
+                    <SelectItem
+                      className="focus:bg-rojo focus:text-white cursor-pointer"
+                      value={intl.formatMessage({ id: "contact.form.subject.option.courses" })}
+                    >
+                      <FormattedMessage id="contact.form.subject.option.courses" />
+                    </SelectItem>
+                    <SelectItem
+                      className="focus:bg-rojo focus:text-white cursor-pointer"
+                      value={intl.formatMessage({ id: "contact.form.subject.option.other" })}
+                    >
+                      <FormattedMessage id="contact.form.subject.option.other" />
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -170,7 +196,7 @@ export default function ContactoForm() {
                 <Textarea
                   placeholder={intl.formatMessage({ id: "contact.form.message.placeholder" })}
                   {...field}
-                  className="števbg-negro border-none text-white min-h-[150px] placeholder:text-white/70 focus:ring-0 focus:border-none"
+                  className="bg-negro border-none text-white min-h-[150px] placeholder:text-white/70 focus:ring-0 focus:border-none"
                 />
               </FormControl>
               <FormMessage />
@@ -178,22 +204,18 @@ export default function ContactoForm() {
           )}
         />
 
-        <Button
-          type="submit"
-          className="w-full bg-rojo hover:bg-rojo/90 text-white cursor-pointer"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" className="w-full bg-rojo hover:bg-rojo/90 text-white cursor-pointer" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               <FormattedMessage id="contact.form.submitting" defaultMessage="Enviando..." />
             </>
-          ) : formStatus === 'success' ? (
+          ) : formStatus === "success" ? (
             <>
               <CheckCircle className="mr-2 h-4 w-4" />
               <FormattedMessage id="contact.form.success" defaultMessage="Mensaje enviado" />
             </>
-          ) : formStatus === 'error' ? (
+          ) : formStatus === "error" ? (
             <>
               <AlertCircle className="mr-2 h-4 w-4" />
               <FormattedMessage id="contact.form.error" defaultMessage="Intentar nuevamente" />
