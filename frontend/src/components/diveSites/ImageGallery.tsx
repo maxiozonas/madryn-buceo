@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 
 interface Props {
@@ -66,14 +66,13 @@ export default function ImageGallery({ media, className, style }: Props) {
       style={style}
     >
       {media[current].type === "image" ? (
-        <Image
+        <img
           src={media[current].url || "/images/placeholder.jpg"}
           alt="Foto del sitio"
           width={768}
           height={432}
           className="w-full h-full max-w-full max-h-full object-contain rounded-xl"
           sizes="(max-width: 768px) 90vw, 768px"
-          priority
           onError={() =>
             console.error("Error loading image:", media[current].url)
           }

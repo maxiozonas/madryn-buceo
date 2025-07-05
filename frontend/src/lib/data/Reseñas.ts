@@ -14,7 +14,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.1.text",
       date: "home.reseña.1.date",
-      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102534/rese%C3%B1a-1_akz0gk.png",
+      image: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/reseñas/reseña-1_akz0gk.png",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.2.text",
       date: "home.reseña.2.date",
-      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102534/rese%C3%B1as-2_ji9t09.png",
+      image: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/reseñas/reseñas-2_ji9t09.png",
     },
     {
       id: 3,
@@ -30,6 +30,6 @@ export const reseñas: Reseña[] = [
       rating: 5,
       text: "home.reseña.3.text",
       date: "home.reseña.3.date",
-      image: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102533/rese%C3%B1as-3_ves2ng.png",
+      image: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/reseñas/reseñas-3_ves2ng.png",
     },
 ];

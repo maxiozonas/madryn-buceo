@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface LanguageSwitcherProps {
@@ -52,11 +51,11 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
 
   const flags = {
     es: {
-      src: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102589/spain_x0dq7z.svg",
+      src: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/flags/spain_x0dq7z.svg",
       alt: "Bandera de España"
     },
     en: {
-      src: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102589/uk_xdxy8p.svg",
+      src: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/flags/uk_xdxy8p.svg",
       alt: "UK Flag"
     }
   }
@@ -73,12 +72,12 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label="Cambiar a Español"
         >
           <div className="relative w-8 h-6 overflow-hidden rounded shadow-sm mb-1">
-            <Image 
-              src={flags.es.src}
-              alt={flags.es.alt}
-              fill
-              className="object-cover"
-            />
+<img
+  src={flags.es.src}
+  alt={flags.es.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
           </div>
           <span className="text-xs font-medium">ESP</span>
         </button>
@@ -92,12 +91,12 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label="Switch to English"
         >
           <div className="relative w-8 h-6 overflow-hidden rounded shadow-sm mb-1">
-            <Image 
-              src={flags.en.src}
-              alt={flags.en.alt}
-              fill
-              className="object-cover"
-            />
+<img
+  src={flags.en.src}
+  alt={flags.en.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
           </div>
           <span className="text-xs font-medium">ENG</span>
         </button>
@@ -129,12 +128,12 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         onMouseEnter={handleMouseEnter}
       >
         <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-          <Image 
-            src={locale === "es" ? flags.es.src : flags.en.src}
-            alt={locale === "es" ? flags.es.alt : flags.en.alt}
-            fill
-            className="object-cover"
-          />
+<img
+  src={locale === "es" ? flags.es.src : flags.en.src}
+  alt={locale === "es" ? flags.es.alt : flags.en.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
         </div>
         <span className="text-sm font-medium">{locale === "es" ? "ESP" : "ENG"}</span>
       </button>
@@ -153,12 +152,12 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
             )}
           >
             <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-              <Image 
-                src={flags.es.src}
-                alt={flags.es.alt}
-                fill
-                className="object-cover"
-              />
+<img
+  src={flags.es.src}
+  alt={flags.es.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
             </div>
             <span className="text-sm">ESP</span>
           </button>
@@ -171,12 +170,12 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
             )}
           >
             <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-              <Image 
-                src={flags.en.src}
-                alt={flags.en.alt}
-                fill
-                className="object-cover"
-              />
+<img
+  src={flags.en.src}
+  alt={flags.en.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
             </div>
             <span className="text-sm">ENG</span>
           </button>

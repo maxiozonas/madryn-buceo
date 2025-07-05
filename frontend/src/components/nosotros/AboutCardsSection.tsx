@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import Image from "next/image";
 import ImageGallery from "./ImageGallery";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
@@ -10,9 +9,9 @@ import { FileClock, House, Users } from "lucide-react";
 import { FormattedMessage } from "react-intl";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
-  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102693/galeriaLocal2_nxa28x.webp", type: "image" },
-  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102690/galeriaLocal1_xagqad.webp", type: "image" },
-  { url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102687/galeriaLocal3_wrb28t.webp", type: "image" },
+  { url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/GaleriaLocal/galeriaLocal2_nxa28x.webp", type: "image" },
+  { url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/GaleriaLocal/galeriaLocal1_xagqad.webp", type: "image" },
+  { url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/GaleriaLocal/galeriaLocal3_wrb28t.webp", type: "image" },
 ];
 
 export function AboutCardsSection() {
@@ -77,7 +76,7 @@ export function AboutCardsSection() {
               description={
                 <FormattedMessage id ={"our.history2"}/>
               }
-              videoSrc="https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753439/docu_wtmto4.mp4"
+              videoSrc="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/nosotros/docu_wtmto4.mp4"
             >
             </AboutCard>
 
@@ -89,7 +88,7 @@ export function AboutCardsSection() {
                 </div>
               }
               description={<FormattedMessage id ={"our.staff2"}/>}
-              imageSrc="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748091254/staff_nrcxj9.jpg"
+              imageSrc="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/staff_nrcxj9.jpg"
             />
           </motion.div>
         </div>
@@ -153,13 +152,13 @@ function AboutCard({
       >
         <div className="relative h-64" style={{ borderRadius: 0 }}>
           {imageSrc && (
-            <Image
-              src={imageSrc}
-              alt=""
-              fill
-              className="object-cover transition-transform duration-300"
-              style={{ borderRadius: 0 }}
-            />
+<img
+  src={imageSrc}
+  alt=""
+  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+  style={{ borderRadius: 0 }}
+/>
+
           )}
           {videoSrc && (
             <video

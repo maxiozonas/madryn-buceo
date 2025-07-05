@@ -1,55 +1,62 @@
-"use client"
+"use client";
 
-import { Calendar, Activity, Heart, ArrowRight, Info } from "lucide-react"
-import type { Excursion } from "@/lib/data/Excursiones"
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
-import { FormattedMessage } from "react-intl"
+import { Calendar, Activity, Heart, ArrowRight, Info } from "lucide-react";
+import type { Excursion } from "@/lib/data/Excursiones";
+import { Card, CardContent } from "@/components/ui/card";
+
+import { FormattedMessage } from "react-intl";
 
 interface RequerimientosSectionProps {
-  excursion: Excursion
+  excursion: Excursion;
 }
 
-export default function RequirementsSection({ excursion }: RequerimientosSectionProps) {
+export default function RequirementsSection({
+  excursion,
+}: RequerimientosSectionProps) {
   if (!excursion.requirements || excursion.requirements.length === 0) {
-    let imageSrc = excursion.cardImage
+    let imageSrc = excursion.cardImage;
 
     if (excursion.slug.includes("salidas")) {
-      imageSrc = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102581/salidas-5_tadnaz.webp"
+      imageSrc =
+        "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-5_tadnaz.webp";
     } else if (excursion.slug.includes("delfines")) {
-      imageSrc = "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102546/delfines-2_dtop9v.webp"
+      imageSrc =
+        "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-2_dtop9v.webp";
     }
 
     return (
       <Card className="bg-negro-secundario shadow-md border-gray-800 h-full p-0 rounded-2xl">
         <CardContent className="p-0 overflow-hidden h-full rounded-2xl">
-          <div className="relative w-full h-full rounded-2xl" style={{ minHeight: "100%" }}>
-            <Image
+          <div
+            className="relative w-full h-full rounded-2xl"
+            style={{ minHeight: "100%" }}
+          >
+            <img
               src={imageSrc}
               alt="formattedMessage({ id: `${excursion.title}.noRequirementsAlt` })"
-              fill
-              className="object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
+
             <span className="sr-only">
               <FormattedMessage id={`${excursion.title}.noRequirementsAlt`} />
             </span>
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   const getIcon = (reqKey: string) => {
     if (reqKey.includes("minAge")) {
-      return <Calendar className="h-6 w-6 text-rojo" />
+      return <Calendar className="h-6 w-6 text-rojo" />;
     } else if (reqKey.includes("physicalCondition")) {
-      return <Activity className="h-6 w-6 text-rojo" />
+      return <Activity className="h-6 w-6 text-rojo" />;
     } else if (reqKey.includes("health")) {
-      return <Heart className="h-6 w-6 text-rojo" />
+      return <Heart className="h-6 w-6 text-rojo" />;
     } else {
-      return <Info className="h-6 w-6 text-rojo" />
+      return <Info className="h-6 w-6 text-rojo" />;
     }
-  }
+  };
 
   return (
     <Card className="bg-negro-secundario shadow-md border-[#403d39] hover:shadow-xl transition-shadow duration-300 h-full">
@@ -65,7 +72,9 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
                 key={index}
                 className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center"
               >
-                <div className="mb-4 bg-negro/60 p-4 rounded-full">{getIcon(req.title)}</div>
+                <div className="mb-4 bg-negro/60 p-4 rounded-full">
+                  {getIcon(req.title)}
+                </div>
                 <h3 className="font-bold text-white text-lg mb-2">
                   <FormattedMessage id={req.title} />
                 </h3>
@@ -82,18 +91,31 @@ export default function RequirementsSection({ excursion }: RequerimientosSection
               className="bg-negro/40 p-6 rounded-lg hover:bg-negro/60 transition-colors duration-200 flex flex-col items-center text-center w-full"
             >
               <div className="mb-4 bg-negro/60 p-4 rounded-full">
-                {getIcon(excursion.requirements[excursion.requirements.length - 1].title)}
+                {getIcon(
+                  excursion.requirements[excursion.requirements.length - 1]
+                    .title
+                )}
               </div>
               <h3 className="font-bold text-white text-lg mb-2">
-                <FormattedMessage id={excursion.requirements[excursion.requirements.length - 1].title} />
+                <FormattedMessage
+                  id={
+                    excursion.requirements[excursion.requirements.length - 1]
+                      .title
+                  }
+                />
               </h3>
               <p className="text-white text-sm">
-                <FormattedMessage id={excursion.requirements[excursion.requirements.length - 1].description} />
+                <FormattedMessage
+                  id={
+                    excursion.requirements[excursion.requirements.length - 1]
+                      .description
+                  }
+                />
               </p>
             </div>
           )}
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

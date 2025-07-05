@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -18,13 +18,14 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Tripadvisor"
           >
-            <Image
-              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102584/logo-trip-footer_omt51e.png"
-              alt="Tripadvisor"
-              width={160}
-              height={32}
-              className="object-contain"
-            />
+<img
+  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-trip-footer_omt51e.png"
+  alt="Tripadvisor"
+  width={160}
+  height={32}
+  className="object-contain"
+/>
+
           </a>
 
           <a
@@ -33,13 +34,14 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Madryn Travel"
           >
-            <Image
-              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102586/logo-madryn-footer_qsilvz.png"
-              alt="Madryn Travel"
-              width={160}
-              height={32} 
-              className="object-contain"
-            />
+<img
+  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-madryn-footer_qsilvz.png"
+  alt="Madryn Travel"
+  width={160}
+  height={32}
+  className="object-contain"
+/>
+
           </a>
         </div>
         <div className="text-center text-sm">
@@ -49,12 +51,13 @@ export default function Footer() {
         </div>
         <div className="flex justify-center">
           <a/>
-            <Image
-              src="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102583/footer-widget-logo_hvzu7u.png"
-              alt="Tripadvisor"
-              width={300}
-              height={82}
-            />
+<img
+  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/footer-widget-logo_hvzu7u.png"
+  alt="Tripadvisor"
+  width={300}
+  height={82}
+/>
+
         </div>
         <div className="text-center text-sm">
           <p><FormattedMessage id="footer.text.4" /></p>

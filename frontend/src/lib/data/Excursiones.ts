@@ -104,17 +104,17 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.snorkeling.buttonText",
-    heroImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111666/G0222062_upwqk8.jpg",
-    cardImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111666/G0222062_upwqk8.jpg",
+    heroImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/G0222062_upwqk8.jpg",
+    cardImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/G0222062_upwqk8.jpg",
     galleryImages: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699356/IMG_2225_a3esbd.jpg",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699315/G0257730_cm7zyw.jpg",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699309/GOPR8581_amfrco.jpg",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748699307/IMG_2203_naonah.jpg",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/IMG_2225_a3esbd.jpg",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/G0257730_cm7zyw.jpg",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/GOPR8581_amfrco.jpg",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/IMG_2203_naonah.jpg",
     ],
     galleryVideos: [
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1748699421/GX015072_wfh0lr.mp4",
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839486/GX019812_1_mbvdht.mp4",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/GX015072_wfh0lr.mp4",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/snorkel/GX019812_1_mbvdht.mp4",
     ]
   },
   {
@@ -192,17 +192,17 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.bautismo.buttonText",
-    heroImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111820/IMG_6098_aov9c0.jpg",
-    cardImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748111820/IMG_6098_aov9c0.jpg",
+    heroImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/IMG_6098_aov9c0.jpg",
+    cardImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/IMG_6098_aov9c0.jpg",
     galleryImages: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102560/bautismo-header_ptqfzr.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102558/bautismo-3_apphh0.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102555/bautismo-1_dvhs0k.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102555/bautismo-2_eekd7e.webp"
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/bautismo-header_ptqfzr.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/bautismo-3_apphh0.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/bautismo-1_dvhs0k.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/bautismo/bautismo-2_eekd7e.webp"
     ],
     galleryVideos: [
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747840099/GX013204_1_zvezcz.mp4",
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747839859/GX012838_1_ormbgw.mp4"
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/excursiones/bautismo/GX013204_1_zvezcz.mp4",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/excursiones/bautismo/GX012838_1_ormbgw.mp4"
     ]
   },
   {
@@ -257,17 +257,17 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.delfines.buttonText",
-    heroImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102557/delfines-header_p8qfua.webp",
-    cardImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102557/delfines-header_p8qfua.webp",
+    heroImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-header_p8qfua.webp",
+    cardImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-header_p8qfua.webp",
     galleryImages: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102558/delfines-1_d67wwh.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102546/delfines-2_dtop9v.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102556/delfines-3_lra4za.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102543/delfines-4_sfsloo.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-1_d67wwh.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-2_dtop9v.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-3_lra4za.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/delfines/delfines-4_sfsloo.webp",
     ],
     galleryVideos: [
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841017/GX010414_1_or3jp5.mp4",
-      "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747841035/GX017534_goty_1_st2fpr.mp4"
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/excursiones/delfines/GX010414_1_or3jp5.mp4",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/excursiones/delfines/GX017534_goty_1_st2fpr.mp4"
     ]
   },
   {
@@ -315,12 +315,12 @@ export const excursiones: Excursion[] = [
       },
     ],
     buttonText: "excursions.salidas.buttonText",
-    heroImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102572/salidas-header_wqqqid.webp",
-    cardImage: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102572/salidas-header_wqqqid.webp",
+    heroImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-header_wqqqid.webp",
+    cardImage: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-header_wqqqid.webp",
     galleryImages: [
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102579/salidas-1_hxw4fm.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102573/salidas-3_fujalr.webp",
-      "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102568/salidas-4_xoapwd.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-1_hxw4fm.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-3_fujalr.webp",
+      "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/excursiones/salidas/salidas-4_xoapwd.webp",
     ],
   },
 ]

@@ -7,11 +7,11 @@ import { FormattedMessage, useIntl } from "react-intl";
 export default function IntroSection() {
   const intl = useIntl();
   const divingMedia: { type: "image" | "video"; url: string }[] = [
-    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102581/galeria1_elkzuh.webp" },
-    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748112130/G0453282_ynfn94.jpg" },
-    { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875248/mirages1_vg6pog.webm" },
-    { type: "image", url: "https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102579/galeria2_ssjzkv.webp" },
-    { type: "video", url: "https://res.cloudinary.com/dyxrbncdj/video/upload/v1747875312/folias1_vdkark.webm" },
+    { type: "image", url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/buceo/GaleriaBuceo/galeria1_elkzuh.webp" },
+    { type: "image", url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/buceo/GaleriaBuceo/G0453282_ynfn94.jpg" },
+    { type: "video", url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/brevetados/brevetados1_vg6pog.webm" },
+    { type: "image", url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/buceo/GaleriaBuceo/galeria2_ssjzkv.webp" },
+    { type: "video", url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/brevetados/brevetados2_vdkark.webm" },
   ];
 
   return (

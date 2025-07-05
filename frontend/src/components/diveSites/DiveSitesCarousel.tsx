@@ -2,7 +2,6 @@
 
 import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -110,21 +109,18 @@ export default function DiveSitesCarousel({
                     }`}
                     style={{ borderRadius: 0 }}
                   >
-                    <div
-                      className="relative h-64"
-                      style={{ borderRadius: 0 }}
-                    >
-                      <Image
+                    <div className="relative h-64" style={{ borderRadius: 0 }}>
+                      <img
                         src={getCardImage(site.media)}
                         alt={site.name}
-                        fill
-                        className="object-cover transition-transform duration-300"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
                         style={{ borderRadius: 0 }}
                       />
                     </div>
+
                     <CardContent className="p-2 text-center w-full mb-4">
                       <h3 className="text-sm font-bold text-white/80">
-                        <FormattedMessage id={site.name}/>
+                        <FormattedMessage id={site.name} />
                       </h3>
                     </CardContent>
                   </Card>

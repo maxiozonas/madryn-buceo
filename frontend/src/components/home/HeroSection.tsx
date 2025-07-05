@@ -29,8 +29,8 @@ export default function HeroSection() {
             muted
             preload="auto"
             className="object-cover w-full h-full">
-            <track kind="captions" srcLang="es" src="https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753459/video1--optimizado_ope7xh.mp4" />
-            <source src="https://res.cloudinary.com/dyxrbncdj/video/upload/v1747753459/video1--optimizado_ope7xh.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="es" src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/inicio/video1--optimizado_ope7xh.mp4" />
+            <source src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/inicio/video1--optimizado_ope7xh.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/20" />
         </div>

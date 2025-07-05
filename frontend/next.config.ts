@@ -14,7 +14,12 @@ const nextConfig: NextConfig = {
         hostname: 'res.cloudinary.com',
         port: '',
         pathname: '/**',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'xurbyte.github.io',
+        pathname: '/assets-mdybuceo/**',
+      },
     ],
   },
 };

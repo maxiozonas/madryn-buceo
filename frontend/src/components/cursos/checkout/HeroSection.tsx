@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import ButtonRojo from "@/components/ui/button-rojo";
 import { ReactNode } from "react";
@@ -22,20 +21,23 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
-export default function HeroSection({ title, heroImage, miniDescription }: HeroSectionProps) {
+export default function HeroSection({
+  title,
+  heroImage,
+  miniDescription,
+}: HeroSectionProps) {
   return (
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <Image
+          <img
             src={heroImage}
             alt={title}
-            fill
-            className="object-cover"
-            priority
+            className="absolute inset-0 w-full h-full object-cover z-0"
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
+
         <div className="container relative z-10 text-center text-white">
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
@@ -53,7 +55,10 @@ export default function HeroSection({ title, heroImage, miniDescription }: HeroS
           >
             {miniDescription}
           </motion.p>
-          <ButtonRojo texto={<FormattedMessage id="contact.us" />} href="/contacto" />
+          <ButtonRojo
+            texto={<FormattedMessage id="contact.us" />}
+            href="/contacto"
+          />
         </div>
       </section>
     </>

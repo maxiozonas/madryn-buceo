@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import { Card } from "../ui/card"
-import Link from "next/link"
-import Image from "next/image"
-import { CardContent } from "../ui/card"
-import ButtonRojo from "../ui/button-rojo"
-import { useRouter } from "next/navigation"
-import { FormattedMessage } from "react-intl"
+import { Card } from "../ui/card";
+import Link from "next/link";
+import { CardContent } from "../ui/card";
+import ButtonRojo from "../ui/button-rojo";
+import { useRouter } from "next/navigation";
+import { FormattedMessage } from "react-intl";
 
 export default function ExcursionCard({
   title,
@@ -15,18 +14,18 @@ export default function ExcursionCard({
   link,
   bg,
 }: {
-  title: string
-  description: string 
-  image: string
-  link: string
-  bg?: boolean
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  bg?: boolean;
 }) {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    router.push(link)
-  }
+    e.preventDefault();
+    router.push(link);
+  };
 
   return (
     <div
@@ -43,16 +42,19 @@ export default function ExcursionCard({
             : "overflow-hidden p-0 border-none rounded-none shadow-md bg-negro-secundario transition-shadow h-full"
         }
       >
-        <Link href={link} className="h-full flex flex-col" onClick={handleClick}>
+        <Link
+          href={link}
+          className="h-full flex flex-col"
+          onClick={handleClick}
+        >
           <div className="relative overflow-hidden h-64">
             <div className="w-full h-full rounded-none">
-              <Image
+              <img
                 src={image}
                 alt=""
-                fill
-                className="w-full h-full object-cover rounded-none transition-transform duration-500 group-hover:scale-110"
-                priority
+                className="absolute inset-0 w-full h-full object-cover rounded-none transition-transform duration-500 group-hover:scale-110"
               />
+
               <span className="sr-only">
                 <FormattedMessage id={`${title}`} />
               </span>
@@ -84,5 +86,5 @@ export default function ExcursionCard({
         </Link>
       </Card>
     </div>
-  )
+  );
 }

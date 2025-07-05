@@ -1,62 +1,58 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import ButtonRojo from "../ui/button-rojo"
-import { ChevronDown } from "lucide-react"
-import { FormattedMessage } from "react-intl"
-import { motion } from "framer-motion"
+import ButtonRojo from "../ui/button-rojo";
+import { ChevronDown } from "lucide-react";
+import { FormattedMessage } from "react-intl";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
-  heroImage: string
-  title?: string  
-  miniDescription?: string  
+  heroImage: string;
+  title?: string;
+  miniDescription?: string;
 }
 
 const scrollToNextSection = () => {
-  const nextSection = document.getElementById("descripcion")
+  const nextSection = document.getElementById("descripcion");
   if (nextSection) {
     const headerOffset = 80;
     const elementPosition = nextSection.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    
+
     window.scrollTo({
       top: offsetPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   } else {
-    console.warn("Element with ID 'descripcion' not found for scrolling.")
+    console.warn("Element with ID 'descripcion' not found for scrolling.");
   }
-}
+};
 
-export default function HeroSection({
-  heroImage,
-}: HeroSectionProps) {
-  const callToAction = { href: "/contacto" }
-  const altText = "diveCertification.altText"
-  
+export default function HeroSection({ heroImage }: HeroSectionProps) {
+  const callToAction = { href: "/contacto" };
+  const altText = "diveCertification.altText";
+
   return (
     <>
-      <motion.section 
+      <motion.section
         className="h-[90vh] flex items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <Image
+          <img
             src={heroImage}
             alt=""
-            fill
-            className="object-cover"
-            priority
+            className="absolute inset-0 w-full h-full object-cover z-0"
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
+
         <span className="sr-only">
           <FormattedMessage id={altText} />
         </span>
         <div className="container mb-20 relative z-10 text-center text-white">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -64,7 +60,7 @@ export default function HeroSection({
           >
             <FormattedMessage id="diveCertification.title" />
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-base md:text-2xl mb-8 font-oceanica"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -72,7 +68,7 @@ export default function HeroSection({
           >
             <FormattedMessage id="diveCertification.miniDescription" />
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
@@ -84,13 +80,13 @@ export default function HeroSection({
           </motion.div>
         </div>
       </motion.section>
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        <motion.button 
+        <motion.button
           className="animate-bounce cursor-pointer bg-none flex flex-col items-center gap-2"
           onClick={scrollToNextSection}
         >
@@ -101,5 +97,5 @@ export default function HeroSection({
         </motion.button>
       </motion.div>
     </>
-  )
+  );
 }

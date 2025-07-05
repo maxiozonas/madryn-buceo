@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { motion } from "framer-motion";
@@ -78,13 +77,13 @@ export default function StaffCarousel({ staff }: Props) {
                         className="relative h-64"
                         style={{ borderRadius: 0 }}
                       >
-                        <Image
-                          src={member.media.url}
-                          alt={member.name}
-                          fill
-                          className="object-cover transition-transform duration-300"
-                          style={{ borderRadius: 0 }}
-                        />
+<img
+  src={member.media.url}
+  alt={member.name}
+  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+  style={{ borderRadius: 0 }}
+/>
+
                       </div>
                       <CardContent className="p-2 text-center w-full">
                         <div className="h-2 flex items-center justify-center">

@@ -13,7 +13,7 @@ export default function NosotrosPage() {
     <main>
       <HeroSection
         title={<FormattedMessage id="about.us" defaultMessage="About Us" />}
-        heroImage="https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102425/terranovaa_lsleg4.webp"
+        heroImage="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/terranovaa_lsleg4.webp"
         miniDescription={
           <FormattedMessage id="about.us2" defaultMessage="Our Story" />
         }

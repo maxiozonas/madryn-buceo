@@ -11,7 +11,7 @@ export default function CheckoutPage() {
     <>
       <HeroSection
         title={"Checkout"}
-        heroImage={"https://res.cloudinary.com/dyxrbncdj/image/upload/v1748102674/terranova2_scr7nz.webp"}
+        heroImage={"https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/terranova2_kwrcw2.webp"}
         miniDescription={<FormattedMessage id="checkout.subtitulo" />}
       />
       <section className="container flex flex-col items-center justify-center px-8 mx-auto py-20">

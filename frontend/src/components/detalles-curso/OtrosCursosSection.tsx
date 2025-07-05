@@ -2,7 +2,6 @@
 
 import { Card, CardContent } from "../ui/card";
 import { Map } from "lucide-react";
-import Image from "next/image";
 import { allCursos } from "@/lib/data/Cursos";
 import ButtonRojo from "../ui/button-rojo";
 import Link from "next/link";
@@ -35,16 +34,15 @@ export default function OtrosCursosSection() {
                     layoutId={`card-image-container-${relatedCurso.slug}`}
                     className="w-full h-full"
                   >
-                    <Image
+                    <img
                       src={relatedCurso.cardImage}
                       alt={relatedCurso.title}
-                      fill
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      priority
                       id={`activity-image-${relatedCurso.slug}`}
                     />
                   </motion.div>
                 </div>
+
                 <CardContent className="flex flex-col items-center text-center text-white relative p-6">
                   <motion.h3
                     layoutId={`card-title-${relatedCurso.slug}`}

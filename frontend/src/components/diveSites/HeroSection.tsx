@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -29,15 +28,14 @@ export default function HeroSection({
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <Image
+          <img
             src={heroImage}
-            alt={"title"}
-            fill
-            className="object-cover"
-            priority
+            alt="title"
+            className="absolute inset-0 w-full h-full object-cover z-0"
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>
+
         <div className="container relative z-10 text-center text-white">
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica"
