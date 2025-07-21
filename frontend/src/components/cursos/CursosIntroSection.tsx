@@ -5,7 +5,7 @@ export default function CursosIntroSection() {
   const imagen =
     "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/buceo/GOPR1373_yz9rgw.jpg";
   const logo =
-    "https://drive.google.com/uc?export=view&id=16CG2pJMJm8nXif2CVRnEBzoiZe0BZOK5";
+    "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/cursos/padi.webp";
 
   const intl = useIntl();
   return (

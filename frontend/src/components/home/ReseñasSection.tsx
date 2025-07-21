@@ -212,7 +212,7 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
             variants={starContainerVariants}
           >
             <img
-              src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/mages/inicio/google_bx9cwm.png"
+              src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/inicio/google_bx9cwm.png"
               alt="Google"
               width={20}
               height={20}
