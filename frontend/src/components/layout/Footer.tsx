@@ -1,6 +1,5 @@
 "use client";
 
-
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -18,14 +17,13 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Tripadvisor"
           >
-<img
-  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-trip-footer_omt51e.png"
-  alt="Tripadvisor"
-  width={160}
-  height={32}
-  className="object-contain"
-/>
-
+            <img
+              src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-trip-footer_omt51e.png"
+              alt="Tripadvisor"
+              width={160}
+              height={32}
+              className="object-contain"
+            />
           </a>
 
           <a
@@ -34,64 +32,64 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Madryn Travel"
           >
-<img
-  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-madryn-footer_qsilvz.png"
-  alt="Madryn Travel"
-  width={160}
-  height={32}
-  className="object-contain"
-/>
-
+            <img
+              src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-madryn-footer_qsilvz.png"
+              alt="Madryn Travel"
+              width={160}
+              height={32}
+              className="object-contain"
+            />
           </a>
         </div>
         <div className="text-center text-sm">
-          <p><FormattedMessage id="footer.text.1" /></p>
-          <p><FormattedMessage id="footer.text.2" /></p>
-          <p><FormattedMessage id="footer.text.3" /></p>
+          <p>
+            <FormattedMessage id="footer.text.1" />
+          </p>
+          <p>
+            <FormattedMessage id="footer.text.2" />
+          </p>
+          <p>
+            <FormattedMessage id="footer.text.3" />
+          </p>
         </div>
         <div className="flex justify-center">
-          <a/>
-<img
-  src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/footer-widget-logo_hvzu7u.png"
-  alt="Tripadvisor"
-  width={300}
-  height={82}
-/>
-
+          <a />
+          <img
+            src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/footer-widget-logo_hvzu7u.png"
+            alt="Tripadvisor"
+            width={300}
+            height={82}
+          />
         </div>
         <div className="text-center text-sm">
-          <p><FormattedMessage id="footer.text.4" /></p>
+          <p>
+            <FormattedMessage id="footer.text.4" />
+          </p>
         </div>
         <div className="text-center text-sm">
-          <p>© {new Date().getFullYear()} Madryn Buceo. Todos los derechos reservados.</p>
-          <p className="mt-2">
+          <p>
+            © {new Date().getFullYear()} Madryn Buceo. Todos los derechos
+            reservados.
+          </p>
+          <p className="mt-2 justify-center items-center flex gap-2 ">
             Desarrollado por{" "}
-            <a 
-              href="https://www.linkedin.com/in/maximoozonas/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:no-underline font-bold"
-            >
-              Máximo
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="inline-block ml-1 -mt-1">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>{" "}y{" "}
-            <a 
-              href="https://www.linkedin.com/in/ezequiel-valle-y-garcia/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:no-underline font-bold"
-            >
-              Ezequiel
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="inline-block ml-1 -mt-1">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
+                      <a
+            href="https://www.xurbyte.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Xurbyte"
+          >
+            <img
+            src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/XURBYTE(3)(2).png"
+            alt="Tripadvisor"
+            width={160}
+            height={32}
+            className="object-contain"
+          />
+          </a>
           </p>
         </div>
       </div>
     </footer>
   );
 }
-
