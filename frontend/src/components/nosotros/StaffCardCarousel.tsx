@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { Staff } from "@/lib/data/Staff";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 interface Props {
   staff: Staff[];
@@ -63,7 +64,7 @@ export default function StaffCarousel({ staff }: Props) {
 
               <div
                 ref={carouselRef}
-                className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide overflow-x-hidden snap-x snap-mandatory"
+                className="w-full overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
                 style={{ scrollBehavior: "smooth" }}
               >
                 <div className="flex gap-4 w-max px-2">
@@ -77,12 +78,14 @@ export default function StaffCarousel({ staff }: Props) {
                         className="relative h-64"
                         style={{ borderRadius: 0 }}
                       >
-<img
-  src={member.media.url}
-  alt={member.name}
-  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
-  style={{ borderRadius: 0 }}
-/>
+                        <Image
+                          src={member.media.url}
+                          alt={member.name}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                          style={{ borderRadius: 0 }}
+                          width={800}
+                          height={600}
+                        />
 
                       </div>
                       <CardContent className="p-2 text-center w-full">

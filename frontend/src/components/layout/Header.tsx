@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import LanguageSwitcher from "../ui/languageSwitcher";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +61,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/inicio/logo_keh8c8.png"
               width={80}
               height={40}

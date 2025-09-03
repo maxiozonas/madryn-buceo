@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileClock, House, Users } from "lucide-react";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
   { url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/GaleriaLocal/galeriaLocal2_nxa28x.webp", type: "image" },
@@ -53,28 +54,28 @@ export function AboutCardsSection() {
               title={
                 <div className="flex items-center gap-2">
                   <House className="h-6 w-6 text-rojo" />
-                  <FormattedMessage id ={"our.store"}/>
+                  <FormattedMessage id={"our.store"} />
                 </div>
               }
               description={
-                <FormattedMessage id ={"our.store2"}/>
+                <FormattedMessage id={"our.store2"} />
               }>
               <ImageGallery
                 media={historyMedia}
                 className="absolute inset-0 w-full h-full"
-                style={{ borderRadius: 0 }}/>
-              </AboutCard>
-      
+                style={{ borderRadius: 0 }} />
+            </AboutCard>
+
 
             <AboutCard
               title={
                 <div className="flex items-center gap-2">
                   <FileClock className="h-6 w-6 text-rojo" />
-                  <FormattedMessage id ={"our.history"}/>
+                  <FormattedMessage id={"our.history"} />
                 </div>
               }
               description={
-                <FormattedMessage id ={"our.history2"}/>
+                <FormattedMessage id={"our.history2"} />
               }
               videoSrc="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/videos/nosotros/docu_wtmto4.mp4"
             >
@@ -84,10 +85,10 @@ export function AboutCardsSection() {
               title={
                 <div className="flex items-center gap-2">
                   <Users className="h-6 w-6 text-rojo" />
-                  <FormattedMessage id ={"our.staff"}/>
+                  <FormattedMessage id={"our.staff"} />
                 </div>
               }
-              description={<FormattedMessage id ={"our.staff2"}/>}
+              description={<FormattedMessage id={"our.staff2"} />}
               imageSrc="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/staff_nrcxj9.jpg"
             />
           </motion.div>
@@ -152,12 +153,14 @@ function AboutCard({
       >
         <div className="relative h-64" style={{ borderRadius: 0 }}>
           {imageSrc && (
-<img
-  src={imageSrc}
-  alt=""
-  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
-  style={{ borderRadius: 0 }}
-/>
+            <Image
+              src={imageSrc}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+              style={{ borderRadius: 0 }}
+              width={800}
+              height={600}
+            />
 
           )}
           {videoSrc && (
@@ -167,7 +170,7 @@ function AboutCard({
               style={{ borderRadius: 0 }}
             >
               <source src={videoSrc} type="video/mp4" />
-              <FormattedMessage id ={"browser"}/>
+              <FormattedMessage id={"browser"} />
             </video>
           )}
           {children}

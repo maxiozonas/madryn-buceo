@@ -6,6 +6,7 @@ import { CardContent } from "../ui/card";
 import ButtonRojo from "../ui/button-rojo";
 import { useRouter } from "next/navigation";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function ExcursionCard({
   title,
@@ -49,10 +50,12 @@ export default function ExcursionCard({
         >
           <div className="relative overflow-hidden h-64">
             <div className="w-full h-full rounded-none">
-              <img
+              <Image
                 src={image}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover rounded-none transition-transform duration-500 group-hover:scale-110"
+                width={500}
+                height={500}
               />
 
               <span className="sr-only">

@@ -4,6 +4,7 @@ import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
 import { motion } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
+import Image from "next/image";
 
 export default function PadiSection() {
   const intl = useIntl();
@@ -85,7 +86,7 @@ export default function PadiSection() {
                 className="flex justify-start sm:justify-end"
                 variants={logoAnimation}
               >
-                <img
+                <Image
                   src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/pngwing.com_1_kbr7nw.png"
                   alt="Certificación PADI"
                   width={100}
@@ -129,10 +130,12 @@ export default function PadiSection() {
             viewport={{ once: true, amount: 0.3 }}
             variants={imageAnimation}
           >
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/inicio/bautismo_fizpfd.jpg"
               alt="Certificación PADI"
               className="absolute inset-0 w-full h-full object-cover"
+              width={800}
+              height={600}
             />
           </motion.div>
         </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ButtonRojo from "@/components/ui/button-rojo";
 import { ReactNode } from "react";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 interface HeroSectionProps {
   title: string;
@@ -30,10 +31,12 @@ export default function HeroSection({
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <img
+          <Image
             src={heroImage}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover z-0"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>

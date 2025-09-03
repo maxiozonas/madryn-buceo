@@ -7,6 +7,7 @@ import ButtonRojo from "../ui/button-rojo";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function OtrosCursosSection() {
   return (
@@ -34,11 +35,13 @@ export default function OtrosCursosSection() {
                     layoutId={`card-image-container-${relatedCurso.slug}`}
                     className="w-full h-full"
                   >
-                    <img
+                    <Image
                       src={relatedCurso.cardImage}
                       alt={relatedCurso.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       id={`activity-image-${relatedCurso.slug}`}
+                      width={500}
+                      height={500}
                     />
                   </motion.div>
                 </div>

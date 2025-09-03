@@ -4,6 +4,7 @@ import ButtonRojo from "../ui/button-rojo";
 import { ChevronDown } from "lucide-react";
 import { FormattedMessage } from "react-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface HeroSectionProps {
   heroImage: string;
@@ -40,10 +41,12 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <img
+          <Image
             src={heroImage}
             alt=""
             className="absolute inset-0 w-full h-full object-cover z-0"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>

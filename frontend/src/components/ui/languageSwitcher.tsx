@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface LanguageSwitcherProps {
   isMobile?: boolean;
@@ -24,9 +25,9 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        dropdownRef.current && 
-        buttonRef.current && 
-        !dropdownRef.current.contains(event.target as Node) && 
+        dropdownRef.current &&
+        buttonRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
         !buttonRef.current.contains(event.target as Node)
       ) {
         setIsDropdownOpen(false);
@@ -72,16 +73,18 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label="Cambiar a Español"
         >
           <div className="relative w-8 h-6 overflow-hidden rounded shadow-sm mb-1">
-<img
-  src={flags.es.src}
-  alt={flags.es.alt}
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+            <Image
+              src={flags.es.src}
+              alt={flags.es.alt}
+              className="absolute inset-0 w-full h-full object-cover"
+              width={800}
+              height={600}
+            />
 
           </div>
           <span className="text-xs font-medium">ESP</span>
         </button>
-        
+
         <button
           onClick={() => handleChange({ target: { value: "en" } } as React.ChangeEvent<HTMLSelectElement>)}
           className={cn(
@@ -91,11 +94,13 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label="Switch to English"
         >
           <div className="relative w-8 h-6 overflow-hidden rounded shadow-sm mb-1">
-<img
-  src={flags.en.src}
-  alt={flags.en.alt}
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+            <Image
+              src={flags.en.src}
+              alt={flags.en.alt}
+              className="absolute inset-0 w-full h-full object-cover"
+              width={800}
+              height={600}
+            />
 
           </div>
           <span className="text-xs font-medium">ENG</span>
@@ -128,18 +133,20 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         onMouseEnter={handleMouseEnter}
       >
         <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-<img
-  src={locale === "es" ? flags.es.src : flags.en.src}
-  alt={locale === "es" ? flags.es.alt : flags.en.alt}
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+          <Image
+            src={locale === "es" ? flags.es.src : flags.en.src}
+            alt={locale === "es" ? flags.es.alt : flags.en.alt}
+            className="absolute inset-0 w-full h-full object-cover"
+            width={800}
+            height={600}
+          />
 
         </div>
         <span className="text-sm font-medium">{locale === "es" ? "ESP" : "ENG"}</span>
       </button>
-      
+
       {isDropdownOpen && (
-        <div 
+        <div
           ref={dropdownRef}
           className="absolute right-0 top-full mt-1 w-32 bg-negro-secundario shadow-lg rounded-md overflow-hidden z-50"
           onMouseEnter={handleMouseEnter}
@@ -152,16 +159,18 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
             )}
           >
             <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-<img
-  src={flags.es.src}
-  alt={flags.es.alt}
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+              <Image
+                src={flags.es.src}
+                alt={flags.es.alt}
+                className="absolute inset-0 w-full h-full object-cover"
+                width={800}
+                height={600}
+              />
 
             </div>
             <span className="text-sm">ESP</span>
           </button>
-          
+
           <button
             onClick={() => handleChange({ target: { value: "en" } } as React.ChangeEvent<HTMLSelectElement>)}
             className={cn(
@@ -170,11 +179,13 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
             )}
           >
             <div className="relative w-6 h-4 overflow-hidden rounded shadow-sm">
-<img
-  src={flags.en.src}
-  alt={flags.en.alt}
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+              <Image
+                src={flags.en.src}
+                alt={flags.en.alt}
+                className="absolute inset-0 w-full h-full object-cover"
+                width={800}
+                height={600}
+              />
 
             </div>
             <span className="text-sm">ENG</span>

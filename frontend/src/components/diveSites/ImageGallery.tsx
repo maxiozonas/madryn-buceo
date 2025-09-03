@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface Props {
   media: { type: "image" | "video"; url: string }[];
@@ -15,22 +16,14 @@ export default function ImageGallery({ media, className, style }: Props) {
     setCurrent((prev) => (prev - 1 + media.length) % media.length);
 
   useEffect(() => {
-    console.log("ImageGallery media:", media);
-    console.log("Current media:", media[current]);
     if (media[current]?.type === "image") {
       const img = new window.Image();
       img.src = media[current].url || "/images/placeholder.jpg";
       img.onload = () => {
-        console.log(
-          `Image dimensions: ${img.naturalWidth}x${img.naturalHeight}`
-        );
         const renderedImg = document.querySelector(
           `img[src="${img.src}"]`
         ) as HTMLImageElement;
         if (renderedImg) {
-          console.log(
-            `Rendered dimensions: ${renderedImg.width}x${renderedImg.height}`
-          );
         }
       };
       img.onerror = () => {
@@ -40,9 +33,6 @@ export default function ImageGallery({ media, className, style }: Props) {
       const video = document.createElement("video");
       video.src = media[current].url;
       video.onloadedmetadata = () => {
-        console.log(
-          `Video dimensions: ${video.videoWidth}x${video.videoHeight}`
-        );
       };
       video.onerror = () => {
         console.error("Failed to load video:", media[current].url);
@@ -66,7 +56,7 @@ export default function ImageGallery({ media, className, style }: Props) {
       style={style}
     >
       {media[current].type === "image" ? (
-        <img
+        <Image
           src={media[current].url || "/images/placeholder.jpg"}
           alt="Foto del sitio"
           width={768}

@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 interface Props {
   sites: DiveSite[];
@@ -110,11 +111,13 @@ export default function DiveSitesCarousel({
                     style={{ borderRadius: 0 }}
                   >
                     <div className="relative h-64" style={{ borderRadius: 0 }}>
-                      <img
+                      <Image
                         src={getCardImage(site.media)}
                         alt={site.name}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
                         style={{ borderRadius: 0 }}
+                        width={280}
+                        height={280}
                       />
                     </div>
 

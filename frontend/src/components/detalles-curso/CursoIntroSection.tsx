@@ -2,6 +2,7 @@
 import { Badge } from "../ui/badge";
 import { Clock, ArrowDown, Check } from "lucide-react";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface CursoIntroSectionProps {
   title: ReactNode;
@@ -26,10 +27,12 @@ export default function CursoIntroSection({
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <img
+          <Image
             src={cardImage}
             alt="Hero"
             className="absolute inset-0 w-full h-full object-cover z-0"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>

@@ -6,6 +6,7 @@ import { ImageIcon, Film } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
 import ButtonRojo from "../ui/button-rojo";
+import Image from "next/image";
 
 interface GaleriaSectionProps {
   galleryImages: string[];
@@ -90,12 +91,14 @@ export default function GaleriaSection({
               onClick={() => openModal(0, allMedia[0].type)}
             >
               {allMedia[0].type === "image" ? (
-                <img
+                <Image
                   src={
                     allMedia[0].src || "/placeholder.svg?height=300&width=400"
                   }
                   alt={`${title} - Imagen destacada`}
                   className="object-cover transition-transform duration-300 brightness-50 absolute inset-0 w-full h-full"
+                  width={500}
+                  height={500}
                 />
               ) : (
                 <div className="relative w-full h-full">
@@ -131,10 +134,12 @@ export default function GaleriaSection({
               onClick={() => openModal(index, media.type)}
             >
               {media.type === "image" ? (
-                <img
+                <Image
                   src={media.src || "/placeholder.svg?height=300&width=400"}
                   alt={`${title} - Imagen ${index + 1}`}
                   className="object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-50 absolute inset-0 w-full h-full"
+                  width={500}
+                  height={500}
                 />
               ) : (
                 <div className="relative w-full h-full">
@@ -210,7 +215,7 @@ export default function GaleriaSection({
               >
                 {mediaType === "image" ? (
                   <div className="relative w-[800px] h-[500px] mx-auto">
-                    <img
+                    <Image
                       src={
                         allMedia[selectedMedia].src ||
                         "/placeholder.svg?height=800&width=1200"
@@ -218,6 +223,8 @@ export default function GaleriaSection({
                       alt={`${title} - Imagen ${selectedMedia + 1}`}
                       className="absolute inset-0 w-full h-full object-contain"
                       sizes="(max-width: 768px) 100vw, 800px"
+                      width={800}
+                      height={500}
                     />
                   </div>
                 ) : (

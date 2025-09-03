@@ -1,5 +1,6 @@
 import { Award, SeparatorHorizontal } from "lucide-react";
 import { FormattedMessage, useIntl } from "react-intl";
+import Image from "next/image";
 
 export default function CursosIntroSection() {
   const imagen =
@@ -13,7 +14,7 @@ export default function CursosIntroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         <div className="flex flex-col justify-center">
           <div className="mb-4 w-36 inline-flex items-center justify-center rounded-lg bg-muted px-4 py-1.5 text-lg font-medium">
-            <img
+            <Image
               src={logo}
               alt="Certificación PADI"
               width={100}
@@ -65,10 +66,12 @@ export default function CursosIntroSection() {
         </div>
 
         <div className="relative overflow-hidden rounded-xl">
-          <img
+          <Image
             src={imagen}
             alt="Buceo en Puerto Madryn"
             className="absolute inset-0 w-full h-full object-cover aspect-[4/3]"
+            width={800}
+            height={600}
           />
 
           <div className="absolute bottom-4 left-4 z-20 bg-negro/80 backdrop-blur-sm p-3 rounded-lg border border-[#403d39]">

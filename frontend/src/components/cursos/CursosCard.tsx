@@ -4,6 +4,7 @@ import { Curso } from "@/lib/data/Cursos";
 import ButtonRojo from "../ui/button-rojo";
 import { FormattedMessage } from "react-intl";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface CursoCardProps {
   course: Curso;
@@ -29,7 +30,7 @@ export default function CursoCard({ course }: CursoCardProps) {
     <div>
       <Card className="overflow-hidden h-full flex flex-col pt-0 border-none shadow-lg bg-negro-secundario hover:shadow-xl transition-shadow">
         <div className="relative h-64">
-          <img
+          <Image
             src={course.cardImage}
             alt=""
             width={500}

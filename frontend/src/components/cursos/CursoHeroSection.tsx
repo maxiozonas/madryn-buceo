@@ -1,6 +1,7 @@
 "use client";
 
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function HeroSection() {
   const image =
@@ -10,10 +11,12 @@ export default function HeroSection() {
     <>
       <section className="h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 mask-fade-bottom">
-          <img
+          <Image
             src={image}
             alt="Local"
             className="absolute inset-0 w-full h-full object-cover z-0"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 z-0 bg-black/50" />
         </div>

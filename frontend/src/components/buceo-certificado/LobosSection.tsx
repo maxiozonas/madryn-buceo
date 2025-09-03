@@ -3,6 +3,7 @@
 import ButtonRojo from "../ui/button-rojo";
 import { SeparatorHorizontal } from "lucide-react";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function DescriptionSection() {
   return (
@@ -33,10 +34,12 @@ export default function DescriptionSection() {
             </div>
           </div>
           <div className="relative h-[350px] w-full overflow-hidden rounded-lg">
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/buceo/IMG_2260_su53bd.jpg"
               alt="Buceo con Lobos Marinos"
               className="absolute inset-0 w-full h-full object-cover"
+              width={1920}
+              height={1080}
             />
           </div>
         </div>

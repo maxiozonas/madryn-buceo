@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Tripadvisor"
           >
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-trip-footer_omt51e.png"
               alt="Tripadvisor"
               width={160}
@@ -32,7 +33,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Madryn Travel"
           >
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/logo-madryn-footer_qsilvz.png"
               alt="Madryn Travel"
               width={160}
@@ -54,7 +55,7 @@ export default function Footer() {
         </div>
         <div className="flex justify-center">
           <a />
-          <img
+          <Image
             src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/footer/footer-widget-logo_hvzu7u.png"
             alt="Tripadvisor"
             width={300}
@@ -79,7 +80,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             title="Xurbyte"
           >
-            <img
+            <Image
             src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/XURBYTE(3)(2).png"
             alt="Tripadvisor"
             width={160}

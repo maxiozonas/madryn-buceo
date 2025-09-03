@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { reseñas } from "@/lib/data/Reseñas";
 import { FormattedMessage, useIntl } from "react-intl";
+import Image from "next/image";
 
 export default function ReseñasSection() {
   const controls = useAnimation();
@@ -118,7 +119,7 @@ export default function ReseñasSection() {
             className="w-full flex justify-center"
           >
             <Button className="bg-white hover:bg-white text-black text-lg font-semibold cursor-pointer flex items-center gap-2">
-              <img
+              <Image
                 src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/inicio/google_bx9cwm.png"
                 alt="Google"
                 width={24}
@@ -191,10 +192,12 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
             transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
           >
             <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">
-              <img
+              <Image
                 src={reseña.image || "/placeholder.svg"}
                 alt={reseña.name}
                 className="absolute inset-0 w-full h-full object-cover"
+                width={40}
+                height={40}
               />
             </div>
             <div>
@@ -211,7 +214,7 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
             className="flex mb-4 items-center"
             variants={starContainerVariants}
           >
-            <img
+            <Image
               src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/inicio/google_bx9cwm.png"
               alt="Google"
               width={20}

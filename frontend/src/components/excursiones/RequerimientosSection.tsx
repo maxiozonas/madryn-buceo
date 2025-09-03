@@ -3,7 +3,7 @@
 import { Calendar, Activity, Heart, ArrowRight, Info } from "lucide-react";
 import type { Excursion } from "@/lib/data/Excursiones";
 import { Card, CardContent } from "@/components/ui/card";
-
+import Image from "next/image";
 import { FormattedMessage } from "react-intl";
 
 interface RequerimientosSectionProps {
@@ -31,10 +31,12 @@ export default function RequirementsSection({
             className="relative w-full h-full rounded-2xl"
             style={{ minHeight: "100%" }}
           >
-            <img
+            <Image
               src={imageSrc}
               alt="formattedMessage({ id: `${excursion.title}.noRequirementsAlt` })"
               className="absolute inset-0 w-full h-full object-cover"
+              width={1920}
+              height={1080}
             />
 
             <span className="sr-only">

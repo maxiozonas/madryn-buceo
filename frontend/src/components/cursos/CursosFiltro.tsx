@@ -5,6 +5,7 @@ import { cursos, allCursos, type Curso } from "@/lib/data/Cursos";
 import { Card, CardContent } from "../ui/card";
 import ButtonRojo from "../ui/button-rojo";
 import { useIntl, FormattedMessage } from "react-intl";
+import Image from "next/image";
 
 export default function CursoFiltro() {
   const intl = useIntl();
@@ -80,12 +81,14 @@ export default function CursoFiltro() {
               className="group border-[#403d39] bg-negro-secundario pt-0 rounded-none"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                <Image
                   src={
                     curso.cardImage || "/placeholder.svg?height=400&width=600"
                   }
                   alt={intl.formatMessage({ id: curso.title })}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={500}
+                  height={500}
                 />
 
                 <div className="absolute top-0 right-0 bg-rojo text-white px-3 py-1 text-sm font-medium">

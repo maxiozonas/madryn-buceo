@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import Image from "next/image";
 
 interface Props {
   media: { type: "image" | "video"; url: string }[];
@@ -17,10 +18,12 @@ export default function ImageGallery({ media, className }: Props) {
   return (
 <div className={`relative w-full ${className || "h-64 md:h-80"}`}>
   {media[current].type === "image" ? (
-    <img
+    <Image
       src={media[current].url}
       alt="Foto del sitio"
       className="absolute inset-0 w-full h-full object-cover rounded-xl"
+      width={800}
+      height={600}
     />
   ) : (
     <video
