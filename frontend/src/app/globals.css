@@ -67,7 +67,7 @@ body {
   color: var(--color-woodsmoke-950);
 }
 
-input, textarea {
+input, textarea, select {
   @apply bg-negro text-white placeholder:text-white/70 focus:ring-0 focus:border-none;
 }
 

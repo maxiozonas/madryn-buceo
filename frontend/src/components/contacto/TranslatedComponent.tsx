@@ -8,7 +8,6 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"
 export default function TranslatedContactContent() {
   return (
     <>
-
       <section className="flex justify-center relative p-8 md:px-0">
         <div className="relative z-20 container h-full flex flex-col justify-center items-center text-white text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase font-oceanica">

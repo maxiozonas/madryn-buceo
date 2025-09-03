@@ -32,39 +32,95 @@ export async function sendEmail(data: ContactFormData) {
     });
 
     const htmlTemplate = `
-      <!DOCTYPE html>
-      <html lang="es">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nuevo Mensaje de Contacto - Madryn Buceo</title>
-      </head>
-      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #e5e7eb; margin: 0; padding: 0; background-color: #1f2937;">
-        <div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #374151; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-          <div style="text-align: center; margin-bottom: 20px;">
-            <h2 style="color: #ef4444; font-size: 24px; margin: 0;">Nuevo Mensaje de Contacto</h2>
-            <p style="color: #9ca3af; font-size: 16px;">Madryn Buceo - Puerto Madryn</p>
-          </div>
-          <div style="background-color: #4b5563; padding: 20px; border-radius: 6px;">
-            <p style="margin: 0 0 10px;"><strong style="color: #e5e7eb;">Nombre:</strong> ${validatedData.name}</p>
-            <p style="margin: 0 0 10px;"><strong style="color: #e5e7eb;">Correo Electrónico:</strong> ${validatedData.email}</p>
-            <p style="margin: 0 0 10px;"><strong style="color: #e5e7eb;">Teléfono:</strong> ${validatedData.phone}</p>
-            <p style="margin: 0 0 10px;"><strong style="color: #e5e7eb;">Asunto:</strong> ${validatedData.subject}</p>
-            <p style="margin: 0 0 10px;"><strong style="color: #e5e7eb;">Mensaje:</strong></p>
-            <p style="white-space: pre-wrap; color: #d1d5db;">${validatedData.message}</p>
-          </div>
-          <div style="text-align: center; margin-top: 20px; color: #9ca3af;">
-            <p>Este mensaje fue enviado desde el formulario de contacto de <a href="https://madrynbuceo.com" style="color: #ef4444; text-decoration: none;">Madryn Buceo</a>.</p>
-            <p>B. Brown 1900 - Bajada 5 - Balneario Sara, Puerto Madryn, Argentina</p>
-          </div>
-        </div>
-      </body>
-      </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Mensaje - Madryn Buceo</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f3f4f6; font-family: Arial, Helvetica, sans-serif;">
+
+  <!-- Container -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+      <td align="center" style="padding: 30px 10px;">
+
+        <!-- Card -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="background:#ffffff; border-radius:12px; overflow:hidden;">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background:#dc2626; padding:30px; text-align:center; color:#ffffff;">
+              <h1 style="margin:0; font-size:24px; font-weight:bold;">Nuevo Mensaje</h1>
+              <p style="margin:5px 0 0; font-size:14px; opacity:0.9;">Formulario de Contacto</p>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td style="padding:30px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size:15px; line-height:1.6; color:#111827;">
+                
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #e5e7eb;">
+                    <strong>Nombre:</strong> ${validatedData.name}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #e5e7eb;">
+                    <strong>Email:</strong> ${validatedData.email}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #e5e7eb;">
+                    <strong>Teléfono:</strong> ${validatedData.phone}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:10px 0; border-bottom:1px solid #e5e7eb;">
+                    <strong>Asunto:</strong> ${validatedData.subject}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:20px 0;">
+                    <strong>Mensaje:</strong><br>
+                    <p style="margin:10px 0; white-space:pre-wrap;">${validatedData.message}</p>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#1f2937; color:#9ca3af; text-align:center; padding:20px; font-size:13px;">
+              <p style="margin:0; color:#ffffff; font-weight:bold;">Madryn Buceo</p>
+              <p style="margin:5px 0;">Puerto Madryn - Patagonia Argentina</p>
+              <p style="margin:5px 0;">📍 B. Brown 1900 - Bajada 5 - Balneario Sara</p>
+              <p style="margin:10px 0 0;">Este mensaje fue enviado desde 
+                <a href="https://madrynbuceo.com" style="color:#ef4444; text-decoration:none;">madrynbuceo.com</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
     `;
 
     const mailOptions = {
       from: `"Madryn Buceo" <${process.env.EMAIL_USER}>`,
-      to: 'madrynbuceo@hotmail.com',
+      to: 'madrynbuceo@gmail.com',
       replyTo: validatedData.email,
       subject: `Nuevo mensaje de contacto: ${validatedData.subject}`,
       text: `
