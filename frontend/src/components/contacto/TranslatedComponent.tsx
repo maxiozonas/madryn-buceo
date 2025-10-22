@@ -115,7 +115,7 @@ export default function TranslatedContactContent() {
                         <FaTiktok className="h-6 w-6" />
                       </a>
                       <a
-                        href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=5492804366804&text&type=phone_number&app_absent=0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-rojo p-3 rounded-full text-white hover:bg-opacity-80 transition-colors"
