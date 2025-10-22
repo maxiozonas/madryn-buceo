@@ -168,7 +168,7 @@ export default function Header() {
               <FaTiktok className="hover:text-rojo" />
             </a>
             <a
-              href="https://api.whatsapp.com/send/?phone=5492804564422&text&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=5492804366804&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
             >
