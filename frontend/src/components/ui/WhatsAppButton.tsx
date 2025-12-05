@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
   message = "Hola, me gustaría obtener más información sobre sus excursiones."
 }) => {
-  const phone = "+5492804366804";
+  const phone = "+5492804564422";
   
   const formattedPhone = phone.startsWith('+') 
     ? phone.substring(1) 
