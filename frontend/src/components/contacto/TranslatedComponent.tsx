@@ -66,7 +66,7 @@ export default function TranslatedContactContent() {
                         <FormattedMessage id="contact.info.phone.label" defaultMessage="Teléfono" />
                       </h3>
                       <p className="text-gray-300">
-                        +5492804366804
+                        +5492804564422
                       </p>
                     </div>
                   </div>
