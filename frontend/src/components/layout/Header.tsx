@@ -5,11 +5,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NavLinks } from "@/lib/data/NavLinks";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import LanguageSwitcher from "../ui/languageSwitcher";
 import Image from "next/image";
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+const EASE_IN = [0.4, 0, 1, 1] as const;
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +34,14 @@ export default function Header() {
     setExpandedSubmenu(expandedSubmenu === index ? null : index);
   };
 
-  const submenuVariants = {
+  const submenuVariants: Variants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
     exit: {
@@ -45,18 +49,18 @@ export default function Header() {
       y: -10,
       transition: {
         duration: 0.2,
-        ease: "easeIn",
+        ease: EASE_IN,
       },
     },
   };
 
+
   return (
     <header
-      className={`sticky top-0 z-50 text-white transition-all duration-300 p-3 ${
-        isScrolled || isOpen
+      className={`sticky top-0 z-50 text-white transition-all duration-300 p-3 ${isScrolled || isOpen
           ? "bg-negro-secundario shadow-md pt-3"
           : "bg-transparent hover:bg-negro-secundario hover:shadow-md hover:pt-3"
-      }`}
+        }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center justify-between w-full lg:w-auto">
@@ -180,11 +184,10 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-negro-secundario/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isOpen
+        className={`lg:hidden mt-2 fixed inset-0 top-16 z-50 bg-negro-secundario/95 backdrop-blur-md transition-all duration-300 ease-in-out ${isOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-full"
-        }`}
+          }`}
       >
         <div className="container h-full flex flex-col py-6 px-4">
           <nav className="flex flex-col flex-1 space-y-2">
@@ -204,17 +207,15 @@ export default function Header() {
                         defaultMessage={link.title}
                       />
                       <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-300 ${
-                          expandedSubmenu === index ? "rotate-180" : ""
-                        }`}
+                        className={`h-5 w-5 transition-transform duration-300 ${expandedSubmenu === index ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                     <div
-                      className={`transition-all duration-300 ease-in-out overflow-hidden bg-negro-secundario ${
-                        expandedSubmenu === index
+                      className={`transition-all duration-300 ease-in-out overflow-hidden bg-negro-secundario ${expandedSubmenu === index
                           ? "max-h-96 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="px-6 py-2 bg-negro-secundario">
                         {link.submenu.map((sublink, subIndex) => (

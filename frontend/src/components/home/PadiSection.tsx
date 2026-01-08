@@ -2,13 +2,16 @@
 
 import ButtonRojo from "../ui/button-rojo";
 import ButtonNegro from "../ui/button-negro";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { FormattedMessage, useIntl } from "react-intl";
 import Image from "next/image";
 
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+
 export default function PadiSection() {
   const intl = useIntl();
-  const fadeIn = {
+
+  const fadeIn: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -17,7 +20,7 @@ export default function PadiSection() {
     },
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,26 +30,29 @@ export default function PadiSection() {
     },
   };
 
-  const imageAnimation = {
+  const imageAnimation: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: "easeOut",
+        ease: EASE_OUT, // ✅ FIX
       },
     },
   };
 
-  const logoAnimation = {
-    hidden: { opacity: 0, x: 20 },
+  const logoAnimation: Variants = {
+    hidden: {
+      opacity: 0,
+      x: -40,
+    },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: EASE_OUT,
       },
     },
   };
@@ -68,6 +74,7 @@ export default function PadiSection() {
             <FormattedMessage id="home.padi.description" />
           </p>
         </motion.div>
+
         <div className="w-full grid items-center gap-8 lg:grid-cols-2">
           <motion.div
             initial="hidden"
@@ -82,6 +89,7 @@ export default function PadiSection() {
               <h2 className="text-2xl md:text-3xl font-bold uppercase text-white">
                 <FormattedMessage id="home.padi.subTitle" />
               </h2>
+
               <motion.div
                 className="flex justify-start sm:justify-end"
                 variants={logoAnimation}
@@ -95,20 +103,27 @@ export default function PadiSection() {
                 />
               </motion.div>
             </motion.div>
+
             <motion.p
               className="mb-6 text-lg text-white/80 prose-2xl"
               variants={fadeIn}
               dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: "home.padi.paragraph.1" }),
+                __html: intl.formatMessage({
+                  id: "home.padi.paragraph.1",
+                }),
               }}
             />
+
             <motion.p
               className="mb-6 text-lg text-white/80 prose-2xl"
               variants={fadeIn}
               dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: "home.padi.paragraph.2" }),
+                __html: intl.formatMessage({
+                  id: "home.padi.paragraph.2",
+                }),
               }}
             />
+
             <motion.div
               className="flex flex-wrap gap-4 text-end"
               variants={fadeIn}
@@ -123,6 +138,7 @@ export default function PadiSection() {
               />
             </motion.div>
           </motion.div>
+
           <motion.div
             className="relative h-[350px] w-full overflow-hidden rounded-lg"
             initial="hidden"

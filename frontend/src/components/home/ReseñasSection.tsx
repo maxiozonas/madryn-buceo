@@ -2,7 +2,12 @@
 
 import { Star } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  AnimatePresence,
+  type Variants,
+} from "framer-motion";
 import { Reseña } from "@/lib/types/reseñas";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -10,6 +15,8 @@ import { useEffect } from "react";
 import { reseñas } from "@/lib/data/Reseñas";
 import { FormattedMessage, useIntl } from "react-intl";
 import Image from "next/image";
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export default function ReseñasSection() {
   const controls = useAnimation();
@@ -19,7 +26,7 @@ export default function ReseñasSection() {
     controls.start("visible");
   }, [controls]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,19 +37,19 @@ export default function ReseñasSection() {
     },
   };
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
   };
 
-  const cardContainerVariants = {
+  const cardContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -53,7 +60,7 @@ export default function ReseñasSection() {
     },
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -61,7 +68,7 @@ export default function ReseñasSection() {
       transition: {
         delay: 0.8,
         duration: 0.5,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
     hover: {
@@ -89,11 +96,14 @@ export default function ReseñasSection() {
         >
           <FormattedMessage id="home.reseñas.title" />
         </motion.h2>
+
         <motion.p
           className="text-center text-white max-w-3xl mx-auto mb-12"
           variants={titleVariants}
           dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: "home.reseñas.description" }),
+            __html: intl.formatMessage({
+              id: "home.reseñas.description",
+            }),
           }}
         />
 
@@ -115,7 +125,7 @@ export default function ReseñasSection() {
         >
           <Link
             target="_blank"
-            href="https://www.google.com/search?q=madryn+buceo&oq=madryn+buceo+&gs_lcrp=EgZjaHJvbWUyBggAEEUYPDILCAEQRRgeGDkYqQYyCAgCEAAYFhgeMgsIAxAAGAUYHhipBjILCAQQABgFGB4YqQYyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgyNjI5ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8#lrd=0xbe024aaf5130b587:0x67d8409a6b02a656,1,,,,"
+            href="https://www.google.com/search?q=madryn+buceo"
             className="w-full flex justify-center"
           >
             <Button className="bg-white hover:bg-white text-black text-lg font-semibold cursor-pointer flex items-center gap-2">
@@ -125,7 +135,6 @@ export default function ReseñasSection() {
                 width={24}
                 height={24}
               />
-
               <FormattedMessage id="home.reseñas.button" />
             </Button>
           </Link>
@@ -136,7 +145,7 @@ export default function ReseñasSection() {
 }
 
 function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -144,7 +153,7 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
       transition: {
         duration: 0.6,
         delay: index * 0.1,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
     hover: {
@@ -153,12 +162,12 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
         "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
   };
 
-  const starContainerVariants = {
+  const starContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -169,14 +178,14 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
     },
   };
 
-  const starVariants = {
+  const starVariants: Variants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: EASE_OUT,
       },
     },
   };
@@ -225,7 +234,10 @@ function ReseñaCard({ reseña, index }: { reseña: Reseña; index: number }) {
             {[...Array(5)].map((_, i) => (
               <motion.div key={i} variants={starVariants}>
                 <Star
-                  className={`h-5 w-5 ${i < reseña.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+                  className={`h-5 w-5 ${i < reseña.rating
+                      ? "text-yellow-400 fill-yellow-400"
+                      : "text-gray-400"
+                    }`}
                 />
               </motion.div>
             ))}

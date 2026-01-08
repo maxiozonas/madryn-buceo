@@ -5,7 +5,7 @@ import { DiveSite } from "@/lib/data/ArrayDiveSites";
 import ImageGallery from "./ImageGallery";
 import { BadgeCheck, Ruler, Gauge, MapPinned } from "lucide-react";
 import { FormattedMessage } from "react-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 interface DiveSiteModalProps {
   isOpen: boolean;
@@ -14,7 +14,7 @@ interface DiveSiteModalProps {
   handleGoBack?: () => void;
 }
 
-const modalVariants = {
+const modalVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -24,7 +24,7 @@ const modalVariants = {
     y: 0,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: [0.16, 1, 0.3, 1], // easeOut
     },
   },
   exit: {
@@ -32,7 +32,7 @@ const modalVariants = {
     y: 20,
     transition: {
       duration: 0.2,
-      ease: "easeIn",
+      ease: [0.4, 0, 1, 1], // easeIn
     },
   },
 };
@@ -87,18 +87,17 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
                         />
                         :
                       </strong>{" "}
-                      <FormattedMessage
-                        id={site.difficulty}
-                        defaultMessage="Difficulty"
-                      />
+                      <FormattedMessage id={site.difficulty} />
                     </p>
+
                     <p className="flex items-center gap-2">
                       <Ruler className="w-5 h-5 text-rojo" />
                       <strong>
                         <FormattedMessage id="depth" defaultMessage="Depth" />:
                       </strong>{" "}
-                      <FormattedMessage id={site.depth} defaultMessage="Depth" />
+                      <FormattedMessage id={site.depth} />
                     </p>
+
                     <p className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-rojo" />
                       <strong>
@@ -110,6 +109,7 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
                       </strong>{" "}
                       {site.certification}
                     </p>
+
                     <p className="flex items-center gap-2">
                       <MapPinned className="w-5 h-5 text-rojo" />
                       <strong>
@@ -129,7 +129,10 @@ const DiveSiteModal: React.FC<DiveSiteModalProps> = ({
                     onClick={closeModal}
                     className="w-full py-2 px-4 bg-rojo text-white rounded-lg hover:bg-rojo/80 transition cursor-pointer"
                   >
-                    <FormattedMessage id="diveSite.close" defaultMessage="Close" />
+                    <FormattedMessage
+                      id="diveSite.close"
+                      defaultMessage="Close"
+                    />
                   </button>
                 </div>
               </div>

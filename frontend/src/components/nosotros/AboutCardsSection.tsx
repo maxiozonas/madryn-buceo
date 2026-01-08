@@ -3,11 +3,14 @@
 import React, { ReactNode } from "react";
 import ImageGallery from "./ImageGallery";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { FileClock, House, Users } from "lucide-react";
 import { FormattedMessage } from "react-intl";
 import Image from "next/image";
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+
 
 const historyMedia: { type: "image" | "video"; url: string }[] = [
   { url: "https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/nosotros/GaleriaLocal/galeriaLocal2_nxa28x.webp", type: "image" },
@@ -111,14 +114,14 @@ function AboutCard({
   videoSrc?: string;
   children?: React.ReactNode;
 }) {
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: EASE_OUT, // ✅ FIX
       },
     },
     hover: {
@@ -129,7 +132,7 @@ function AboutCard({
     },
   };
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -139,6 +142,7 @@ function AboutCard({
       },
     },
   };
+
 
   return (
     <motion.div
