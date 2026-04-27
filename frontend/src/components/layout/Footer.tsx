@@ -75,13 +75,13 @@ export default function Footer() {
           <p className="mt-2 justify-center items-center flex gap-2 ">
             Desarrollado por{" "}
                       <a
-            href="https://www.xurbyte.com/"
+            href="https://www.xenova.com.ar/"
             target="_blank"
             rel="noopener noreferrer"
             title="Xurbyte"
           >
             <Image
-            src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/XURBYTE(3)(2).png"
+            src="https://xurbyte.github.io/assets-mdybuceo/MADRYN%20BUCEO_2025-07-05_09_54/images/Imagotipo_Lima.avif"
             alt="Tripadvisor"
             width={160}
             height={32}
