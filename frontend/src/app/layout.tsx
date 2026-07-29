@@ -1,5 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/Header"
 import Footer from "../components/layout/Footer"
@@ -7,6 +8,8 @@ import "leaflet/dist/leaflet.css"
 import WhatsAppButton from "@/components/ui/WhatsAppButton"
 import ClientIntlProvider from "./ClientIntlProvider"
 import Script from "next/script"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Madryn Buceo | Aventuras Submarinas en Puerto Madryn",
@@ -92,7 +95,7 @@ export default function RootLayout({
         <noscript>
         </noscript>
       </head>
-      <body>
+      <body className={inter.className}>
         <ClientIntlProvider locale="es">
           <Header />
           {children}
